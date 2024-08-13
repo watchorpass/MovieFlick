@@ -17,18 +17,18 @@ struct StarsRateComponent: View {
         return rate / 2
     }
     
-    var parteEntera: Int {
+    var integerPart: Int {
         Int(fiveStarsValue)
     }
     
-    var parteDecimal: Double {
-        fiveStarsValue - Double(parteEntera)
+    var fractionalPart: Double {
+        fiveStarsValue - Double(integerPart)
     }
     
     var numbersArray: [Double] {
-        var result = Array(repeating: 1.0, count: parteEntera)
+        var result = Array(repeating: 1.0, count: integerPart)
         if result.count < 5 {
-            result.append(parteDecimal)
+            result.append(fractionalPart)
         }
         while result.count < 5 {
             result.append(0)
@@ -40,21 +40,7 @@ struct StarsRateComponent: View {
         HStack(spacing: 4) {
             ForEach(numbersArray, id: \.self) { value in
                 if value > 0.0 && value < 1.0 {
-                    var dCorregido: Double {
-                        switch value {
-                        case 0.999 ... 1.0: 0
-                        case 0.85 ... 0.99: 0.25
-                        case 0.75 ... 0.84: 0.33
-                        case 0.65 ... 0.74: 0.4
-                        case 0.55 ... 0.64: 0.455
-                        case 0.45 ... 0.54: 0.5
-                        case 0.35 ... 0.44: 0.545
-                        case 0.25 ... 0.34: 0.585
-                        case 0.15 ... 0.24: 0.66
-                        case 0.05 ... 0.14: 0.74
-                        default: 1
-                        }
-                    }
+                    var offset = adjustedOffset(floatPart: value)
                     Image(systemName: "star.fill")
                         .resizable()
                         .frame(width: starSize, height: starSize)
@@ -62,7 +48,7 @@ struct StarsRateComponent: View {
                         .background() {
                             Rectangle()
                                 .foregroundColor(starsColor)
-                                .offset(x: -starSize  * dCorregido )
+                                .offset(x: -starSize * offset )
                                 .mask(Image(systemName: "star.fill")
                                     .resizable()
                                     .frame(width: starSize, height: starSize))
@@ -94,8 +80,24 @@ struct StarsRateComponent: View {
             }
         }
     }
+    
+    func adjustedOffset(floatPart: Double) -> Double {
+        switch floatPart {
+        case 0.999 ... 1.0: return 0.0
+        case 0.85 ... 0.99: return 0.25
+        case 0.75 ... 0.84: return 0.33
+        case 0.65 ... 0.74: return 0.4
+        case 0.55 ... 0.64: return 0.455
+        case 0.45 ... 0.54: return 0.5
+        case 0.35 ... 0.44: return 0.545
+        case 0.25 ... 0.34: return 0.585
+        case 0.15 ... 0.24: return 0.66
+        case 0.05 ... 0.14: return 0.74
+        default: return 1.0
+        }
+    }
 }
 
 #Preview {
-    StarsRateComponent(rate: 7.1111111111340, starSize: 20)
+    StarsRateComponent(rate: 8.322, starSize: 20)
 }
