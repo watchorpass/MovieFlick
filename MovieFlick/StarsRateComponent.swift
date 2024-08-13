@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct StarsRateComponent: View {
-    
     let rate: Double
-    var starSize: CGFloat = 30.0
+    var starSize: CGFloat = 20.0
     var starsColor: Color = .yellow
     
     var fiveStarsValue: Double {
         guard rate > 0.0 && rate < 10.0 else { return 0.0 }
-        
         return rate / 2
     }
     
@@ -25,12 +23,10 @@ struct StarsRateComponent: View {
     
     var parteDecimal: Double {
         fiveStarsValue - Double(parteEntera)
-        
     }
     
     var numbersArray: [Double] {
         var result = Array(repeating: 1.0, count: parteEntera)
-        
         if result.count < 5 {
             result.append(parteDecimal)
         }
@@ -39,7 +35,6 @@ struct StarsRateComponent: View {
         }
         return result
     }
-    
     
     var body: some View {
         HStack(spacing: 4) {
@@ -79,7 +74,6 @@ struct StarsRateComponent: View {
                                 .frame(width: starSize, height: starSize)
                                 .foregroundColor(.secondary.opacity(0.4))
                         }
-                    
                 } else if value == 1.0 {
                     Image(systemName: "star.fill")
                         .resizable()
@@ -91,25 +85,17 @@ struct StarsRateComponent: View {
                                 .frame(width: starSize, height: starSize)
                                 .foregroundColor(.secondary.opacity(0.4))
                         }
-                    
-                       
                 } else {
                     Image(systemName: "star")
                         .resizable()
                         .frame(width: starSize, height: starSize)
                         .foregroundColor(.secondary.opacity(0.4))
-                       
-                    
-                }
+                                    }
             }
         }
     }
-    
-  
-    
-    
 }
 
 #Preview {
-    StarsRateComponent(rate: 7.1111111111340, starSize: 50)
+    StarsRateComponent(rate: 7.1111111111340, starSize: 20)
 }
