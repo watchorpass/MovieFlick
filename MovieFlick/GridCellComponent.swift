@@ -9,46 +9,57 @@ import SwiftUI
 
 struct GridCellComponent: View {
     let title: String
-    let image: Image? = nil
     let cellSize: CGFloat
+    var image: Image? = nil
+    var color: Color? = nil
     var action: () -> Void
     
-    var gradient = LinearGradient(
-        colors: [.black.opacity(0.8), .black.opacity(0)],
-        startPoint: .bottom,
-        endPoint: .center
-    )
-    
     var body: some View {
-        ZStack(alignment: .bottomLeading) {
-            (image ?? Image(systemName: "popcorn"))
-                .resizable()
-                .scaledToFit()
-                .padding()
-                .frame(width: cellSize, height: cellSize)
-                .background(.ultraThinMaterial) // por si sale el placeholder popcorn, que se vea el fondo difuminado.
-            gradient
+        ZStack {
+            if let color { color }
+            else {
+                (image ?? Image(systemName: "popcorn"))
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: cellSize, height: cellSize)
+                    .background(.ultraThinMaterial)
+            }
             Text(title)
-                .fontWeight(.light)
-                .foregroundColor(.white)
-                .lineLimit(1)
-                .padding(8)
+                .lineLimit(2)
+                .font(.title)
+                .fontWeight(.semibold)
+                .padding(.vertical, 10)
                 .allowsTightening(true)
-                .truncationMode(.middle) // si una pelicula es la 2 o el final del título es lo importante. De esta manera se permite leer correcetamente.
+                .truncationMode(.middle)
+                .frame(maxWidth: .infinity)
+                .background(.thinMaterial)
         }
-        .clipShape(RoundedRectangle(cornerRadius: cellSize/15))
+        .clipShape(RoundedRectangle(cornerRadius: cellSize/10))
         .frame(width: cellSize, height: cellSize)
     }
 }
 
-#Preview("large") {
-    GridCellComponent(title: "Movie title",cellSize: 300, action: {})
+#Preview("Different sizes") {
+    VStack(spacing: 10) {
+        GridCellComponent(title: "Movie title",cellSize: 300, action: {})
+        Text("300")
+        GridCellComponent(title: "Genre name",cellSize: 200, color: .purple, action: {})
+        Text("200 and color")
+        GridCellComponent(title: "Large title movie just for checking long text 2",cellSize: 150, action: {})
+        Text("150 and long text")
+    }
 }
 
-#Preview("medium") {
-    GridCellComponent(title: "Movie title",cellSize: 200, action: {})
+#Preview("Genres") {
+    Grid {
+        GridCellComponent(title: "Action", cellSize: 150, image: Image("Inside Man Poster"), action: {})
+        GridCellComponent(title: "Fiction", cellSize: 150, image: Image("Breaking Bad Poster"), action: {})
+    }
 }
 
-#Preview("small") {
-    GridCellComponent(title: "Movie title",cellSize: 150, action: {})
+#Preview("Film & TVseries") {
+    VStack {
+        GridCellComponent(title: "Films", cellSize: 350, image: Image("Inside Man Poster"), action: {})
+        GridCellComponent(title: "TV Series", cellSize: 350, image: Image("Breaking Bad Poster"), action: {})
+    }
 }
