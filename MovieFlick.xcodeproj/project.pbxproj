@@ -11,6 +11,7 @@
 		1A0035EE2C66114B00DC89C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0035ED2C66114B00DC89C0 /* ContentView.swift */; };
 		1A0035F02C66114C00DC89C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0035EF2C66114C00DC89C0 /* Assets.xcassets */; };
 		1A0035F32C66114C00DC89C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0035F22C66114C00DC89C0 /* Preview Assets.xcassets */; };
+		1A0036392C6D084A00DC89C0 /* PackageNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0036382C6D084A00DC89C0 /* PackageNetwork */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0036392C6D084A00DC89C0 /* PackageNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +205,9 @@
 			dependencies = (
 			);
 			name = MovieFlick;
+			packageProductDependencies = (
+				1A0036382C6D084A00DC89C0 /* PackageNetwork */,
+			);
 			productName = MovieFlick;
 			productReference = 1A0035E82C66114B00DC89C0 /* MovieFlick.app */;
 			productType = "com.apple.product-type.application";
@@ -231,6 +236,9 @@
 				Base,
 			);
 			mainGroup = 1A0035DF2C66114B00DC89C0;
+			packageReferences = (
+				1A0036372C6D084A00DC89C0 /* XCRemoteSwiftPackageReference "NetworkPackage" */,
+			);
 			productRefGroup = 1A0035E92C66114B00DC89C0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -464,6 +472,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A0036372C6D084A00DC89C0 /* XCRemoteSwiftPackageReference "NetworkPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/watchorpass/NetworkPackage";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A0036382C6D084A00DC89C0 /* PackageNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A0036372C6D084A00DC89C0 /* XCRemoteSwiftPackageReference "NetworkPackage" */;
+			productName = PackageNetwork;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1A0035E02C66114B00DC89C0 /* Project object */;
 }
