@@ -11,16 +11,16 @@
 		1A0035EE2C66114B00DC89C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0035ED2C66114B00DC89C0 /* ContentView.swift */; };
 		1A0035F02C66114C00DC89C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0035EF2C66114C00DC89C0 /* Assets.xcassets */; };
 		1A0035F32C66114C00DC89C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0035F22C66114C00DC89C0 /* Preview Assets.xcassets */; };
-		A1C77F4A2C676264008B018F /* GridCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C77F492C676264008B018F /* GridCellComponent.swift */; };
-		D32CA79E2C6C07C5009DF748 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CA79D2C6C07C5009DF748 /* ButtonComponent.swift */; };
-		D32CA7962C6A01FA009DF748 /* StarsRateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CA7952C6A01FA009DF748 /* StarsRateComponent.swift */; };
 		1A00363B2C6DE69500DC89C0 /* MovieSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00363A2C6DE69500DC89C0 /* MovieSwipeView.swift */; };
 		1A00363D2C6DF38400DC89C0 /* SwipeCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00363C2C6DF38400DC89C0 /* SwipeCardComponent.swift */; };
 		1A0036402C6DF5B100DC89C0 /* SwipeGestureModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00363F2C6DF5B100DC89C0 /* SwipeGestureModifier.swift */; };
 		1A0036422C6DF5F500DC89C0 /* PosterImgModfier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0036412C6DF5F500DC89C0 /* PosterImgModfier.swift */; };
 		1A0036442C6DF64400DC89C0 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0036432C6DF64400DC89C0 /* View+Extension.swift */; };
 		1A0036462C6DF67800DC89C0 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0036452C6DF67800DC89C0 /* Image+Extension.swift */; };
-		1A0036392C6D084A00DC89C0 /* PackageNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0036382C6D084A00DC89C0 /* PackageNetwork */; };
+		1A0036692C6F48F600DC89C0 /* PackageNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0036682C6F48F600DC89C0 /* PackageNetwork */; };
+		A1C77F4A2C676264008B018F /* GridCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C77F492C676264008B018F /* GridCellComponent.swift */; };
+		D32CA7962C6A01FA009DF748 /* StarsRateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CA7952C6A01FA009DF748 /* StarsRateComponent.swift */; };
+		D32CA79E2C6C07C5009DF748 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CA79D2C6C07C5009DF748 /* ButtonComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,15 +29,15 @@
 		1A0035ED2C66114B00DC89C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1A0035EF2C66114C00DC89C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A0035F22C66114C00DC89C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A1C77F492C676264008B018F /* GridCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCellComponent.swift; sourceTree = "<group>"; };
-		D32CA79D2C6C07C5009DF748 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
-		D32CA7952C6A01FA009DF748 /* StarsRateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsRateComponent.swift; sourceTree = "<group>"; };
 		1A00363A2C6DE69500DC89C0 /* MovieSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSwipeView.swift; sourceTree = "<group>"; };
 		1A00363C2C6DF38400DC89C0 /* SwipeCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardComponent.swift; sourceTree = "<group>"; };
 		1A00363F2C6DF5B100DC89C0 /* SwipeGestureModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureModifier.swift; sourceTree = "<group>"; };
 		1A0036412C6DF5F500DC89C0 /* PosterImgModfier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImgModfier.swift; sourceTree = "<group>"; };
 		1A0036432C6DF64400DC89C0 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		1A0036452C6DF67800DC89C0 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
+		A1C77F492C676264008B018F /* GridCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCellComponent.swift; sourceTree = "<group>"; };
+		D32CA7952C6A01FA009DF748 /* StarsRateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsRateComponent.swift; sourceTree = "<group>"; };
+		D32CA79D2C6C07C5009DF748 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A0036392C6D084A00DC89C0 /* PackageNetwork in Frameworks */,
+				1A0036692C6F48F600DC89C0 /* PackageNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +241,7 @@
 			);
 			name = MovieFlick;
 			packageProductDependencies = (
-				1A0036382C6D084A00DC89C0 /* PackageNetwork */,
+				1A0036682C6F48F600DC89C0 /* PackageNetwork */,
 			);
 			productName = MovieFlick;
 			productReference = 1A0035E82C66114B00DC89C0 /* MovieFlick.app */;
@@ -272,7 +272,7 @@
 			);
 			mainGroup = 1A0035DF2C66114B00DC89C0;
 			packageReferences = (
-				1A0036372C6D084A00DC89C0 /* XCRemoteSwiftPackageReference "NetworkPackage" */,
+				1A0036672C6F48F600DC89C0 /* XCRemoteSwiftPackageReference "NetworkPackage" */,
 			);
 			productRefGroup = 1A0035E92C66114B00DC89C0 /* Products */;
 			projectDirPath = "";
@@ -518,7 +518,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1A0036372C6D084A00DC89C0 /* XCRemoteSwiftPackageReference "NetworkPackage" */ = {
+		1A0036672C6F48F600DC89C0 /* XCRemoteSwiftPackageReference "NetworkPackage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/watchorpass/NetworkPackage";
 			requirement = {
@@ -529,9 +529,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1A0036382C6D084A00DC89C0 /* PackageNetwork */ = {
+		1A0036682C6F48F600DC89C0 /* PackageNetwork */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1A0036372C6D084A00DC89C0 /* XCRemoteSwiftPackageReference "NetworkPackage" */;
+			package = 1A0036672C6F48F600DC89C0 /* XCRemoteSwiftPackageReference "NetworkPackage" */;
 			productName = PackageNetwork;
 		};
 /* End XCSwiftPackageProductDependency section */
