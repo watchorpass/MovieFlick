@@ -1,0 +1,15 @@
+{
+  "originHash" : "4a67b0bc2346dc86d13005ead3d615f46a50dd5aef565886550e3aed926a9553",
+  "pins" : [
+    {
+      "identity" : "networkpackage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/watchorpass/NetworkPackage",
+      "state" : {
+        "branch" : "main",
+        "revision" : "27e6f04f44964b2804c754802e12acd5226c0b80"
+      }
+    }
+  ],
+  "version" : 3
+}
