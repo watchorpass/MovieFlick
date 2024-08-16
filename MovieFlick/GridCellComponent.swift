@@ -34,6 +34,7 @@ struct GridCellComponent: View {
                 .frame(maxWidth: .infinity)
                 .background(.thinMaterial)
         }
+        .onTapGesture(perform: action)
         .clipShape(RoundedRectangle(cornerRadius: cellSize/10))
         .frame(width: cellSize, height: cellSize)
     }
