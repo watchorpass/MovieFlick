@@ -17,7 +17,7 @@ struct StartView: View {
         }
         .padding(.bottom, 100)
         .background {
-            Image("StartViewImage")
+            Image(.startView)
                 .opacity(0.7)
         }
     }
