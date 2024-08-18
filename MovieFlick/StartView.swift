@@ -11,15 +11,15 @@ struct StartView: View {
     var body: some View {
         VStack {
             Spacer()
-            ButtonComponent(title: "Start", action: {
-                print("Start pressed")
-            })
+            Image(.logoLetra)
+                .resizable()
+                .scaledToFit()
+                .padding()
+            Spacer()
+            ButtonComponent(title: "Start", action: {})
         }
         .padding(.bottom, 100)
-        .background {
-            Image(.startView)
-                .opacity(0.7)
-        }
+        .appBackground(gradientOpacity: 0.5)
     }
 }
 

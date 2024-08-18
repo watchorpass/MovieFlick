@@ -23,7 +23,7 @@ struct ButtonComponent: View {
                 .foregroundColor(.primary)
                 .padding()
                 .frame(maxWidth: 250, maxHeight: 50)
-                .background(isPressed ? color.opacity(0.4) : color.opacity(0.5))
+                .background(isPressed ? color.opacity(0.4) : color.opacity(0.8))
                 .cornerRadius(10)
                 .overlay {
                     RoundedRectangle(cornerRadius: 10)

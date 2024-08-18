@@ -40,7 +40,7 @@ struct StarsRateComponent: View {
         HStack(spacing: 4) {
             ForEach(numbersArray, id: \.self) { value in
                 if value > 0.0 && value < 1.0 {
-                    var offset = adjustedOffset(floatPart: value)
+                    let offset = adjustedOffset(floatPart: value)
                     Image(systemName: "star.fill")
                         .resizable()
                         .frame(width: starSize, height: starSize)
