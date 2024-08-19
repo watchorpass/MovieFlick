@@ -19,10 +19,10 @@ struct PlayersView: View {
                 .foregroundStyle(Color.yellow)
 
             Spacer()
-            ForEach (0..<textExample.count) { index in
+            ForEach(textExample.indices, id: \.self) { index in
                 ZStack {
                     ButtonComponent(title: "", action: {}, color: Color.green)
-                    TextField("Player 1", text: $textExample[index])
+                    TextField("Player \(index + 1)", text: $textExample[index])
                         .font(.title)
                         .bold()
                         .multilineTextAlignment(.center)
