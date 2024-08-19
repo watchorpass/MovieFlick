@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlayersView: View {
 
-    @State var textExample = ["Player 1", "Player 2"]
+    @State var textExample = ["", ""]
 
     var body: some View {
         VStack {
@@ -19,10 +19,10 @@ struct PlayersView: View {
                 .foregroundStyle(Color.yellow)
 
             Spacer()
-            ForEach ($textExample, id: \.self) { player in
+            ForEach (0..<textExample.count) { index in
                 ZStack {
                     ButtonComponent(title: "", action: {}, color: Color.green)
-                    TextField("Player 1", text: player)
+                    TextField("Player 1", text: $textExample[index])
                         .font(.title)
                         .bold()
                         .multilineTextAlignment(.center)
