@@ -1,0 +1,400 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/qU4HDNKv7gjdlvMu74r70rISPwn.jpg",
+            "genre_ids": [
+                12,
+                16,
+                35,
+                10751
+            ],
+            "id": 10315,
+            "original_language": "en",
+            "original_title": "Fantastic Mr. Fox",
+            "overview": "Un astuto zorro llamado Fox (voz original de George Clooney) parece llevar una vida idílica con su esposa (Meryl Streep) y con su hijo Ash (Jason Schwartzman). Pero, por las noches, el señor Fox se dedica a robar gallinas, patos y pavos en las granjas vecinas. Los granjeros deciden acabar con la situación cazando a Mr. Fox. Basada en el famoso libro para niños de Roald Dahl.",
+            "popularity": 116.999,
+            "poster_path": "/2B2IcoSMpOa64Yw8DDtGzXdS4vl.jpg",
+            "release_date": "2009-10-23",
+            "title": "Fantástico Sr. Fox",
+            "video": false,
+            "vote_average": 7.8,
+            "vote_count": 5285
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/2q75qMwDijJPVbTp6SDDojjEEXg.jpg",
+            "genre_ids": [
+                35
+            ],
+            "id": 38365,
+            "original_language": "en",
+            "original_title": "Grown Ups",
+            "overview": "Después de muchos años, su antiguo entrenador de basquet muere y cincos amigos deciden pasar un fin de semanas -ahora con sus respectivas familias- en la casa donde celebraron, antaño, el campeonato.",
+            "popularity": 110.22,
+            "poster_path": "/r1mDA1SLjw2yiYhhLiAjrd2Pt1l.jpg",
+            "release_date": "2010-06-24",
+            "title": "Niños grandes",
+            "video": false,
+            "vote_average": 6.385,
+            "vote_count": 5965
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
+            "genre_ids": [
+                28,
+                12,
+                878
+            ],
+            "id": 436270,
+            "original_language": "en",
+            "original_title": "Black Adam",
+            "overview": "Casi 5000 años después de que los dioses antiguos le concediesen sus poderes y tras ser encarcelado, Black Adam queda liberado de su tumba terrenal y está listo para hacer justicia a su manera en el mundo moderno.",
+            "popularity": 108.174,
+            "poster_path": "/mPTzXksC8HcAj6EM6WjZFJVJEzF.jpg",
+            "release_date": "2022-10-19",
+            "title": "Black Adam",
+            "video": false,
+            "vote_average": 6.924,
+            "vote_count": 6113
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/hC9QftCUwQxgOoYrO6TwQ3Qr3HH.jpg",
+            "genre_ids": [
+                35,
+                10749
+            ],
+            "id": 10591,
+            "original_language": "en",
+            "original_title": "The Girl Next Door",
+            "overview": "Matthew, un ambicioso joven de un instituto con aspiraciones a ser político en el futuro, se enamora de la chica de sus sueños: la bella y joven vecina de la puerta de al lado. Ambos comienzan un idílico romance, pero un sorprendente descubrimiento pondrá a prueba su relación: ella es un famosa actriz porno.",
+            "popularity": 106.809,
+            "poster_path": "/lpFkU7VmWvtBOf6FnWV3bCLoXVW.jpg",
+            "release_date": "2004-04-09",
+            "title": "La vecina de al lado",
+            "video": false,
+            "vote_average": 6.72,
+            "vote_count": 3413
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/s0OrExdg7i3RLR7oqzHRk4q2kL4.jpg",
+            "genre_ids": [
+                18,
+                35
+            ],
+            "id": 194662,
+            "original_language": "en",
+            "original_title": "Birdman or (The Unexpected Virtue of Ignorance)",
+            "overview": "Después de hacerse famoso interpretando a un célebre superhéroe, un actor trata de darle un nuevo rumbo a su vida, recuperando a su familia y preparándose para el estreno de una obra teatral en Broadway.",
+            "popularity": 72.211,
+            "poster_path": "/lJxWFRrQIOphpD3oPjD0J0d9JYY.jpg",
+            "release_date": "2014-10-17",
+            "title": "Birdman o (la inesperada virtud de la ignorancia)",
+            "video": false,
+            "vote_average": 7.466,
+            "vote_count": 12619
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/5wJ2tckpvwcxGCAgZiccodwEJpf.jpg",
+            "genre_ids": [
+                28,
+                878,
+                12
+            ],
+            "id": 841,
+            "original_language": "en",
+            "original_title": "Dune",
+            "overview": "Por orden imperial la familia Atreides deberá hacerse cargo de la explotación del desértico planeta de Arrakis, conocido también como Dune, el único planeta donde se encuentra 'la especia', una potente droga que, además, es necesaria para los vuelos espaciales.",
+            "popularity": 65.89,
+            "poster_path": "/5qTvYDiy7bIdXyknlId9xZPDoF.jpg",
+            "release_date": "1984-12-14",
+            "title": "Dune",
+            "video": false,
+            "vote_average": 6.198,
+            "vote_count": 2949
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/bF9k4L3E93fHESs55zcyvxG5qZH.jpg",
+            "genre_ids": [
+                28,
+                12,
+                14
+            ],
+            "id": 205584,
+            "original_language": "en",
+            "original_title": "Gods of Egypt",
+            "overview": "La supervivencia de la humanidad pende de un hilo, pero Beck, un héroe mortal, está decidido a salvar el mundo y a rescatar a su verdadero amor. Para conseguirlo busca la ayuda del poderoso dios Horus, con el que establecerá una alianza contra Set, el despiadado dios de la oscuridad que ha usurpado el trono de Egipto, sumiendo al país en el caos. Para ganar la batalla contra Set y sus secuaces tendrán que someterse a terribles pruebas de valentía y sacrificio.",
+            "popularity": 63.962,
+            "poster_path": "/j6RDEmmkkDwF8hoAWh9xiYybYC7.jpg",
+            "release_date": "2016-02-25",
+            "title": "Dioses de Egipto",
+            "video": false,
+            "vote_average": 5.656,
+            "vote_count": 3993
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/f1a51iItLhHnGWs2btAQjlDIEPB.jpg",
+            "genre_ids": [
+                35,
+                10749
+            ],
+            "id": 11631,
+            "original_language": "en",
+            "original_title": "Mamma Mia!",
+            "overview": "Versión cinematográfica del popular musical de ABBA. Una joven que ha crecido en una pequeña isla griega, ha sido educada por una madre rebelde y poco convencional, que siempre se ha negado a revelarle la identidad de su padre. Cuando, por fin, parece que la joven está a punto de saberlo, aparecen tres posibles candidatos.",
+            "popularity": 62.157,
+            "poster_path": "/kfwpEsGsME1yVbZsPl6QvZy7Gue.jpg",
+            "release_date": "2008-07-03",
+            "title": "Mamma Mia!",
+            "video": false,
+            "vote_average": 6.977,
+            "vote_count": 6371
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/hYZICJYYKBqlmm1YBN483YbTN5j.jpg",
+            "genre_ids": [
+                18
+            ],
+            "id": 595,
+            "original_language": "en",
+            "original_title": "To Kill a Mockingbird",
+            "overview": "En la época de la Gran Depresión, en una población sureña, Atticus Finch es un abogado que defiende a un hombre negro acusado de haber violado a una mujer blanca. Aunque la inocencia del hombre resulta evidente, el veredicto del jurado es tan previsible que ningún abogado aceptaría el caso, excepto Atticus Finch, el ciudadano más respetable de la ciudad. Su compasiva y valiente defensa de un inocente le granjea enemistades, pero le otorga el respeto y la admiración de sus dos hijos, huérfanos de madre.  Adaptación cinematográfica de la novela homónima de Harper Lee.",
+            "popularity": 54.744,
+            "poster_path": "/elLuuNim93XReUc6vvpC9B6IBGJ.jpg",
+            "release_date": "1962-12-20",
+            "title": "Matar a un ruiseñor",
+            "video": false,
+            "vote_average": 8.002,
+            "vote_count": 2546
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/rqmE0aFFerz8E8PkGOKPAoIY5Ax.jpg",
+            "genre_ids": [
+                18,
+                10751,
+                14
+            ],
+            "id": 1585,
+            "original_language": "en",
+            "original_title": "It's a Wonderful Life",
+            "overview": "Es la vigilia de Navidad en Bedford falls, NY, y George Bailey está planeando suicidarse. Pero un ángel es enviado para detenerle en su intento. Él le enseñará a George las cosas maravillosas de su juventud, cómo salvó la vida de su hermano y la de otros que, gracias a haber conocido a George, son felices. Así, nuestro amigo descubrirá que... ¡La vida es realmente un tesoro maravilloso que debemos disfrutar!",
+            "popularity": 53.909,
+            "poster_path": "/63W4MsB8e5whhPNyxhRVTzSsCje.jpg",
+            "release_date": "1946-12-20",
+            "title": "¡Qué bello es vivir!",
+            "video": false,
+            "vote_average": 8.276,
+            "vote_count": 4202
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/rsBFDOVtsVQ76dcOsRMTmREFffV.jpg",
+            "genre_ids": [
+                18,
+                35,
+                10749
+            ],
+            "id": 43347,
+            "original_language": "en",
+            "original_title": "Love & Other Drugs",
+            "overview": "Maggie es una mujer independiente que ha decidido vivir sin ataduras. Pero conoce a Jamie, un joven cuyo irresistible encanto funciona no sólo con las mujeres, sino también dentro del despiadado mundo de las ventas farmacéuticas. La relación entre Maggie y Jamie, para sorpresa de ambos, desemboca en amor. La película se basa en una historia real: la de Jamie Reidy, un vendedor de Pfizer (laboratorio que desarrolló la Viagra), quien sacó a la luz algunas prácticas dudosas empleadas por estas compañías farmacéuticas.",
+            "popularity": 53.804,
+            "poster_path": "/bzXczujSYdsddv9FZBmVhPUN65z.jpg",
+            "release_date": "2010-11-04",
+            "title": "Amor y otras drogas",
+            "video": false,
+            "vote_average": 7.056,
+            "vote_count": 5035
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/vDf9FmgCbn9YH4JGTpIsyiKX1fa.jpg",
+            "genre_ids": [
+                28,
+                878
+            ],
+            "id": 816741,
+            "original_language": "es",
+            "original_title": "Ojos Grises",
+            "overview": "En un futuro postapocalíptico, la humanidad es daltónica. Un científico brillante muere repentinamente, dejando su precioso maletín lleno de una droga sintética altamente adictiva que permite a la gente ...",
+            "popularity": 52.737,
+            "poster_path": "/23pj4HkVlsEAJsSn2z7GoXgP46H.jpg",
+            "release_date": "2018-05-11",
+            "title": "Ojos Grises",
+            "video": false,
+            "vote_average": 5.836,
+            "vote_count": 61
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/omvtRhwBgwB8EWDjWMt95rDGPsv.jpg",
+            "genre_ids": [
+                28,
+                12,
+                14
+            ],
+            "id": 1729,
+            "original_language": "zh",
+            "original_title": "The Forbidden Kingdom",
+            "overview": "Un joven (Michael Angarano), que siente una gran pasión por el cine de Kung Fu, visita regularmente una casa de empeños en Chinatown buscando películas. En una de sus visitas descubre un bastón que ha visto en un sueño recientemente, y más tarde se ve envuelto en un atraco en la misma casa de empeños, tras el cual huye con el bastón. En medio de la huida cae desde una azotea y es milagrosamente transportado a la China medieval donde, con la ayuda del luchador borracho (Jackie Chan), el monje silencioso (Jet Li), y el Gorrion Dorado (Yifei Liu), deberá devolver este bastón al mismo Rey Mono, transformado en una estatua de piedra mucho tiempo atras.",
+            "popularity": 49.946,
+            "poster_path": "/2Cl8oOuNiBPJGNYZzbyRR6BDhKd.jpg",
+            "release_date": "2008-04-17",
+            "title": "El reino prohibido",
+            "video": false,
+            "vote_average": 6.615,
+            "vote_count": 1650
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/9IYyCLf5NNAQFK9pNtqzEU9HWzM.jpg",
+            "genre_ids": [
+                35,
+                878
+            ],
+            "id": 68,
+            "original_language": "en",
+            "original_title": "Brazil",
+            "overview": "En un extraño y deprimente universo futurista donde reinan las máquinas, una mosca cae dentro de un ordenador y cambia el apellido del guerrillero Harry Tuttle (Robert de Niro) por el del tranquilo padre de familia Harry Buttle, que es detenido y asesinado por el aparato represor del Estado. El tranquilo burócrata Sam Lowry (Jonathan Pryce) es el encargado de devolver un talón a la familia de la víctima, circunstancia que le permite conocer a Jill Layton (Kim Greist), la mujer de sus sueños. Y, mientras la persigue, hace amistad con Harry Tuttle y se convierte en su cómplice.",
+            "popularity": 47.746,
+            "poster_path": "/x7N8ZbCw7ojT8XbvoeGL0LXTK8E.jpg",
+            "release_date": "1985-02-20",
+            "title": "Brazil",
+            "video": false,
+            "vote_average": 7.672,
+            "vote_count": 3221
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/3azw5uVGlaQtELBKG6bcHJlxZOk.jpg",
+            "genre_ids": [
+                18,
+                10749,
+                14
+            ],
+            "id": 122906,
+            "original_language": "en",
+            "original_title": "About Time",
+            "overview": "La trama de la película gira en torno a un joven llamado Tim Lake. El protagonista y su familia tienen el curioso don de poder viajar a través del tiempo. Al descubrir esta cualidad, Tim empieza a beneficiarse de ello para cambiar diferentes aspectos de su vida. Se enamora de una chica, Mary, a la que conoce tras transladarse a vivir a Londres por motivos de trabajo. Su historia de amor se verá beneficiada gracias al don de Tim, sin embargo, el protagonista no tardará en darse cuenta de que su habilidad no es capaz de ampararle en algunos problemas y cuestiones familiares.",
+            "popularity": 47.159,
+            "poster_path": "/u8k9KMzZGYgg2f5i8pKj23VMNPZ.jpg",
+            "release_date": "2013-09-04",
+            "title": "Una cuestión de tiempo",
+            "video": false,
+            "vote_average": 7.923,
+            "vote_count": 8312
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/eqlYZEs8RZvlBRu0jud7veEZspG.jpg",
+            "genre_ids": [
+                18,
+                12,
+                10752
+            ],
+            "id": 17339,
+            "original_language": "en",
+            "original_title": "Force 10 from Navarone",
+            "overview": "Segunda Guerra Mundial, 1943. Mallory y Miller, los héroes que destruyeron los cañones de Navarone, son enviados a Yugoslavia en busca de un fantasma del pasado.",
+            "popularity": 46.07,
+            "poster_path": "/lJwytWc5QcRBO8N3skFJILTgnc7.jpg",
+            "release_date": "1978-08-16",
+            "title": "Fuerza 10 de Navarone",
+            "video": false,
+            "vote_average": 6.2,
+            "vote_count": 292
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/t5x6szKi5N99zp6DWLoCum7bAUu.jpg",
+            "genre_ids": [
+                53,
+                28,
+                9648
+            ],
+            "id": 59965,
+            "original_language": "en",
+            "original_title": "Abduction",
+            "overview": "Un día, Nathan Harper ve su foto en una página de personas desaparecidas. Sospechando que sus padres pudieron secuestrarlo siendo un bebé, empieza a investigar y descubre que sus padres no son quienes dicen ser. Pero lo peor es que, de repente, sin saber cómo ni por qué, empieza a ser perseguido por la policía, por agentes del gobierno e incluso por asesinos a sueldo, convirtiéndose en la víctima de una misteriosa conspiración. A partir de ese momento el objetivo de su vida será averiguar su verdadera identidad.",
+            "popularity": 43.193,
+            "poster_path": "/xme9loDZEpsyfLTGupbMFNAmFrZ.jpg",
+            "release_date": "2011-09-22",
+            "title": "Sin salida",
+            "video": false,
+            "vote_average": 5.866,
+            "vote_count": 2836
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/zI9KXvQEkku5cmcwKnubOY5JfhJ.jpg",
+            "genre_ids": [
+                28,
+                12,
+                18,
+                37
+            ],
+            "id": 42703,
+            "original_language": "en",
+            "original_title": "The Way West",
+            "overview": "Missouri, 1843. El senador William J. Tadlock busca voluntarios que lo acompañen hasta Oregón. Será un viaje largo y lleno de penalidades, que exige atravesar territorio indio. Entre los primeros que se unen a la caravana está la familia de Lije Evans, un granjero sediento de aventuras, los recién casados Johnnie y Amada Mack y varios comerciantes de Independence.",
+            "popularity": 42.991,
+            "poster_path": "/vcFhoARKz9k0RKotAnEjpqtHMeM.jpg",
+            "release_date": "1967-05-24",
+            "title": "Camino De Oregón",
+            "video": false,
+            "vote_average": 5.965,
+            "vote_count": 85
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/2vcdZBbf7sPPzIHfN5ial24UbxK.jpg",
+            "genre_ids": [
+                28,
+                12,
+                878
+            ],
+            "id": 305470,
+            "original_language": "en",
+            "original_title": "Power Rangers",
+            "overview": "La película sigue a cinco jóvenes predestinados a convertirse en algo extraordinario cuando descubren que tanto su modesto poblado, Angel Grove, como el resto del mundo, están al borde de la aniquilación por una amenaza alienígena. Nuestros héroes descubren rápidamente que son los únicos que pueden salvar al planeta, pero para lograrlo tendrán que superar problemas de la vida real y unirse bajo el nombre de Power Rangers antes de que sea demasiado tarde.",
+            "popularity": 41.831,
+            "poster_path": "/dgsnZW7zyChQfAzCtmLlPp5twpl.jpg",
+            "release_date": "2017-03-23",
+            "title": "Power Rangers",
+            "video": false,
+            "vote_average": 6.261,
+            "vote_count": 4337
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/rLMQvYhl6DU6QZVNcJTbs87gVPs.jpg",
+            "genre_ids": [
+                28,
+                14,
+                12
+            ],
+            "id": 9947,
+            "original_language": "en",
+            "original_title": "Elektra",
+            "overview": "Elektra (Jennifer Garner), tras recuperarse de las mortales heridas sufridas en \"Daredevil\", se convierte en la más peligrosa asesina del mundo. Una vez asignada su última misión, Elektra tomará una decisión que llevará su vida en una nueva dirección... o la destruirá para siempre.",
+            "popularity": 40.685,
+            "poster_path": "/tPNM1iP7YS9w4OQsBOChLzbHmBF.jpg",
+            "release_date": "2005-01-13",
+            "title": "Elektra",
+            "video": false,
+            "vote_average": 5.0,
+            "vote_count": 2367
+        }
+    ],
+    "total_pages": 11,
+    "total_results": 201
+}
