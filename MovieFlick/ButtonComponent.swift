@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ButtonComponent: View {
     var title: String
-    var action: () -> Void
     var color: Color = .yellow
+    var action: () -> Void
     
     @State private var isPressed: Bool = false
     

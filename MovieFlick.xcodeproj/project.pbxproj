@@ -21,6 +21,7 @@
 		5F0A47C82C6FA83700EAFC02 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0A47C72C6FA83700EAFC02 /* StartView.swift */; };
 		5F0A47CA2C6FAF7300EAFC02 /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0A47C92C6FAF7300EAFC02 /* PlayersView.swift */; };
 		5F5BC29C2C724ABE0019D8AC /* AppBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5BC29B2C724ABE0019D8AC /* AppBackground.swift */; };
+		5FE312922C75E70700C0971F /* PlayerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE312912C75E70700C0971F /* PlayerTextField.swift */; };
 		5FFFEC552C71D738002FB36B /* ChooseTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFFEC542C71D738002FB36B /* ChooseTypeView.swift */; };
 		A1C77F4A2C676264008B018F /* GridCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C77F492C676264008B018F /* GridCellComponent.swift */; };
 		D32CA7962C6A01FA009DF748 /* StarsRateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CA7952C6A01FA009DF748 /* StarsRateComponent.swift */; };
@@ -42,6 +43,7 @@
 		5F0A47C72C6FA83700EAFC02 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		5F0A47C92C6FAF7300EAFC02 /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
 		5F5BC29B2C724ABE0019D8AC /* AppBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackground.swift; sourceTree = "<group>"; };
+		5FE312912C75E70700C0971F /* PlayerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTextField.swift; sourceTree = "<group>"; };
 		5FFFEC542C71D738002FB36B /* ChooseTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTypeView.swift; sourceTree = "<group>"; };
 		A1C77F492C676264008B018F /* GridCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCellComponent.swift; sourceTree = "<group>"; };
 		D32CA7952C6A01FA009DF748 /* StarsRateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsRateComponent.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				D32CA79D2C6C07C5009DF748 /* ButtonComponent.swift */,
 				D32CA7952C6A01FA009DF748 /* StarsRateComponent.swift */,
 				1A00363C2C6DF38400DC89C0 /* SwipeCardComponent.swift */,
+				5FE312912C75E70700C0971F /* PlayerTextField.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				5F0A47C82C6FA83700EAFC02 /* StartView.swift in Sources */,
 				D32CA79E2C6C07C5009DF748 /* ButtonComponent.swift in Sources */,
 				1A0036462C6DF67800DC89C0 /* Image+Extension.swift in Sources */,
+				5FE312922C75E70700C0971F /* PlayerTextField.swift in Sources */,
 				1A0036402C6DF5B100DC89C0 /* SwipeGestureModifier.swift in Sources */,
 				1A0035EC2C66114B00DC89C0 /* MovieFlickApp.swift in Sources */,
 				5F0A47CA2C6FAF7300EAFC02 /* PlayersView.swift in Sources */,

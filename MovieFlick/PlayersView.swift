@@ -27,7 +27,7 @@ struct PlayersView: View {
             ForEach(PlayersName.indices, id: \.self) { index in
                 HStack{
                     ZStack {
-                        ButtonComponent(title: "", action: {}, color: Color.green)
+                        ButtonComponent(title: "", color: Color.green,  action: {})
                         TextField("Player \(index + 1)", text: $PlayersName[index])
                             .font(.title)
                             .bold()
@@ -36,21 +36,19 @@ struct PlayersView: View {
                     }
                     if PlayersName.count > 2 {
                         ButtonComponent(title: "-",
-                                        action: {
+                                        color: .red, action: {
                             PlayersName.remove(at: index)
-                        },
-                                        color: .red)
+                        })
                         .frame(width: 50)
                     }
                 }
             }
             ButtonComponent(title: addPlayerText,
-                            action: {
-                                if PlayersName.count < 4 {
-                                    PlayersName.append("")
-                                }
-                            },
-                            color: Color.yellow)
+                            color: Color.yellow, action: {
+                if PlayersName.count < 4 {
+                    PlayersName.append("")
+                }
+            })
             Spacer()
             ButtonComponent(title: "Continue", action: {})
         }
