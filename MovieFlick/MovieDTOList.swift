@@ -18,7 +18,6 @@ struct MovieDTOList: Codable {
     }
 }
 
-// MARK: - Result
 struct MovieDTO: Codable {
     let adult: Bool
     let backdropPath: String?
