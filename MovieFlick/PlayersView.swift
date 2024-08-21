@@ -17,6 +17,7 @@ struct PlayersView: View {
             return "Max. 4 players"
         }
     }
+
     var body: some View {
         VStack {
             Text("Create your players")

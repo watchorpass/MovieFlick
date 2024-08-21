@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct PlayerTextField: View {
+    
     var backgroundText: String
     @Binding var text: String
     var color: Color
+    
     var body: some View {
         TextField(backgroundText, text: $text)
             .multilineTextAlignment(.center)
