@@ -14,7 +14,7 @@ struct MovieListInteractorPreview: MovieListInteractorProtocol {
         let url = Bundle.main.url(forResource: "PreviewDataMovieList", withExtension: "json")!
         let data = try Data(contentsOf: url)
         let decoder = JSONDecoder()
-        return try decoder.decode(MovieDTOList.self, from: data).results.map { $0.toMovie() }
+        return try decoder.decode(MovieDTOList.self, from: data).results.map(\.toMovie)
     }
 }
 
