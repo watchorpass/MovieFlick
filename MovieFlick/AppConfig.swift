@@ -11,7 +11,7 @@ final class AppConfig {
     static let shared = AppConfig()
     
     var APIKey: String?
-    var AccessTokenAuth: String?
+    var accessTokenAuth: String?
     
     init () {
         try? getApiKey()
@@ -22,6 +22,6 @@ final class AppConfig {
         let data = try Data(contentsOf: url)
         let plist = try PropertyListDecoder().decode([String: String].self, from: data)
         APIKey = plist["API_Key_Auth"]
-        AccessTokenAuth = plist["Access_Token_Auth"]
+        accessTokenAuth = plist["Access_Token_Auth"]
     }
 }

@@ -27,11 +27,12 @@
 		D32CA79E2C6C07C5009DF748 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CA79D2C6C07C5009DF748 /* ButtonComponent.swift */; };
 		D3BF08772C75021400F487F2 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF08762C75021400F487F2 /* URL.swift */; };
 		D3BF08792C75025300F487F2 /* PreviewDataMovieList.json in Resources */ = {isa = PBXBuildFile; fileRef = D3BF08782C75025300F487F2 /* PreviewDataMovieList.json */; };
-		D3BF087B2C75026200F487F2 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF087A2C75026200F487F2 /* MovieList.swift */; };
+		D3BF087B2C75026200F487F2 /* MovieDTOList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF087A2C75026200F487F2 /* MovieDTOList.swift */; };
 		D3BF087D2C75027700F487F2 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF087C2C75027700F487F2 /* Movie.swift */; };
 		D3BF087F2C75029C00F487F2 /* MovieListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF087E2C75029C00F487F2 /* MovieListInteractor.swift */; };
 		D3BF08812C7502B900F487F2 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF08802C7502B900F487F2 /* AppConfig.swift */; };
 		D3BF08832C75030000F487F2 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF08822C75030000F487F2 /* PreviewData.swift */; };
+		D3EF5B6B2C75F9C400558003 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF5B6A2C75F9C400558003 /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,11 +56,12 @@
 		D32CA79D2C6C07C5009DF748 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		D3BF08762C75021400F487F2 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		D3BF08782C75025300F487F2 /* PreviewDataMovieList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PreviewDataMovieList.json; sourceTree = "<group>"; };
-		D3BF087A2C75026200F487F2 /* MovieList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
+		D3BF087A2C75026200F487F2 /* MovieDTOList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDTOList.swift; sourceTree = "<group>"; };
 		D3BF087C2C75027700F487F2 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		D3BF087E2C75029C00F487F2 /* MovieListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListInteractor.swift; sourceTree = "<group>"; };
 		D3BF08802C7502B900F487F2 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		D3BF08822C75030000F487F2 /* PreviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		D3EF5B6A2C75F9C400558003 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				1A0036232C67554D00DC89C0 /* ModelDTO */,
 				1A0036252C67559C00DC89C0 /* ModelOptions */,
 				1A0036242C67555300DC89C0 /* Model */,
+				D3EF5B6A2C75F9C400558003 /* Enums.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -186,7 +189,7 @@
 		1A0036232C67554D00DC89C0 /* ModelDTO */ = {
 			isa = PBXGroup;
 			children = (
-				D3BF087A2C75026200F487F2 /* MovieList.swift */,
+				D3BF087A2C75026200F487F2 /* MovieDTOList.swift */,
 			);
 			name = ModelDTO;
 			sourceTree = "<group>";
@@ -349,9 +352,10 @@
 				D3BF087D2C75027700F487F2 /* Movie.swift in Sources */,
 				1A0035EE2C66114B00DC89C0 /* ContentView.swift in Sources */,
 				5F0A47C82C6FA83700EAFC02 /* StartView.swift in Sources */,
-				D3BF087B2C75026200F487F2 /* MovieList.swift in Sources */,
+				D3BF087B2C75026200F487F2 /* MovieDTOList.swift in Sources */,
 				D32CA79E2C6C07C5009DF748 /* ButtonComponent.swift in Sources */,
 				1A0036462C6DF67800DC89C0 /* Image+Extension.swift in Sources */,
+				D3EF5B6B2C75F9C400558003 /* Enums.swift in Sources */,
 				1A0036402C6DF5B100DC89C0 /* SwipeGestureModifier.swift in Sources */,
 				D3BF08832C75030000F487F2 /* PreviewData.swift in Sources */,
 				D3BF08772C75021400F487F2 /* URL.swift in Sources */,

@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct MovieList: Codable {
+struct MovieDTOList: Codable {
     let page: Int
-    let results: [MovieResult]
+    let results: [MovieDTO]
     let totalPages: Int
     
     enum CodingKeys: String, CodingKey {
@@ -19,7 +19,7 @@ struct MovieList: Codable {
 }
 
 // MARK: - Result
-struct MovieResult: Codable {
+struct MovieDTO: Codable {
     let adult: Bool
     let backdropPath: String?
     let genreIDS: [Int]
@@ -50,16 +50,16 @@ struct MovieResult: Codable {
         case voteCount = "vote_count"
     }
 }
-extension MovieResult {
-    func toMovie() -> Movie {
+extension MovieDTO {
+    var toMovie: Movie {
         Movie(adult: adult,
-              backdropPath: "https://image.tmdb.org/t/p/w600_and_h900_bestv2/abcd1234.jpg\(backdropPath ?? "")",
+              backdropPath: .imageURL(endPath: backdropPath ?? ""),
               genreIDS: genreIDS,
               id: id,
               originalTitle: originalTitle,
               overview: overview,
               popularity: popularity,
-              posterPath: "https://image.tmdb.org/t/p/w600_and_h900_bestv2/abcd1234.jpg\(posterPath ?? "")",
+              posterPath: .imageURL(endPath: posterPath ?? ""),
               releaseDate: releaseDate,
               title: title,
               video: video,

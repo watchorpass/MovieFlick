@@ -17,6 +17,7 @@ protocol MovieListInteractorProtocol {
 struct MovieListInteractor: MovieListInteractorProtocol, NetworkInteractor {
     
     static let shared = MovieListInteractor()
+    let appConfig = AppConfig.shared
         
     func getMovies(isAdult: Bool? = nil, includesVideo: Bool? = nil, page: Int? = nil, sortBy: SortType? = nil, releaseYear: Int? = nil, dateGreaterThan: String? = nil, dateLessThan: String? = nil, voteGreaterThan: Double? = nil, voteLessThan: Double? = nil, region: String? = nil, providers: [Provider]? = nil, genres: [Genre]? = nil, monetizationTypes: [MonetizationType]? = nil) async throws -> [Movie] {
         
@@ -34,10 +35,6 @@ struct MovieListInteractor: MovieListInteractorProtocol, NetworkInteractor {
                                genres: genres,
                                monetizationTypes: monetizationTypes)
         
-        let request = try await URLRequest.get(url: url, token: AppConfig().AccessTokenAuth)
-        //print(request)
-        let result = try await getJSONFromURL(request: request, type: MovieList.self)
-        //print(result)
-        return result.results.map { $0.toMovie() }
+        return try await getJSONFromURL(request: .get(url: url, token: appConfig.accessTokenAuth), type: MovieDTOList.self).results.map(\.toMovie)
     }
 }
