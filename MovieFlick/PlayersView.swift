@@ -34,12 +34,14 @@ struct PlayersView: View {
                             .multilineTextAlignment(.center)
                             .frame(width: 200)
                     }
-                    ButtonComponent(title: "-",
-                                    action: {
-                                    textExample.remove(at: index)
-                                    },
-                                    color: .red)
+                    if textExample.count > 2 {
+                        ButtonComponent(title: "-",
+                                        action: {
+                            textExample.remove(at: index)
+                        },
+                                        color: .red)
                         .frame(width: 50)
+                    }
                 }
             }
             ButtonComponent(title: addPlayerText,
