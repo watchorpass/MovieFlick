@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ButtonComponent: View {
+struct AppButton: View {
+    
     var title: String
     var color: Color = .yellow
     var action: () -> Void
@@ -49,7 +50,7 @@ struct ButtonComponent: View {
     }
 }
 #Preview {
-    ButtonComponent(title: "Popular") {
+    AppButton(title: "Popular") {
         print("Popular button tapped")
     }
 }

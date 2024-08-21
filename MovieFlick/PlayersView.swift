@@ -29,7 +29,7 @@ struct PlayersView: View {
                 HStack{
                     PlayerTextField(backgroundText: "Player \(index + 1)", text: $PlayersName[index], color: .green)
                     if PlayersName.count > 2 {
-                        ButtonComponent(title: "-",
+                        AppButton(title: "-",
                                         color: .red, action: {
                             PlayersName.remove(at: index)
                         })
@@ -37,14 +37,14 @@ struct PlayersView: View {
                     }
                 }
             }
-            ButtonComponent(title: addPlayerText,
+            AppButton(title: addPlayerText,
                             color: Color.yellow, action: {
                 if PlayersName.count < 4 {
                     PlayersName.append("")
                 }
             })
             Spacer()
-            ButtonComponent(title: "Continue", action: {})
+            AppButton(title: "Continue", action: {})
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground()
