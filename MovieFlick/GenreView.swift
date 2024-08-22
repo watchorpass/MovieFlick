@@ -1,13 +1,53 @@
 import SwiftUI
 
-struct Genre: Identifiable {
-    let name: String
-    let id: Int
+enum Genre: Int, CaseIterable {
+    case action = 28
+    case adventure = 12
+    case animation = 16
+    case comedy = 35
+    case crime = 80
+    case documentary = 99
+    case drama = 18
+    case family = 10751
+    case fantasy = 14
+    case history = 36
+    case horror = 27
+    case music = 10402
+    case mystery = 9648
+    case romance = 10749
+    case scienceFiction = 878
+    case tvMovie = 10770
+    case thriller = 53
+    case war = 10752
+    case western = 37
+    
+    var description: String {
+        switch self {
+            case .action: return "Action"
+            case .adventure: return "Adventure"
+            case .animation: return "Animation"
+            case .comedy: return "Comedy"
+            case .crime: return "Crime"
+            case .documentary: return "Documentary"
+            case .drama: return "Drama"
+            case .family: return "Family"
+            case .fantasy: return "Fantasy"
+            case .history: return "History"
+            case .horror: return "Horror"
+            case .music: return "Music"
+            case .mystery: return "Mystery"
+            case .romance: return "Romance"
+            case .scienceFiction: return "Science Fiction"
+            case .tvMovie: return "TV Movie"
+            case .thriller: return "Thriller"
+            case .war: return "War"
+            case .western: return "Western"
+        }
+    }
 }
 
 struct GenreView: View {
     let filteredType: String
-    let genreList: [Genre]
     
     var body: some View {
         VStack {
@@ -21,12 +61,12 @@ struct GenreView: View {
             GeometryReader { geometry in
                 ScrollView {
                     LazyVGrid(columns: [GridItem(), GridItem()], spacing: 20) {
-                        ForEach(genreList) { genres in
-                            GridCellComponent(title: genres.name, cellSize: geometry.size.width*0.4, color: .teal, action: {})
+                        ForEach(Genre.allCases, id: \.self) { genre in
+                            GridCellComponent(title: genre.description, cellSize: geometry.size.width*0.4, color: .yellow.opacity(0.2), action: {})
                         }
                     }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -35,5 +75,5 @@ struct GenreView: View {
 }
 
 #Preview {
-    GenreView(filteredType: "Popular", genreList: [Genre(name: "Action", id: 1), Genre(name: "Comedy", id: 2), Genre(name: "Thriller", id: 3), Genre(name: "Romantic", id: 4), Genre(name: "Drama", id: 5), Genre(name: "Drama 6", id: 6), Genre(name: "Drama 7", id: 7), Genre(name: "Drama 8", id: 8), Genre(name: "Drama 9", id: 9)])
+    GenreView(filteredType: "Popular")
 }
