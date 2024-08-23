@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ButtonComponent: View {
+struct AppButton: View {
     var title: String
-    var action: () -> Void
     var color: Color = .yellow
+    var action: () -> Void
     
     @State private var isPressed: Bool = false
     
@@ -49,7 +49,7 @@ struct ButtonComponent: View {
     }
 }
 #Preview {
-    ButtonComponent(title: "Popular") {
+    AppButton(title: "Popular") {
         print("Popular button tapped")
     }
 }

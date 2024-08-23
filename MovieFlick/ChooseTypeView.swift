@@ -17,7 +17,7 @@ struct ChooseTypeView: View {
             Spacer()
             GridCellComponent(title: "Films", cellSize: 300, image: Image(.interestellar), action: {})
                 .padding()
-            GridCellComponent(title: "Films", cellSize: 300, image: Image(.theLastOfUs), action: {})
+            GridCellComponent(title: "TV Series", cellSize: 300, image: Image(.theLastOfUs), action: {})
                 .padding()
             Spacer()
         }
