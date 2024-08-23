@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AppButton: View {
-    
     var title: String
     var color: Color = .yellow
     var action: () -> Void
