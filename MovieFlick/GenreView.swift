@@ -62,7 +62,7 @@ struct GenreView: View {
                 ScrollView {
                     LazyVGrid(columns: [GridItem(), GridItem()], spacing: 20) {
                         ForEach(Genre.allCases, id: \.self) { genre in
-                            GridCellComponent(title: genre.description, cellSize: geometry.size.width*0.4, color: .yellow.opacity(0.2), action: {})
+                            GridCellComponent(title: "genre.description", cellSize: geometry.size.width*0.4, image: Image(.interestellar), action: {})
                         }
                     }
                     .padding(.horizontal)

@@ -15,24 +15,33 @@ struct GridCellComponent: View {
     var action: () -> Void
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottom) {
             if let color { color }
             else {
-                (image ?? Image(systemName: "popcorn"))
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: cellSize, height: cellSize)
-                    .background(.ultraThinMaterial)
+                ZStack(alignment: .bottom) {
+                    (image ?? Image(systemName: "popcorn"))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: cellSize, height: cellSize)
+                        .background(.ultraThinMaterial)
+                    ZStack(alignment: .bottomLeading) {
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: cellSize, height: cellSize/2)
+                            .foregroundStyle(LinearGradient(colors: [.black, .clear],
+                                                            startPoint: .bottom,
+                                                            endPoint: .top))
+                    }
+                }
             }
             Text(title)
+                .multilineTextAlignment(.center)
+                .foregroundStyle(Color(.white))
                 .lineLimit(2)
-                .font(.title)
+                .font((cellSize > 250) ? .title : .title3)
                 .fontWeight(.semibold)
                 .padding(.vertical, 10)
                 .allowsTightening(true)
                 .truncationMode(.middle)
-                .frame(maxWidth: .infinity)
-                .background(.thinMaterial)
         }
         .onTapGesture(perform: action)
         .clipShape(RoundedRectangle(cornerRadius: cellSize/10))
