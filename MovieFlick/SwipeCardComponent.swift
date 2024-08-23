@@ -11,12 +11,23 @@ struct SwipeCardComponent: View {
     @State private var offset = CGSize.zero
     @State private var color: Color = .clear
     @State private var buttonOpacity = true
+    @State private var showDetail = false
+    
+    var imageOffset: CGFloat
     var imageURL: URL?
+    
+    var positiveAction: () -> Void
+    var negativeAction: () -> Void
     
     var body: some View {
         VStack {
+            Text("Player One")
+                .font(.title)
+                .bold()
+                .foregroundStyle(Color.white)
+                .padding(.top, 15)
             ZStack {
-                AsyncImage(url: URL(string: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/aQnbNiadeGzGSjWLaXyeNxpAUIx.jpg")!) { img in
+                AsyncImage(url: imageURL) { img in
                     img
                         .aspectFill()
                 } placeholder: {
@@ -24,12 +35,18 @@ struct SwipeCardComponent: View {
                         .aspectFill()
                 }
                 .posterImgModifiers(color: color)
+                .offset(x: imageOffset * -2, y: imageOffset * -2)
             }
             .offset(x: offset.width, y: offset.height * 0.4)
             .rotationEffect(.degrees(Double(offset.width / 40)))
             .swipeGestureModifier(offset: $offset, color: $color, buttonOpacity: $buttonOpacity)
             
+            Spacer()
             buttonsView
+            Spacer()
+        }
+        .sheet(isPresented: $showDetail) {
+            Rectangle()
         }
     }
     
@@ -42,13 +59,18 @@ struct SwipeCardComponent: View {
                     swipeCard(width: newOffset.width)
                     buttonOpacity.toggle()
                 }
+                
+                negativeAction()
             } label: {
                 Image(systemName: "xmark")
-                    .foregroundStyle(Color.white)
-                    .font(.title)
-                    .padding()
-                    .background(Color.red)
-                    .clipShape(Circle())
+                    .fontWeight(.heavy)
+                    .foregroundStyle(Color.red)
+                    .background {
+                        Circle()
+                            .fill(.white.opacity(0.7))
+                            .frame(width: 48, height: 48)
+                            .shadow(color: .white, radius: 4)
+                    }
             }
             
             Button {
@@ -57,25 +79,32 @@ struct SwipeCardComponent: View {
                     offset = CGSize(width: 500, height: 0)
                     buttonOpacity.toggle()
                 }
+                
+                positiveAction()
             } label: {
-                Image(systemName: "arrowshape.turn.up.right")
-                    .foregroundStyle(Color.white)
-                    .font(.title)
-                    .padding()
-                    .background(Color.green)
-                    .clipShape(Circle())
+                Image(systemName: "heart.fill")
+                    .fontWeight(.heavy)
+                    .foregroundStyle(Color.green)
+                    .background {
+                        Circle()
+                            .fill(.white.opacity(0.7))
+                            .frame(width: 48, height: 48)
+                            .shadow(color: .white, radius: 4)
+                    }
             }
         }
         .opacity(buttonOpacity ? 1 : 0)
-        .padding(.top, 60)
+        .padding(.top, 20)
     }
     
     func swipeCard(width: CGFloat) {
         switch width {
         case -500...(-150):
             offset = CGSize(width: -500, height: 0)
+            negativeAction()
         case 150...500:
             offset = CGSize(width: 500, height: 0)
+            positiveAction()
         default:
             offset = .zero
         }
@@ -94,5 +123,12 @@ struct SwipeCardComponent: View {
 }
 
 #Preview {
-    SwipeCardComponent()
+    NavigationStack {
+        SwipeCardComponent(imageOffset: .zero, imageURL: URL(string: "https://image.tmdb.org/t/p/w500/rweIrveL43TaxUN0akQEaAXL6x0.jpg")!) {
+            
+        } negativeAction: {
+            
+        }
+            .appBackground()
+    }
 }
