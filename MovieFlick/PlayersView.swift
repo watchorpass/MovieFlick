@@ -9,7 +9,14 @@ import SwiftUI
 
 struct PlayersView: View {
 
-    @State var textExample = ["Player 1", "Player 2"]
+    @State var PlayersName = ["", ""]
+    var addPlayerText: String {
+        if PlayersName.count < 4 {
+            return "Add new player +"
+        } else {
+            return "Max. 4 players"
+        }
+    }
 
     var body: some View {
         VStack {
@@ -17,21 +24,27 @@ struct PlayersView: View {
                 .font(.title)
                 .bold()
                 .foregroundStyle(Color.yellow)
-
             Spacer()
-            ForEach ($textExample, id: \.self) { player in
-                ZStack {
-                    ButtonComponent(title: "", action: {}, color: Color.green)
-                    TextField("Player 1", text: player)
-                        .font(.title)
-                        .bold()
-                        .multilineTextAlignment(.center)
-                        .frame(width: 200)
+            ForEach(PlayersName.indices, id: \.self) { index in
+                HStack{
+                    PlayerTextField(backgroundText: "Player \(index + 1)", text: $PlayersName[index], color: .green)
+                    if PlayersName.count > 2 {
+                        AppButton(title: "-",
+                                        color: .red, action: {
+                            PlayersName.remove(at: index)
+                        })
+                        .frame(width: 50)
+                    }
                 }
             }
-            ButtonComponent(title: "Add new player +", action: {textExample.append("")}, color: Color.yellow)
+            AppButton(title: addPlayerText,
+                            color: Color.yellow, action: {
+                if PlayersName.count < 4 {
+                    PlayersName.append("")
+                }
+            })
             Spacer()
-            ButtonComponent(title: "Continue", action: {})
+            AppButton(title: "Continue", action: {})
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground()

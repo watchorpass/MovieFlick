@@ -16,7 +16,7 @@ struct StartView: View {
                 .scaledToFit()
                 .padding()
             Spacer()
-            ButtonComponent(title: "Start", action: {})
+            AppButton(title: "Start", action: {})
         }
         .padding(.bottom, 100)
         .appBackground(gradientOpacity: 0.5)
