@@ -13,9 +13,9 @@ struct FilterView: View {
             Text("Select which list you want to see")
                 .foregroundStyle(.yellow)
                 .padding(.bottom, 30)
-            ButtonComponent(title: "Popular", action: {})
+            AppButton(title: "Popular", action: {})
                 .padding(.bottom, 20)
-            ButtonComponent(title: "Top rated", action: {})
+            AppButton(title: "Top rated", action: {})
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
