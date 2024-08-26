@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct FilterView: View {
-    let selectedType: String
+    @Environment(MovieFlickViewModel.self) var vm
+    let selectedType: String = "Movies"
     
     var body: some View {
         VStack {
@@ -13,9 +14,16 @@ struct FilterView: View {
             Text("Select which list you want to see")
                 .foregroundStyle(.yellow)
                 .padding(.bottom, 30)
-            AppButton(title: "Popular", action: {})
-                .padding(.bottom, 20)
-            AppButton(title: "Top rated", action: {})
+            VStack(spacing: 20){
+                AppButton(title: "Popular") {
+                    vm.sortType = .popularity
+                    vm.viewState = .genreView
+                }
+                AppButton(title: "Top rated") {
+                    vm.sortType = .voteAverage
+                    vm.viewState = .genreView
+                }
+            }
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -24,5 +32,5 @@ struct FilterView: View {
 }
 
 #Preview {
-    FilterView(selectedType: "Movies")
+    FilterView()
 }
