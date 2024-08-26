@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MovieFlickApp: App {
+    @State var viewModel = MovieFlickViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            PlayersView()
+            CardStackView()
+                .environment(viewModel)
         }
     }
 }

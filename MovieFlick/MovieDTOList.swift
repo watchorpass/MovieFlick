@@ -63,6 +63,7 @@ extension MovieDTO {
               title: title,
               video: video,
               voteAverage: voteAverage,
-              voteCount: voteCount)
+              voteCount: voteCount,
+              cardImage: nil)
     }
 }

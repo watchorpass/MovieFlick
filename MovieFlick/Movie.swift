@@ -5,7 +5,7 @@
 //  Created by Fran Malo on 19/8/24.
 //
 
-import Foundation
+import SwiftUI
 
 struct Movie: Identifiable, Hashable {
     let adult: Bool
@@ -21,4 +21,5 @@ struct Movie: Identifiable, Hashable {
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
+    var cardImage: UIImage?
 }
