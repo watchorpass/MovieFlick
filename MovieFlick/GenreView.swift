@@ -18,7 +18,7 @@ struct GenreView: View {
                         ForEach(Genre.allCases, id: \.self) { genre in
                             GridCellComponent(title: genre.description, 
                                               cellSize: geometry.size.width*0.4,
-                                              image: Image(.interestellar)) {
+                                              image: Image(genre.description)) {
                                 vm.selectedGenre = genre
                                 vm.viewState = .swipeView
                             }
@@ -35,4 +35,5 @@ struct GenreView: View {
 
 #Preview {
     GenreView()
+        .environment(MovieFlickViewModel())
 }

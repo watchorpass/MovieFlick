@@ -61,6 +61,7 @@ extension NewCard {
             degrees = -12
         } completion: {
             //viewModel.removeCard(movie)
+            viewModel.removeFromResultMovies(movie: movie)
             viewModel.swipeCount -= 1
         }
     }

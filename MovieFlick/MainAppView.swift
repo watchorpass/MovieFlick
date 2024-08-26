@@ -27,4 +27,5 @@ struct MainAppView: View {
 
 #Preview {
     MainAppView()
+        .environment(MovieFlickViewModel())
 }

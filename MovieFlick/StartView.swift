@@ -29,4 +29,5 @@ struct StartView: View {
 
 #Preview {
     StartView()
+        .environment(MovieFlickViewModel())
 }

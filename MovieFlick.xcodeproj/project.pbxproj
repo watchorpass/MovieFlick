@@ -174,9 +174,9 @@
 				5FFFEC542C71D738002FB36B /* ChooseTypeView.swift */,
 				A106CFD22C73502200762871 /* FilterView.swift */,
 				A106CFD42C73536000762871 /* GenreView.swift */,
-				1A0036752C73312B00DC89C0 /* SwipeView.swift */,
-				1ABFB2582C7B060700473726 /* CardStackView.swift */,
 				1ABFB25C2C7CE40200473726 /* NextPlayerView.swift */,
+				1ABFB2582C7B060700473726 /* CardStackView.swift */,
+				1A0036752C73312B00DC89C0 /* SwipeView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";

@@ -55,4 +55,5 @@ struct PlayersView: View {
 
 #Preview {
     PlayersView()
+        .environment(MovieFlickViewModel())
 }

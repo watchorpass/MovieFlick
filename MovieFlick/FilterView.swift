@@ -2,7 +2,7 @@ import SwiftUI
 
 struct FilterView: View {
     @Environment(MovieFlickViewModel.self) var vm
-    let selectedType: String = "Movies"
+    let selectedType: String = "Filters"
     
     var body: some View {
         VStack {
@@ -33,4 +33,5 @@ struct FilterView: View {
 
 #Preview {
     FilterView()
+        .environment(MovieFlickViewModel())
 }

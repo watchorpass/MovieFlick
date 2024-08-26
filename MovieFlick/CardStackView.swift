@@ -16,7 +16,7 @@ struct CardStackView: View {
             if newValue == 0 {
                 vm.playersName.removeFirst()
                 vm.viewState = .playerTwoView
-                vm.swipeCount = 2
+                vm.swipeCount = vm.moviesWithCard.count
             }
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -26,4 +26,5 @@ struct CardStackView: View {
 
 #Preview {
     CardStackView()
+        .environment(MovieFlickViewModel())
 }

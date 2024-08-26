@@ -34,4 +34,5 @@ struct ChooseTypeView: View {
 
 #Preview {
     ChooseTypeView()
+        .environment(MovieFlickViewModel())
 }
