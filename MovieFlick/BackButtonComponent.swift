@@ -19,7 +19,6 @@ struct BackButtonComponent: View {
                 .fontWeight(.medium)
                 .foregroundStyle(.yellow)
         }
-
     }
 }
 
