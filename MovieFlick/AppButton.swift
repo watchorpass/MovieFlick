@@ -15,9 +15,11 @@ struct AppButton: View {
     @State private var isPressed: Bool = false
     
     var body: some View {
-        Button(action: {
-            action()
-        }) {
+        Button {
+            withAnimation(.spring) {
+                action()
+            }
+        } label: {
             Text(title)
                 .fontWeight(.bold)
                 .foregroundColor(.primary)

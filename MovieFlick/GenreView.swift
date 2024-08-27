@@ -1,22 +1,27 @@
 import SwiftUI
 
 struct GenreView: View {
-    let filteredType: String
+    @Environment(MovieFlickViewModel.self) var vm
+
+    var gridColums = [GridItem(), GridItem()]
     
     var body: some View {
         VStack {
-            Text(filteredType.uppercased())
-                .font(.title)
-                .bold()
-                .foregroundStyle(.yellow)
             Text("Select your favourite genres")
+                .font(.title2)
+                .fontWeight(.heavy)
                 .foregroundStyle(.yellow)
             Spacer()
             GeometryReader { geometry in
                 ScrollView {
-                    LazyVGrid(columns: [GridItem(), GridItem()], spacing: 20) {
+                    LazyVGrid(columns: gridColums, spacing: 20) {
                         ForEach(Genre.allCases, id: \.self) { genre in
-                            GridCellComponent(title: "genre.description", cellSize: geometry.size.width*0.4, image: Image(.interestellar), action: {})
+                            GridCellComponent(title: genre.description, 
+                                              cellSize: geometry.size.width*0.4,
+                                              image: Image(genre.description)) {
+                                vm.selectedGenre = genre
+                                vm.viewState = .swipeView
+                            }
                         }
                     }
                     .padding(.horizontal)
@@ -29,5 +34,6 @@ struct GenreView: View {
 }
 
 #Preview {
-    GenreView(filteredType: "Popular")
+    GenreView()
+        .environment(MovieFlickViewModel())
 }

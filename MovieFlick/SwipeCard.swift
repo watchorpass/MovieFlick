@@ -50,7 +50,8 @@ extension NewCard {
             xOffset = 500
             degrees = 12
         } completion: {
-            viewModel.removeCard(movie)
+            //viewModel.removeCard(movie)
+            viewModel.swipeCount -= 1
         }
     }
     
@@ -59,7 +60,9 @@ extension NewCard {
             xOffset = -500
             degrees = -12
         } completion: {
-            viewModel.removeCard(movie)
+            //viewModel.removeCard(movie)
+            viewModel.removeFromResultMovies(movie: movie)
+            viewModel.swipeCount -= 1
         }
     }
 }

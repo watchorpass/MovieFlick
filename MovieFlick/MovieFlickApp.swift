@@ -13,7 +13,7 @@ struct MovieFlickApp: App {
     
     var body: some Scene {
         WindowGroup {
-            CardStackView()
+            MainAppView()
                 .environment(viewModel)
         }
     }

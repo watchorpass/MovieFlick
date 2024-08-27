@@ -35,7 +35,7 @@ struct MovieListInteractor: MovieListInteractorProtocol, NetworkInteractor {
                                genres: genres,
                                monetizationTypes: monetizationTypes)
         
-        return try await getJSONFromURL(request: .get(url: url, token: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MzFlNWZiNmYyZmI4OWIwN2ZjNTdkMGQ3MTIwYWJhOCIsIm5iZiI6MTcyNDU2ODMyOC4xNjc3MDQsInN1YiI6IjYyNjk3MDJiZjkyNTMyMTYyMzM3NDYxMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.a-fs34o6qj9lDwG-s8_9Im4rM5Yu52Pts1thS_-ZRes"), type: MovieDTOList.self).results.map(\.toMovie)
+        return try await getJSONFromURL(request: .get(url: url, token: appConfig.APIKey), type: MovieDTOList.self).results.map(\.toMovie)
     }
     
     func loadCardImages(for movies: [Movie]) async throws -> [Movie] {
