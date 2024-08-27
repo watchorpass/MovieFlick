@@ -39,9 +39,9 @@ final class MovieFlickViewModel {
     
     func fetchMovies() async {
         do {
-            let movies = try await interactor.getMovies(isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2022, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: nil, monetizationTypes: nil)
+            let movies = try await interactor.getMovies(isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2024, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: nil, monetizationTypes: nil)
             
-            moviesWithCard = try await interactor.loadCardImages(for: movies)
+            moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
         } catch {
