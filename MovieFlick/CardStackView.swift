@@ -14,9 +14,7 @@ struct CardStackView: View {
         }
         .onChange(of: vm.swipeCount, { oldValue, newValue in
             if newValue == 0 {
-                vm.playersName.removeFirst()
                 vm.viewState = .playerTwoView
-                vm.swipeCount = vm.moviesWithCard.count
             }
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity)

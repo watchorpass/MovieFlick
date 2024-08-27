@@ -33,6 +33,10 @@ final class MovieFlickViewModel {
         }
     }
     
+    func restartCount() {
+        swipeCount = moviesWithCard.count
+    }
+    
     func fetchMovies() async {
         do {
             let movies = try await interactor.getMovies(isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2022, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: nil, monetizationTypes: nil)
