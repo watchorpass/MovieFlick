@@ -35,11 +35,12 @@ struct ResultsView: View {
             }
             HStack {
                 AppButton(title: "Restart Game") {
+                    vm.playersName = ["", ""]
                     vm.viewState = .startView
                 }
                 
                 AppButton(title: "Choose one") {
-                    
+                    vm.viewState = .chooseWheel
                 }
             }
         }
