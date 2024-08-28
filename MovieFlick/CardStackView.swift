@@ -12,6 +12,7 @@ struct CardStackView: View {
             }
             Spacer()
         }
+        .opacity(vm.showError ? 0 : 1)
         .onChange(of: vm.swipeCount, { oldValue, newValue in
             if newValue == 0 {
                 vm.viewState = .playerTwoView
@@ -19,6 +20,16 @@ struct CardStackView: View {
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground()
+        .overlay {
+            CustomErrorView(alertTitle: "UPS... Algo ha salido mal",
+                            alertMessage: vm.errorMsg) {
+                Task {
+                    await vm.fetchMovies()
+                }
+            }
+            .padding(.bottom, 68)
+            .opacity(vm.showError ? 1 : 0)
+        }
     }
 }
 

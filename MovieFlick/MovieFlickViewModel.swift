@@ -26,6 +26,9 @@ final class MovieFlickViewModel {
     var sortType: SortType = .popularity
     var selectedGenre: Genre = .action
     
+    var showError = false
+    var errorMsg = ""
+    
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
         Task { 
@@ -45,7 +48,8 @@ final class MovieFlickViewModel {
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
         } catch {
-            print(error)
+            showError.toggle()
+            errorMsg = "Comprueba tu conexión a internet e inténtalo de nuevo"
         }
     }
     
