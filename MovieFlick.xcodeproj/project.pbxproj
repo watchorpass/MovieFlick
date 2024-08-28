@@ -122,7 +122,6 @@
 				1A0036222C67551800DC89C0 /* Models */,
 				1A0036262C6755B700DC89C0 /* Network */,
 				1A0036292C6756B400DC89C0 /* Utils */,
-				D3BF08752C74FADF00F487F2 /* Interface */,
 				1A0036282C67560B00DC89C0 /* AppConfig */,
 				1A00361D2C67548C00DC89C0 /* Resources */,
 				1A00361C2C67547F00DC89C0 /* System */,
@@ -279,6 +278,7 @@
 				1A0036432C6DF64400DC89C0 /* View+Extension.swift */,
 				1A0036452C6DF67800DC89C0 /* Image+Extension.swift */,
 				1ABFB2622C7DCE2200473726 /* UIDevice+Extension.swift */,
+				D3BF08752C74FADF00F487F2 /* Interface */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
