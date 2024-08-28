@@ -27,7 +27,14 @@ struct ChooseTypeView: View {
                 .padding()
             Spacer()
         }
+        .padding(.top, 48)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .overlay(alignment: .topLeading) {
+            BackButtonComponent {
+                vm.viewState = .playersView
+            }
+            .padding(.leading, 24)
+        }
         .appBackground()
     }
 }

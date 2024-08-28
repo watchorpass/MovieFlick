@@ -47,6 +47,7 @@ struct PlayersView: View {
                 vm.viewState = .chooseTypeView
             }
         }
+        .padding(.top, 48)
         .animation(.spring, value: vm.playersName)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground()

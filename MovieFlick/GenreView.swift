@@ -6,12 +6,11 @@ struct GenreView: View {
     var gridColums = [GridItem(), GridItem()]
     
     var body: some View {
-        VStack {
+        VStack(spacing: 24) {
             Text("Select your favourite genres")
                 .font(.title2)
                 .fontWeight(.heavy)
                 .foregroundStyle(.yellow)
-            Spacer()
             GeometryReader { geometry in
                 ScrollView {
                     LazyVGrid(columns: gridColums, spacing: 20) {
@@ -28,7 +27,14 @@ struct GenreView: View {
                 }
             }
         }
+        .padding(.top, 48)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .overlay(alignment: .topLeading) {
+            BackButtonComponent {
+                vm.viewState = .filterView
+            }
+            .padding(.leading, 24)
+        }
         .appBackground()
     }
 }

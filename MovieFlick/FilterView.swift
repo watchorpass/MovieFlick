@@ -26,7 +26,14 @@ struct FilterView: View {
             }
             Spacer()
         }
+        .padding(.top, 48)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .overlay(alignment: .topLeading) {
+            BackButtonComponent {
+                vm.viewState = .chooseTypeView
+            }
+            .padding(.leading, 24)
+        }
         .appBackground()
     }
 }
