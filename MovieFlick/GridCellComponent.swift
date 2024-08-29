@@ -34,10 +34,10 @@ struct GridCellComponent: View {
                 }
             }
             Text(title)
+                .font(.custom(typography, size: ((cellSize > 250) ? 38 : 22)))
                 .multilineTextAlignment(.center)
                 .foregroundStyle(Color(.white))
                 .lineLimit(2)
-                .font((cellSize > 250) ? .title : .title3)
                 .fontWeight(.semibold)
                 .padding(.vertical, 10)
                 .allowsTightening(true)

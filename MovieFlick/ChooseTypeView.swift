@@ -13,9 +13,7 @@ struct ChooseTypeView: View {
     var body: some View {
         VStack {
             Text("What to see")
-                .font(.title)
-                .bold()
-                .foregroundStyle(.yellow)
+                .largeTitle()
             Spacer()
             GridCellComponent(title: "Films", cellSize: 300, image: Image(.interestellar)) {
                 vm.viewState = .filterView

@@ -21,7 +21,7 @@ struct AppButton: View {
             }
         } label: {
             Text(title)
-                .fontWeight(.bold)
+                .font(.custom(typography, size: 18, relativeTo: .body))
                 .foregroundColor(.primary)
                 .padding()
                 .frame(maxWidth: 250, maxHeight: 50)

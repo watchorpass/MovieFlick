@@ -1,16 +1,26 @@
 import SwiftUI
 
+//public let typography = "Lonely Cake"
+//public let typography = "Intensa Fuente"
+public let typography = "Sparky Stones"
+
 extension Text {
-    func title() -> some View {
+    func largeTitle() -> some View {
         self
-            .font(.title)
-            .fontWeight(.medium)
+            .font(.custom(typography, size: 50, relativeTo: .title))
+            .foregroundStyle(.yellow)
+            .multilineTextAlignment(.center)
+    }
+    
+    func body() -> some View {
+        self
+            .font(.custom(typography, size: 18, relativeTo: .body))
             .foregroundStyle(.yellow)
     }
     
-    func text() -> some View {
+    func smallTitle() -> some View {
         self
-            .font(.body)
+            .font(.custom(typography, size: 28, relativeTo: .title3))
             .fontWeight(.regular)
             .foregroundStyle(.yellow)
     }

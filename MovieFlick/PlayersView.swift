@@ -22,9 +22,7 @@ struct PlayersView: View {
         @Bindable var bvm = vm
         VStack {
             Text("Create your players")
-                .font(.title)
-                .bold()
-                .foregroundStyle(Color.yellow)
+                .largeTitle()
             Spacer()
             ForEach(vm.playersName.indices, id: \.self) { index in
                 HStack {

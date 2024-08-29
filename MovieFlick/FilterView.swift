@@ -7,10 +7,10 @@ struct FilterView: View {
     var body: some View {
         VStack {
             Text(selectedType.uppercased())
-                .title()
+                .largeTitle()
             Spacer()
             Text("Select which list you want to see")
-                .text()
+                .body()
             VStack(spacing: 20){
                 AppButton(title: "Popular") {
                     vm.sortType = .popularity

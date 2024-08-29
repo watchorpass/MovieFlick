@@ -15,9 +15,7 @@ struct NextPlayerView: View {
             if let player = vm.playersName.first {
                 VStack(spacing: 16) {
                     Text("It's your turn: \(player)")
-                        .font(.title2)
-                        .fontWeight(.heavy)
-                        .foregroundStyle(Color.yellow)
+                        .smallTitle()
                     AppButton(title: "I'm Ready") {
                         vm.viewState = .swipeView
                     }

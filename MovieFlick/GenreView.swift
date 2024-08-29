@@ -8,7 +8,8 @@ struct GenreView: View {
     var body: some View {
         VStack {
             Text("Select your favourite genres")
-                .title()
+                .largeTitle()
+                .padding(.bottom, 20)
             Spacer()
             GeometryReader { geometry in
                 ScrollView {

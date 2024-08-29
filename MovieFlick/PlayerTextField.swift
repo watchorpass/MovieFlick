@@ -14,6 +14,7 @@ struct PlayerTextField: View {
     
     var body: some View {
         TextField(backgroundText, text: $text)
+            .font(.custom(typography, size: 28, relativeTo: .title3))
             .multilineTextAlignment(.center)
             .font(.title)
             .bold()
