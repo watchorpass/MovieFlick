@@ -24,7 +24,7 @@ final class MovieFlickViewModel {
     
     var viewState: ViewState = .startView
     var sortType: SortType = .popularity
-    var selectedGenre: Genre = .action
+    var selectedGenres: [Genre] = []
     
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
@@ -39,7 +39,7 @@ final class MovieFlickViewModel {
     
     func fetchMovies() async {
         do {
-            let movies = try await interactor.getMovies(isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2024, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: nil, monetizationTypes: nil)
+            let movies = try await interactor.getMovies(isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2024, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: selectedGenres, monetizationTypes: nil)
             
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
             resultMovies = moviesWithCard
@@ -59,5 +59,26 @@ final class MovieFlickViewModel {
         guard let index = resultMovies.firstIndex(where: {$0.id == movie.id}) else { return }
         
         resultMovies.remove(at: index)
+    }
+    
+    func addGenre(genre: Genre) {
+        if genre == .all {
+            if selectedGenres.contains(.all) {
+                selectedGenres = []
+            } else {
+                selectedGenres = [.all]
+            }
+        } else {
+            if let index = selectedGenres.firstIndex(of: .all) {
+                   selectedGenres.remove(at: index)
+               }
+            if selectedGenres.contains(genre) {
+                if let index = selectedGenres.firstIndex(of: genre) {
+                       selectedGenres.remove(at: index)
+                   }
+            } else {
+                selectedGenres.append(genre)
+            }
+        }
     }
 }

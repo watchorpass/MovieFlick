@@ -51,7 +51,9 @@ extension URL {
             queryItems.append(.providers(providers: providers))
         }
         if let genres = genres {
-            queryItems.append(.genres(genre: genres))
+            if !genres.contains(.all) {
+                queryItems.append(.genres(genre: genres))
+            }
         }
         if let monetizationTypes = monetizationTypes {
             queryItems.append(.monetizationTypes(types: monetizationTypes))
