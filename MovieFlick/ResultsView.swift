@@ -40,6 +40,7 @@ struct ResultsView: View {
                 }
                 
                 AppButton(title: "Choose one") {
+                    vm.randomMovie()
                     vm.viewState = .chooseWheel
                 }
             }

@@ -20,7 +20,8 @@ final class MovieFlickViewModel {
     var resultMovies: [Movie] = []
     var moviesWithCard: [Movie] = []
     var playersName: [String] = ["", ""]
-    
+    var movieSelected: Movie = Movie(adult: false, backdropPath: nil, genreIDS: [], id: 1, originalTitle: "original", overview: "", popularity: 1.1, posterPath: nil, releaseDate: "", title: "", video: false, voteAverage: 5.5, voteCount: 1)
+
     var swipeCount: Int = 0
     
     var viewState: ViewState = .startView
@@ -31,6 +32,12 @@ final class MovieFlickViewModel {
         self.interactor = interactor
         Task { 
             await fetchMovies()
+        }
+    }
+    
+    func randomMovie() {
+        if let movieWinner = resultMovies.randomElement() {
+            movieSelected = movieWinner
         }
     }
     

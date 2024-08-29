@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-import Combine
+
 
 final class ChooseWheelViewModel: ObservableObject {
     @Published var segmentCount = 1
@@ -21,6 +21,7 @@ final class ChooseWheelViewModel: ObservableObject {
     @Published var names: [String] = [""]
     @Published var winningColor: [String] = []
     @Published var newColorName: String = ""
+    @Published var movies: [Movie] = []
     
     var selectedColor: Color = .blue
     var lastUsedColor: Color = .clear
@@ -32,6 +33,7 @@ final class ChooseWheelViewModel: ObservableObject {
     }
     
     func addResultFilms(moviesResult: [Movie]) {
+        movies = moviesResult
         for movie in moviesResult {
             newColorName = movie.title
             addNewItem()
@@ -54,7 +56,6 @@ final class ChooseWheelViewModel: ObservableObject {
             let restOfRotationInteger = Int(restOfRotation)
             let winningIndex = Double(restOfRotationInteger) == restOfRotation ? restOfRotationInteger : restOfRotationInteger + 1
             this.winningColor = this.names.reversed()
-            print("dddd", this.winningColor)
             this.winningName = this.winningColor[winningIndex - 1]
             this.showAlert = true
         }

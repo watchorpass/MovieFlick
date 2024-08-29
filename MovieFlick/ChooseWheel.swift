@@ -30,7 +30,7 @@ struct ChooseWheel: View {
                             Image(.interestellar)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(maxWidth: 50)
+                                .frame(maxWidth: 80)
                                 .rotationEffect(angleForSegment(index + 1) - Angle(degrees: 10))
                                 .offset(
                                     CGSize(
@@ -102,11 +102,13 @@ struct ChooseWheel: View {
         }
         .appBackground()
         .padding(.horizontal, 12)
-        .alert("", isPresented: $wheelVM.showAlert) {
-            
-        } message: {
+        .sheet(isPresented: $wheelVM.showAlert, content: {
             Text("The winning is \(wheelVM.winningName).")
-        }
+            Image(.interestellar)
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: 200)
+        })
 
     }
     

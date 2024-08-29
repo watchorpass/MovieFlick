@@ -23,7 +23,7 @@ struct MainAppView: View {
             case .resultView:
                 Text("ResultView")
             case .chooseWheel:
-                ChooseWheel()
+                MovieSelectionView()
             }
         }
         .animation(.spring, value: vm.viewState)

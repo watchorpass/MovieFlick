@@ -29,6 +29,8 @@
 		1ABFB2652C7E16F700473726 /* BackButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABFB2642C7E16F700473726 /* BackButtonComponent.swift */; };
 		5F0A47C82C6FA83700EAFC02 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0A47C72C6FA83700EAFC02 /* StartView.swift */; };
 		5F0A47CA2C6FAF7300EAFC02 /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0A47C92C6FAF7300EAFC02 /* PlayersView.swift */; };
+		5F51D2AC2C80C06400BA1318 /* MovieSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F51D2AB2C80C06400BA1318 /* MovieSelectionView.swift */; };
+		5F51D2AE2C80D1DE00BA1318 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F51D2AD2C80D1DE00BA1318 /* DetailView.swift */; };
 		5F5BC29C2C724ABE0019D8AC /* AppBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5BC29B2C724ABE0019D8AC /* AppBackground.swift */; };
 		5FA696482C7F7FF800ACA38A /* ChooseWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA696472C7F7FF800ACA38A /* ChooseWheel.swift */; };
 		5FA6964A2C7F802800ACA38A /* ChooseWheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA696492C7F802800ACA38A /* ChooseWheelViewModel.swift */; };
@@ -74,6 +76,8 @@
 		1ABFB2642C7E16F700473726 /* BackButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonComponent.swift; sourceTree = "<group>"; };
 		5F0A47C72C6FA83700EAFC02 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		5F0A47C92C6FAF7300EAFC02 /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
+		5F51D2AB2C80C06400BA1318 /* MovieSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSelectionView.swift; sourceTree = "<group>"; };
+		5F51D2AD2C80D1DE00BA1318 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		5F5BC29B2C724ABE0019D8AC /* AppBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackground.swift; sourceTree = "<group>"; };
 		5FA696472C7F7FF800ACA38A /* ChooseWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWheel.swift; sourceTree = "<group>"; };
 		5FA696492C7F802800ACA38A /* ChooseWheelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWheelViewModel.swift; sourceTree = "<group>"; };
@@ -191,7 +195,9 @@
 				1ABFB2582C7B060700473726 /* CardStackView.swift */,
 				1A0036752C73312B00DC89C0 /* SwipeView.swift */,
 				1ABFB2602C7DC34200473726 /* ResultsView.swift */,
+				5F51D2AB2C80C06400BA1318 /* MovieSelectionView.swift */,
 				5FA696472C7F7FF800ACA38A /* ChooseWheel.swift */,
+				5F51D2AD2C80D1DE00BA1318 /* DetailView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				5F0A47C82C6FA83700EAFC02 /* StartView.swift in Sources */,
 				D3BF087B2C75026200F487F2 /* MovieDTOList.swift in Sources */,
 				D32CA79E2C6C07C5009DF748 /* AppButton.swift in Sources */,
+				5F51D2AC2C80C06400BA1318 /* MovieSelectionView.swift in Sources */,
 				1A0036462C6DF67800DC89C0 /* Image+Extension.swift in Sources */,
 				D3EF5B6B2C75F9C400558003 /* Enums.swift in Sources */,
 				5FE312922C75E70700C0971F /* PlayerTextField.swift in Sources */,
@@ -425,6 +432,7 @@
 				D32CA7962C6A01FA009DF748 /* StarsRateComponent.swift in Sources */,
 				1ABFB2632C7DCE2200473726 /* UIDevice+Extension.swift in Sources */,
 				1ABFB2612C7DC34200473726 /* ResultsView.swift in Sources */,
+				5F51D2AE2C80D1DE00BA1318 /* DetailView.swift in Sources */,
 				A106CFD32C73502200762871 /* FilterView.swift in Sources */,
 				5FFFEC552C71D738002FB36B /* ChooseTypeView.swift in Sources */,
 				1A0036762C73312B00DC89C0 /* SwipeView.swift in Sources */,
