@@ -6,10 +6,12 @@ struct CardStackView: View {
     var body: some View {
         VStack {
             ZStack {
-                ForEach(vm.moviesWithCard) { movie in
+                ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
                     NewCard(movie: movie)
+                        .offset(y: CGFloat(Double(index) * 1))
                 }
             }
+            .padding(.top, 48)
             Spacer()
         }
         .opacity(vm.showError ? 0 : 1)
@@ -21,7 +23,7 @@ struct CardStackView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground()
         .overlay {
-            CustomErrorView(alertTitle: "UPS... Algo ha salido mal",
+            CustomErrorView(alertTitle: "UPS... Something went wrong",
                             alertMessage: vm.errorMsg) {
                 Task {
                     await vm.fetchMovies()

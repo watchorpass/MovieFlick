@@ -41,16 +41,19 @@ struct CustomErrorView: View {
             }
             .padding()
             .frame(width: 300, height: 220)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-            .border(.white, width: 2)
             .background(.ultraThinMaterial.opacity(0.4))
-            .shadow(radius: 2)
+            .overlay {
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(lineWidth: 2)
+                    .fill(.white)
+                    .shadow(radius: 2)
+            }
         }
         .foregroundStyle(Color.yellow)
     }
 }
 
 #Preview {
-    CustomErrorView(alertTitle: "UPS... Algo ha salido mal", alertMessage: "Comprueba tu conexión a internet e inténtalo de nuevo") {}
+    CustomErrorView(alertTitle: "UPS... Something went wrong", alertMessage: "Check your internet connection and try again.") {}
         .appBackground()
 }
