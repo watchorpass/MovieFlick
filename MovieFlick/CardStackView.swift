@@ -12,6 +12,9 @@ struct CardStackView: View {
             }
             Spacer()
         }
+        .task {
+            await vm.fetchMovies()
+        }
         .onChange(of: vm.swipeCount, { oldValue, newValue in
             if newValue == 0 {
                 vm.viewState = .playerTwoView
