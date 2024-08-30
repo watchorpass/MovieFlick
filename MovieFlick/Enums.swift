@@ -68,7 +68,7 @@ enum Genre: Int, CaseIterable {
     
     var description: String {
         switch self {
-        case .all: return "All"
+        case .all: return "All Genres"
         case .action: return "Action"
         case .adventure: return "Adventure"
         case .animation: return "Animation"
@@ -91,7 +91,6 @@ enum Genre: Int, CaseIterable {
         }
     }
 }
-
 
 enum MonetizationType: String {
     case flatrate = "flatrate"
