@@ -6,7 +6,7 @@ struct GenreView: View {
     var gridColums = [GridItem(), GridItem()]
     
     var body: some View {
-        VStack(spacing: 24) {
+        VStack(spacing: 8) {
             Text("Select your favourite genres")
                 .font(.title2)
                 .fontWeight(.heavy)
@@ -27,7 +27,7 @@ struct GenreView: View {
                           }
                         }
                     }
-                    .padding(.horizontal)
+                    .padding()
                 }
             }
         }
@@ -43,11 +43,7 @@ struct GenreView: View {
             if !vm.selectedGenres.isEmpty {
                 AppButton(title: "Continue") {
                     vm.viewState = .swipeView
-                    Task {
-                        await vm.fetchMovies()
-                    }
                 }
-                
             }
         }
         .appBackground()

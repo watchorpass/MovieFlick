@@ -11,12 +11,25 @@ import Foundation
 let mainURL = URL(string: "https://api.themoviedb.org/3/discover")!
 let imageBaseUrl = URL(string: "https://image.tmdb.org/t/p/w600_and_h900_bestv2")!
 
-
-
 extension URL {
     static let movieURL = mainURL.appending(path: "movie")
-    static func finalURL(isAdult: Bool? = nil, includesVideo: Bool? = nil, page: Int? = nil, sortBy: SortType? = nil, releaseYear: Int? = nil, dateGreaterThan: String? = nil, dateLessThan: String? = nil, voteGreaterThan: Double? = nil, voteLessThan: Double? = nil, region: String? = nil, providers: [Provider]? = nil, genres: [Genre]? = nil, monetizationTypes: [MonetizationType]? = nil) -> URL {
+    static func finalURL(
+        isAdult: Bool? = nil,
+        includesVideo: Bool? = nil,
+        page: Int? = nil,
+        sortBy: SortType? = nil,
+        releaseYear: Int? = nil,
+        dateGreaterThan: String? = nil,
+        dateLessThan: String? = nil,
+        voteGreaterThan: Double? = nil,
+        voteLessThan: Double? = nil,
+        region: String? = nil,
+        providers: [Provider]? = nil,
+        genres: [Genre]? = nil,
+        monetizationTypes: [MonetizationType]? = nil) -> URL {
+            
         var queryItems: [URLQueryItem] = []
+            
         if let isAdult = isAdult {
             queryItems.append(.includeAdult(isAdult: isAdult))
         }

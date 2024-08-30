@@ -24,13 +24,10 @@ final class MovieFlickViewModel {
     
     var viewState: ViewState = .startView
     var sortType: SortType = .popularity
-    var selectedGenres: [Genre] = []
+    var selectedGenres: [Genre] = [.all]
     
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
-        Task { 
-            await fetchMovies()
-        }
     }
     
     func restartCount() {
@@ -57,25 +54,18 @@ final class MovieFlickViewModel {
     
     func removeFromResultMovies(movie: Movie) {
         guard let index = resultMovies.firstIndex(where: {$0.id == movie.id}) else { return }
-        
         resultMovies.remove(at: index)
     }
     
     func addGenre(genre: Genre) {
         if genre == .all {
-            if selectedGenres.contains(.all) {
-                selectedGenres = []
-            } else {
-                selectedGenres = [.all]
-            }
+            selectedGenres = [.all]
         } else {
             if let index = selectedGenres.firstIndex(of: .all) {
-                   selectedGenres.remove(at: index)
-               }
+                selectedGenres.remove(at: index)
+            }
             if selectedGenres.contains(genre) {
-                if let index = selectedGenres.firstIndex(of: genre) {
-                       selectedGenres.remove(at: index)
-                   }
+                selectedGenres.removeAll { $0 == genre }
             } else {
                 selectedGenres.append(genre)
             }
