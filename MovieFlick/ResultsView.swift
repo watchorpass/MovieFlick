@@ -41,6 +41,7 @@ struct ResultsView: View {
                 
                 AppButton(title: "Choose one") {
                     vm.randomMovie()
+                    vm.wait5Segs()
                     vm.viewState = .chooseWheel
                 }
             }

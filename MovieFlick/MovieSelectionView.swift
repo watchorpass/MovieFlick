@@ -41,7 +41,17 @@ struct MovieSelectionView: View {
             
         }
         .overlay {
-            // añadir gif
+            VStack {
+                Text("Random movie . . .")
+                    .bold()
+                    .font(.title)
+                    .foregroundStyle(.yellow)
+            }
+            .onAppear {
+                print("loading view")
+            }
+            .appBackground()
+            .opacity(vm.showLoadingView ? 1 : 0 )
             
         }
         .appBackground()

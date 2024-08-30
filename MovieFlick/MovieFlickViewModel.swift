@@ -27,12 +27,21 @@ final class MovieFlickViewModel {
     var viewState: ViewState = .startView
     var sortType: SortType = .popularity
     var selectedGenre: Genre = .action
+    var showLoadingView = true
     
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
         Task { 
             await fetchMovies()
         }
+    }
+    
+    func wait5Segs() {
+        Task {
+            try? await Task.sleep(nanoseconds: 3_500_000_000)
+            showLoadingView.toggle()
+        }
+        
     }
     
     func randomMovie() {
