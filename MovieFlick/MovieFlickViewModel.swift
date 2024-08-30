@@ -26,6 +26,9 @@ final class MovieFlickViewModel {
     var sortType: SortType = .popularity
     var selectedGenres: [Genre] = [.all]
     
+    var showError = false
+    var errorMsg = ""
+    
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
     }
@@ -42,14 +45,14 @@ final class MovieFlickViewModel {
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
         } catch {
-            print(error)
+            showError.toggle()
+            errorMsg = "Check your internet connection and try again"
         }
     }
     
     func removeCard(_ movie: Movie) {
         guard let index = moviesWithCard.firstIndex(where: {$0.id == movie.id }) else { return }
         moviesWithCard.remove(at: index)
-        print(moviesWithCard.count)
     }
     
     func removeFromResultMovies(movie: Movie) {
