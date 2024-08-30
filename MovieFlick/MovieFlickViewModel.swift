@@ -74,4 +74,8 @@ final class MovieFlickViewModel {
             }
         }
     }
+    
+    func selectedGenresInGenreView(genre: Genre) {
+        
+    }
 }

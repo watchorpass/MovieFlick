@@ -21,13 +21,14 @@ struct GenreView: View {
                                 vm.addGenre(genre: genre)
                             }
                           .overlay {
-                              RoundedRectangle(cornerRadius: 10)
+                              RoundedRectangle(cornerRadius: geometry.size.width*0.4/10)
                                   .stroke(lineWidth: 4)
                                   .fill(vm.selectedGenres.contains(genre) ? .yellow : .clear)
                           }
+                          .padding(4)
                         }
                     }
-                    .padding()
+                    Spacer(minLength: 65)
                 }
             }
         }
