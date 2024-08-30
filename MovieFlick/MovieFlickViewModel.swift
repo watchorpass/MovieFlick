@@ -46,14 +46,13 @@ final class MovieFlickViewModel {
             swipeCount = moviesWithCard.count
         } catch {
             showError.toggle()
-            errorMsg = "Comprueba tu conexión a internet e inténtalo de nuevo"
+            errorMsg = "Check your internet connection and try again"
         }
     }
     
     func removeCard(_ movie: Movie) {
         guard let index = moviesWithCard.firstIndex(where: {$0.id == movie.id }) else { return }
         moviesWithCard.remove(at: index)
-        print(moviesWithCard.count)
     }
     
     func removeFromResultMovies(movie: Movie) {
