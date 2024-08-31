@@ -26,7 +26,7 @@ enum SortType: String {
     case voteCount = "vote_count.desc"
 }
 
-enum Provider: Int {
+enum Provider: Int, CaseIterable {
     case netflix = 8
     case appleTV = 2
     case movistarPlus = 149
@@ -42,6 +42,26 @@ enum Provider: Int {
     case mubi = 11
     case skyShowtime = 1773
     case crunchyroll = 283
+    
+    var description: String {
+        switch self {
+            case .netflix: return "Netflix"
+            case .appleTV: return "Apple TV"
+            case .movistarPlus: return "Movistar Plus"
+            case .hboMax: return "HBO Max"
+            case .youtubePremium: return "YouTube Premium"
+            case .amazonPrimeVideo: return "Amazon Prime Video"
+            case .flixOle: return "FlixOlé"
+            case .disneyPlus: return "Disney Plus"
+            case .filmin: return "Filmin"
+            case .rakutenTV: return "Rakuten TV"
+            case .atresplayer: return "Atresplayer"
+            case .rtve: return "RTVE"
+            case .mubi: return "MUBI"
+            case .skyShowtime: return "SkyShowtime"
+            case .crunchyroll: return "Crunchyroll"
+        }
+    }
 }
 
 enum Genre: Int, CaseIterable {
@@ -68,26 +88,26 @@ enum Genre: Int, CaseIterable {
     
     var description: String {
         switch self {
-        case .all: return "All Genres"
-        case .action: return "Action"
-        case .adventure: return "Adventure"
-        case .animation: return "Animation"
-        case .comedy: return "Comedy"
-        case .crime: return "Crime"
-        case .documentary: return "Documentary"
-        case .drama: return "Drama"
-        case .family: return "Family"
-        case .fantasy: return "Fantasy"
-        case .history: return "History"
-        case .horror: return "Horror"
-        case .music: return "Music"
-        case .mystery: return "Mystery"
-        case .romance: return "Romance"
-        case .scienceFiction: return "Science Fiction"
-        case .tvMovie: return "TV Movie"
-        case .thriller: return "Thriller"
-        case .war: return "War"
-        case .western: return "Western"
+            case .all: return "All Genres"
+            case .action: return "Action"
+            case .adventure: return "Adventure"
+            case .animation: return "Animation"
+            case .comedy: return "Comedy"
+            case .crime: return "Crime"
+            case .documentary: return "Documentary"
+            case .drama: return "Drama"
+            case .family: return "Family"
+            case .fantasy: return "Fantasy"
+            case .history: return "History"
+            case .horror: return "Horror"
+            case .music: return "Music"
+            case .mystery: return "Mystery"
+            case .romance: return "Romance"
+            case .scienceFiction: return "Science Fiction"
+            case .tvMovie: return "TV Movie"
+            case .thriller: return "Thriller"
+            case .war: return "War"
+            case .western: return "Western"
         }
     }
 }

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MainAppView: View {
     @Environment(MovieFlickViewModel.self) var vm
+    @State var showSettings = true
     
     var body: some View {
         Group {
@@ -25,6 +26,10 @@ struct MainAppView: View {
             }
         }
         .animation(.spring, value: vm.viewState)
+        .sheet(isPresented: $showSettings) {
+            SettingsView()
+                .presentationDetents([.height(100), .large])
+        }
     }
 }
 
