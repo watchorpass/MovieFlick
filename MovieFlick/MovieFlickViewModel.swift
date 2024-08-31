@@ -19,6 +19,7 @@ final class MovieFlickViewModel {
     var resultMovies: [Movie] = []
     var moviesWithCard: [Movie] = []
     var playersName: [String] = ["Alex", "Fran"]
+    var providerList: [Provider]? = nil
     
     var swipeCount: Int = 0
     
@@ -72,6 +73,18 @@ final class MovieFlickViewModel {
             } else {
                 selectedGenres.append(genre)
             }
+        }
+    }
+    
+    func isProviderSelected(provider: Provider) -> Bool {
+        return providerList?.contains(provider) ?? false
+    }
+    
+    func toggleProvider(provider: Provider) {
+        if let index = providerList?.firstIndex(of: provider) {
+            providerList?.remove(at: index)
+        } else {
+            providerList?.append(provider)
         }
     }
 }

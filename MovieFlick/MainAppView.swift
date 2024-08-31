@@ -29,6 +29,7 @@ struct MainAppView: View {
         .sheet(isPresented: $showSettings) {
             SettingsView()
                 .presentationDetents([.height(100), .large])
+                .presentationBackground(.ultraThinMaterial)
         }
     }
 }
