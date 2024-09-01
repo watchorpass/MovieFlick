@@ -22,7 +22,7 @@ struct MainAppView: View {
                 NextPlayerView()
             case .resultView:
                 Text("ResultView")
-            case .chooseWheel:
+            case .movieSelection:
                 MovieSelectionView()
             }
         }

@@ -11,7 +11,7 @@ enum ViewState {
     case swipeView
     case playerTwoView
     case resultView
-    case chooseWheel
+    case movieSelection
 }
 
 @Observable
@@ -38,7 +38,7 @@ final class MovieFlickViewModel {
     
     func wait5Segs() {
         Task {
-            try? await Task.sleep(nanoseconds: 3_500_000_000)
+            try? await Task.sleep(nanoseconds: 5_000_000_000)
             showLoadingView.toggle()
         }
         
