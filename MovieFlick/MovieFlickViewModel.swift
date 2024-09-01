@@ -31,6 +31,7 @@ final class MovieFlickViewModel {
     var showError = false
     var errorMsg = ""
     
+    var showLoadingView = true    
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
     }

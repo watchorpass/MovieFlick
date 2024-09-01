@@ -31,7 +31,13 @@ struct MovieSelectionView: View {
                         showSheet.toggle()
                     }
             } else {
-                // poner el error view de deadpool
+                CustomErrorView(alertTitle: "Image can not be loaded. Try again please.",
+                                alertMessage: vm.errorMsg) {
+                    Task {
+                        await vm.fetchMovies()
+                    }
+                }
+                .padding(.bottom, 68)
             }
             Spacer()
             AppButton(title: "Restart") {
@@ -42,13 +48,12 @@ struct MovieSelectionView: View {
         }
         .overlay {
             VStack {
-                Text("Random movie . . .")
+                Text("Selecting movie . . .")
                     .bold()
                     .font(.title)
                     .foregroundStyle(.yellow)
-            }
-            .onAppear {
-                print("loading view")
+                GifImage(name: "xdd")
+                    .frame(width: 200, height: 200)
             }
             .appBackground()
             .opacity(vm.showLoadingView ? 1 : 0 )
@@ -57,7 +62,7 @@ struct MovieSelectionView: View {
         .appBackground()
         .padding(.horizontal, 12)
         .sheet(isPresented: $showSheet, content: {
-            DetailView()
+            DetailView(movie: vm.movieSelected)
         })
     }
 }

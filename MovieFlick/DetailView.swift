@@ -9,24 +9,28 @@ import SwiftUI
 
 struct DetailView: View {
     @Environment(MovieFlickViewModel.self) var vm
+    var movie: Movie? = nil
     
     var body: some View {
         VStack (spacing: 32) {
-            if let uiImage = vm.movieSelected.cardImage {
+            if let uiImage = movie?.cardImage {
                 Image(uiImage: uiImage)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 300)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
-                Text(vm.movieSelected.overview)
+                Text(movie?.overview ?? "Overview no available")
                     .foregroundStyle(.white)
-                    .padding()
+                    .padding(.horizontal)
+                StarsRateComponent(rate: movie?.voteAverage ?? 0.0, starSize: 40)
             } else {
-                // poner el error view de deadpool
-            }
-            AppButton(title: "Restart") {
-                vm.playersName = ["", ""]
-                vm.viewState = .startView
+                CustomErrorView(alertTitle: "UPS... Something went wrong",
+                                alertMessage: vm.errorMsg) {
+                    Task {
+                        await vm.fetchMovies()
+                    }
+                }
+                .padding(.bottom, 68)
             }
         }
         .appBackground()
