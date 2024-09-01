@@ -44,20 +44,9 @@ struct MovieSelectionView: View {
                 vm.playersName = ["", ""]
                 vm.viewState = .startView
             }
-            
         }
         .overlay {
-            VStack {
-                Text("Selecting movie . . .")
-                    .bold()
-                    .font(.title)
-                    .foregroundStyle(.yellow)
-                GifImage(name: "xdd")
-                    .frame(width: 200, height: 200)
-            }
-            .appBackground()
-            .opacity(vm.showLoadingView ? 1 : 0 )
-            
+            LoadingSelectingView()
         }
         .appBackground()
         .padding(.horizontal, 12)
