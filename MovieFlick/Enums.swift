@@ -90,6 +90,10 @@ enum Genre: Int, CaseIterable {
         case .western: return "Western"
         }
     }
+    
+    var MovieGenres: [Self] {
+        [.all,.action,.adventure,.animation,.comedy,.crime,.documentary,.drama,.family,.fantasy,.history,.history,.horror,.music,.mystery,.romance,.scienceFiction,.thriller,.tvMovie,.war,.western]
+    }
 }
 
 enum MonetizationType: String {

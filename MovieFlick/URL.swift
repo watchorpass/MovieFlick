@@ -13,6 +13,8 @@ let imageBaseUrl = URL(string: "https://image.tmdb.org/t/p/w600_and_h900_bestv2"
 
 extension URL {
     static let movieURL = mainURL.appending(path: "movie")
+    static let tvURL = mainURL.appending(path: "TV")
+
     static func finalURL(
         isAdult: Bool? = nil,
         includesVideo: Bool? = nil,
