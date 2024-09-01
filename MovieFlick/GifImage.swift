@@ -18,6 +18,11 @@ struct GifImage: UIViewRepresentable {
     
     func makeUIView(context: Context) -> some UIView {
         let webView = WKWebView()
+        
+        webView.isOpaque = false
+        webView.backgroundColor = .clear
+        webView.scrollView.backgroundColor = .clear
+        
         let url = Bundle.main.url(forResource: name, withExtension: "gif")!
         let data = try! Data(contentsOf: url)
         
@@ -25,10 +30,8 @@ struct GifImage: UIViewRepresentable {
         
         return webView
     }
+    
     func updateUIView(_ uiView: UIViewType, context: Context) {
         uiView.reloadInputViews()
     }
-    
 }
-
-

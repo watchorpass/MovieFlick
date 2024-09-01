@@ -45,11 +45,12 @@ struct MovieSelectionView: View {
                 vm.viewState = .startView
             }
         }
+        .padding(.horizontal, 12)
+        .appBackground()
         .overlay {
             LoadingSelectingView()
+                .opacity(vm.showLoadingView ? 1 : 0)
         }
-        .appBackground()
-        .padding(.horizontal, 12)
         .sheet(isPresented: $showSheet, content: {
             DetailView(movie: vm.movieSelected)
         })

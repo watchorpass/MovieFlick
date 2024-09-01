@@ -17,10 +17,12 @@ struct LoadingSelectingView: View {
                 .font(.title)
                 .foregroundStyle(.yellow)
             GifImage(name: "xdd")
-                .frame(width: 200, height: 200)
+                .scaledToFit()
+                .frame(width: 200)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground()
-        .opacity(vm.showLoadingView ? 1 : 0 )
+        .background(Color.white)
     }
 }
 

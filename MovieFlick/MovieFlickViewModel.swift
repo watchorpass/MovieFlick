@@ -38,10 +38,9 @@ final class MovieFlickViewModel {
     
     func wait5Segs() {
         Task {
-            try? await Task.sleep(nanoseconds: 5_000_000_000)
+            try? await Task.sleep(nanoseconds: 25_000_000_000)
             showLoadingView.toggle()
         }
-        
     }
     
     func randomMovie() {
