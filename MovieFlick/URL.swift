@@ -73,8 +73,9 @@ extension URL {
         }
         return movieURL.appending(queryItems: queryItems)
     }
-    static func imageURL(endPath: String) -> URL {
-        imageBaseUrl.appending(path: endPath)
+    static func imageURL(endPath: String?) -> URL? {
+        guard let path = endPath else { return nil }
+        return imageBaseUrl.appending(path: path)
     }
 }
 

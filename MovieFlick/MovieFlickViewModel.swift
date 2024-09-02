@@ -78,7 +78,7 @@ final class MovieFlickViewModel {
     
     func addGenre(genre: Genre) {
         if genre == .all {
-            selectedGenres = [.all]
+            selectedGenres = Genre.allCases
         } else {
             if let index = selectedGenres.firstIndex(of: .all) {
                 selectedGenres.remove(at: index)
