@@ -46,21 +46,26 @@ struct TVSerieDTO: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
+    
+    
+    
 }
 
 extension TVSerieDTO {
-    func toTVSSerie() -> TVSerie {
-        TVSerie(adult: adult,
-                backdropPath: .imageURL(endPath: backdropPath ?? ""),
-                genreIDS: genreIDS,
-                id: id,
-                originalTitle: originalName,
-                overview: overview,
-                popularity: popularity,
-                posterPath: .imageURL(endPath: posterPath ?? ""),
-                firstAirDate: firstAirDate,
-                title: name,
-                voteAverage: voteAverage,
-                voteCount: voteCount)
+    var toMovie: Movie {
+        Movie(adult: adult,
+              backdropPath: .imageURL(endPath: backdropPath ?? ""),
+              genreIDS: genreIDS,
+              id: id,
+              originalTitle: originalName,
+              overview: overview,
+              popularity: popularity,
+              posterPath: .imageURL(endPath: posterPath ?? ""),
+              releaseDate: firstAirDate,
+              title: name,
+              video: false,
+              voteAverage: voteAverage,
+              voteCount: voteCount,
+              cardImage: nil)
     }
 }

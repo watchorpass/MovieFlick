@@ -25,6 +25,7 @@ final class MovieFlickViewModel {
     var viewState: ViewState = .startView
     var sortType: SortType = .popularity
     var selectedGenres: [Genre] = [.all]
+    var isMovie = true
     
     var showError = false
     var errorMsg = ""
@@ -39,7 +40,7 @@ final class MovieFlickViewModel {
     
     func fetchMovies() async {
         do {
-            let movies = try await interactor.getMovies(isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2024, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: selectedGenres, monetizationTypes: nil)
+            let movies = try await interactor.getMovies(isMovie: isMovie, isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2024, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: selectedGenres, monetizationTypes: nil)
             
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
             resultMovies = moviesWithCard
