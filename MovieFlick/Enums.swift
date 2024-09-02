@@ -113,8 +113,7 @@ enum Genre: Int, CaseIterable {
         [.all,.action,.adventure,.animation,.comedy,.crime,.documentary,.drama,.family,.fantasy,.history,.horror,.music,.mystery,.romance,.scienceFiction,.tvMovie,.thriller,.war,.western]
     }
     static var TVGenres: [Self] {
-        //[.all, .actionAdventure, .animation, .comedy, .crime, .documentary, .drama, .family, .kids, .mystery, .news, .reality, .sciFiFantasy, .soap, .talk, .warPolitics, .western]
-        [.all, .animation, .comedy, .crime, .documentary, .drama, .family, .mystery, .western]
+        [.all, .actionAdventure, .animation, .comedy, .crime, .documentary, .drama, .family, .kids, .mystery, .news, .reality, .sciFiFantasy, .soap, .talk, .warPolitics, .western]
     }
 }
 
