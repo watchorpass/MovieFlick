@@ -39,6 +39,7 @@ struct ResultsView: View {
             .safeAreaInset(edge: .bottom) {
                 HStack {
                     AppButton(title: "Restart Game") {
+                        vm.showLoadingView = true
                         vm.playersName = ["", ""]
                         vm.viewState = .startView
                     }

@@ -38,7 +38,7 @@ final class MovieFlickViewModel {
     
     func wait5Segs() {
         Task {
-            try? await Task.sleep(nanoseconds: 25_000_000_000)
+            try? await Task.sleep(nanoseconds: 5_000_000_000)
             showLoadingView.toggle()
         }
     }
@@ -57,7 +57,7 @@ final class MovieFlickViewModel {
         do {
             let movies = try await interactor.getMovies(isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2024, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: selectedGenres, monetizationTypes: nil)
             
-            moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
+            moviesWithCard = try await interactor.loadCardImages(for: movies).reversed().dropLast(17)
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
         } catch {

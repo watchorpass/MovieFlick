@@ -41,6 +41,7 @@ struct MovieSelectionView: View {
             }
             Spacer()
             AppButton(title: "Restart") {
+                vm.showLoadingView = true
                 vm.playersName = ["", ""]
                 vm.viewState = .startView
             }
