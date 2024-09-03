@@ -29,12 +29,11 @@ struct PlayersView: View {
             ForEach(vm.playersName.indices, id: \.self) { index in
                 HStack {
                     PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.playersName[index], color: .green)
-                    if vm.playersName.count > 2 {
-                        AppButton(title: "-", color: .red) {
-                            vm.playersName.remove(at: index)
-                        }
-                        .frame(width: 50)
+                    AppButton(title: "–", color: .red, animation: nil, isDissabled: (vm.playersName.count > 2)) {
+                        vm.playersName.remove(at: index)
                     }
+                    .frame(width: 50)
+                    
                 }
             }
             AppButton(title: addPlayerText, color: Color.yellow) {
@@ -48,7 +47,7 @@ struct PlayersView: View {
             }
         }
         .padding(.top, 48)
-        .animation(.spring, value: vm.playersName)
+        .animation(.smooth, value: vm.playersName)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground()
     }

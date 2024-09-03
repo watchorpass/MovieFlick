@@ -10,13 +10,15 @@ import SwiftUI
 struct AppButton: View {
     var title: String
     var color: Color = .yellow
+    var animation: Animation? = .spring
+    var isDissabled: Bool = false
     var action: () -> Void
     
     @State private var isPressed: Bool = false
     
     var body: some View {
         Button {
-            withAnimation(.spring) {
+            isDissabled ? () : withAnimation(animation) {
                 action()
             }
         } label: {
@@ -25,7 +27,7 @@ struct AppButton: View {
                 .foregroundColor(.primary)
                 .padding()
                 .frame(maxWidth: 250, maxHeight: 50)
-                .background(isPressed ? color.opacity(0.4) : color.opacity(0.8))
+                .background((isPressed || isDissabled) ? color.opacity(0.4) : color.opacity(0.8))
                 .cornerRadius(10)
                 .overlay {
                     RoundedRectangle(cornerRadius: 10)
