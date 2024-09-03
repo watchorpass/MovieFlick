@@ -10,7 +10,7 @@ import TipKit
 
 struct SwipeTip: Tip {
     var title: Text {
-        Text("Time to Swipe")
+        Text("Time to Swipe!")
     }
     
     var message: Text? {
@@ -18,7 +18,7 @@ struct SwipeTip: Tip {
     }
     
     var image: Image? {
-        Image(systemName: "iphone")
+        Image(systemName: "square.stack.fill")
     }
     
 }
