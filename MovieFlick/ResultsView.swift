@@ -45,6 +45,9 @@ struct ResultsView: View {
         }
         .padding()
         .appBackground()
+        .onAppear {
+            vm.swipeTip.invalidate(reason: .actionPerformed)
+        }
     }
 }
 

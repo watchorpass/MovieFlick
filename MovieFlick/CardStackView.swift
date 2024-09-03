@@ -1,8 +1,9 @@
 import SwiftUI
+import TipKit
 
 struct CardStackView: View {
     @Environment(MovieFlickViewModel.self) var vm
-    
+
     var body: some View {
         VStack {
             ZStack {
@@ -12,6 +13,7 @@ struct CardStackView: View {
                 }
             }
             .padding(.top, 48)
+            .popoverTip(vm.swipeTip)
             Spacer()
         }
         .task {
@@ -41,4 +43,8 @@ struct CardStackView: View {
 #Preview {
     CardStackView()
         .environment(MovieFlickViewModel())
+        .task {
+            try? Tips.configure([
+                .datastoreLocation(.applicationDefault)])
+        }
 }

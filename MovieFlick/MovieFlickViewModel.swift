@@ -29,6 +29,8 @@ final class MovieFlickViewModel {
     var showError = false
     var errorMsg = ""
     
+    let swipeTip = SwipeTip()
+    
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
     }
