@@ -10,7 +10,6 @@ import SwiftUI
 struct ResultsView: View {
     @Environment(MovieFlickViewModel.self) var vm
     let items: [GridItem] = [GridItem(), GridItem()]
-    @State private var movieSheet: Movie? = nil
     
     var body: some View {
         VStack(spacing: 26) {
@@ -27,9 +26,6 @@ struct ResultsView: View {
                                 .scaledToFit()
                                 .frame(width: 160)
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
-                                .onTapGesture {
-                                    movieSheet = movie
-                                }
                         } else {
                             Image(systemName: "popcorn")
                         }
@@ -52,9 +48,6 @@ struct ResultsView: View {
                 }
                 .padding()
             }
-        }
-        .sheet(item: $movieSheet) { movie in
-            DetailView(movie: movie)
         }
         .appBackground()
     }

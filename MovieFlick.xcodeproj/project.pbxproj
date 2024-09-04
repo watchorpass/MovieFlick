@@ -31,7 +31,6 @@
 		5F1546C52C85A2A50089DB5D /* movieLoading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5F1546C42C85A2A50089DB5D /* movieLoading.gif */; };
 		5F1919022C845F1300BDCF48 /* LoadingSelectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1919012C845F1300BDCF48 /* LoadingSelectingView.swift */; };
 		5F51D2AC2C80C06400BA1318 /* MovieSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F51D2AB2C80C06400BA1318 /* MovieSelectionView.swift */; };
-		5F51D2AE2C80D1DE00BA1318 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F51D2AD2C80D1DE00BA1318 /* DetailView.swift */; };
 		5F5BC29C2C724ABE0019D8AC /* AppBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5BC29B2C724ABE0019D8AC /* AppBackground.swift */; };
 		5FE312922C75E70700C0971F /* PlayerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE312912C75E70700C0971F /* PlayerTextField.swift */; };
 		5FEDFE1F2C83786900A01C04 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDFE1E2C83786900A01C04 /* GifImage.swift */; };
@@ -76,7 +75,6 @@
 		5F1546C42C85A2A50089DB5D /* movieLoading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = movieLoading.gif; sourceTree = "<group>"; };
 		5F1919012C845F1300BDCF48 /* LoadingSelectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSelectingView.swift; sourceTree = "<group>"; };
 		5F51D2AB2C80C06400BA1318 /* MovieSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSelectionView.swift; sourceTree = "<group>"; };
-		5F51D2AD2C80D1DE00BA1318 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		5F5BC29B2C724ABE0019D8AC /* AppBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackground.swift; sourceTree = "<group>"; };
 		5FE312912C75E70700C0971F /* PlayerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTextField.swift; sourceTree = "<group>"; };
 		5FEDFE1E2C83786900A01C04 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 		1A0036202C6754F100DC89C0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5F51D2AD2C80D1DE00BA1318 /* DetailView.swift */,
 				A1C77F492C676264008B018F /* GridCellComponent.swift */,
 				D32CA79D2C6C07C5009DF748 /* AppButton.swift */,
 				D32CA7952C6A01FA009DF748 /* StarsRateComponent.swift */,
@@ -424,7 +421,6 @@
 				D32CA7962C6A01FA009DF748 /* StarsRateComponent.swift in Sources */,
 				1ABFB2632C7DCE2200473726 /* UIDevice+Extension.swift in Sources */,
 				1ABFB2612C7DC34200473726 /* ResultsView.swift in Sources */,
-				5F51D2AE2C80D1DE00BA1318 /* DetailView.swift in Sources */,
 				5FEDFE1F2C83786900A01C04 /* GifImage.swift in Sources */,
 				A106CFD32C73502200762871 /* FilterView.swift in Sources */,
 				5FFFEC552C71D738002FB36B /* ChooseTypeView.swift in Sources */,

@@ -27,9 +27,6 @@ struct MovieSelectionView: View {
                     .scaledToFit()
                     .frame(width: 350)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .onTapGesture {
-                        showSheet.toggle()
-                    }
             } else {
                 CustomErrorView(alertTitle: "Image can not be loaded. Try again please.",
                                 alertMessage: vm.errorMsg) {
@@ -52,9 +49,6 @@ struct MovieSelectionView: View {
             LoadingSelectingView()
                 .opacity(vm.showLoadingView ? 1 : 0)
         }
-        .sheet(isPresented: $showSheet, content: {
-            DetailView(movie: vm.movieSelected)
-        })
     }
 }
 
