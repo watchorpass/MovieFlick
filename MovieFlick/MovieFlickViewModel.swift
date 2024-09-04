@@ -36,16 +36,13 @@ final class MovieFlickViewModel {
         self.interactor = interactor
     }
     
-    func wait5Segs() {
-        Task {
-            try? await Task.sleep(nanoseconds: 5_000_000_000)
-            showLoadingView.toggle()
-        }
-    }
-    
     func randomMovie() {
         if let movieWinner = resultMovies.randomElement() {
             movieSelected = movieWinner
+        }
+        Task {
+            try? await Task.sleep(nanoseconds: 5_000_000_000)
+            showLoadingView.toggle()
         }
     }
     
@@ -57,7 +54,7 @@ final class MovieFlickViewModel {
         do {
             let movies = try await interactor.getMovies(isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2024, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: selectedGenres, monetizationTypes: nil)
             
-            moviesWithCard = try await interactor.loadCardImages(for: movies).reversed().dropLast(17)
+            moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
         } catch {
