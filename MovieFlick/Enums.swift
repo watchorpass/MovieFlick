@@ -115,6 +115,15 @@ enum Genre: Int, CaseIterable {
     static var TVGenres: [Self] {
         [.all, .actionAdventure, .animation, .comedy, .crime, .documentary, .drama, .family, .kids, .mystery, .news, .reality, .sciFiFantasy, .soap, .talk, .warPolitics, .western]
     }
+    
+    static func GenreListByType(type: SelectedType) -> [Self] {
+        switch type {
+        case .movie:
+            Self.MovieGenres
+        case .serie:
+            Self.TVGenres
+        }
+    }
 }
 
 enum MonetizationType: String {

@@ -32,7 +32,6 @@ struct TVSerieDTO: Codable {
     let voteAverage: Double
     let voteCount: Int
 
-
     enum CodingKeys: String, CodingKey {
         case adult
         case backdropPath = "backdrop_path"
@@ -46,9 +45,6 @@ struct TVSerieDTO: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
-    
-    
-    
 }
 
 extension TVSerieDTO {
