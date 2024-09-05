@@ -20,7 +20,7 @@ final class MovieFlickViewModel {
     var resultMovies: [Movie] = []
     var moviesWithCard: [Movie] = []
     var playersName: [String] = ["", ""]
-    var movieSelected: Movie = Movie(adult: false, backdropPath: nil, genreIDS: [], id: 1, originalTitle: "original", overview: "", popularity: 1.1, posterPath: nil, releaseDate: "", title: "", video: false, voteAverage: 5.5, voteCount: 1)
+    var movieSelected: Movie = .movieExample
 
     var swipeCount: Int = 0
     
@@ -32,6 +32,7 @@ final class MovieFlickViewModel {
     var errorMsg = ""
     
     var showLoadingView = true    
+    
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
     }
