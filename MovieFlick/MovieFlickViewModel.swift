@@ -7,6 +7,7 @@ enum ViewState {
     case playersView
     case chooseTypeView
     case filterView
+    case providerView
     case genreView
     case swipeView
     case playerTwoView
@@ -25,7 +26,8 @@ final class MovieFlickViewModel {
     var viewState: ViewState = .startView
     var sortType: SortType = .popularity
     var selectedGenres: [Genre] = [.all]
-    
+    var selectedProviders: [Provider] = [.all]
+
     var showError = false
     var errorMsg = ""
     
@@ -71,6 +73,21 @@ final class MovieFlickViewModel {
                 selectedGenres.removeAll { $0 == genre }
             } else {
                 selectedGenres.append(genre)
+            }
+        }
+    }
+    
+    func addprovider(provider: Provider) {
+        if provider == .all {
+            selectedProviders = Provider.allCases
+        } else {
+            if let index = selectedProviders.firstIndex(of: .all) {
+                selectedProviders.remove(at: index)
+            }
+            if selectedProviders.contains(provider) {
+                selectedProviders.removeAll { $0 == provider }
+            } else {
+                selectedProviders.append(provider)
             }
         }
     }

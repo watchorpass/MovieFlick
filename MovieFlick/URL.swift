@@ -61,6 +61,9 @@ extension URL {
             queryItems.append(.region(region: region))
         }
         if let providers = providers {
+            if !providers.contains(.all) {
+                queryItems.append(.providers(providers: providers))
+            }
             queryItems.append(.providers(providers: providers))
         }
         if let genres = genres {

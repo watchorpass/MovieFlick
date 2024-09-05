@@ -22,6 +22,8 @@ struct MainAppView: View {
                 NextPlayerView()
             case .resultView:
                 Text("ResultView")
+            case .providerView:
+                ProvidersView()
             }
         }
         .animation(.spring, value: vm.viewState)

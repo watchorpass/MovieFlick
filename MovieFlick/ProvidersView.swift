@@ -1,30 +1,33 @@
+//
+//  ProvidersView.swift
+//  MovieFlick
+//
+//  Created by Fran Malo on 5/9/24.
+//
+
 import SwiftUI
 
-struct GenreView: View {
+struct ProvidersView: View {
     @Environment(MovieFlickViewModel.self) var vm
     
-    var gridColums = [GridItem(), GridItem()]
+    var gridColums = [GridItem(), GridItem(), GridItem()]
     
     var body: some View {
         VStack(spacing: 8) {
-            Text("Select your favourite genres")
+            Text("Select providers")
                 .font(.title2)
                 .fontWeight(.heavy)
                 .foregroundStyle(.yellow)
             GeometryReader { geometry in
                 ScrollView {
                     LazyVGrid(columns: gridColums, spacing: 20) {
-                        ForEach(Genre.allCases, id: \.self) { genre in
-                            GridCellComponent(title: genre.description,
-                                              cellSize: geometry.size.width*0.4,
-                                              image: Image(genre.description)) {
-                                vm.addGenre(genre: genre)
+                        ForEach(Provider.avaibleProviders, id: \.self) { provider in
+                            CellProvider(cellSize: 80, image: Image("\(provider)")) {
+                                vm.addprovider(provider: provider)
                             }
-                          .overlay {
-                              RoundedRectangle(cornerRadius: geometry.size.width*0.4/10)
-                                  .stroke(lineWidth: 4)
-                                  .fill(vm.selectedGenres.contains(genre) ? .yellow : .clear)
-                          }
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(vm.selectedProviders.contains(provider) ? .yellow : .gray, lineWidth: 4))
+                            
                           .padding(4)
                         }
                     }
@@ -36,14 +39,14 @@ struct GenreView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .overlay(alignment: .topLeading) {
             BackButtonComponent {
-                vm.viewState = .providerView
+                vm.viewState = .filterView
             }
             .padding(.leading, 24)
         }
         .overlay(alignment: .bottom) {
-            if !vm.selectedGenres.isEmpty {
+            if !vm.selectedProviders.isEmpty {
                 AppButton(title: "Continue") {
-                    vm.viewState = .swipeView
+                    vm.viewState = .genreView
                 }
             }
         }
@@ -52,6 +55,6 @@ struct GenreView: View {
 }
 
 #Preview {
-    GenreView()
+    ProvidersView()
         .environment(MovieFlickViewModel())
 }

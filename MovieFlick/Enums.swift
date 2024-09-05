@@ -26,7 +26,8 @@ enum SortType: String {
     case voteCount = "vote_count.desc"
 }
 
-enum Provider: Int {
+enum Provider: Int, CaseIterable {
+    case all = 0
     case netflix = 8
     case appleTV = 2
     case movistarPlus = 149
@@ -42,6 +43,10 @@ enum Provider: Int {
     case mubi = 11
     case skyShowtime = 1773
     case crunchyroll = 283
+    
+    static var avaibleProviders: [Self] {
+        [.netflix, .amazonPrimeVideo, .hboMax, .appleTV, .movistarPlus, .disneyPlus, .filmin, .crunchyroll, .flixOle]
+    }
 }
 
 enum Genre: Int, CaseIterable {
