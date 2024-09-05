@@ -26,8 +26,8 @@ final class MovieFlickViewModel {
     var viewState: ViewState = .startView
     var sortType: SortType = .popularity
     var selectedGenres: [Genre] = [.all]
-    var selectedProviders: [Provider] = [.all]
-
+    var selectedProviders: [Provider] = []
+    
     var showError = false
     var errorMsg = ""
     
@@ -78,17 +78,10 @@ final class MovieFlickViewModel {
     }
     
     func addprovider(provider: Provider) {
-        if provider == .all {
-            selectedProviders = Provider.allCases
+        if selectedProviders.contains(provider) {
+            selectedProviders.removeAll { $0 == provider }
         } else {
-            if let index = selectedProviders.firstIndex(of: .all) {
-                selectedProviders.remove(at: index)
-            }
-            if selectedProviders.contains(provider) {
-                selectedProviders.removeAll { $0 == provider }
-            } else {
-                selectedProviders.append(provider)
-            }
+            selectedProviders.append(provider)
         }
     }
 }
