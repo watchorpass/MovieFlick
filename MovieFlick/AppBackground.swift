@@ -13,6 +13,7 @@ struct AppBackground: ViewModifier {
         content
             .background {
                 ZStack {
+                    Color.white
                     Image(.portada)
                         .opacity(0.7)
                     LinearGradient(

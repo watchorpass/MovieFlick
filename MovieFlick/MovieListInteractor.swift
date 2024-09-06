@@ -54,7 +54,7 @@ struct MovieListInteractor: MovieListInteractorProtocol, NetworkInteractor {
     }
     
     func loadCardImages(for movies: [Movie]) async throws -> [Movie] {
-        var mutableMovies = movies
+        var mutableMovies = movies.filter({ $0.posterPath != nil })
 
         try await withThrowingTaskGroup(of: (Int, UIImage?).self) { group in
             for (index, movie) in mutableMovies.enumerated() {
