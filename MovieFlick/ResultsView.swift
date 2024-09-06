@@ -13,7 +13,7 @@ struct ResultsView: View {
     
     var body: some View {
         VStack(spacing: 26) {
-            Text("MOVIE MATCHES")
+            Text("\(vm.selectedType.rawValue) MATCHES")
                 .font(.title)
                 .fontWeight(.heavy)
                 .foregroundStyle(Color.yellow)
