@@ -13,11 +13,10 @@ struct ResultsView: View {
     
     var body: some View {
         VStack(spacing: 26) {
-            Text("MOVIE MATCHES")
+            Text("\(vm.selectedType.rawValue) MATCHES")
                 .font(.title)
                 .fontWeight(.heavy)
                 .foregroundStyle(Color.yellow)
-            
             ScrollView {
                 LazyVGrid(columns: items) {
                     ForEach(vm.resultMovies) { movie in
@@ -33,17 +32,22 @@ struct ResultsView: View {
                     }
                 }
             }
-            HStack {
-                AppButton(title: "Restart Game") {
-                    vm.viewState = .startView
-                }
-                
-                AppButton(title: "Choose one") {
+            .safeAreaInset(edge: .bottom) {
+                HStack {
+                    AppButton(title: "Restart Game") {
+                        vm.showLoadingView = true
+                        vm.playersName = ["", ""]
+                        vm.viewState = .startView
+                    }
                     
+                    AppButton(title: "Choose one") {
+                        vm.randomMovie()
+                        vm.viewState = .movieSelection
+                    }
                 }
+                .padding()
             }
         }
-        .padding()
         .appBackground()
     }
 }
