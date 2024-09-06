@@ -174,7 +174,7 @@ extension URLQueryItem {
         return URLQueryItem(name: "with_watch_providers", value: providersID)
     }
     static func genres(genre: [Genre]) -> URLQueryItem {
-        let genreIDs = genre.map { String($0.rawValue) }.joined(separator: ",")
+        let genreIDs = genre.map { String($0.rawValue) }.joined(separator: "|")
         return URLQueryItem(name: "with_genres", value: genreIDs)
     }
     static func monetizationTypes(types: [MonetizationType]) -> URLQueryItem {
