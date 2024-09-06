@@ -11,6 +11,7 @@ enum ViewState {
     case swipeView
     case playerTwoView
     case resultView
+    case movieSelection
 }
 enum SelectedType:  String {
     case movie = "MOVIE"
@@ -22,8 +23,10 @@ final class MovieFlickViewModel {
     let interactor: MovieListInteractorProtocol
     var resultMovies: [Movie] = []
     var moviesWithCard: [Movie] = []
-    var playersName: [String] = ["Alex", "Fran"]
+    var playersName: [String] = ["", ""]
     
+    var movieSelected: Movie?
+
     var swipeCount: Int = 0
     
     var viewState: ViewState = .startView
@@ -34,8 +37,20 @@ final class MovieFlickViewModel {
     var showError = false
     var errorMsg = ""
     
+    var showLoadingView = true    
+    
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
+    }
+    
+    func randomMovie() {
+        if let movieWinner = resultMovies.randomElement() {
+            movieSelected = movieWinner
+        }
+        Task {
+            try? await Task.sleep(nanoseconds: 5_000_000_000)
+            showLoadingView.toggle()
+        }
     }
     
     func restartCount() {
