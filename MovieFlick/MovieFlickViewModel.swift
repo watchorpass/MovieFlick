@@ -13,6 +13,10 @@ enum ViewState {
     case resultView
     case movieSelection
 }
+enum SelectedType:  String {
+    case movie = "MOVIE"
+    case serie = "SERIE"
+}
 
 @Observable
 final class MovieFlickViewModel {
@@ -27,6 +31,7 @@ final class MovieFlickViewModel {
     var viewState: ViewState = .startView
     var sortType: SortType = .popularity
     var selectedGenres: [Genre] = [.all]
+    var selectedType: SelectedType = .movie
     
     var showError = false
     var errorMsg = ""
@@ -64,6 +69,27 @@ final class MovieFlickViewModel {
         }
     }
     
+    func fetchSeries() async {
+        do {
+            let movies = try await interactor.getSeries(isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2024, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: selectedGenres, monetizationTypes: nil)
+            
+            moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
+            resultMovies = moviesWithCard
+            swipeCount = moviesWithCard.count
+        } catch {
+            showError.toggle()
+            errorMsg = "Check your internet connection and try again"
+        }
+    }
+    
+    func fetchContent() async {
+        switch selectedType {
+        case .movie:
+            await fetchMovies()
+        case .serie:
+            await fetchSeries()
+        }
+    }
     func removeCard(_ movie: Movie) {
         guard let index = moviesWithCard.firstIndex(where: {$0.id == movie.id }) else { return }
         moviesWithCard.remove(at: index)

@@ -1,0 +1,424 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/mu3lEhGovyhKHPJzb7HNYtZUCDT.jpg",
+            "genre_ids": [
+                10766
+            ],
+            "id": 206559,
+            "origin_country": [
+                "ZA"
+            ],
+            "original_language": "af",
+            "original_name": "Binnelanders",
+            "overview": "A South African Afrikaans soap opera. It is set in and around the fictional private hospital, Binneland Kliniek, in Pretoria, and the storyline follows the trials, trauma and tribulations of the staff and patients of the hospital.",
+            "popularity": 7191.526,
+            "poster_path": "/v9nGSRx5lFz6KEgfmgHJMSgaARC.jpg",
+            "first_air_date": "2005-10-13",
+            "name": "Binnelanders",
+            "vote_average": 5.632,
+            "vote_count": 73
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/nlLKuyFz6lI0KyiY1V1AE2GwGX9.jpg",
+            "genre_ids": [
+                35,
+                18,
+                10766
+            ],
+            "id": 32209,
+            "origin_country": [
+                "PE"
+            ],
+            "original_language": "es",
+            "original_name": "Al Fondo Hay Sitio",
+            "overview": "Al fondo hay sitio is a Peruvian TV series created in 2008-2009 by Efraín Aguilar. It deals with the problems of social differences and economic status. It's one of the most popular shows in Peru and is now being shown in Ecuador, Bolivia, Paraguay and Uruguay.",
+            "popularity": 5275.36,
+            "poster_path": "/g7cuCCkvoBuSwemTHYz3k0hvvmz.jpg",
+            "first_air_date": "2009-03-30",
+            "name": "Al Fondo Hay Sitio",
+            "vote_average": 7.885,
+            "vote_count": 208
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/dasgPx3OgkxHSQyncKlApfZkpi2.jpg",
+            "genre_ids": [
+                10767,
+                10763
+            ],
+            "id": 224,
+            "origin_country": [
+                "GB"
+            ],
+            "original_language": "en",
+            "original_name": "Match of the Day",
+            "overview": "BBC's football highlights and analysis.\n\n\"The longest-running football television programme in the world\" as recognised by Guinness World Records in 2015.",
+            "popularity": 3520.214,
+            "poster_path": "/aA25JrHXj8ZPTJYj2iSIueyb34C.jpg",
+            "first_air_date": "1964-08-22",
+            "name": "Match of the Day",
+            "vote_average": 7.375,
+            "vote_count": 40
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/3u5b6Zy3EKQX0ALvg1uBC7wd1Jw.jpg",
+            "genre_ids": [
+                35,
+                10767
+            ],
+            "id": 4419,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Real Time with Bill Maher",
+            "overview": "Each week Bill Maher surrounds himself with a panel of guests which include politicians, actors, comedians, musicians and the like to discuss what's going on in the world.",
+            "popularity": 3524.381,
+            "poster_path": "/pbpoLLp4kvnYVfnEGiEhagpJuVZ.jpg",
+            "first_air_date": "2003-02-21",
+            "name": "Real Time with Bill Maher",
+            "vote_average": 6.013,
+            "vote_count": 200
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/euuK8owCrdiz0HMj8iVhhquPhDv.jpg",
+            "genre_ids": [
+                80,
+                18,
+                10759
+            ],
+            "id": 4614,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "NCIS",
+            "overview": "From murder and espionage to terrorism and stolen submarines, a team of special agents investigates any crime that has a shred of evidence connected to Navy and Marine Corps personnel, regardless of rank or position.",
+            "popularity": 3009.666,
+            "poster_path": "/2exOHePjOTquUsbThPGhuEjYTyA.jpg",
+            "first_air_date": "2003-09-23",
+            "name": "NCIS",
+            "vote_average": 7.6,
+            "vote_count": 2229
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/7OrV2aAH5Yp7hA9zCCvUloLvZtl.jpg",
+            "genre_ids": [
+                16,
+                10762
+            ],
+            "id": 57532,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "PAW Patrol",
+            "overview": "PAW Patrol is a CG action-adventure for old children and preschool series starring a pack of six heroic puppies led by a tech-savvy 10-year-old boy named Ryder.",
+            "popularity": 3033.773,
+            "poster_path": "/8HXkgUBO5OF8ZK9XbY69RM4S5rv.jpg",
+            "first_air_date": "2013-08-12",
+            "name": "PAW Patrol",
+            "vote_average": 6.998,
+            "vote_count": 724
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/NNC08YmJFFlLi1prBkK8quk3dp.jpg",
+            "genre_ids": [
+                10759,
+                10765,
+                18
+            ],
+            "id": 84773,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "The Lord of the Rings: The Rings of Power",
+            "overview": "Beginning in a time of relative peace, we follow an ensemble cast of characters as they confront the re-emergence of evil to Middle-earth. From the darkest depths of the Misty Mountains, to the majestic forests of Lindon, to the breathtaking island kingdom of Númenor, to the furthest reaches of the map, these kingdoms and characters will carve out legacies that live on long after they are gone.",
+            "popularity": 4179.57,
+            "poster_path": "/mYLOqiStMxDK3fYZFirgrMt8z5d.jpg",
+            "first_air_date": "2022-09-01",
+            "name": "The Lord of the Rings: The Rings of Power",
+            "vote_average": 7.342,
+            "vote_count": 2700
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/8OD8iFc1zdjkey1XvMEHjnuPGs1.jpg",
+            "genre_ids": [
+                10766
+            ],
+            "id": 14424,
+            "origin_country": [
+                "BR"
+            ],
+            "original_language": "pt",
+            "original_name": "Malhação",
+            "overview": "Malhação is a Brazilian television series for the teenage audience. The soap started in 1995, and was set in a fictional Gym Club called Malhação on Barra da Tijuca, Rio de Janeiro. Through the years the location varied slightly. Although the name of the soap remains the same, it is now set in the Múltipla Escolha High School.",
+            "popularity": 2524.922,
+            "poster_path": "/bF24r2FxsjzgkJcrbBU8RC9JVoU.jpg",
+            "first_air_date": "1995-04-24",
+            "name": "Young Hearts",
+            "vote_average": 5.796,
+            "vote_count": 27
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/bYMkuSxg9zJY61vQrceGooqLNOQ.jpg",
+            "genre_ids": [
+                10764
+            ],
+            "id": 4551,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "America's Got Talent",
+            "overview": "A weekly talent competition where an array of performers – from singers and dancers, to comedians and novelty acts – vie for a $1 million cash prize.",
+            "popularity": 2972.863,
+            "poster_path": "/1YLiZqge79k4M0sIbiWi1ByNags.jpg",
+            "first_air_date": "2006-06-21",
+            "name": "America's Got Talent",
+            "vote_average": 5.65,
+            "vote_count": 247
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/ddFB0J0b3yKIyvlAnbAHWGWxnCJ.jpg",
+            "genre_ids": [
+                10764
+            ],
+            "id": 241492,
+            "origin_country": [
+                "BR"
+            ],
+            "original_language": "pt",
+            "original_name": "Estrela da Casa",
+            "overview": "",
+            "popularity": 3144.242,
+            "poster_path": "/i8HkMKyuZ13i8xpMW3ZmdTXYOL0.jpg",
+            "first_air_date": "2024-08-13",
+            "name": "Estrela da Casa",
+            "vote_average": 2.0,
+            "vote_count": 2
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/5ElVEImEPQmLVj1hkRM26rpsDKe.jpg",
+            "genre_ids": [
+                18
+            ],
+            "id": 242101,
+            "origin_country": [
+                "PT"
+            ],
+            "original_language": "pt",
+            "original_name": "Cacau",
+            "overview": "Cacau is an engaging saga of family secrets, clandestine loves and sacrifices, all sweetened by the irresistible taste of chocolate and the magic of cocoa plantations.",
+            "popularity": 3024.7,
+            "poster_path": "/nNCFBKZ68fmr008moWSzLdu2mUP.jpg",
+            "first_air_date": "2024-01-15",
+            "name": "Cacau",
+            "vote_average": 5.692,
+            "vote_count": 13
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/f5445uc1T6HqTe4Zi0hfkk7kuHn.jpg",
+            "genre_ids": [
+                10767
+            ],
+            "id": 31351,
+            "origin_country": [
+                "CA"
+            ],
+            "original_language": "fr",
+            "original_name": "Tout le monde en parle",
+            "overview": "Host Guy A. Lepage brings together six to eight personalities from different milieus—sports, politics, stage productions and more—that are the subject of everyone’s conversations and/or are important figures in recent events. Participants are invited to speak freely, voicing their opinions on headline news or on a subject that is near and dear to them. ",
+            "popularity": 3011.555,
+            "poster_path": "/8BiaKzjK3arQM2yKLzB9zBKB6GL.jpg",
+            "first_air_date": "2004-09-12",
+            "name": "Tout le monde en parle",
+            "vote_average": 4.2,
+            "vote_count": 9
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/vgeDRVpSUa4Hvovg4C6dgm4dfUW.jpg",
+            "genre_ids": [
+                10766,
+                18
+            ],
+            "id": 112470,
+            "origin_country": [
+                "FR"
+            ],
+            "original_language": "fr",
+            "original_name": "Ici tout commence",
+            "overview": "This television drama series is centered around the prestigious culinary school of renowned chef Auguste Armand. The show follows the lives of students and staff as they navigate the challenges and pressures of the culinary world—delving into their personal and professional lives, revealing secrets, rivalries, and complex relationships.",
+            "popularity": 3427.253,
+            "poster_path": "/yuTHx38jpogXovMhqNatvozigMJ.jpg",
+            "first_air_date": "2020-11-02",
+            "name": "Here it all begins",
+            "vote_average": 7.1,
+            "vote_count": 49
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/lvgsNKgf6wMItoPCJMliFNUB0Yp.jpg",
+            "genre_ids": [
+                10763
+            ],
+            "id": 4026,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "CBS News Sunday Morning",
+            "overview": "The sparkling notes of a trumpet fanfare and the familiar logo of the sun alert viewers that it's time for CBS's Sunday morning staple. Journalist Jane Pauley helms the show, taking over hosting duties from Charles Osgood, who spent 22 years on the job. A morning talk show, this program airs at a different pace and focuses much of its attention on the performing arts. After a quick update of the day's news and national weather, correspondents offer longer-length segments on a variety of topics, from architecture to ballet to music to pop culture to politics.",
+            "popularity": 3362.148,
+            "poster_path": "/4AL2bjz8IROQi05frEaPHr9A7pr.jpg",
+            "first_air_date": "1979-01-28",
+            "name": "CBS News Sunday Morning",
+            "vote_average": 6.188,
+            "vote_count": 16
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/sx3N4xsZDv0zAGfImtruZLYirhs.jpg",
+            "genre_ids": [
+                10759,
+                18,
+                10768,
+                10751
+            ],
+            "id": 242931,
+            "origin_country": [
+                "PH"
+            ],
+            "original_language": "tl",
+            "original_name": "Pulang Araw",
+            "overview": "Red Sun is a family drama that tells stories of courage, sacrifice, and hardships that every Filipino family has. These stories were inspired by the tales of the unsung heroes who defied the odds of World War II and the Japanese occupation of the Philippines.",
+            "popularity": 2891.665,
+            "poster_path": "/2zbaRzgieKiHYkTGztQUzrAYbgb.jpg",
+            "first_air_date": "2024-07-29",
+            "name": "Pulang Araw",
+            "vote_average": 8.286,
+            "vote_count": 7
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/h8tzpd1pqyKCu5V4lw3eUiO6L9Y.jpg",
+            "genre_ids": [
+                16,
+                35,
+                10751
+            ],
+            "id": 65763,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "New Looney Tunes",
+            "overview": "Wabbit is an animated series starring Bugs Bunny. The series features many other Looney Tunes characters including Wile E. Coyote, Yosemite Sam, and the Tasmanian Devil.",
+            "popularity": 3131.741,
+            "poster_path": "/prMr01vuNZc42SAuaa1Kzyh9iyd.jpg",
+            "first_air_date": "2015-09-21",
+            "name": "New Looney Tunes",
+            "vote_average": 7.06,
+            "vote_count": 141
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/jbTqU6BJMufoMnPSlO4ThrcXs3Y.jpg",
+            "genre_ids": [
+                16,
+                35
+            ],
+            "id": 1434,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Family Guy",
+            "overview": "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+            "popularity": 2157.844,
+            "poster_path": "/y0HUz4eUNUe3TeEd8fQWYazPaC7.jpg",
+            "first_air_date": "1999-01-31",
+            "name": "Family Guy",
+            "vote_average": 7.356,
+            "vote_count": 4299
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/miVfaepSfWV9uIbPEnC3EvExVSn.jpg",
+            "genre_ids": [
+                10767
+            ],
+            "id": 46188,
+            "origin_country": [
+                "FR"
+            ],
+            "original_language": "fr",
+            "original_name": "Vivement dimanche",
+            "overview": "",
+            "popularity": 1673.343,
+            "poster_path": "/nRrrsDkH1kYgjvTpirkwMqZFjc5.jpg",
+            "first_air_date": "1998-09-20",
+            "name": "Vivement dimanche",
+            "vote_average": 2.8,
+            "vote_count": 5
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/woA7DdpCtbH35SczuvvHTqurhGC.jpg",
+            "genre_ids": [
+                80
+            ],
+            "id": 40862,
+            "origin_country": [
+                "DE"
+            ],
+            "original_language": "de",
+            "original_name": "SOKO Köln",
+            "overview": "The SOKO Köln investigates the cathedral city with humor and often with hard work. Their cases take them into a variety of environments, from the Cologne clique to the terraced housing estates on the outskirts of the city.",
+            "popularity": 1911.408,
+            "poster_path": "/uCerPXtj8Oz9kvks9KuUE16O0I4.jpg",
+            "first_air_date": "2003-10-22",
+            "name": "SOKO Köln",
+            "vote_average": 6.2,
+            "vote_count": 4
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/nG2im8JKKNB6dXg9ZmVTuiYqFJI.jpg",
+            "genre_ids": [
+                10766,
+                18
+            ],
+            "id": 14610,
+            "origin_country": [
+                "FI"
+            ],
+            "original_language": "fi",
+            "original_name": "Salatut elämät",
+            "overview": "Salatut elämät (Secret Lives) is a Finnish television soap opera that premiered on MTV3 on 25 January 1999. The series' storylines follow the daily lives of several families who live in the same apartment block in Helsinki.",
+            "popularity": 2813.001,
+            "poster_path": "/ugYAGyxwajuplDUUYT8Bzbj8eNR.jpg",
+            "first_air_date": "1999-01-25",
+            "name": "Secret Lives",
+            "vote_average": 4.8,
+            "vote_count": 15
+        }
+    ],
+    "total_pages": 8996,
+    "total_results": 179906
+}
