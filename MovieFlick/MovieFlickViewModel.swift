@@ -18,7 +18,7 @@ final class MovieFlickViewModel {
     let interactor: MovieListInteractorProtocol
     var resultMovies: [Movie] = []
     var moviesWithCard: [Movie] = []
-    var playersName: [String] = ["Alex", "Fran"]
+    var playersName: [String] = ["", ""]
     
     var swipeCount: Int = 0
     
@@ -73,5 +73,9 @@ final class MovieFlickViewModel {
                 selectedGenres.append(genre)
             }
         }
+    }
+    
+    func playersWithoutName() -> Bool {
+        playersName.contains("")
     }
 }

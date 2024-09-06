@@ -10,12 +10,8 @@ import SwiftUI
 struct PlayersView: View {
     @Environment(MovieFlickViewModel.self) var vm
     
-    var addPlayerText: String {
-        if vm.playersName.count < 4 {
-            return "Add new player +"
-        } else {
-            return "Max. 4 players"
-        }
+    private var addPlayerText: (String, Bool) {
+        (vm.playersName.count < 4) ? ("Add new player +", false) : ("Max. 4 players", true)
     }
     
     var body: some View {
@@ -29,20 +25,17 @@ struct PlayersView: View {
             ForEach(vm.playersName.indices, id: \.self) { index in
                 HStack {
                     PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.playersName[index], color: .green)
-                    AppButton(title: "–", color: .red, animation: nil, isDissabled: (vm.playersName.count > 2)) {
+                    AppButton(title: "–", color: (vm.playersName.count < 3) ? .gray : .red, animation: nil, isButtonDisabled: (vm.playersName.count < 3)) {
                         vm.playersName.remove(at: index)
                     }
                     .frame(width: 50)
-                    
                 }
             }
-            AppButton(title: addPlayerText, color: Color.yellow) {
-                if vm.playersName.count < 4 {
-                    vm.playersName.append("")
-                }
+            AppButton(title: addPlayerText.0, color: .yellow, isButtonDisabled: addPlayerText.1) {
+                vm.playersName.append("")
             }
             Spacer()
-            AppButton(title: "Continue") {
+            AppButton(title: "Continue", isButtonDisabled: vm.playersWithoutName()) {
                 vm.viewState = .chooseTypeView
             }
         }
