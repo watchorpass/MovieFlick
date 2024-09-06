@@ -50,7 +50,7 @@ struct ResultsView: View {
         }
         .appBackground()
         .onAppear {
-            vm.swipeTip.invalidate(reason: .actionPerformed)
+//            vm.swipeTip.invalidate(reason: .actionPerformed)
         }
     }
 }
