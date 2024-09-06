@@ -17,7 +17,7 @@ struct CardStackView: View {
             Spacer()
         }
         .task {
-            await vm.fetchMovies()
+            await vm.fetchContent()
         }
         .opacity(vm.showError ? 0 : 1)
         .onChange(of: vm.swipeCount, { oldValue, newValue in
