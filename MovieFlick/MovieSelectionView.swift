@@ -17,24 +17,26 @@ struct MovieSelectionView: View {
                 .font(.title)
                 .foregroundStyle(.yellow)
                 .bold()
-            Text(vm.movieSelected.title)
-                .font(.title)
-                .foregroundStyle(.yellow)
-                .bold()
-            if let uiImage = vm.movieSelected.cardImage {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 350)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-            } else {
-                CustomErrorView(alertTitle: "Image can not be loaded. Try again please.",
-                                alertMessage: vm.errorMsg) {
-                    Task {
-                        await vm.fetchMovies()
+            if let selectedMovie = vm.movieSelected {
+                Text(selectedMovie.title)
+                    .font(.title)
+                    .foregroundStyle(.yellow)
+                    .bold()
+                if let uiImage = selectedMovie.cardImage {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 350)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                } else {
+                    CustomErrorView(alertTitle: "Image can not be loaded. Try again please.",
+                                    alertMessage: vm.errorMsg) {
+                        Task {
+                            await vm.fetchMovies()
+                        }
                     }
+                    .padding(.bottom, 68)
                 }
-                .padding(.bottom, 68)
             }
             Spacer()
             AppButton(title: "Restart") {

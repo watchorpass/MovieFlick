@@ -24,7 +24,8 @@ final class MovieFlickViewModel {
     var resultMovies: [Movie] = []
     var moviesWithCard: [Movie] = []
     var playersName: [String] = ["", ""]
-    var movieSelected: Movie = .movieExample
+    
+    var movieSelected: Movie?
 
     var swipeCount: Int = 0
     
