@@ -38,7 +38,8 @@ final class MovieFlickViewModel {
     var errorMsg = ""
     
     let swipeTip = SwipeTip()
-    let genreTip = SwipeTip()
+    let genreTip = GenreTip()
+    let chooseOneTip = ChooseOneTip()
     
     var showLoadingView = true
     
@@ -64,7 +65,7 @@ final class MovieFlickViewModel {
         do {
             let movies = try await interactor.getMovies(isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2024, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: selectedGenres, monetizationTypes: nil)
             
-            moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
+            moviesWithCard = try await interactor.loadCardImages(for: movies).reversed().dropLast(15)
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
         } catch {

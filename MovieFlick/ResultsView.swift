@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct ResultsView: View {
     @Environment(MovieFlickViewModel.self) var vm
@@ -35,23 +36,23 @@ struct ResultsView: View {
             .safeAreaInset(edge: .bottom) {
                 HStack {
                     AppButton(title: "Restart Game") {
+                        vm.swipeTip.invalidate(reason: .actionPerformed)
                         vm.showLoadingView = true
                         vm.playersName = ["", ""]
                         vm.viewState = .startView
                     }
                     
                     AppButton(title: "Choose one") {
+                        vm.swipeTip.invalidate(reason: .actionPerformed)
                         vm.randomMovie()
                         vm.viewState = .movieSelection
                     }
+                    .popoverTip(vm.chooseOneTip)
                 }
                 .padding()
             }
         }
         .appBackground()
-        .onAppear {
-//            vm.swipeTip.invalidate(reason: .actionPerformed)
-        }
     }
 }
 
