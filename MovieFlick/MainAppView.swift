@@ -22,6 +22,8 @@ struct MainAppView: View {
                 NextPlayerView()
             case .resultView:
                 Text("ResultView")
+            case .movieSelection:
+                MovieSelectionView()
             case .providerView:
                 ProvidersView()
             }

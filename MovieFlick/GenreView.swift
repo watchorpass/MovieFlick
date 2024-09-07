@@ -14,10 +14,10 @@ struct GenreView: View {
             GeometryReader { geometry in
                 ScrollView {
                     LazyVGrid(columns: gridColums, spacing: 20) {
-                        ForEach(Genre.allCases, id: \.self) { genre in
+                        ForEach(Genre.GenreListByType(type: vm.selectedType) , id: \.self) { genre in
                             GridCellComponent(title: genre.description,
                                               cellSize: geometry.size.width*0.4,
-                                              image: Image(genre.description)) {
+                                              image: Image("\(genre.description)\(vm.selectedType == .movie ? "" : "TV")")) {
                                 vm.addGenre(genre: genre)
                             }
                           .overlay {

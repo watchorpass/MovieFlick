@@ -70,6 +70,15 @@ enum Genre: Int, CaseIterable {
     case war = 10752
     case western = 37
     
+    case actionAdventure = 10759
+    case kids = 10762
+    case news = 10763
+    case reality = 10764
+    case sciFiFantasy = 10765
+    case soap = 10766
+    case talk = 10767
+    case warPolitics = 10768
+    
     var description: String {
         switch self {
         case .all: return "All Genres"
@@ -92,6 +101,31 @@ enum Genre: Int, CaseIterable {
         case .thriller: return "Thriller"
         case .war: return "War"
         case .western: return "Western"
+            
+        case .actionAdventure: return "Action & Adventure"
+        case .kids: return "Kids"
+        case .news: return "News"
+        case .reality: return "Reality"
+        case .sciFiFantasy: return "Sci-Fi & Fantasy"
+        case .soap: return "Soap"
+        case .talk: return "Talk"
+        case .warPolitics: return "War & Politics"
+        }
+    }
+    
+    static var MovieGenres: [Self] {
+        [.all,.action,.adventure,.animation,.comedy,.crime,.documentary,.drama,.family,.fantasy,.history,.horror,.music,.mystery,.romance,.scienceFiction,.tvMovie,.thriller,.war,.western]
+    }
+    static var TVGenres: [Self] {
+        [.all, .actionAdventure, .animation, .comedy, .crime, .documentary, .drama, .family, .kids, .mystery, .news, .reality, .sciFiFantasy, .soap, .talk, .warPolitics, .western]
+    }
+    
+    static func GenreListByType(type: SelectedType) -> [Self] {
+        switch type {
+        case .movie:
+            Self.MovieGenres
+        case .serie:
+            Self.TVGenres
         }
     }
 }
