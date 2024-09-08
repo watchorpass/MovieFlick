@@ -10,7 +10,7 @@ import SwiftUI
 struct ProvidersView: View {
     @Environment(MovieFlickViewModel.self) var vm
     
-    var gridColums = [GridItem(), GridItem(), GridItem()]
+    var gridColums = [GridItem(), GridItem()]
     
     var body: some View {
         VStack(spacing: 8) {
@@ -22,12 +22,15 @@ struct ProvidersView: View {
                 ScrollView {
                     LazyVGrid(columns: gridColums, spacing: 20) {
                         ForEach(Provider.avaibleProviders, id: \.self) { provider in
-                            CellProvider(cellSize: 80, image: Image("\(provider)")) {
+                            GridCellComponent(title: "", cellSize: geometry.size.width*0.40,
+                                              image: Image("\(provider)")) {
                                 vm.addprovider(provider: provider)
                             }
-                            .clipShape(Circle())
-                            .overlay(Circle().stroke(vm.selectedProviders.contains(provider) ? .yellow : .gray, lineWidth: 4))
-                            
+                          .overlay {
+                              RoundedRectangle(cornerRadius: geometry.size.width*0.4/10)
+                                  .stroke(lineWidth: 4)
+                                  .fill(vm.selectedProviders.contains(provider) ? .yellow : .clear)
+                          }
                           .padding(4)
                         }
                     }

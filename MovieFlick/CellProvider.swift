@@ -24,8 +24,7 @@ struct CellProvider: View {
                 .scaledToFill()
                 .frame(width: cellSize, height: cellSize)
                 .background(.ultraThinMaterial)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.white, lineWidth: 4))
+
                 .shadow(radius: 10)
         }
     }
@@ -35,13 +34,13 @@ struct CellProvider: View {
 
 #Preview ("Providers") {
     Grid {
-        CellProvider(cellSize: 100, image: Image("appleTV"), action: {})
-        CellProvider(cellSize: 100, image: Image("netflix"), action: {})
-        CellProvider(cellSize: 100, image: Image("amazonPrimeVideo"), action: {})
-        CellProvider(cellSize: 100, image: Image("crunchyroll"), action: {})
-        CellProvider(cellSize: 100, image: Image("disneyPlus"), action: {})
-        CellProvider(cellSize: 100, image: Image("filmin"), action: {})
-        CellProvider(cellSize: 100, image: Image("hboMax"), action: {})
+        CellProvider(cellSize: 100, image: Image("AppleTV"), action: {})
+        CellProvider(cellSize: 100, image: Image("Netflix"), action: {})
+        CellProvider(cellSize: 100, image: Image("PrimeVideo"), action: {})
+        CellProvider(cellSize: 100, image: Image("Crunchyroll"), action: {})
+        CellProvider(cellSize: 100, image: Image("DisneyPlus"), action: {})
+        CellProvider(cellSize: 100, image: Image("Filmin"), action: {})
+        CellProvider(cellSize: 100, image: Image("MAX"), action: {})
 
     }
 }
