@@ -32,7 +32,6 @@ struct GenreView: View {
                         }
                     }
                     Spacer(minLength: 65)
-                    
                 }
             }
         }
