@@ -21,6 +21,14 @@ struct NewCard: View {
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFill()
+                    .overlay(alignment: .bottomTrailing) {
+                        Image(systemName: "info.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 40)
+                            .foregroundStyle(.yellow)
+                            .padding(16)
+                    }
             }
             SwipeActionIndicationView(xOffset: $xOffset, screenCutoff: screenCutoff)
                 .frame(width: cardWidth)

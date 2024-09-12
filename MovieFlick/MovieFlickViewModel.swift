@@ -20,6 +20,8 @@ final class MovieFlickViewModel {
     var moviesWithCard: [Movie] = []
     var playersName: [String] = ["Alex", "Fran"]
     
+    var selectedMovie: Movie?
+    
     var swipeCount: Int = 0
     
     var viewState: ViewState = .startView
@@ -73,5 +75,9 @@ final class MovieFlickViewModel {
                 selectedGenres.append(genre)
             }
         }
+    }
+    
+    func movieSelected(_ index: Int) -> Movie {
+        return moviesWithCard[index]
     }
 }

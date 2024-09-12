@@ -10,6 +10,7 @@ import SwiftUI
 struct ResultsView: View {
     @Environment(MovieFlickViewModel.self) var vm
     let items: [GridItem] = [GridItem(), GridItem()]
+    @State var showDetail = false
     
     var body: some View {
         VStack(spacing: 26) {
@@ -27,6 +28,18 @@ struct ResultsView: View {
                                 .scaledToFit()
                                 .frame(width: 160)
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
+                                .overlay(alignment: .bottomTrailing) {
+                                    Image(systemName: "info.circle")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 20)
+                                        .foregroundStyle(.yellow)
+                                        .padding(16)
+                                        .onTapGesture {
+                                            vm.selectedMovie = movie
+                                            showDetail.toggle()
+                                        }
+                                }
                         } else {
                             Image(systemName: "popcorn")
                         }
@@ -43,6 +56,11 @@ struct ResultsView: View {
                 }
             }
         }
+        .sheet(isPresented: $showDetail, content: {
+            if let movie = vm.selectedMovie {
+                DetailView(movie: movie)
+            }
+        })
         .padding()
         .appBackground()
     }

@@ -2,13 +2,21 @@ import SwiftUI
 
 struct CardStackView: View {
     @Environment(MovieFlickViewModel.self) var vm
+    @State var showDetail = false
+    @State var selectedMovie: Movie?
     
     var body: some View {
         VStack {
             ZStack {
                 ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
-                    NewCard(movie: movie)
-                        .offset(y: CGFloat(Double(index) * 1))
+                    VStack {
+                        NewCard(movie: movie)
+                            .onTapGesture {
+                                vm.selectedMovie = vm.movieSelected(index)
+                                showDetail.toggle()
+                            }
+                    }
+                    .offset(y: CGFloat(Double(index) * 1))
                 }
             }
             .padding(.top, 48)
@@ -23,6 +31,15 @@ struct CardStackView: View {
                 vm.viewState = .playerTwoView
             }
         })
+        .sheet(isPresented: $showDetail, content: {
+            if let selected = vm.selectedMovie {
+                DetailView(movie: selected)
+                    .presentationBackground(.ultraThinMaterial)
+            } else {
+                Text("HELLO")
+                    .presentationBackground(.ultraThinMaterial)
+            }
+        })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground()
         .overlay {
@@ -32,8 +49,8 @@ struct CardStackView: View {
                     await vm.fetchMovies()
                 }
             }
-            .padding(.bottom, 68)
-            .opacity(vm.showError ? 1 : 0)
+                            .padding(.bottom, 68)
+                            .opacity(vm.showError ? 1 : 0)
         }
     }
 }

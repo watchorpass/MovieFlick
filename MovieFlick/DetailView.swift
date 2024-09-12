@@ -8,36 +8,57 @@
 import SwiftUI
 
 struct DetailView: View {
-    @Environment(MovieFlickViewModel.self) var vm
-    var movie: Movie? = nil
+    var movie: Movie
     
     var body: some View {
-        VStack (spacing: 32) {
-            if let uiImage = movie?.cardImage {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 300)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                Text(movie?.overview ?? "Overview no available")
-                    .foregroundStyle(.white)
-                    .padding(.horizontal)
-                StarsRateComponent(rate: movie?.voteAverage ?? 0.0, starSize: 40)
-            } else {
-                CustomErrorView(alertTitle: "UPS... Something went wrong",
-                                alertMessage: vm.errorMsg) {
-                    Task {
-                        await vm.fetchMovies()
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 12) {
+                if let uiImage = movie.cardImage {
+                    ZStack(alignment: .bottom) {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: .infinity)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                        ZStack(alignment: .bottom) {
+                            RoundedRectangle(cornerRadius: 10)
+                                .frame(maxWidth: .infinity, maxHeight: 300)
+                                .foregroundStyle(LinearGradient(colors: [.black, .clear, .clear, .clear],
+                                                                startPoint: .bottom,
+                                                                endPoint: .top))
+                        }
                     }
+                } else {
+                    Image(systemName: "popcorn")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
-                                .padding(.bottom, 68)
+                VStack(alignment: .leading) {
+                    HStack{
+                        Text("Rate:")
+                            .font(.title3)
+                            .bold()
+                            .foregroundStyle(.yellow)
+                        StarsRateComponent(rate: movie.voteAverage, starSize: 18)
+                        Spacer()
+                        Text(movie.releaseDate)
+                            .foregroundStyle(.yellow)
+                    }
+                    Text(movie.overview)
+                        .font(.title2)
+                        .foregroundStyle(.white)
+                }
+                .padding(.horizontal)
             }
+            .padding(.bottom, UIDevice.bottomInsetSize)
         }
         .appBackground()
+        .ignoresSafeArea()
     }
 }
 
 #Preview {
-    DetailView()
-        .environment(MovieFlickViewModel())
+    DetailView(movie: .previewMovie)
 }
