@@ -119,4 +119,8 @@ final class MovieFlickViewModel {
             }
         }
     }
+    
+    func playersWithoutName() -> Bool {
+        playersName.contains("")
+    }
 }

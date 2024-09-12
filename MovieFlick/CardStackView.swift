@@ -6,6 +6,13 @@ struct CardStackView: View {
 
     var body: some View {
         VStack {
+            if let name = vm.playersName.first {
+                Text(name + "'s turn")
+                    .font(.title2)
+                    .fontWeight(.heavy)
+                    .foregroundStyle(.yellow)
+                    .padding(.top)
+            }
             ZStack {
                 ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
                     NewCard(movie: movie)
