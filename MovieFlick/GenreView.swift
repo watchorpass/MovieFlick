@@ -1,4 +1,5 @@
 import SwiftUI
+import TipKit
 
 struct GenreView: View {
     @Environment(MovieFlickViewModel.self) var vm
@@ -13,6 +14,8 @@ struct GenreView: View {
                 .foregroundStyle(.yellow)
             GeometryReader { geometry in
                 ScrollView {
+                    TipView(vm.genreTip)
+                        .padding()
                     LazyVGrid(columns: gridColums, spacing: 20) {
                         ForEach(Genre.GenreListByType(type: vm.selectedType) , id: \.self) { genre in
                             GridCellComponent(title: genre.description,

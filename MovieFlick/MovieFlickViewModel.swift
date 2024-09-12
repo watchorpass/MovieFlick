@@ -37,7 +37,11 @@ final class MovieFlickViewModel {
     var showError = false
     var errorMsg = ""
     
-    var showLoadingView = true    
+    let swipeTip = SwipeTip()
+    let genreTip = GenreTip()
+    let chooseOneTip = ChooseOneTip()
+    
+    var showLoadingView = true
     
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
