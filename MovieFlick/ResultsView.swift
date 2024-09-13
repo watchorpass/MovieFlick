@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct ResultsView: View {
     @Environment(MovieFlickViewModel.self) var vm
@@ -14,11 +15,10 @@ struct ResultsView: View {
     
     var body: some View {
         VStack(spacing: 26) {
-            Text("MOVIE MATCHES")
+            Text("\(vm.selectedType.rawValue) MATCHES")
                 .font(.title)
                 .fontWeight(.heavy)
                 .foregroundStyle(Color.yellow)
-            
             ScrollView {
                 LazyVGrid(columns: items) {
                     ForEach(vm.resultMovies) { movie in
@@ -46,14 +46,23 @@ struct ResultsView: View {
                     }
                 }
             }
-            HStack {
-                AppButton(title: "Restart Game") {
-                    vm.viewState = .startView
-                }
-                
-                AppButton(title: "Choose one") {
+            .safeAreaInset(edge: .bottom) {
+                HStack {
+                    AppButton(title: "Restart Game") {
+                        vm.swipeTip.invalidate(reason: .actionPerformed)
+                        vm.showLoadingView = true
+                        vm.playersName = ["", ""]
+                        vm.viewState = .startView
+                    }
                     
+                    AppButton(title: "Choose one") {
+                        vm.swipeTip.invalidate(reason: .actionPerformed)
+                        vm.randomMovie()
+                        vm.viewState = .movieSelection
+                    }
+                    .popoverTip(vm.chooseOneTip)
                 }
+                .padding()
             }
         }
         .sheet(isPresented: $showDetail, content: {

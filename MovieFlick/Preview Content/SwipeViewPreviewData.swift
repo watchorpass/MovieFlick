@@ -20,3 +20,5 @@ let myMockArray: [MovieModel] = [
     MovieModel(title: "Dr Strange", url: URL(string: "https://image.tmdb.org/t/p/w500/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg")!),
     MovieModel(title: "Thor", url: URL(string: "https://image.tmdb.org/t/p/w500/prSfAi1xGrhLQNxVSUFh61xQ4Qy.jpg")!)
 ]
+
+

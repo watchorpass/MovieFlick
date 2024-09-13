@@ -7,10 +7,16 @@ enum ViewState {
     case playersView
     case chooseTypeView
     case filterView
+    case providerView
     case genreView
     case swipeView
     case playerTwoView
     case resultView
+    case movieSelection
+}
+enum SelectedType:  String {
+    case movie = "MOVIE"
+    case serie = "SERIE"
 }
 
 @Observable
@@ -18,7 +24,7 @@ final class MovieFlickViewModel {
     let interactor: MovieListInteractorProtocol
     var resultMovies: [Movie] = []
     var moviesWithCard: [Movie] = []
-    var playersName: [String] = ["Alex", "Fran"]
+    var playersName: [String] = ["", ""]
     
     var selectedMovie: Movie?
     
@@ -27,12 +33,30 @@ final class MovieFlickViewModel {
     var viewState: ViewState = .startView
     var sortType: SortType = .popularity
     var selectedGenres: [Genre] = [.all]
+    var selectedType: SelectedType = .movie
+    var selectedProviders: [Provider] = []
     
     var showError = false
     var errorMsg = ""
     
+    let swipeTip = SwipeTip()
+    let genreTip = GenreTip()
+    let chooseOneTip = ChooseOneTip()
+    
+    var showLoadingView = true
+    
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
+    }
+    
+    func randomMovie() {
+        if let movieWinner = resultMovies.randomElement() {
+            movieSelected = movieWinner
+        }
+        Task {
+            try? await Task.sleep(nanoseconds: 5_000_000_000)
+            showLoadingView.toggle()
+        }
     }
     
     func restartCount() {
@@ -41,7 +65,7 @@ final class MovieFlickViewModel {
     
     func fetchMovies() async {
         do {
-            let movies = try await interactor.getMovies(isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2024, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: selectedGenres, monetizationTypes: nil)
+            let movies = try await interactor.getMovies(isAdult: true, includesVideo: nil, page: 1, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
             
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
             resultMovies = moviesWithCard
@@ -52,6 +76,27 @@ final class MovieFlickViewModel {
         }
     }
     
+    func fetchSeries() async {
+        do {
+            let movies = try await interactor.getSeries(isAdult: true, includesVideo: nil, page: 1, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
+            
+            moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
+            resultMovies = moviesWithCard
+            swipeCount = moviesWithCard.count
+        } catch {
+            showError.toggle()
+            errorMsg = "Check your internet connection and try again"
+        }
+    }
+    
+    func fetchContent() async {
+        switch selectedType {
+        case .movie:
+            await fetchMovies()
+        case .serie:
+            await fetchSeries()
+        }
+    }
     func removeCard(_ movie: Movie) {
         guard let index = moviesWithCard.firstIndex(where: {$0.id == movie.id }) else { return }
         moviesWithCard.remove(at: index)
@@ -79,5 +124,17 @@ final class MovieFlickViewModel {
     
     func movieSelected(_ index: Int) -> Movie {
         return moviesWithCard[index]
+    }
+    
+    func playersWithoutName() -> Bool {
+        playersName.contains("")
+    }
+    
+    func addprovider(provider: Provider) {
+        if selectedProviders.contains(provider) {
+            selectedProviders.removeAll { $0 == provider }
+        } else {
+            selectedProviders.append(provider)
+        }
     }
 }
