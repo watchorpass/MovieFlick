@@ -26,8 +26,8 @@ final class MovieFlickViewModel {
     var moviesWithCard: [Movie] = []
     var playersName: [String] = ["", ""]
     
-    var movieSelected: Movie?
-
+    var selectedMovie: Movie?
+    
     var swipeCount: Int = 0
     
     var viewState: ViewState = .startView
@@ -51,7 +51,7 @@ final class MovieFlickViewModel {
     
     func randomMovie() {
         if let movieWinner = resultMovies.randomElement() {
-            movieSelected = movieWinner
+            selectedMovie = movieWinner
         }
         Task {
             try? await Task.sleep(nanoseconds: 5_000_000_000)
@@ -120,6 +120,10 @@ final class MovieFlickViewModel {
                 selectedGenres.append(genre)
             }
         }
+    }
+    
+    func movieSelected(_ index: Int) -> Movie {
+        return moviesWithCard[index]
     }
     
     func playersWithoutName() -> Bool {

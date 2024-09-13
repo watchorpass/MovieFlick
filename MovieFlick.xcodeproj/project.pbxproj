@@ -32,6 +32,7 @@
 		5F1919022C845F1300BDCF48 /* LoadingSelectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1919012C845F1300BDCF48 /* LoadingSelectingView.swift */; };
 		5F51D2AC2C80C06400BA1318 /* MovieSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F51D2AB2C80C06400BA1318 /* MovieSelectionView.swift */; };
 		5F5BC29C2C724ABE0019D8AC /* AppBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5BC29B2C724ABE0019D8AC /* AppBackground.swift */; };
+		5F6D37102C883B4200DE7040 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D370F2C883B4200DE7040 /* DetailView.swift */; };
 		5FC30F1E2C870D3D00D07EAD /* TipKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC30F1D2C870D3D00D07EAD /* TipKit.swift */; };
 		5FE312922C75E70700C0971F /* PlayerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE312912C75E70700C0971F /* PlayerTextField.swift */; };
 		5FEDFE1F2C83786900A01C04 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEDFE1E2C83786900A01C04 /* GifImage.swift */; };
@@ -80,6 +81,7 @@
 		5F1919012C845F1300BDCF48 /* LoadingSelectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSelectingView.swift; sourceTree = "<group>"; };
 		5F51D2AB2C80C06400BA1318 /* MovieSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSelectionView.swift; sourceTree = "<group>"; };
 		5F5BC29B2C724ABE0019D8AC /* AppBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackground.swift; sourceTree = "<group>"; };
+		5F6D370F2C883B4200DE7040 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		5FC30F1D2C870D3D00D07EAD /* TipKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipKit.swift; sourceTree = "<group>"; };
 		5FE312912C75E70700C0971F /* PlayerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTextField.swift; sourceTree = "<group>"; };
 		5FEDFE1E2C83786900A01C04 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				1ABFB2562C7B05A600473726 /* SwipeCard.swift */,
 				1ABFB2642C7E16F700473726 /* BackButtonComponent.swift */,
 				1ABFB2662C7F0ADC00473726 /* CustomErrorView.swift */,
+				5F6D370F2C883B4200DE7040 /* DetailView.swift */,
 				D30664492C8A32A400ABED1A /* CellProvider.swift */,
 				5F1919012C845F1300BDCF48 /* LoadingSelectingView.swift */,
 			);
@@ -436,6 +439,7 @@
 				5FE312922C75E70700C0971F /* PlayerTextField.swift in Sources */,
 				1A0036402C6DF5B100DC89C0 /* SwipeGestureModifier.swift in Sources */,
 				D3BF08832C75030000F487F2 /* PreviewData.swift in Sources */,
+				5F6D37102C883B4200DE7040 /* DetailView.swift in Sources */,
 				D3BF08772C75021400F487F2 /* URL.swift in Sources */,
 				1A0035EC2C66114B00DC89C0 /* MovieFlickApp.swift in Sources */,
 				5F0A47CA2C6FAF7300EAFC02 /* PlayersView.swift in Sources */,
