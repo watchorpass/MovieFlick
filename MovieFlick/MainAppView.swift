@@ -24,6 +24,8 @@ struct MainAppView: View {
                 Text("ResultView")
             case .movieSelection:
                 MovieSelectionView()
+            case .providerView:
+                ProvidersView()
             }
         }
         .animation(.spring, value: vm.viewState)

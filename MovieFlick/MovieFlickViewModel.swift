@@ -7,6 +7,7 @@ enum ViewState {
     case playersView
     case chooseTypeView
     case filterView
+    case providerView
     case genreView
     case swipeView
     case playerTwoView
@@ -33,6 +34,7 @@ final class MovieFlickViewModel {
     var sortType: SortType = .popularity
     var selectedGenres: [Genre] = [.all]
     var selectedType: SelectedType = .movie
+    var selectedProviders: [Provider] = []
     
     var showError = false
     var errorMsg = ""
@@ -63,7 +65,7 @@ final class MovieFlickViewModel {
     
     func fetchMovies() async {
         do {
-            let movies = try await interactor.getMovies(isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2024, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: selectedGenres, monetizationTypes: nil)
+            let movies = try await interactor.getMovies(isAdult: true, includesVideo: nil, page: 1, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
             
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
             resultMovies = moviesWithCard
@@ -76,7 +78,7 @@ final class MovieFlickViewModel {
     
     func fetchSeries() async {
         do {
-            let movies = try await interactor.getSeries(isAdult: true, includesVideo: false, page: 1, sortBy: .popularity, releaseYear: 2024, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: nil, providers: nil, genres: selectedGenres, monetizationTypes: nil)
+            let movies = try await interactor.getSeries(isAdult: true, includesVideo: nil, page: 1, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
             
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
             resultMovies = moviesWithCard
@@ -122,5 +124,13 @@ final class MovieFlickViewModel {
     
     func playersWithoutName() -> Bool {
         playersName.contains("")
+    }
+    
+    func addprovider(provider: Provider) {
+        if selectedProviders.contains(provider) {
+            selectedProviders.removeAll { $0 == provider }
+        } else {
+            selectedProviders.append(provider)
+        }
     }
 }

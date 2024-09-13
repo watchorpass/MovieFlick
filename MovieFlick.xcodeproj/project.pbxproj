@@ -39,6 +39,8 @@
 		A106CFD32C73502200762871 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106CFD22C73502200762871 /* FilterView.swift */; };
 		A106CFD52C73536000762871 /* GenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106CFD42C73536000762871 /* GenreView.swift */; };
 		A1C77F4A2C676264008B018F /* GridCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C77F492C676264008B018F /* GridCellComponent.swift */; };
+		D30664482C89C54400ABED1A /* ProvidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30664472C89C54400ABED1A /* ProvidersView.swift */; };
+		D306644A2C8A32A400ABED1A /* CellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30664492C8A32A400ABED1A /* CellProvider.swift */; };
 		D329B1432C84E07C00808E1C /* TVSerieDTOList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329B1422C84E07C00808E1C /* TVSerieDTOList.swift */; };
 		D32CA7962C6A01FA009DF748 /* StarsRateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CA7952C6A01FA009DF748 /* StarsRateComponent.swift */; };
 		D32CA79E2C6C07C5009DF748 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CA79D2C6C07C5009DF748 /* AppButton.swift */; };
@@ -85,6 +87,8 @@
 		A106CFD22C73502200762871 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		A106CFD42C73536000762871 /* GenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreView.swift; sourceTree = "<group>"; };
 		A1C77F492C676264008B018F /* GridCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCellComponent.swift; sourceTree = "<group>"; };
+		D30664472C89C54400ABED1A /* ProvidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidersView.swift; sourceTree = "<group>"; };
+		D30664492C8A32A400ABED1A /* CellProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProvider.swift; sourceTree = "<group>"; };
 		D30664462C899AA300ABED1A /* PreviewDataSeriesList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PreviewDataSeriesList.json; sourceTree = "<group>"; };
 		D329B1422C84E07C00808E1C /* TVSerieDTOList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSerieDTOList.swift; sourceTree = "<group>"; };
 		D32CA7952C6A01FA009DF748 /* StarsRateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsRateComponent.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 				5F0A47C92C6FAF7300EAFC02 /* PlayersView.swift */,
 				5FFFEC542C71D738002FB36B /* ChooseTypeView.swift */,
 				A106CFD22C73502200762871 /* FilterView.swift */,
+				D30664472C89C54400ABED1A /* ProvidersView.swift */,
 				A106CFD42C73536000762871 /* GenreView.swift */,
 				1ABFB2582C7B060700473726 /* CardStackView.swift */,
 				1ABFB25C2C7CE40200473726 /* NextPlayerView.swift */,
@@ -210,6 +215,7 @@
 				1ABFB2562C7B05A600473726 /* SwipeCard.swift */,
 				1ABFB2642C7E16F700473726 /* BackButtonComponent.swift */,
 				1ABFB2662C7F0ADC00473726 /* CustomErrorView.swift */,
+				D30664492C8A32A400ABED1A /* CellProvider.swift */,
 				5F1919012C845F1300BDCF48 /* LoadingSelectingView.swift */,
 			);
 			name = Components;
@@ -425,6 +431,7 @@
 				D32CA79E2C6C07C5009DF748 /* AppButton.swift in Sources */,
 				5F51D2AC2C80C06400BA1318 /* MovieSelectionView.swift in Sources */,
 				1A0036462C6DF67800DC89C0 /* Image+Extension.swift in Sources */,
+				D306644A2C8A32A400ABED1A /* CellProvider.swift in Sources */,
 				D3EF5B6B2C75F9C400558003 /* Enums.swift in Sources */,
 				5FE312922C75E70700C0971F /* PlayerTextField.swift in Sources */,
 				1A0036402C6DF5B100DC89C0 /* SwipeGestureModifier.swift in Sources */,
@@ -440,6 +447,7 @@
 				1ABFB2612C7DC34200473726 /* ResultsView.swift in Sources */,
 				5FEDFE1F2C83786900A01C04 /* GifImage.swift in Sources */,
 				A106CFD32C73502200762871 /* FilterView.swift in Sources */,
+				D30664482C89C54400ABED1A /* ProvidersView.swift in Sources */,
 				5FFFEC552C71D738002FB36B /* ChooseTypeView.swift in Sources */,
 				1ABFB25D2C7CE40200473726 /* NextPlayerView.swift in Sources */,
 				1A0036442C6DF64400DC89C0 /* View+Extension.swift in Sources */,

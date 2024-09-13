@@ -26,22 +26,26 @@ enum SortType: String {
     case voteCount = "vote_count.desc"
 }
 
-enum Provider: Int {
-    case netflix = 8
-    case appleTV = 2
-    case movistarPlus = 149
-    case hboMax = 1899
-    case youtubePremium = 188
-    case amazonPrimeVideo = 119
-    case flixOle = 393
-    case disneyPlus = 337
-    case filmin = 64
-    case rakutenTV = 35
-    case atresplayer = 62
+enum Provider: Int, CaseIterable {
+    case Netflix = 8
+    case AppleTV = 2
+    case MovistarPlus = 149
+    case MAX = 1899
+    case YoutubePremium = 188
+    case PrimeVideo = 119
+    case FlixOle = 393
+    case DisneyPlus = 337
+    case Filmin = 64
+    case RakutenTV = 35
+    case Atresplayer = 62
     case rtve = 541
     case mubi = 11
     case skyShowtime = 1773
-    case crunchyroll = 283
+    case Crunchyroll = 283
+    
+    static var avaibleProviders: [Self] {
+        [.Netflix, .PrimeVideo, .MAX, .AppleTV, .MovistarPlus, .DisneyPlus, .Filmin, .Crunchyroll, .FlixOle]
+    }
 }
 
 enum Genre: Int, CaseIterable {
