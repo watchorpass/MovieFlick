@@ -1,10 +1,18 @@
 import SwiftUI
+import TipKit
 
 struct CardStackView: View {
     @Environment(MovieFlickViewModel.self) var vm
-    
+
     var body: some View {
         VStack {
+            if let name = vm.playersName.first {
+                Text(name + "'s turn")
+                    .font(.title2)
+                    .fontWeight(.heavy)
+                    .foregroundStyle(.yellow)
+                    .padding(.top)
+            }
             ZStack {
                 ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
                     NewCard(movie: movie)
@@ -12,6 +20,7 @@ struct CardStackView: View {
                 }
             }
             .padding(.top, 48)
+            .popoverTip(vm.swipeTip)
             Spacer()
         }
         .task {
@@ -48,4 +57,8 @@ struct CardStackView: View {
 #Preview {
     CardStackView()
         .environment(MovieFlickViewModel())
+        .task {
+            try? Tips.configure([
+                .datastoreLocation(.applicationDefault)])
+        }
 }
