@@ -51,7 +51,7 @@ final class MovieFlickViewModel {
     
     func randomMovie() {
         if let movieWinner = resultMovies.randomElement() {
-            movieSelected = movieWinner
+            selectedMovie = movieWinner
         }
         Task {
             try? await Task.sleep(nanoseconds: 5_000_000_000)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MovieSelectionView: View {
     @Environment(MovieFlickViewModel.self) var vm
-    @State var showSheet = false
+    @State var showDetail = false
     
     var body: some View {
         VStack {
@@ -17,7 +17,7 @@ struct MovieSelectionView: View {
                 .font(.title)
                 .foregroundStyle(.yellow)
                 .bold()
-            if let selectedMovie = vm.movieSelected {
+            if let selectedMovie = vm.selectedMovie {
                 Text(selectedMovie.title)
                     .font(.title)
                     .foregroundStyle(.yellow)
@@ -28,6 +28,18 @@ struct MovieSelectionView: View {
                         .scaledToFit()
                         .frame(width: 350)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .overlay(alignment: .bottomTrailing) {
+                            Image(systemName: "info.circle")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20)
+                                .foregroundStyle(.yellow)
+                                .padding(16)
+                                .onTapGesture {
+                                    vm.selectedMovie = selectedMovie
+                                    showDetail.toggle()
+                                }
+                        }
                 } else {
                     CustomErrorView(alertTitle: "Image can not be loaded. Try again please.",
                                     alertMessage: vm.errorMsg) {
@@ -43,6 +55,11 @@ struct MovieSelectionView: View {
                 vm.showLoadingView = true
                 vm.playersName = ["", ""]
                 vm.viewState = .startView
+            }
+        }
+        .sheet(isPresented: $showDetail) {
+            if let movie = vm.selectedMovie {
+                DetailView(movie: movie)
             }
         }
         .padding(.horizontal, 12)
