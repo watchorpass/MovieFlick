@@ -34,6 +34,13 @@ struct CardStackView: View {
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground()
+        .overlay(alignment: .topLeading) {
+            BackButtonComponent {
+                vm.restartCount()
+                vm.viewState = .genreView
+            }
+            .padding(.leading, 24)
+        }
         .overlay {
             CustomErrorView(alertTitle: "UPS... Something went wrong",
                             alertMessage: vm.errorMsg) {
