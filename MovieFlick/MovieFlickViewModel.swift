@@ -126,10 +126,6 @@ final class MovieFlickViewModel {
         return moviesWithCard[index]
     }
     
-    func movieSelected(_ index: Int) -> Movie {
-        return moviesWithCard[index]
-    }
-    
     func playersWithoutName() -> Bool {
         playersName.contains("")
     }

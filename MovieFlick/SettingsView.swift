@@ -10,26 +10,29 @@ struct SettingsView: View {
         HStack{
             Spacer()
             Button{
-              dismiss()
+                dismiss()
             } label: {
                 Image(systemName: "xmark.circle.fill")
                     .font(.title)
                     .foregroundStyle(.regularMaterial)
-                    
+                
             }
             .padding()
         }
         VStack(spacing: 20) {
+            Image(systemName: "gear")
             Text("⚙️ Settings")
                 .font(.largeTitle)
             DisclosureGroup("Platforms allowed", isExpanded: $isExpanded) {
-                ForEach(Provider.allCases, id: \.self) { provider in
-                    HStack {
-                        Toggle(provider.description, isOn: Binding(get: {
+                VStack {
+                    ForEach(Provider.avaibleProviders, id: \.self) { provider in
+                        Toggle("\(provider)", isOn: Binding(get: {
                             vm.isProviderSelected(provider: provider)
                         }, set: { isOn in
                             vm.toggleProvider(provider: provider)
                         }))
+                        .padding(.horizontal)
+                        
                     }
                 }
             }
@@ -42,11 +45,11 @@ struct SettingsView: View {
             Text("`Made with ♡ by Alberto, Alex, Fran M., and Fran O.`")
                 .font(.caption)
         }
-//        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//        .background {
-//            Color.purple.opacity(0.8)
-//                .ignoresSafeArea()
-//        }
+        //        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        //        .background {
+        //            Color.purple.opacity(0.8)
+        //                .ignoresSafeArea()
+        //        }
     }
 }
 
