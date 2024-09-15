@@ -18,10 +18,12 @@ struct ChooseTypeView: View {
                 .foregroundStyle(.yellow)
             Spacer()
             GridCellComponent(title: "Films", cellSize: 300, image: Image(.interestellar)) {
+                vm.selectedType = .movie
                 vm.viewState = .filterView
             }
                 .padding()
             GridCellComponent(title: "TV Series", cellSize: 300, image: Image(.theLastOfUs)) {
+                vm.selectedType = .serie
                 vm.viewState = .filterView
             }
                 .padding()

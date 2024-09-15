@@ -27,40 +27,24 @@ enum SortType: String {
 }
 
 enum Provider: Int, CaseIterable {
-    case netflix = 8
-    case appleTV = 2
-    case movistarPlus = 149
-    case hboMax = 1899
-    case youtubePremium = 188
-    case amazonPrimeVideo = 119
-    case flixOle = 393
-    case disneyPlus = 337
-    case filmin = 64
-    case rakutenTV = 35
-    case atresplayer = 62
+    case Netflix = 8
+    case AppleTV = 2
+    case MovistarPlus = 149
+    case MAX = 1899
+    case YoutubePremium = 188
+    case PrimeVideo = 119
+    case FlixOle = 393
+    case DisneyPlus = 337
+    case Filmin = 64
+    case RakutenTV = 35
+    case Atresplayer = 62
     case rtve = 541
     case mubi = 11
     case skyShowtime = 1773
-    case crunchyroll = 283
+    case Crunchyroll = 283
     
-    var description: String {
-        switch self {
-            case .netflix: return "Netflix"
-            case .appleTV: return "Apple TV"
-            case .movistarPlus: return "Movistar Plus"
-            case .hboMax: return "HBO Max"
-            case .youtubePremium: return "YouTube Premium"
-            case .amazonPrimeVideo: return "Amazon Prime Video"
-            case .flixOle: return "FlixOlé"
-            case .disneyPlus: return "Disney Plus"
-            case .filmin: return "Filmin"
-            case .rakutenTV: return "Rakuten TV"
-            case .atresplayer: return "Atresplayer"
-            case .rtve: return "RTVE"
-            case .mubi: return "MUBI"
-            case .skyShowtime: return "SkyShowtime"
-            case .crunchyroll: return "Crunchyroll"
-        }
+    static var avaibleProviders: [Self] {
+        [.Netflix, .PrimeVideo, .MAX, .AppleTV, .MovistarPlus, .DisneyPlus, .Filmin, .Crunchyroll, .FlixOle]
     }
 }
 
@@ -86,28 +70,62 @@ enum Genre: Int, CaseIterable {
     case war = 10752
     case western = 37
     
+    case actionAdventure = 10759
+    case kids = 10762
+    case news = 10763
+    case reality = 10764
+    case sciFiFantasy = 10765
+    case soap = 10766
+    case talk = 10767
+    case warPolitics = 10768
+    
     var description: String {
         switch self {
-            case .all: return "All Genres"
-            case .action: return "Action"
-            case .adventure: return "Adventure"
-            case .animation: return "Animation"
-            case .comedy: return "Comedy"
-            case .crime: return "Crime"
-            case .documentary: return "Documentary"
-            case .drama: return "Drama"
-            case .family: return "Family"
-            case .fantasy: return "Fantasy"
-            case .history: return "History"
-            case .horror: return "Horror"
-            case .music: return "Music"
-            case .mystery: return "Mystery"
-            case .romance: return "Romance"
-            case .scienceFiction: return "Science Fiction"
-            case .tvMovie: return "TV Movie"
-            case .thriller: return "Thriller"
-            case .war: return "War"
-            case .western: return "Western"
+        case .all: return "All Genres"
+        case .action: return "Action"
+        case .adventure: return "Adventure"
+        case .animation: return "Animation"
+        case .comedy: return "Comedy"
+        case .crime: return "Crime"
+        case .documentary: return "Documentary"
+        case .drama: return "Drama"
+        case .family: return "Family"
+        case .fantasy: return "Fantasy"
+        case .history: return "History"
+        case .horror: return "Horror"
+        case .music: return "Music"
+        case .mystery: return "Mystery"
+        case .romance: return "Romance"
+        case .scienceFiction: return "Science Fiction"
+        case .tvMovie: return "TV Movie"
+        case .thriller: return "Thriller"
+        case .war: return "War"
+        case .western: return "Western"
+            
+        case .actionAdventure: return "Action & Adventure"
+        case .kids: return "Kids"
+        case .news: return "News"
+        case .reality: return "Reality"
+        case .sciFiFantasy: return "Sci-Fi & Fantasy"
+        case .soap: return "Soap"
+        case .talk: return "Talk"
+        case .warPolitics: return "War & Politics"
+        }
+    }
+    
+    static var MovieGenres: [Self] {
+        [.all,.action,.adventure,.animation,.comedy,.crime,.documentary,.drama,.family,.fantasy,.history,.horror,.music,.mystery,.romance,.scienceFiction,.tvMovie,.thriller,.war,.western]
+    }
+    static var TVGenres: [Self] {
+        [.all, .actionAdventure, .animation, .comedy, .crime, .documentary, .drama, .family, .kids, .mystery, .news, .reality, .sciFiFantasy, .soap, .talk, .warPolitics, .western]
+    }
+    
+    static func GenreListByType(type: SelectedType) -> [Self] {
+        switch type {
+        case .movie:
+            Self.MovieGenres
+        case .serie:
+            Self.TVGenres
         }
     }
 }
