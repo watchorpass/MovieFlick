@@ -5,31 +5,38 @@ struct CardStackView: View {
     @Environment(MovieFlickViewModel.self) var vm
     @State var showDetail = false
     @State var selectedMovie: Movie?
-    
+
     var body: some View {
         VStack {
-            if let name = vm.playersName.first {
-                Text(name + "'s turn")
-                    .font(.title2)
-                    .fontWeight(.heavy)
-                    .foregroundStyle(.yellow)
-                    .padding(.top)
-            }
-            ZStack {
-                ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
-                    VStack {
-                        NewCard(movie: movie)
-                            .onTapGesture {
-                                vm.selectedMovie = vm.movieSelected(index)
-                                showDetail.toggle()
-                            }
+            //ForEach(vm.players, id: \.self) { player in
+            
+            if let player = vm.players.first(where: { !$0.hasPlay }) {
+                Text(player.name + "'s turn")
+                            .font(.title2)
+                            .fontWeight(.heavy)
+                            .foregroundStyle(.yellow)
+                            .padding(.top)
+
+                ZStack {
+                    ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
+                        VStack {
+                            NewCard(movie: movie)
+                                .onTapGesture {
+                                    vm.selectedMovie = vm.movieSelected(index)
+                                    showDetail.toggle()
+                                }
+                        }
+                        .offset(y: CGFloat(Double(index) * 1))
                     }
-                    .offset(y: CGFloat(Double(index) * 1))
                 }
+                .padding(.top, 48)
+                .popoverTip(vm.swipeTip)
+                Spacer()
+            } else {
+                
             }
-            .padding(.top, 48)
-            .popoverTip(vm.swipeTip)
-            Spacer()
+
+
         }
         .task {
             await vm.fetchContent()

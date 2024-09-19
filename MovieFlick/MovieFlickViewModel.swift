@@ -24,7 +24,7 @@ final class MovieFlickViewModel {
     let interactor: MovieListInteractorProtocol
     var resultMovies: [Movie] = []
     var moviesWithCard: [Movie] = []
-    var playersName: [String] = ["", ""]
+    var players: [Player] = [.emptyPlayer, .emptyPlayer]
     
     var selectedMovie: Movie?
     
@@ -127,7 +127,7 @@ final class MovieFlickViewModel {
     }
     
     func playersWithoutName() -> Bool {
-        playersName.contains("")
+        players.map { $0.name }.contains("")
     }
     
     func addprovider(provider: Provider) {
@@ -136,5 +136,9 @@ final class MovieFlickViewModel {
         } else {
             selectedProviders.append(provider)
         }
+    }
+    
+    func addPlayer(name: String, index: Int ) {
+        players[index] = Player(name: name)
     }
 }

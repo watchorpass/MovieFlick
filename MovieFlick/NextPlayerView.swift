@@ -9,10 +9,9 @@ import SwiftUI
 
 struct NextPlayerView: View {
     @Environment(MovieFlickViewModel.self) var vm
-
     var body: some View {
         Group {
-            if let player = vm.playersName.first {
+            if let player = vm.players.first {
                 VStack(spacing: 16) {
                     Text("It's your turn: \(player)")
                         .font(.title2)
@@ -28,7 +27,7 @@ struct NextPlayerView: View {
             }
         }
         .onAppear {
-            vm.playersName.removeFirst()
+            //vm.playersName.removeFirst()
             vm.restartCount()
         }
     }

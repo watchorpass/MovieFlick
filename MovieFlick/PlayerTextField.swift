@@ -11,7 +11,6 @@ struct PlayerTextField: View {
     var backgroundText: String
     @Binding var text: String
     var color: Color
-    
     var body: some View {
         TextField(backgroundText, text: $text)
             .multilineTextAlignment(.center)
@@ -31,5 +30,5 @@ struct PlayerTextField: View {
 }
 
 #Preview {
-    PlayerTextField(backgroundText: "Text Background", text: .constant(String()) , color: .green)
+    PlayerTextField(backgroundText: "Text Background", text: .constant(String()) , color: .green) 
 }

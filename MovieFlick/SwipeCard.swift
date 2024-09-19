@@ -146,5 +146,7 @@ struct SwipeActionIndicationView: View {
 }
 
 #Preview {
-    SwipeActionIndicationView(xOffset: .constant(20), screenCutoff: 500)
+    //SwipeActionIndicationView(xOffset: .constant(20), screenCutoff: 500)
+    NewCard(movie: .previewMovie)
+        .environment(MovieFlickViewModel())
 }
