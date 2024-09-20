@@ -25,6 +25,7 @@ final class MovieFlickViewModel {
     var resultMovies: [Movie] = []
     var moviesWithCard: [Movie] = []
     var players: [Player] = [.emptyPlayer, .emptyPlayer]
+    var selectedPlayer: Player = .emptyPlayer
     
     var selectedMovie: Movie?
     
@@ -140,5 +141,18 @@ final class MovieFlickViewModel {
     
     func addPlayer(name: String, index: Int ) {
         players[index] = Player(name: name)
+    }
+    
+    func updatePlayer(player: Player) {
+        if let index = players.firstIndex(where: { $0.name == player.name }) {
+            players[index] = player
+        }
+    }
+    
+    func nextPlayer(player: Player) -> Player? {
+        if let index = players.firstIndex(where: { $0.name == player.name }) {
+            return players[index + 1]
+        }
+        return nil
     }
 }

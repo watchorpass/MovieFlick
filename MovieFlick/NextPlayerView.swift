@@ -11,9 +11,9 @@ struct NextPlayerView: View {
     @Environment(MovieFlickViewModel.self) var vm
     var body: some View {
         Group {
-            if let player = vm.players.first {
+            if let player = vm.nextPlayer(player: vm.selectedPlayer) {
                 VStack(spacing: 16) {
-                    Text("It's your turn: \(player)")
+                    Text("It's your turn: \(player.name)")
                         .font(.title2)
                         .fontWeight(.heavy)
                         .foregroundStyle(Color.yellow)
@@ -23,7 +23,10 @@ struct NextPlayerView: View {
                 }
                 .appBackground()
             } else {
-                ResultsView()
+                AppButton(title: "See Matches") {
+                    vm.viewState = .resultView
+                }
+                //ResultsView()
             }
         }
         .onAppear {

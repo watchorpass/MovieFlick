@@ -16,8 +16,12 @@ struct CardStackView: View {
                             .fontWeight(.heavy)
                             .foregroundStyle(.yellow)
                             .padding(.top)
+                            .onAppear {
+                                vm.selectedPlayer = player
+                            }
 
                 ZStack {
+                   
                     ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
                         VStack {
                             NewCard(movie: movie)
@@ -29,11 +33,20 @@ struct CardStackView: View {
                         .offset(y: CGFloat(Double(index) * 1))
                     }
                 }
+                .onDisappear{
+                    vm.updatePlayer(player: vm.selectedPlayer)
+                }
                 .padding(.top, 48)
                 .popoverTip(vm.swipeTip)
+//                .onChange(of: player.hasPlay) {
+//                    vm.viewState = .playerTwoView
+//                }
                 Spacer()
-            } else {
-                
+//                if player.moviesPassed == vm.swipeCount {
+//                    task {
+//                       // vm.viewState = .playerTwoView
+//                    }
+//                }
             }
 
 
