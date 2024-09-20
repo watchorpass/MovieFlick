@@ -69,6 +69,7 @@ final class MovieFlickViewModel {
             let movies = try await interactor.getMovies(isAdult: true, includesVideo: nil, page: 1, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
             
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
+            moviesWithCard = [moviesWithCard[0], moviesWithCard[1], moviesWithCard[2]]
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
         } catch {
@@ -151,8 +152,14 @@ final class MovieFlickViewModel {
     
     func nextPlayer(player: Player) -> Player? {
         if let index = players.firstIndex(where: { $0.name == player.name }) {
-            return players[index + 1]
+            if index + 1 < players.count {
+                return players[index + 1]
+            }
         }
         return nil
     }
+    func isLastPlayer(player: Player) -> Bool {
+        players.last == player
+    }
+    
 }

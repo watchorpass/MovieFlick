@@ -21,7 +21,6 @@ struct NextPlayerView: View {
                         vm.viewState = .swipeView
                     }
                 }
-                .appBackground()
             } else {
                 AppButton(title: "See Matches") {
                     vm.viewState = .resultView
@@ -29,6 +28,8 @@ struct NextPlayerView: View {
                 //ResultsView()
             }
         }
+        .appBackground()
+
         .onAppear {
             //vm.playersName.removeFirst()
             vm.restartCount()

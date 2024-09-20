@@ -3,6 +3,7 @@ import TipKit
 
 struct CardStackView: View {
     @Environment(MovieFlickViewModel.self) var vm
+    @State var internalState: Int = 0
     @State var showDetail = false
     @State var selectedMovie: Movie?
 
@@ -10,7 +11,7 @@ struct CardStackView: View {
         VStack {
             //ForEach(vm.players, id: \.self) { player in
             
-            if let player = vm.players.first(where: { !$0.hasPlay }) {
+            if let player = vm.players.first(where: { $0.moviesPassed < vm.swipeCount }) {
                 Text(player.name + "'s turn")
                             .font(.title2)
                             .fontWeight(.heavy)
@@ -21,7 +22,11 @@ struct CardStackView: View {
                             }
 
                 ZStack {
-                   
+                    AppButton(title: "next") {
+                        vm.updatePlayer(player: vm.selectedPlayer)
+                        internalState += 1
+                        //vm.viewState = .playerTwoView
+                    }
                     ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
                         VStack {
                             NewCard(movie: movie)
@@ -33,9 +38,7 @@ struct CardStackView: View {
                         .offset(y: CGFloat(Double(index) * 1))
                     }
                 }
-                .onDisappear{
-                    vm.updatePlayer(player: vm.selectedPlayer)
-                }
+                
                 .padding(.top, 48)
                 .popoverTip(vm.swipeTip)
 //                .onChange(of: player.hasPlay) {
@@ -51,6 +54,7 @@ struct CardStackView: View {
 
 
         }
+        .id(internalState)
         .task {
             await vm.fetchContent()
         }
