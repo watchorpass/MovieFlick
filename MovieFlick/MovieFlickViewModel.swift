@@ -144,6 +144,10 @@ final class MovieFlickViewModel {
         players[index] = Player(name: name)
     }
     
+    func canBeAdded(player: Player) -> Bool {
+        players.filter { $0.name == player.name }.count > 1
+    }
+    
     func updatePlayer(player: Player) {
         if let index = players.firstIndex(where: { $0.name == player.name }) {
             players[index] = player
@@ -151,7 +155,7 @@ final class MovieFlickViewModel {
     }
     
     func nextPlayer(player: Player) -> Player? {
-        if let index = players.firstIndex(where: { $0.name == player.name }) {
+        if let index = players.firstIndex(where: { $0.id == player.id }) {
             if index + 1 < players.count {
                 return players[index + 1]
             }
@@ -159,7 +163,20 @@ final class MovieFlickViewModel {
         return nil
     }
     func isLastPlayer(player: Player) -> Bool {
-        players.last == player
+        players.last?.id ?? .none  == player.id
     }
     
+    func isFirstOfHisName(player: Player) -> Bool {
+        if player.name.isEmpty {
+            return true
+        }
+        if let index = players.firstIndex(where: { $0.name == player.name }) {
+            return players[index].id == player.id
+        }
+        return false
+    }
+    
+    func noSecondNames() -> Bool {
+        return !players.allSatisfy({isFirstOfHisName(player: $0)})
+    }
 }

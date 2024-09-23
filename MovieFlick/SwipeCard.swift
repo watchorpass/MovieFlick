@@ -58,7 +58,7 @@ extension NewCard {
             xOffset = 500
             degrees = 12
         } completion: {
-            viewModel.selectedPlayer.choosedMovies.append(movie)
+            //viewModel.selectedPlayer.choosedMovies.append(movie)
             viewModel.selectedPlayer.moviesPassed += 1
         }
     }

@@ -24,7 +24,7 @@ struct PlayersView: View {
             Spacer()
             ForEach(vm.players.indices, id: \.self) { index in
                 HStack {
-                    PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.players[index].name, color: .green)
+                    PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.players[index].name, color: vm.isFirstOfHisName(player: vm.players[index]) ? .green : .red)
                     AppButton(title: "–", color: (vm.players.count < 3) ? .gray : .red, animation: nil, isButtonDisabled: (vm.players.count < 3)) {
                         vm.players.remove(at: index)
                     }
@@ -35,7 +35,8 @@ struct PlayersView: View {
                 vm.players.append(.emptyPlayer)
             }
             Spacer()
-            AppButton(title: "Continue", isButtonDisabled: vm.playersWithoutName()) {
+            AppButton(title: "Continue", isButtonDisabled: (vm.playersWithoutName() || vm.noSecondNames())) {
+                print(vm.noSecondNames())
                 vm.viewState = .chooseTypeView
             }
         }

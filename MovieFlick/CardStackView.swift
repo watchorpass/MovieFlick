@@ -6,12 +6,18 @@ struct CardStackView: View {
     @State var internalState: Int = 0
     @State var showDetail = false
     @State var selectedMovie: Movie?
+    var player : Player {
+        vm.players.first(where: { $0.moviesPassed < vm.swipeCount } ) ?? .emptyPlayer
+       // vm.players.first(where: { $0.hasPlay(count: vm.swipeCount) } ) ?? .emptyPlayer
+
+    }
+        
 
     var body: some View {
         VStack {
             //ForEach(vm.players, id: \.self) { player in
             
-            if let player = vm.players.first(where: { $0.moviesPassed < vm.swipeCount }) {
+            //if let player = vm.players.first(where: { $0.moviesPassed < vm.swipeCount }) {
                 Text(player.name + "'s turn")
                             .font(.title2)
                             .fontWeight(.heavy)
@@ -19,14 +25,31 @@ struct CardStackView: View {
                             .padding(.top)
                             .onAppear {
                                 vm.selectedPlayer = player
+                                
+                                print(vm.players)
                             }
 
                 ZStack {
-                    AppButton(title: "next") {
-                        vm.updatePlayer(player: vm.selectedPlayer)
-                        internalState += 1
-                        //vm.viewState = .playerTwoView
+                    VStack(spacing: 16) {
+                        if vm.isLastPlayer(player: player) {
+                            AppButton(title: "See matches") {
+                                vm.updatePlayer(player: vm.selectedPlayer)
+                                vm.viewState = .resultView
+                            }
+                        } else {
+                            Text("It's your turn, \(vm.nextPlayer(player: player)?.name ?? "")")
+                                .font(.title2)
+                                .fontWeight(.heavy)
+                                .foregroundStyle(Color.yellow)
+                            AppButton(title: "next") {
+                                vm.updatePlayer(player: vm.selectedPlayer)
+                                internalState += 1
+                                //vm.viewState = .playerTwoView
+                            }
+                        }
+                        
                     }
+                    
                     ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
                         VStack {
                             NewCard(movie: movie)
@@ -50,20 +73,17 @@ struct CardStackView: View {
 //                       // vm.viewState = .playerTwoView
 //                    }
 //                }
-            }
-
-
         }
-        .id(internalState)
+        .id(player)
         .task {
             await vm.fetchContent()
         }
         .opacity(vm.showError ? 0 : 1)
-        .onChange(of: vm.swipeCount, { oldValue, newValue in
-            if newValue == 0 {
-                vm.viewState = .playerTwoView
-            }
-        })
+//        .onChange(of: vm.swipeCount, { oldValue, newValue in
+//            if newValue == 0 {
+//                vm.viewState = .playerTwoView
+//            }
+//        })
         .sheet(isPresented: $showDetail, content: {
             if let selected = vm.selectedMovie {
                 DetailView(movie: selected)
