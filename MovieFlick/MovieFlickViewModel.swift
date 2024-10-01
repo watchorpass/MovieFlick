@@ -10,7 +10,6 @@ enum ViewState {
     case providerView
     case genreView
     case swipeView
-    case playerTwoView
     case resultView
     case movieSelection
 }

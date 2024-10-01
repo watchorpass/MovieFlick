@@ -18,10 +18,7 @@ struct MainAppView: View {
                 GenreView()
             case .swipeView:
                 CardStackView()
-            case .playerTwoView:
-                NextPlayerView()
             case .resultView:
-                //Text("ResultView")
                 ResultsView()
             case .movieSelection:
                 MovieSelectionView()
