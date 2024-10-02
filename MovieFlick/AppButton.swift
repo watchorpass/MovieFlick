@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppButton: View {
     var title: String
-    var color: Color = .yellow
+    var color: Color = .clear
     var animation: Animation? = .spring
     var isButtonDisabled: Bool = false
     var action: () -> Void
@@ -24,15 +24,16 @@ struct AppButton: View {
         } label: {
             Text(title)
                 .fontWeight(.bold)
+                .foregroundStyle(.white)
                 .foregroundColor(.primary.opacity(isButtonDisabled ? 0.4 : 1))
                 .padding()
-                .frame(maxWidth: 250, maxHeight: 50)
+                .frame(maxWidth: 350, maxHeight: 50)
                 .background((isPressed || isButtonDisabled) ? color.opacity(0.4) : color.opacity(0.75))
                 .cornerRadius(10)
                 .overlay {
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 4)
-                        .fill(isButtonDisabled ? color.opacity(0.5) : color)
+                        .stroke(lineWidth: 2)
+                        .fill(isButtonDisabled ? color.opacity(0.5) : .white)
                 }
                 .scaleEffect(isPressed ? 0.95 : 1.0)
         }
@@ -63,5 +64,9 @@ struct AppButton: View {
             print("Popular button tapped")
         }
         AppButton(title: "Button dissabled", color: .red, animation: nil, isButtonDisabled: true) {}
+    }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .background {
+        Color.purple
     }
 }

@@ -22,18 +22,23 @@ struct PlayersView: View {
                 .bold()
                 .foregroundStyle(Color.yellow)
             Spacer()
-            ForEach(vm.playersName.indices, id: \.self) { index in
-                HStack {
-                    PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.playersName[index], color: .green)
-                    AppButton(title: "–", color: (vm.playersName.count < 3) ? .gray : .red, animation: nil, isButtonDisabled: (vm.playersName.count < 3)) {
-                        vm.playersName.remove(at: index)
+            VStack {
+                ForEach(vm.playersName.indices, id: \.self) { index in
+                    HStack {
+                        PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.playersName[index], color: .green)
+                        AppButton(title: "–", color: (vm.playersName.count < 3) ? .gray : .red, animation: nil, isButtonDisabled: (vm.playersName.count < 3)) {
+                            vm.playersName.remove(at: index)
+                        }
+                        .frame(width: 50)
                     }
-                    .frame(width: 50)
                 }
+                AppButton(title: addPlayerText.0, isButtonDisabled: addPlayerText.1) {
+                    vm.playersName.append("")
+                }
+                .padding(.vertical)
             }
-            AppButton(title: addPlayerText.0, color: .yellow, isButtonDisabled: addPlayerText.1) {
-                vm.playersName.append("")
-            }
+            .frame(width: 350)
+            
             Spacer()
             AppButton(title: "Continue", isButtonDisabled: vm.playersWithoutName()) {
                 vm.viewState = .chooseTypeView
