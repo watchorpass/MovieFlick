@@ -15,7 +15,7 @@ struct ChooseTypeView: View {
             Text("What to see")
                 .font(.title)
                 .bold()
-                .foregroundStyle(.yellow)
+                .foregroundStyle(.white)
             Spacer()
             GridCellComponent(title: "Films", cellSize: 300, image: Image(.interestellar)) {
                 vm.selectedType = .movie

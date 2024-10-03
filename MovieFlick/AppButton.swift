@@ -24,16 +24,16 @@ struct AppButton: View {
         } label: {
             Text(title)
                 .fontWeight(.bold)
-                .foregroundStyle(.white)
+                .foregroundStyle(isButtonDisabled ? .white.opacity(0.5) : .white)
                 .foregroundColor(.primary.opacity(isButtonDisabled ? 0.4 : 1))
                 .padding()
                 .frame(maxWidth: 350, maxHeight: 50)
-                .background((isPressed || isButtonDisabled) ? color.opacity(0.4) : color.opacity(0.75))
+                .background(isButtonDisabled ? color.opacity(0.2) : color.opacity(0.6))
                 .cornerRadius(10)
                 .overlay {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
-                        .fill(isButtonDisabled ? color.opacity(0.5) : .white)
+                        .fill(isButtonDisabled ? .white.opacity(0.5) : .white)
                 }
                 .scaleEffect(isPressed ? 0.95 : 1.0)
         }
@@ -63,7 +63,7 @@ struct AppButton: View {
         AppButton(title: "Active Button") {
             print("Popular button tapped")
         }
-        AppButton(title: "Button dissabled", color: .red, animation: nil, isButtonDisabled: true) {}
+        AppButton(title: "Button dissabled", animation: nil, isButtonDisabled: true) {}
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background {

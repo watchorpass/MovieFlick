@@ -13,7 +13,7 @@ struct PlayerTextField: View {
     var color: Color
     
     var body: some View {
-        TextField("", text: $text, prompt: Text(backgroundText).foregroundStyle(.white))
+        TextField("", text: $text, prompt: Text(backgroundText).foregroundStyle(.white.opacity(0.5)))
             .foregroundStyle(.white)
             .accentColor(.white)
             .multilineTextAlignment(.center)

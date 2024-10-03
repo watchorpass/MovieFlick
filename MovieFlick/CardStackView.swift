@@ -12,7 +12,7 @@ struct CardStackView: View {
                 Text(name + "'s turn")
                     .font(.title2)
                     .fontWeight(.heavy)
-                    .foregroundStyle(.yellow)
+                    .foregroundStyle(.white)
                     .padding(.top)
             }
             ZStack {
@@ -27,7 +27,7 @@ struct CardStackView: View {
                     .offset(y: CGFloat(Double(index) * 1))
                 }
             }
-            .padding(.top, 48)
+            .padding(.top)
             .popoverTip(vm.swipeTip)
             Spacer()
         }

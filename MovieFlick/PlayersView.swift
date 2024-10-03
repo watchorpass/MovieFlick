@@ -20,13 +20,16 @@ struct PlayersView: View {
             Text("Create your players")
                 .font(.title)
                 .bold()
-                .foregroundStyle(Color.yellow)
+                .foregroundStyle(Color.white)
             Spacer()
             VStack {
                 ForEach(vm.playersName.indices, id: \.self) { index in
                     HStack {
-                        PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.playersName[index], color: .green)
-                        AppButton(title: "–", color: (vm.playersName.count < 3) ? .gray : .red, animation: nil, isButtonDisabled: (vm.playersName.count < 3)) {
+                        PlayerTextField(backgroundText: "Player \(index + 1)",
+                                        text: $bvm.playersName[index], color: .white)
+                        AppButton(title: "–",
+                                  animation: nil,
+                                  isButtonDisabled: (vm.playersName.count < 3)) {
                             vm.playersName.remove(at: index)
                         }
                         .frame(width: 50)
@@ -40,7 +43,9 @@ struct PlayersView: View {
             .frame(width: 350)
             
             Spacer()
-            AppButton(title: "Continue", isButtonDisabled: vm.playersWithoutName()) {
+            AppButton(title: "Continue",
+                      color: .gray,
+                      isButtonDisabled: vm.playersWithoutName()) {
                 vm.viewState = .chooseTypeView
             }
         }

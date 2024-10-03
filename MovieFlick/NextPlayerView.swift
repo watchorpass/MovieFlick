@@ -17,8 +17,8 @@ struct NextPlayerView: View {
                     Text("It's your turn: \(player)")
                         .font(.title2)
                         .fontWeight(.heavy)
-                        .foregroundStyle(Color.yellow)
-                    AppButton(title: "I'm Ready") {
+                        .foregroundStyle(Color.white)
+                    AppButton(title: "I'm Ready", color: .gray) {
                         vm.viewState = .swipeView
                     }
                 }

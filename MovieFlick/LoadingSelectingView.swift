@@ -15,7 +15,7 @@ struct LoadingSelectingView: View {
             Text("Selecting movie . . .")
                 .bold()
                 .font(.title)
-                .foregroundStyle(.yellow)
+                .foregroundStyle(.white)
             GifImage(name: "movieLoading")
                 .scaledToFit()
                 .frame(width: 200)

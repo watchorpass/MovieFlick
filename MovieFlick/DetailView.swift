@@ -40,11 +40,11 @@ struct DetailView: View {
                         Text("Rate:")
                             .font(.title3)
                             .bold()
-                            .foregroundStyle(.yellow)
+                            .foregroundStyle(.white)
                         StarsRateComponent(rate: movie.voteAverage, starSize: 18)
                         Spacer()
                         Text(movie.releaseDate)
-                            .foregroundStyle(.yellow)
+                            .foregroundStyle(.white)
                     }
                     Text(movie.overview)
                         .font(.title2)

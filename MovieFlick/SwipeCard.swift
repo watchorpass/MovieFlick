@@ -26,7 +26,7 @@ struct NewCard: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 40)
-                            .foregroundStyle(.yellow)
+                            .foregroundStyle(.white)
                             .padding(16)
                     }
             }

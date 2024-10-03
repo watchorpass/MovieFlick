@@ -18,7 +18,7 @@ struct ResultsView: View {
             Text("\(vm.selectedType.rawValue) MATCHES")
                 .font(.title)
                 .fontWeight(.heavy)
-                .foregroundStyle(Color.yellow)
+                .foregroundStyle(Color.white)
             ScrollView {
                 LazyVGrid(columns: items) {
                     ForEach(vm.resultMovies) { movie in
@@ -33,7 +33,7 @@ struct ResultsView: View {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 20)
-                                        .foregroundStyle(.yellow)
+                                        .foregroundStyle(.white)
                                         .padding(16)
                                         .onTapGesture {
                                             vm.selectedMovie = movie
@@ -48,14 +48,14 @@ struct ResultsView: View {
             }
             .safeAreaInset(edge: .bottom) {
                 HStack {
-                    AppButton(title: "Restart Game") {
+                    AppButton(title: "Restart Game", color: .gray) {
                         vm.swipeTip.invalidate(reason: .actionPerformed)
                         vm.showLoadingView = true
                         vm.playersName = ["", ""]
                         vm.viewState = .startView
                     }
                     
-                    AppButton(title: "Choose one") {
+                    AppButton(title: "Choose one", color: .gray) {
                         vm.swipeTip.invalidate(reason: .actionPerformed)
                         vm.randomMovie()
                         vm.viewState = .movieSelection
