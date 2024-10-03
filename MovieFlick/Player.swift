@@ -17,9 +17,4 @@ struct Player: Equatable, Hashable, Identifiable {
         }
     }
     var moviesPassed = 0
-    var hasPlay = false
-
-    func hasPlay(count: Int) -> Bool {
-        moviesPassed >= count
-    }
 }

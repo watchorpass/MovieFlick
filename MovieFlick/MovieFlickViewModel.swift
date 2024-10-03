@@ -68,7 +68,6 @@ final class MovieFlickViewModel {
             let movies = try await interactor.getMovies(isAdult: true, includesVideo: nil, page: 1, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
             
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
-            moviesWithCard = [moviesWithCard[0], moviesWithCard[1], moviesWithCard[2]]
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
         } catch {
