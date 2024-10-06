@@ -14,7 +14,7 @@ struct CardStackView: View {
                 Text(player.name + "'s turn")
                             .font(.title2)
                             .fontWeight(.heavy)
-                            .foregroundStyle(.yellow)
+                            .foregroundStyle(.white)
                             .padding(.top)
                             .onAppear {
                                 vm.selectedPlayer = player
@@ -31,7 +31,7 @@ struct CardStackView: View {
                             Text("It's your turn, \(vm.nextPlayer(player: player)?.name ?? "")")
                                 .font(.title2)
                                 .fontWeight(.heavy)
-                                .foregroundStyle(Color.yellow)
+                                .foregroundStyle(Color.white)
                             AppButton(title: "Next") {
                                 vm.updatePlayer(player: vm.selectedPlayer)
                             }
@@ -50,8 +50,7 @@ struct CardStackView: View {
                         .offset(y: CGFloat(Double(index) * 1))
                     }
                 }
-                
-                .padding(.top, 48)
+                .padding(.top)
                 .popoverTip(vm.swipeTip)
                 Spacer()
         }

@@ -35,7 +35,7 @@ struct CustomErrorView: View {
                 }
                 .font(.title2)
                 .buttonStyle(.bordered)
-                .tint(.yellow)
+                .tint(.white)
                 .foregroundStyle(Color.white)
                 
             }

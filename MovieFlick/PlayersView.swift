@@ -31,7 +31,7 @@ struct PlayersView: View {
                     .frame(width: 50)
                 }
             }
-            AppButton(title: addPlayerText.0, color: .yellow, isButtonDisabled: addPlayerText.1) {
+            AppButton(title: addPlayerText.0, isButtonDisabled: addPlayerText.1) {
                 vm.players.append(.emptyPlayer)
             }
             Spacer()
