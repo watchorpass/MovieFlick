@@ -5,41 +5,61 @@ struct CardStackView: View {
     @Environment(MovieFlickViewModel.self) var vm
     @State var showDetail = false
     @State var selectedMovie: Movie?
-    
+    var player : Player {
+        vm.players.first(where: { $0.moviesPassed < vm.swipeCount } ) ?? .emptyPlayer
+    }
+
     var body: some View {
         VStack {
-            if let name = vm.playersName.first {
-                Text(name + "'s turn")
-                    .font(.title2)
-                    .fontWeight(.heavy)
-                    .foregroundStyle(.yellow)
-                    .padding(.top)
-            }
-            ZStack {
-                ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
-                    VStack {
-                        NewCard(movie: movie)
-                            .onTapGesture {
-                                vm.selectedMovie = vm.movieSelected(index)
-                                showDetail.toggle()
+                Text(player.name + "'s turn")
+                            .font(.title2)
+                            .fontWeight(.heavy)
+                            .foregroundStyle(.yellow)
+                            .padding(.top)
+                            .onAppear {
+                                vm.selectedPlayer = player
                             }
+
+                ZStack {
+                    VStack(spacing: 16) {
+                        if vm.isLastPlayer(player: player) {
+                            AppButton(title: "See matches") {
+                                vm.updatePlayer(player: vm.selectedPlayer)
+                                vm.viewState = .resultView
+                            }
+                        } else {
+                            Text("It's your turn, \(vm.nextPlayer(player: player)?.name ?? "")")
+                                .font(.title2)
+                                .fontWeight(.heavy)
+                                .foregroundStyle(Color.yellow)
+                            AppButton(title: "Next") {
+                                vm.updatePlayer(player: vm.selectedPlayer)
+                            }
+                        }
+                        
                     }
-                    .offset(y: CGFloat(Double(index) * 1))
+                    
+                    ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
+                        VStack {
+                            NewCard(movie: movie)
+                                .onTapGesture {
+                                    vm.selectedMovie = vm.movieSelected(index)
+                                    showDetail.toggle()
+                                }
+                        }
+                        .offset(y: CGFloat(Double(index) * 1))
+                    }
                 }
-            }
-            .padding(.top, 48)
-            .popoverTip(vm.swipeTip)
-            Spacer()
+                
+                .padding(.top, 48)
+                .popoverTip(vm.swipeTip)
+                Spacer()
         }
+        .id(player)
         .task {
             await vm.fetchContent()
         }
         .opacity(vm.showError ? 0 : 1)
-        .onChange(of: vm.swipeCount, { oldValue, newValue in
-            if newValue == 0 {
-                vm.viewState = .playerTwoView
-            }
-        })
         .sheet(isPresented: $showDetail, content: {
             if let selected = vm.selectedMovie {
                 DetailView(movie: selected)

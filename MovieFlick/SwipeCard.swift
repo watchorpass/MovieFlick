@@ -58,7 +58,8 @@ extension NewCard {
             xOffset = 500
             degrees = 12
         } completion: {
-            viewModel.swipeCount -= 1
+            //viewModel.selectedPlayer.choosedMovies.append(movie)
+            viewModel.selectedPlayer.moviesPassed += 1
         }
     }
     
@@ -67,8 +68,8 @@ extension NewCard {
             xOffset = -500
             degrees = -12
         } completion: {
-            viewModel.removeFromResultMovies(movie: movie)
-            viewModel.swipeCount -= 1
+           viewModel.removeFromResultMovies(movie: movie)
+            viewModel.selectedPlayer.moviesPassed += 1
         }
     }
 }
@@ -146,5 +147,7 @@ struct SwipeActionIndicationView: View {
 }
 
 #Preview {
-    SwipeActionIndicationView(xOffset: .constant(20), screenCutoff: 500)
+    //SwipeActionIndicationView(xOffset: .constant(20), screenCutoff: 500)
+    NewCard(movie: .previewMovie)
+        .environment(MovieFlickViewModel())
 }

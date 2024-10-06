@@ -10,7 +10,6 @@ enum ViewState {
     case providerView
     case genreView
     case swipeView
-    case playerTwoView
     case resultView
     case movieSelection
 }
@@ -24,7 +23,8 @@ final class MovieFlickViewModel {
     let interactor: MovieListInteractorProtocol
     var resultMovies: [Movie] = []
     var moviesWithCard: [Movie] = []
-    var playersName: [String] = ["", ""]
+    var players: [Player] = [.emptyPlayer, .emptyPlayer]
+    var selectedPlayer: Player = .emptyPlayer
     
     var selectedMovie: Movie?
     
@@ -127,7 +127,7 @@ final class MovieFlickViewModel {
     }
     
     func playersWithoutName() -> Bool {
-        playersName.contains("")
+        players.map { $0.name }.contains("")
     }
     
     func addprovider(provider: Provider) {
@@ -136,5 +136,45 @@ final class MovieFlickViewModel {
         } else {
             selectedProviders.append(provider)
         }
+    }
+    
+    func addPlayer(name: String, index: Int ) {
+        players[index] = Player(name: name)
+    }
+    
+    func canBeAdded(player: Player) -> Bool {
+        players.filter { $0.name == player.name }.count > 1
+    }
+    
+    func updatePlayer(player: Player) {
+        if let index = players.firstIndex(where: { $0.name == player.name }) {
+            players[index] = player
+        }
+    }
+    
+    func nextPlayer(player: Player) -> Player? {
+        if let index = players.firstIndex(where: { $0.id == player.id }) {
+            if index + 1 < players.count {
+                return players[index + 1]
+            }
+        }
+        return nil
+    }
+    func isLastPlayer(player: Player) -> Bool {
+        players.last?.id ?? .none  == player.id
+    }
+    
+    func isFirstOfHisName(player: Player) -> Bool {
+        if player.name.isEmpty {
+            return true
+        }
+        if let index = players.firstIndex(where: { $0.name == player.name }) {
+            return players[index].id == player.id
+        }
+        return false
+    }
+    
+    func noSecondNames() -> Bool {
+        return !players.allSatisfy({isFirstOfHisName(player: $0)})
     }
 }
