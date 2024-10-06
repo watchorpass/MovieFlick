@@ -11,7 +11,7 @@ struct PlayersView: View {
     @Environment(MovieFlickViewModel.self) var vm
     
     private var addPlayerText: (String, Bool) {
-        (vm.playersName.count < 4) ? ("Add new player +", false) : ("Max. 4 players", true)
+        (vm.players.count < 4) ? ("Add new player +", false) : ("Max. 4 players", true)
     }
     
     var body: some View {
@@ -22,35 +22,26 @@ struct PlayersView: View {
                 .bold()
                 .foregroundStyle(Color.white)
             Spacer()
-            VStack {
-                ForEach(vm.playersName.indices, id: \.self) { index in
-                    HStack {
-                        PlayerTextField(backgroundText: "Player \(index + 1)",
-                                        text: $bvm.playersName[index], color: .white)
-                        AppButton(title: "–",
-                                  animation: nil,
-                                  isButtonDisabled: (vm.playersName.count < 3)) {
-                            vm.playersName.remove(at: index)
-                        }
-                        .frame(width: 50)
+            ForEach(vm.players.indices, id: \.self) { index in
+                HStack {
+                    PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.players[index].name, color: vm.isFirstOfHisName(player: vm.players[index]) ? .green : .red)
+                    AppButton(title: "–", color: (vm.players.count < 3) ? .gray : .red, animation: nil, isButtonDisabled: (vm.players.count < 3)) {
+                        vm.players.remove(at: index)
                     }
+                    .frame(width: 50)
                 }
-                AppButton(title: addPlayerText.0, isButtonDisabled: addPlayerText.1) {
-                    vm.playersName.append("")
-                }
-                .padding(.vertical)
             }
-            .frame(width: 350)
-            
+            AppButton(title: addPlayerText.0, color: .yellow, isButtonDisabled: addPlayerText.1) {
+                vm.players.append(.emptyPlayer)
+            }
             Spacer()
-            AppButton(title: "Continue",
-                      color: .gray,
-                      isButtonDisabled: vm.playersWithoutName()) {
+            AppButton(title: "Continue", isButtonDisabled: (vm.playersWithoutName() || vm.noSecondNames())) {
+                print(vm.noSecondNames())
                 vm.viewState = .chooseTypeView
             }
         }
         .padding(.top, 48)
-        .animation(.smooth, value: vm.playersName)
+        .animation(.smooth, value: vm.players)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground()
     }

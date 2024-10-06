@@ -11,7 +11,6 @@ struct PlayerTextField: View {
     var backgroundText: String
     @Binding var text: String
     var color: Color
-    
     var body: some View {
         TextField("", text: $text, prompt: Text(backgroundText).foregroundStyle(.white.opacity(0.5)))
             .foregroundStyle(.white)
@@ -28,11 +27,5 @@ struct PlayerTextField: View {
 }
 
 #Preview {
-    VStack {
-        PlayerTextField(backgroundText: "Text Background", text: .constant(String()) , color: .green)
-    }
-    .frame(width: 300, height: 300)
-    .background {
-        Color.purple
-    }
+    PlayerTextField(backgroundText: "Text Background", text: .constant(String()) , color: .green) 
 }

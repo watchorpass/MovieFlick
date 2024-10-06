@@ -12,7 +12,7 @@ struct AppButton: View {
     var color: Color = .clear
     var animation: Animation? = .spring
     var isButtonDisabled: Bool = false
-    var action: () -> Void
+    var action: () -> ()
     
     @State private var isPressed: Bool = false
     

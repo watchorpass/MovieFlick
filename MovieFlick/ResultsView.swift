@@ -51,7 +51,7 @@ struct ResultsView: View {
                     AppButton(title: "Restart Game", color: .gray) {
                         vm.swipeTip.invalidate(reason: .actionPerformed)
                         vm.showLoadingView = true
-                        vm.playersName = ["", ""]
+                        vm.players = [.emptyPlayer, .emptyPlayer]
                         vm.viewState = .startView
                     }
                     
