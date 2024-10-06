@@ -20,7 +20,7 @@ struct PlayersView: View {
             Text("Create your players")
                 .font(.title)
                 .bold()
-                .foregroundStyle(Color.yellow)
+                .foregroundStyle(Color.white)
             Spacer()
             ForEach(vm.players.indices, id: \.self) { index in
                 HStack {

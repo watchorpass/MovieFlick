@@ -15,12 +15,12 @@ struct MovieSelectionView: View {
         VStack {
             Text("Movie selected is ")
                 .font(.title)
-                .foregroundStyle(.yellow)
+                .foregroundStyle(.white)
                 .bold()
             if let selectedMovie = vm.selectedMovie {
                 Text(selectedMovie.title)
                     .font(.title)
-                    .foregroundStyle(.yellow)
+                    .foregroundStyle(.white)
                     .bold()
                 if let uiImage = selectedMovie.cardImage {
                     Image(uiImage: uiImage)
@@ -33,7 +33,7 @@ struct MovieSelectionView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 20)
-                                .foregroundStyle(.yellow)
+                                .foregroundStyle(.white)
                                 .padding(16)
                                 .onTapGesture {
                                     vm.selectedMovie = selectedMovie
@@ -51,7 +51,7 @@ struct MovieSelectionView: View {
                 }
             }
             Spacer()
-            AppButton(title: "Restart") {
+            AppButton(title: "Restart", color: .gray) {
                 vm.showLoadingView = true
                 vm.players = [.emptyPlayer, .emptyPlayer]
                 vm.viewState = .startView

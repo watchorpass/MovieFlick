@@ -17,7 +17,7 @@ struct ProvidersView: View {
             Text("Select providers")
                 .font(.title2)
                 .fontWeight(.heavy)
-                .foregroundStyle(.yellow)
+                .foregroundStyle(.white)
             GeometryReader { geometry in
                 ScrollView {
                     LazyVGrid(columns: gridColums, spacing: 20) {
@@ -29,7 +29,7 @@ struct ProvidersView: View {
                           .overlay {
                               RoundedRectangle(cornerRadius: geometry.size.width*0.4/10)
                                   .stroke(lineWidth: 4)
-                                  .fill(vm.selectedProviders.contains(provider) ? .yellow : .clear)
+                                  .fill(vm.selectedProviders.contains(provider) ? .white : .clear)
                           }
                           .padding(4)
                         }
@@ -48,7 +48,7 @@ struct ProvidersView: View {
         }
         .overlay(alignment: .bottom) {
             if !vm.selectedProviders.isEmpty {
-                AppButton(title: "Continue") {
+                AppButton(title: "Continue", color: .gray) {
                     vm.viewState = .genreView
                 }
             }

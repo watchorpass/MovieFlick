@@ -10,7 +10,7 @@ import SwiftUI
 struct StarsRateComponent: View {
     let rate: Double
     var starSize: CGFloat = 20.0
-    var starsColor: Color = .yellow
+    var starsColor: Color = .white
     
     var fiveStarsValue: Double {
         guard rate > 0.0 && rate < 10.0 else { return 0.0 }

@@ -11,7 +11,7 @@ struct GenreView: View {
             Text("Select your favourite genres")
                 .font(.title2)
                 .fontWeight(.heavy)
-                .foregroundStyle(.yellow)
+                .foregroundStyle(.white)
             GeometryReader { geometry in
                 ScrollView {
                     TipView(vm.genreTip)
@@ -26,7 +26,7 @@ struct GenreView: View {
                           .overlay {
                               RoundedRectangle(cornerRadius: geometry.size.width*0.4/10)
                                   .stroke(lineWidth: 4)
-                                  .fill(vm.selectedGenres.contains(genre) ? .yellow : .clear)
+                                  .fill(vm.selectedGenres.contains(genre) ? .white : .clear)
                           }
                           .padding(4)
                         }
@@ -45,7 +45,7 @@ struct GenreView: View {
         }
         .overlay(alignment: .bottom) {
             if !vm.selectedGenres.isEmpty {
-                AppButton(title: "Continue") {
+                AppButton(title: "Continue", color: .gray) {
                     vm.viewState = .swipeView
                 }
                 .task {

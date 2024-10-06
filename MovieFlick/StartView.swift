@@ -18,7 +18,7 @@ struct StartView: View {
                 .scaledToFit()
                 .padding()
             Spacer()
-            AppButton(title: "Start") {
+            AppButton(title: "Start", color: .white) {
                 vm.viewState = .playersView
             }
         }

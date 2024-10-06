@@ -9,17 +9,17 @@ struct FilterView: View {
             Text(selectedType.uppercased())
                 .font(.title)
                 .bold()
-                .foregroundStyle(.yellow)
+                .foregroundStyle(.white)
             Spacer()
             Text("Select which list you want to see")
-                .foregroundStyle(.yellow)
+                .foregroundStyle(.white)
                 .padding(.bottom, 30)
             VStack(spacing: 20){
-                AppButton(title: "Popular") {
+                AppButton(title: "Popular", color: .gray) {
                     vm.sortType = .popularity
                     vm.viewState = .providerView
                 }
-                AppButton(title: "Top rated") {
+                AppButton(title: "Top rated", color: .gray) {
                     vm.sortType = .voteAverage
                     vm.viewState = .providerView
                 }

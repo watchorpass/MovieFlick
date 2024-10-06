@@ -49,7 +49,7 @@ struct CustomErrorView: View {
                     .shadow(radius: 2)
             }
         }
-        .foregroundStyle(Color.yellow)
+        .foregroundStyle(Color.white)
     }
 }
 
