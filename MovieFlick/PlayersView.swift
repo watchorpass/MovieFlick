@@ -22,25 +22,31 @@ struct PlayersView: View {
                 .bold()
                 .foregroundStyle(Color.white)
             Spacer()
-            ForEach(vm.players.indices, id: \.self) { index in
-                HStack {
-                    PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.players[index].name, color: vm.isFirstOfHisName(player: vm.players[index]) ? .green : .red)
-                    AppButton(title: "–", color: (vm.players.count < 3) ? .gray : .red, animation: nil, isButtonDisabled: (vm.players.count < 3)) {
-                        vm.players.remove(at: index)
+            VStack {
+                ForEach(vm.players.indices, id: \.self) { index in
+                    HStack {
+                        PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.players[index].name, color: vm.isFirstOfHisName(player: vm.players[index]) ? .green : .red)
+                        AppButton(title: "–", color: (vm.players.count < 3) ? .gray : .red, animation: nil, isButtonDisabled: (vm.players.count < 3)) {
+                            vm.players.remove(at: index)
+                        }
+                        .frame(width: 50)
                     }
-                    .frame(width: 50)
                 }
+                AppButton(title: addPlayerText.0, isButtonDisabled: addPlayerText.1) {
+                    vm.players.append(.emptyPlayer)
+                }
+                .padding(.vertical)
             }
-            AppButton(title: addPlayerText.0, isButtonDisabled: addPlayerText.1) {
-                vm.players.append(.emptyPlayer)
-            }
+
             Spacer()
             AppButton(title: "Continue", isButtonDisabled: (vm.playersWithoutName() || vm.noSecondNames())) {
                 print(vm.noSecondNames())
                 vm.viewState = .chooseTypeView
             }
         }
+        .padding(.horizontal)
         .padding(.top, 48)
+        .padding(.bottom)
         .animation(.smooth, value: vm.players)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground()

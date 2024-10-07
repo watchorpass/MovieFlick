@@ -27,6 +27,7 @@ struct CardStackView: View {
                                 vm.updatePlayer(player: vm.selectedPlayer)
                                 vm.viewState = .resultView
                             }
+                            .padding()
                         } else {
                             Text("It's your turn, \(vm.nextPlayer(player: player)?.name ?? "")")
                                 .font(.title2)
@@ -35,6 +36,7 @@ struct CardStackView: View {
                             AppButton(title: "Next") {
                                 vm.updatePlayer(player: vm.selectedPlayer)
                             }
+                            .padding(.horizontal)
                         }
                         
                     }

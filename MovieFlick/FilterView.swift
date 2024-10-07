@@ -24,6 +24,7 @@ struct FilterView: View {
                     vm.viewState = .providerView
                 }
             }
+            .padding()
             Spacer()
         }
         .padding(.top, 48)

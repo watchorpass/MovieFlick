@@ -51,6 +51,7 @@ struct ProvidersView: View {
                 AppButton(title: "Continue", color: .gray) {
                     vm.viewState = .genreView
                 }
+                .padding()
             }
         }
         .appBackground()

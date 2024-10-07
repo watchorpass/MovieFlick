@@ -22,6 +22,7 @@ struct StartView: View {
                 vm.viewState = .playersView
             }
         }
+        .padding(.horizontal)
         .padding(.bottom, 100)
         .appBackground(gradientOpacity: 0.5)
     }

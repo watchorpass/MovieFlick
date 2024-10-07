@@ -56,6 +56,7 @@ struct MovieSelectionView: View {
                 vm.players = [.emptyPlayer, .emptyPlayer]
                 vm.viewState = .startView
             }
+            .padding()
         }
         .sheet(isPresented: $showDetail) {
             if let movie = vm.selectedMovie {

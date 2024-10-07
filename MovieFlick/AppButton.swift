@@ -27,7 +27,7 @@ struct AppButton: View {
                 .foregroundStyle(isButtonDisabled ? .white.opacity(0.5) : .white)
                 .foregroundColor(.primary.opacity(isButtonDisabled ? 0.4 : 1))
                 .padding()
-                .frame(maxWidth: 350, maxHeight: 50)
+                .frame(maxWidth: .infinity, maxHeight: 50)
                 .background(isButtonDisabled ? color.opacity(0.2) : color.opacity(0.6))
                 .cornerRadius(10)
                 .overlay {

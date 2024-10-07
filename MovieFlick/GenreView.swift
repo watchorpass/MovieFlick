@@ -48,6 +48,7 @@ struct GenreView: View {
                 AppButton(title: "Continue", color: .gray) {
                     vm.viewState = .swipeView
                 }
+                .padding()
                 .task {
                     await vm.fetchContent()
                 }

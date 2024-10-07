@@ -20,7 +20,7 @@ struct PlayerTextField: View {
             .bold()
             .foregroundColor(.primary)
             .padding()
-            .frame(maxWidth: 350, maxHeight: 50)
+            .frame(maxWidth: .infinity, maxHeight: 50)
             .background(.white.opacity(0.3))
             .cornerRadius(10)
     }
