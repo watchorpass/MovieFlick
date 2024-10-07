@@ -58,7 +58,7 @@ extension MovieDTO {
               originalTitle: originalTitle,
               overview: overview,
               popularity: popularity,
-              posterPath: .imageURL(endPath: posterPath ?? ""),
+              posterPath: .imageURL(endPath: posterPath),
               releaseDate: releaseDate,
               title: title,
               video: video,

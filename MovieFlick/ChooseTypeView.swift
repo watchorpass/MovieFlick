@@ -8,24 +8,40 @@
 import SwiftUI
 
 struct ChooseTypeView: View {
+    @Environment(MovieFlickViewModel.self) var vm
+
     var body: some View {
         VStack {
             Text("What to see")
                 .font(.title)
                 .bold()
-                .foregroundStyle(.yellow)
+                .foregroundStyle(.white)
             Spacer()
-            GridCellComponent(title: "Films", cellSize: 300, image: Image(.interestellar), action: {})
+            GridCellComponent(title: "Films", cellSize: 300, image: Image(.interestellar)) {
+                vm.selectedType = .movie
+                vm.viewState = .filterView
+            }
                 .padding()
-            GridCellComponent(title: "TV Series", cellSize: 300, image: Image(.theLastOfUs), action: {})
+            GridCellComponent(title: "TV Series", cellSize: 300, image: Image(.theLastOfUs)) {
+                vm.selectedType = .serie
+                vm.viewState = .filterView
+            }
                 .padding()
             Spacer()
         }
+        .padding(.top, 48)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .overlay(alignment: .topLeading) {
+            BackButtonComponent {
+                vm.viewState = .playersView
+            }
+            .padding(.leading, 24)
+        }
         .appBackground()
     }
 }
 
 #Preview {
     ChooseTypeView()
+        .environment(MovieFlickViewModel())
 }

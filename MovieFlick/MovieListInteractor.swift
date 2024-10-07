@@ -10,7 +10,7 @@ import PackageNetwork
 
 protocol MovieListInteractorProtocol {
     func getMovies(isAdult: Bool?, includesVideo: Bool?, page: Int?, sortBy: SortType?, releaseYear: Int?, dateGreaterThan: String?, dateLessThan: String?, voteGreaterThan: Double?, voteLessThan: Double?, region: String?, providers: [Provider]?, genres: [Genre]?, monetizationTypes: [MonetizationType]?) async throws -> [Movie]
-    
+    func getSeries(isAdult: Bool?, includesVideo: Bool?, page: Int?, sortBy: SortType?, releaseYear: Int?, dateGreaterThan: String?, dateLessThan: String?, voteGreaterThan: Double?, voteLessThan: Double?, region: String?, providers: [Provider]?, genres: [Genre]?, monetizationTypes: [MonetizationType]?) async throws -> [Movie]
     func loadCardImages(for movies: [Movie]) async throws -> [Movie]
 }
 
@@ -20,26 +20,41 @@ struct MovieListInteractor: MovieListInteractorProtocol, NetworkInteractor {
     let appConfig = AppConfig.shared
         
     func getMovies(isAdult: Bool? = nil, includesVideo: Bool? = nil, page: Int? = nil, sortBy: SortType? = nil, releaseYear: Int? = nil, dateGreaterThan: String? = nil, dateLessThan: String? = nil, voteGreaterThan: Double? = nil, voteLessThan: Double? = nil, region: String? = nil, providers: [Provider]? = nil, genres: [Genre]? = nil, monetizationTypes: [MonetizationType]? = nil) async throws -> [Movie] {
-        
-        let url = URL.finalURL(isAdult: isAdult,
-                               includesVideo: includesVideo,
-                               page: page,
-                               sortBy: sortBy,
-                               releaseYear: releaseYear,
-                               dateGreaterThan: dateGreaterThan,
-                               dateLessThan: dateLessThan,
-                               voteGreaterThan: voteGreaterThan,
-                               voteLessThan: voteLessThan,
-                               region: region,
-                               providers: providers,
-                               genres: genres,
-                               monetizationTypes: monetizationTypes)
-        
-        return try await getJSONFromURL(request: .get(url: url, token: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MzFlNWZiNmYyZmI4OWIwN2ZjNTdkMGQ3MTIwYWJhOCIsIm5iZiI6MTcyNDU2ODMyOC4xNjc3MDQsInN1YiI6IjYyNjk3MDJiZjkyNTMyMTYyMzM3NDYxMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.a-fs34o6qj9lDwG-s8_9Im4rM5Yu52Pts1thS_-ZRes"), type: MovieDTOList.self).results.map(\.toMovie)
+        let url = URL.finalURLMovie(
+            isAdult: isAdult,
+            includesVideo: includesVideo,
+            page: page,
+            sortBy: sortBy,
+            releaseYear: releaseYear,
+            dateGreaterThan: dateGreaterThan,
+            dateLessThan: dateLessThan,
+            voteGreaterThan: voteGreaterThan,
+            voteLessThan: voteLessThan,
+            region: region,
+            providers: providers,
+            genres: genres,
+            monetizationTypes: monetizationTypes)
+        return try await getJSONFromURL(request: .get(url: url, token: appConfig.APIKey), type: MovieDTOList.self).results.map(\.toMovie)
+    }
+    
+    func getSeries(isAdult: Bool? = nil, includesVideo: Bool? = nil, page: Int? = nil, sortBy: SortType? = nil, releaseYear: Int? = nil, dateGreaterThan: String? = nil, dateLessThan: String? = nil, voteGreaterThan: Double? = nil, voteLessThan: Double? = nil, region: String? = nil, providers: [Provider]? = nil, genres: [Genre]? = nil, monetizationTypes: [MonetizationType]? = nil) async throws -> [Movie] {
+        let url = URL.finalURLTVSeries(
+            isAdult: isAdult,
+            page: page,
+            sortBy: sortBy,
+            airDateGreaterThan: dateGreaterThan,
+            airDateLessThan: dateLessThan,
+            voteGreaterThan: voteGreaterThan,
+            voteLessThan: voteLessThan,
+            region: region,
+            providers: providers,
+            genres: genres,
+            monetizationTypes: monetizationTypes)
+        return try await getJSONFromURL(request: .get(url: url, token: appConfig.APIKey), type: TVSerieList.self).results.map(\.toMovie)
     }
     
     func loadCardImages(for movies: [Movie]) async throws -> [Movie] {
-        var mutableMovies = movies
+        var mutableMovies = movies.filter({ $0.posterPath != nil })
 
         try await withThrowingTaskGroup(of: (Int, UIImage?).self) { group in
             for (index, movie) in mutableMovies.enumerated() {

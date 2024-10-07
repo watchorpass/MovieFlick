@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StartView: View {
+    @Environment(MovieFlickViewModel.self) var vm
+    
     var body: some View {
         VStack {
             Spacer()
@@ -16,8 +18,11 @@ struct StartView: View {
                 .scaledToFit()
                 .padding()
             Spacer()
-            AppButton(title: "Start", action: {})
+            AppButton(title: "Start", color: .white) {
+                vm.viewState = .playersView
+            }
         }
+        .padding(.horizontal)
         .padding(.bottom, 100)
         .appBackground(gradientOpacity: 0.5)
     }
@@ -25,4 +30,5 @@ struct StartView: View {
 
 #Preview {
     StartView()
+        .environment(MovieFlickViewModel())
 }

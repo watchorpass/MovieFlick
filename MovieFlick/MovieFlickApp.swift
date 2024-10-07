@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 @main
 struct MovieFlickApp: App {
@@ -13,8 +14,12 @@ struct MovieFlickApp: App {
     
     var body: some Scene {
         WindowGroup {
-            CardStackView()
+            MainAppView()
                 .environment(viewModel)
+                .task {
+                    try? Tips.configure([
+                        .datastoreLocation(.applicationDefault)])
+                }
         }
     }
 }
