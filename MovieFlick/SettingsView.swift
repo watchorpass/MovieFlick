@@ -32,6 +32,7 @@ struct SettingsView: View {
                     .fill(.ultraThinMaterial))
                 .padding()
                 Spacer()
+                Text("Restart tips")
                 Text("`Made with ♡ by Alberto, Alex, Fran M., and Fran O.`")
                     .font(.caption)
             }
