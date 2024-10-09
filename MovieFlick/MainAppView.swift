@@ -8,6 +8,8 @@ struct MainAppView: View {
             switch vm.viewState {
             case .startView:
                 StartView()
+            case .aboutLegalView:
+                AboutLegalView()
             case .playersView:
                 PlayersView()
             case .chooseTypeView:
