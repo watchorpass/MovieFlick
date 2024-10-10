@@ -59,6 +59,3 @@ struct DetailView: View {
     }
 }
 
-#Preview {
-    DetailView(movie: .previewMovie)
-}

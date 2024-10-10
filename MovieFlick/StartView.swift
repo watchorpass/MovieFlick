@@ -21,9 +21,18 @@ struct StartView: View {
             AppButton(title: "Start", color: .white) {
                 vm.viewState = .playersView
             }
+            Spacer()
+            VStack {
+                Text("This product uses the TMDB API but is not endorsed or certified by TMDB.")
+                    .foregroundStyle(.white.opacity(0.7))
+                    .multilineTextAlignment(.center)
+                Image(.tmdbLogo)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 12)
+            }
         }
         .padding(.horizontal)
-        .padding(.bottom, 100)
         .appBackground(gradientOpacity: 0.5)
         .overlay (alignment: .topTrailing){
             Button {

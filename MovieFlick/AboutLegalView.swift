@@ -11,13 +11,14 @@ struct AboutLegalView: View {
     @Environment(MovieFlickViewModel.self) var vm
 
     var body: some View {
-        VStack {
+        ScrollView {
             Text("About")
                 .font(.title)
                 .bold()
                 .foregroundStyle(.white)
             
-            Text("Third Party Intellectual Property Movies metadata is provided by TMDb, the Movie Database. For more information, visit www.themoviedb.org. This is an external service and therefore we are not responsible for the information it provides and cannot guarantee availability. We do not assume any responsibility for the content, privacy policies, or practices of any third party web sites or services.")
+            Text("The movie metadata within this app is provided by a third-party service, The Movie Database (TMDb). For more information about TMDb, please visit www.themoviedb.org. We are not affiliated with TMDb, nor are we responsible for the accuracy, availability, or legality of the information they provide. TMDb is an independent service, and we do not endorse or control the content it supplies. This app does not intend to claim or imply ownership, endorsement, or association with any specific movies, studios, or other intellectual property referenced through TMDb metadata. All trademarks, movie titles, and associated media are the property of their respective owners. We disclaim any responsibility for potential copyright or trademark issues arising from the display of metadata provided by TMDb. Users should refer to TMDb and the rights holders of specific intellectual properties for any concerns regarding legal use. We further do not assume responsibility for the content, privacy policies, or practices of any third-party websites or services linked from this app.")
+                .font(.system(size: 12))
                 .padding()
                 .frame(maxWidth: 400)
                 .background(.white.opacity(0.6))
@@ -33,8 +34,6 @@ struct AboutLegalView: View {
                 .multilineTextAlignment(.center)
                 .padding(.top, 32)
             Spacer()
-            
-            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.horizontal)
