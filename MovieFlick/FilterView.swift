@@ -17,11 +17,11 @@ struct FilterView: View {
             VStack(spacing: 20){
                 AppButton(title: "Popular", color: .gray) {
                     vm.sortType = .popularity
-                    vm.viewState = .providerView
+                    vm.viewState = .genreView
                 }
                 AppButton(title: "Top rated", color: .gray) {
                     vm.sortType = .voteAverage
-                    vm.viewState = .providerView
+                    vm.viewState = .genreView
                 }
             }
             .padding()
