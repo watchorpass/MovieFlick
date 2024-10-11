@@ -25,22 +25,7 @@ struct StartView: View {
         .padding(.horizontal)
         .padding(.bottom, 100)
         .appBackground(gradientOpacity: 0.5)
-        .overlay (alignment: .topTrailing){
-            Button {
-                vm.viewState = .aboutLegalView
-            } label: {
-                Image(systemName: "info.square")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 25)
-                    .foregroundStyle(.white)
-            }
-            .padding()
-            .buttonStyle(PlainButtonStyle())
-
-        }
     }
-
 }
 
 #Preview {

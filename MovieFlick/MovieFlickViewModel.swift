@@ -4,7 +4,6 @@ import SwiftUI
 
 enum ViewState {
     case startView
-    case aboutLegalView
     case playersView
     case chooseTypeView
     case filterView
