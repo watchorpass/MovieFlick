@@ -24,7 +24,7 @@ struct StartView: View {
             Spacer()
             VStack {
                 Text("This product uses the TMDB API but is not endorsed or certified by TMDB.")
-                    .foregroundStyle(.white.opacity(0.7))
+                    .foregroundStyle(.gray)
                     .multilineTextAlignment(.center)
                 Image(.tmdbLogo)
                     .resizable()

@@ -11,7 +11,6 @@
 		1A0035EE2C66114B00DC89C0 /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0035ED2C66114B00DC89C0 /* MainAppView.swift */; };
 		1A0035F02C66114C00DC89C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0035EF2C66114C00DC89C0 /* Assets.xcassets */; };
 		1A0035F32C66114C00DC89C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0035F22C66114C00DC89C0 /* Preview Assets.xcassets */; };
-		1A00363B2C6DE69500DC89C0 /* MovieSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00363A2C6DE69500DC89C0 /* MovieSwipeView.swift */; };
 		1A0036402C6DF5B100DC89C0 /* SwipeGestureModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00363F2C6DF5B100DC89C0 /* SwipeGestureModifier.swift */; };
 		1A0036422C6DF5F500DC89C0 /* PosterImgModfier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0036412C6DF5F500DC89C0 /* PosterImgModfier.swift */; };
 		1A0036442C6DF64400DC89C0 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0036432C6DF64400DC89C0 /* View+Extension.swift */; };
@@ -63,7 +62,6 @@
 		1A0035ED2C66114B00DC89C0 /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
 		1A0035EF2C66114C00DC89C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A0035F22C66114C00DC89C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1A00363A2C6DE69500DC89C0 /* MovieSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSwipeView.swift; sourceTree = "<group>"; };
 		1A00363F2C6DF5B100DC89C0 /* SwipeGestureModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureModifier.swift; sourceTree = "<group>"; };
 		1A0036412C6DF5F500DC89C0 /* PosterImgModfier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImgModfier.swift; sourceTree = "<group>"; };
 		1A0036432C6DF64400DC89C0 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 			children = (
 				1A0035ED2C66114B00DC89C0 /* MainAppView.swift */,
 				D34B058D2CB6D3620038C87C /* AboutLegalView.swift */,
-				1A00363A2C6DE69500DC89C0 /* MovieSwipeView.swift */,
 				5F0A47C72C6FA83700EAFC02 /* StartView.swift */,
 				5F0A47C92C6FAF7300EAFC02 /* PlayersView.swift */,
 				5FFFEC542C71D738002FB36B /* ChooseTypeView.swift */,
@@ -429,7 +426,6 @@
 				D3BF087F2C75029C00F487F2 /* MovieListInteractor.swift in Sources */,
 				1ABFB2672C7F0ADC00473726 /* CustomErrorView.swift in Sources */,
 				D3BF08812C7502B900F487F2 /* AppConfig.swift in Sources */,
-				1A00363B2C6DE69500DC89C0 /* MovieSwipeView.swift in Sources */,
 				1ABFB2652C7E16F700473726 /* BackButtonComponent.swift in Sources */,
 				1ABFB2572C7B05A600473726 /* SwipeCard.swift in Sources */,
 				D3BF087D2C75027700F487F2 /* Movie.swift in Sources */,

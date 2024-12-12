@@ -26,7 +26,7 @@ struct GridCellComponent: View {
                     ZStack(alignment: .bottom) {
                         (image ?? Image(systemName: "popcorn"))
                             .resizable()
-                            .scaledToFill()
+                            .scaledToFit()
                             .frame(width: cellSize, height: cellSize)
                             .background(.ultraThinMaterial)
                         ZStack(alignment: .bottomLeading) {

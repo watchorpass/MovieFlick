@@ -13,20 +13,14 @@ struct CustomErrorView: View {
     let action: () -> Void
     
     var body: some View {
-        VStack(spacing: 0) {
-            Image(.deadpoolimage)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 300)
-            VStack(spacing: 12) {
+            VStack(spacing: 20) {
                 Text(alertTitle)
                     .font(.title2)
                     .fontWeight(.heavy)
                 if let alertMessage {
                     Text(alertMessage)
-                        .font(.title3)
                         .fontWeight(.regular)
-                        .padding(.bottom)
+                        .padding()
                 }
                 Button {
                     action()
@@ -40,7 +34,6 @@ struct CustomErrorView: View {
                 
             }
             .padding()
-            .frame(width: 300, height: 220)
             .background(.ultraThinMaterial.opacity(0.4))
             .overlay {
                 RoundedRectangle(cornerRadius: 10)
@@ -48,7 +41,7 @@ struct CustomErrorView: View {
                     .fill(.white)
                     .shadow(radius: 2)
             }
-        }
+            .padding()
         .foregroundStyle(Color.white)
     }
 }
