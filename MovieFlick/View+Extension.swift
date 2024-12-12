@@ -16,7 +16,7 @@ extension View {
         self.modifier(PosterImgModifiers(color: color))
     }
     
-    func appBackground(gradientOpacity: Double = 0.9) -> some View{
+    func appBackground(gradientOpacity: Double = 0.9) -> some View {
         self.modifier(AppBackground(gradientOpacity: gradientOpacity))
     }
 }
