@@ -1,7 +1,14 @@
 # MovieFlick
 
 Welcome to our app!
+
+We are submitting it to the AppStore, meanwhile you can test it throught [TestFlight](https://testflight.apple.com/join/GDzJPNjV).
+
 Enjoy!
+
+
+
+
 
 # Privacy Policy
 
