@@ -20,7 +20,7 @@ struct GenreView: View {
                         ForEach(Genre.GenreListByType(type: vm.selectedType) , id: \.self) { genre in
                             GridCellComponent(title: genre.description,
                                               cellSize: geometry.size.width*0.4,
-                                              image: Image("\(genre.description)\(vm.selectedType == .movie ? "" : "TV")")) {
+                                              image: nil /*Image("\(genre.description)\(vm.selectedType == .movie ? "" : "TV")")*/) {
                                 vm.addGenre(genre: genre)
                             }
                           .overlay {
