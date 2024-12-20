@@ -2,7 +2,10 @@
 
 Welcome to our app!
 
-We are submitting it to the AppStore, meanwhile you can test it throught [TestFlight](https://testflight.apple.com/join/GDzJPNjV).
+It is published on the AppStore, go check it out! [Link to the AppStore](https://apps.apple.com/es/app/movieflick/id6736606796).
+
+![App_Store_(iOS)](https://github.com/user-attachments/assets/576a9e7f-1db4-47b2-9b6f-c572e44a1bdc)
+
 
 Enjoy!
 
