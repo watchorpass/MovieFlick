@@ -6,6 +6,8 @@
 ## User settings
 xcuserdata/
 **/configAPI.plist
+*/configAPI.plist
+configAPI.plist
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
