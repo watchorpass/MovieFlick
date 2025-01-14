@@ -53,7 +53,7 @@ struct MovieSelectionView: View {
             Spacer()
             AppButton(title: "Restart", color: .gray) {
                 vm.showLoadingView = true
-                vm.players = [.emptyPlayer, .emptyPlayer]
+                vm.resetGame()
                 vm.viewState = .startView
             }
             .padding()

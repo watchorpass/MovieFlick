@@ -178,4 +178,11 @@ final class MovieFlickViewModel {
     func noSecondNames() -> Bool {
         return !players.allSatisfy({isFirstOfHisName(player: $0)})
     }
+    
+    func resetGame() {
+        players = [.emptyPlayer, .emptyPlayer]
+        selectedGenres = [.all]
+        selectedType = .movie
+        selectedProviders.removeAll()
+    }
 }

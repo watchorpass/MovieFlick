@@ -30,4 +30,16 @@ extension UIDevice {
             .safeAreaInsets
             .bottom ?? 0
     }
+    
+    static var height: CGFloat {
+        UIApplication
+            .shared
+            .connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap(\.windows)
+            .first { $0.isKeyWindow }?
+            .screen
+            .bounds
+            .height ?? 0
+    }
 }

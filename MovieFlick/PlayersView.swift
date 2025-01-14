@@ -40,7 +40,7 @@ struct PlayersView: View {
 
             Spacer()
             AppButton(title: "Continue", isButtonDisabled: (vm.playersWithoutName() || vm.noSecondNames())) {
-                print(vm.noSecondNames())
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 vm.viewState = .chooseTypeView
             }
         }

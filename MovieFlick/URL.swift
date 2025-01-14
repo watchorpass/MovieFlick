@@ -170,7 +170,7 @@ extension URLQueryItem {
         URLQueryItem(name: "watch_region", value: region)
     }
     static func providers(providers: [Provider]) -> URLQueryItem {
-        let providersID = providers.map { String($0.rawValue) }.joined(separator: ",")
+        let providersID = providers.map { String($0.rawValue) }.joined(separator: "|")
         return URLQueryItem(name: "with_watch_providers", value: providersID)
     }
     static func genres(genre: [Genre]) -> URLQueryItem {

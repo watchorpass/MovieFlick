@@ -20,30 +20,15 @@ struct ResultsView: View {
                 .fontWeight(.heavy)
                 .foregroundStyle(Color.white)
             ScrollView {
-                LazyVGrid(columns: items) {
-                    ForEach(vm.resultMovies) { movie in
-                        if let image = movie.cardImage {
-                            Image(uiImage: image)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 160)
-                                .clipShape(RoundedRectangle(cornerRadius: 8))
-                                .overlay(alignment: .bottomTrailing) {
-                                    Image(systemName: "info.circle")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 20)
-                                        .foregroundStyle(.white)
-                                        .padding(16)
-                                        .onTapGesture {
-                                            vm.selectedMovie = movie
-                                            showDetail.toggle()
-                                        }
-                                }
-                        } else {
-                            Image(systemName: "popcorn")
-                        }
+                if vm.resultMovies.isEmpty {
+                    VStack {
+                        Text("No matches, try again.")
+                            .fontWeight(.medium)
+                            .foregroundStyle(Color.white)
                     }
+                    .padding(.vertical, UIDevice.height*0.3)
+                } else {
+                    resultMovies
                 }
             }
             .safeAreaInset(edge: .bottom) {
@@ -51,16 +36,17 @@ struct ResultsView: View {
                     AppButton(title: "Restart Game", color: .gray) {
                         vm.swipeTip.invalidate(reason: .actionPerformed)
                         vm.showLoadingView = true
-                        vm.players = [.emptyPlayer, .emptyPlayer]
+                        vm.resetGame()
                         vm.viewState = .startView
                     }
-                    
-                    AppButton(title: "Choose one", color: .gray) {
-                        vm.swipeTip.invalidate(reason: .actionPerformed)
-                        vm.randomMovie()
-                        vm.viewState = .movieSelection
+                    if !vm.resultMovies.isEmpty {
+                        AppButton(title: "Choose one", color: .gray) {
+                            vm.swipeTip.invalidate(reason: .actionPerformed)
+                            vm.randomMovie()
+                            vm.viewState = .movieSelection
+                        }
+                        .popoverTip(vm.chooseOneTip)
                     }
-                    .popoverTip(vm.chooseOneTip)
                 }
                 .padding()
             }
@@ -72,6 +58,34 @@ struct ResultsView: View {
         })
         .padding()
         .appBackground()
+    }
+    
+    var resultMovies: some View {
+        LazyVGrid(columns: items) {
+            ForEach(vm.resultMovies) { movie in
+                if let image = movie.cardImage {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 160)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .overlay(alignment: .bottomTrailing) {
+                            Image(systemName: "info.circle")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20)
+                                .foregroundStyle(.white)
+                                .padding(16)
+                                .onTapGesture {
+                                    vm.selectedMovie = movie
+                                    showDetail.toggle()
+                                }
+                        }
+                } else {
+                    Image(systemName: "popcorn")
+                }
+            }
+        }
     }
 }
 
