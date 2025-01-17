@@ -39,6 +39,7 @@
 		A106CFD52C73536000762871 /* GenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106CFD42C73536000762871 /* GenreView.swift */; };
 		A13CC3362CABE42000C89D59 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13CC3352CABE41A00C89D59 /* Player.swift */; };
 		A1C77F4A2C676264008B018F /* GridCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C77F492C676264008B018F /* GridCellComponent.swift */; };
+		A1F418182D3A4DF400D3EA5E /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F418172D3A4DF400D3EA5E /* CustomAlertView.swift */; };
 		D30664482C89C54400ABED1A /* ProvidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30664472C89C54400ABED1A /* ProvidersView.swift */; };
 		D306644A2C8A32A400ABED1A /* CellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30664492C8A32A400ABED1A /* CellProvider.swift */; };
 		D329B1432C84E07C00808E1C /* TVSerieDTOList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329B1422C84E07C00808E1C /* TVSerieDTOList.swift */; };
@@ -89,6 +90,7 @@
 		A106CFD42C73536000762871 /* GenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreView.swift; sourceTree = "<group>"; };
 		A13CC3352CABE41A00C89D59 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A1C77F492C676264008B018F /* GridCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCellComponent.swift; sourceTree = "<group>"; };
+		A1F418172D3A4DF400D3EA5E /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		D30664462C899AA300ABED1A /* PreviewDataSeriesList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PreviewDataSeriesList.json; sourceTree = "<group>"; };
 		D30664472C89C54400ABED1A /* ProvidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidersView.swift; sourceTree = "<group>"; };
 		D30664492C8A32A400ABED1A /* CellProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProvider.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				5FE312912C75E70700C0971F /* PlayerTextField.swift */,
 				1ABFB2562C7B05A600473726 /* SwipeCard.swift */,
 				1ABFB2642C7E16F700473726 /* BackButtonComponent.swift */,
+				A1F418172D3A4DF400D3EA5E /* CustomAlertView.swift */,
 				1ABFB2662C7F0ADC00473726 /* CustomErrorView.swift */,
 				5F6D370F2C883B4200DE7040 /* DetailView.swift */,
 				D30664492C8A32A400ABED1A /* CellProvider.swift */,
@@ -456,6 +459,7 @@
 				5FEDFE1F2C83786900A01C04 /* GifImage.swift in Sources */,
 				A106CFD32C73502200762871 /* FilterView.swift in Sources */,
 				D30664482C89C54400ABED1A /* ProvidersView.swift in Sources */,
+				A1F418182D3A4DF400D3EA5E /* CustomAlertView.swift in Sources */,
 				5FFFEC552C71D738002FB36B /* ChooseTypeView.swift in Sources */,
 				1A0036442C6DF64400DC89C0 /* View+Extension.swift in Sources */,
 				D329B1432C84E07C00808E1C /* TVSerieDTOList.swift in Sources */,

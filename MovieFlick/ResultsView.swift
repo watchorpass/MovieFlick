@@ -20,26 +20,17 @@ struct ResultsView: View {
                 .fontWeight(.heavy)
                 .foregroundStyle(Color.white)
             ScrollView {
-                if vm.resultMovies.isEmpty {
-                    VStack {
-                        Text("No matches, try again.")
-                            .fontWeight(.medium)
-                            .foregroundStyle(Color.white)
-                    }
-                    .padding(.vertical, UIDevice.height*0.3)
-                } else {
-                    resultMovies
-                }
+                resultMovies
             }
             .safeAreaInset(edge: .bottom) {
                 HStack {
-                    AppButton(title: "Restart Game", color: .gray) {
-                        vm.swipeTip.invalidate(reason: .actionPerformed)
-                        vm.showLoadingView = true
-                        vm.resetGame()
-                        vm.viewState = .startView
-                    }
                     if !vm.resultMovies.isEmpty {
+                        AppButton(title: "Restart Game", color: .gray) {
+                            vm.swipeTip.invalidate(reason: .actionPerformed)
+                            vm.showLoadingView = true
+                            vm.resetGame()
+                            vm.viewState = .startView
+                        }
                         AppButton(title: "Choose one", color: .gray) {
                             vm.swipeTip.invalidate(reason: .actionPerformed)
                             vm.randomMovie()
@@ -49,6 +40,15 @@ struct ResultsView: View {
                     }
                 }
                 .padding()
+            }
+        }
+        .overlay {
+            if vm.resultMovies.isEmpty {
+                CustomAlertView(errorTitle: "NO MATCHES FOUND", errorMessage: "Oops! Looks like there’s no match this time… 🤔 Maybe it’s time to rethink your movie friendship. Or, you can play again and try your luck! 🎬😅") {
+                    vm.showLoadingView = true
+                    vm.resetGame()
+                    vm.viewState = .startView
+                }
             }
         }
         .sheet(isPresented: $showDetail, content: {

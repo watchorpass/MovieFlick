@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AppButton: View {
+    var icon: Image?
     var title: String
     var color: Color = .clear
     var animation: Animation? = .spring
@@ -22,20 +23,27 @@ struct AppButton: View {
                 action()
             }
         } label: {
-            Text(title)
-                .fontWeight(.bold)
-                .foregroundStyle(isButtonDisabled ? .white.opacity(0.5) : .white)
-                .foregroundColor(.primary.opacity(isButtonDisabled ? 0.4 : 1))
-                .padding()
-                .frame(maxWidth: .infinity, maxHeight: 50)
-                .background(isButtonDisabled ? color.opacity(0.2) : color.opacity(0.6))
-                .cornerRadius(10)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(lineWidth: 2)
-                        .fill(isButtonDisabled ? .white.opacity(0.5) : .white)
+            HStack {
+                if let icon {
+                    icon
+                        .resizable()
+                        .scaledToFit()
                 }
-                .scaleEffect(isPressed ? 0.95 : 1.0)
+                Text(title)
+            }
+            .fontWeight(.bold)
+            .foregroundStyle(isButtonDisabled ? .white.opacity(0.5) : .white)
+            .foregroundColor(.primary.opacity(isButtonDisabled ? 0.4 : 1))
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: 50)
+            .background(isButtonDisabled ? color.opacity(0.2) : color.opacity(0.6))
+            .cornerRadius(10)
+            .overlay {
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(lineWidth: 2)
+                    .fill(isButtonDisabled ? .white.opacity(0.5) : .white)
+            }
+            .scaleEffect(isPressed ? 0.95 : 1.0)
         }
         .disabled(isButtonDisabled)
         .simultaneousGesture(
@@ -64,6 +72,8 @@ struct AppButton: View {
             print("Popular button tapped")
         }
         AppButton(title: "Button dissabled", animation: nil, isButtonDisabled: true) {}
+        AppButton(icon: Image(systemName: "arrow.clockwise"),title: "Button enabled", animation: nil, isButtonDisabled: false) {}
+        AppButton(icon: Image(systemName: "arrow.clockwise"),title: "Button dissabled", animation: nil, isButtonDisabled: true) {}
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background {

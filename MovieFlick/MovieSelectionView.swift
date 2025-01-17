@@ -13,15 +13,11 @@ struct MovieSelectionView: View {
     
     var body: some View {
         VStack {
-            Text("Movie selected is ")
+            Text("Selected movie is: ")
                 .font(.title)
                 .foregroundStyle(.white)
                 .bold()
             if let selectedMovie = vm.selectedMovie {
-                Text(selectedMovie.title)
-                    .font(.title)
-                    .foregroundStyle(.white)
-                    .bold()
                 if let uiImage = selectedMovie.cardImage {
                     Image(uiImage: uiImage)
                         .resizable()
