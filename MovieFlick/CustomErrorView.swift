@@ -48,5 +48,5 @@ struct CustomErrorView: View {
 
 #Preview {
     CustomErrorView(alertTitle: "UPS... Something went wrong", alertMessage: "Check your internet connection and try again.") {}
-        .appBackground()
+        .appBackground(gradientOpacity: 0.5)
 }

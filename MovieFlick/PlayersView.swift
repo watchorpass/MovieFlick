@@ -10,7 +10,7 @@ import SwiftUI
 struct PlayersView: View {
     @Environment(MovieFlickViewModel.self) var vm
     
-    private var addPlayerText: (String, Bool) {
+    private var addPlayerText: (LocalizedStringKey, Bool) {
         (vm.players.count < 4) ? ("Add new player +", false) : ("Max. 4 players", true)
     }
     
@@ -49,7 +49,7 @@ struct PlayersView: View {
         .padding(.bottom)
         .animation(.smooth, value: vm.players)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .appBackground()
+        .appBackground(gradientOpacity: 0.5)
     }
 }
 

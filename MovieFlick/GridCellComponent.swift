@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GridCellComponent: View {
-    let title: String
+    let title: LocalizedStringKey
     let cellSize: CGFloat
     var image: Image? = nil
     var color: Color? = nil

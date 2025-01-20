@@ -15,7 +15,7 @@ struct ResultsView: View {
     
     var body: some View {
         VStack(spacing: 26) {
-            Text("\(vm.selectedType.rawValue) MATCHES")
+            Text("MATCHES")
                 .font(.title)
                 .fontWeight(.heavy)
                 .foregroundStyle(Color.white)
@@ -57,7 +57,7 @@ struct ResultsView: View {
             }
         })
         .padding()
-        .appBackground()
+        .appBackground(gradientOpacity: 0.5)
     }
     
     var resultMovies: some View {

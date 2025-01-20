@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppButton: View {
     var icon: Image?
-    var title: String
+    var title: LocalizedStringKey
     var color: Color = .clear
     var animation: Animation? = .spring
     var isButtonDisabled: Bool = false
@@ -76,7 +76,5 @@ struct AppButton: View {
         AppButton(icon: Image(systemName: "arrow.clockwise"),title: "Button dissabled", animation: nil, isButtonDisabled: true) {}
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .background {
-        Color.purple
-    }
+    .appBackground(gradientOpacity: 0.5)
 }

@@ -37,7 +37,7 @@ struct ChooseTypeView: View {
             }
             .padding(.leading, 24)
         }
-        .appBackground()
+        .appBackground(gradientOpacity: 0.5)
     }
 }
 

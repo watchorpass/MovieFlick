@@ -54,7 +54,7 @@ struct ProvidersView: View {
                 .padding()
             }
         }
-        .appBackground()
+        .appBackground(gradientOpacity: 0.5)
     }
 }
 

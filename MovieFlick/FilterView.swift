@@ -2,16 +2,15 @@ import SwiftUI
 
 struct FilterView: View {
     @Environment(MovieFlickViewModel.self) var vm
-    let selectedType: String = "Filters"
     
     var body: some View {
         VStack {
-            Text(selectedType.uppercased())
+            Text("FILTERS")
                 .font(.title)
                 .bold()
                 .foregroundStyle(.white)
             Spacer()
-            Text("Select which list you want to see")
+            Text("Choose your priority")
                 .foregroundStyle(.white)
                 .padding(.bottom, 30)
             VStack(spacing: 20){
@@ -35,7 +34,7 @@ struct FilterView: View {
             }
             .padding(.leading, 24)
         }
-        .appBackground()
+        .appBackground(gradientOpacity: 0.5)
     }
 }
 

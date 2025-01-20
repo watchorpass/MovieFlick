@@ -17,6 +17,7 @@ struct MovieSelectionView: View {
                 .font(.title)
                 .foregroundStyle(.white)
                 .bold()
+                .padding(.top, 50)
             if let selectedMovie = vm.selectedMovie {
                 if let uiImage = selectedMovie.cardImage {
                     Image(uiImage: uiImage)
@@ -60,7 +61,7 @@ struct MovieSelectionView: View {
             }
         }
         .padding(.horizontal, 12)
-        .appBackground()
+        .appBackground(gradientOpacity: 0.5)
         .overlay {
             LoadingSelectingView()
                 .opacity(vm.showLoadingView ? 1 : 0)

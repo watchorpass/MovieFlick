@@ -55,7 +55,7 @@ final class MovieFlickViewModel {
             selectedMovie = movieWinner
         }
         Task {
-            try? await Task.sleep(nanoseconds: 3_000_000_000)
+            try? await Task.sleep(nanoseconds: 5_000_000_000)
             showLoadingView.toggle()
         }
     }

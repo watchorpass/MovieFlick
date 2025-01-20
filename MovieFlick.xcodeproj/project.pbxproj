@@ -38,6 +38,7 @@
 		A106CFD32C73502200762871 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106CFD22C73502200762871 /* FilterView.swift */; };
 		A106CFD52C73536000762871 /* GenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106CFD42C73536000762871 /* GenreView.swift */; };
 		A13CC3362CABE42000C89D59 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13CC3352CABE41A00C89D59 /* Player.swift */; };
+		A1AE41192D3E487F00F3D544 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A1AE41182D3E487F00F3D544 /* Localizable.xcstrings */; };
 		A1C77F4A2C676264008B018F /* GridCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C77F492C676264008B018F /* GridCellComponent.swift */; };
 		A1F418182D3A4DF400D3EA5E /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F418172D3A4DF400D3EA5E /* CustomAlertView.swift */; };
 		D30664482C89C54400ABED1A /* ProvidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30664472C89C54400ABED1A /* ProvidersView.swift */; };
@@ -89,6 +90,7 @@
 		A106CFD22C73502200762871 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		A106CFD42C73536000762871 /* GenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreView.swift; sourceTree = "<group>"; };
 		A13CC3352CABE41A00C89D59 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		A1AE41182D3E487F00F3D544 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		A1C77F492C676264008B018F /* GridCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCellComponent.swift; sourceTree = "<group>"; };
 		A1F418172D3A4DF400D3EA5E /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		D30664462C899AA300ABED1A /* PreviewDataSeriesList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PreviewDataSeriesList.json; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			children = (
 				D3BF08802C7502B900F487F2 /* AppConfig.swift */,
 				D34B058B2CB6D17B0038C87C /* configAPI.plist */,
+				A1AE41182D3E487F00F3D544 /* Localizable.xcstrings */,
 			);
 			name = AppConfig;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 1A0035DF2C66114B00DC89C0;
 			packageReferences = (
@@ -410,6 +414,7 @@
 			files = (
 				D34B058C2CB6D17B0038C87C /* configAPI.plist in Resources */,
 				D3BF08792C75025300F487F2 /* PreviewDataMovieList.json in Resources */,
+				A1AE41192D3E487F00F3D544 /* Localizable.xcstrings in Resources */,
 				1A0035F32C66114C00DC89C0 /* Preview Assets.xcassets in Resources */,
 				5F1546C52C85A2A50089DB5D /* movieLoading.gif in Resources */,
 				1A0035F02C66114C00DC89C0 /* Assets.xcassets in Resources */,
@@ -530,6 +535,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -586,6 +592,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
