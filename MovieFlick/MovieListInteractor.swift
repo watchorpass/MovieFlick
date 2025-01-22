@@ -12,6 +12,8 @@ protocol MovieListInteractorProtocol {
     func getMovies(isAdult: Bool?, includesVideo: Bool?, page: Int?, sortBy: SortType?, releaseYear: Int?, dateGreaterThan: String?, dateLessThan: String?, voteGreaterThan: Double?, voteLessThan: Double?, region: String?, providers: [Provider]?, genres: [Genre]?, monetizationTypes: [MonetizationType]?) async throws -> [Movie]
     func getSeries(isAdult: Bool?, includesVideo: Bool?, page: Int?, sortBy: SortType?, releaseYear: Int?, dateGreaterThan: String?, dateLessThan: String?, voteGreaterThan: Double?, voteLessThan: Double?, region: String?, providers: [Provider]?, genres: [Genre]?, monetizationTypes: [MonetizationType]?) async throws -> [Movie]
     func loadCardImages(for movies: [Movie]) async throws -> [Movie]
+    func savePlayers(players: [Player]) throws
+    func loadPlayers() throws -> [Player]
 }
 
 struct MovieListInteractor: MovieListInteractorProtocol, NetworkInteractor {
@@ -82,5 +84,15 @@ struct MovieListInteractor: MovieListInteractorProtocol, NetworkInteractor {
         } else {
             throw URLError(.badServerResponse)
         }
+    }
+    
+    func savePlayers(players: [Player]) throws {
+        let data = try JSONEncoder().encode(players)
+        try data.write(to: URL.documentsDirectory.appending(path: "playerList"), options: .atomic)
+    }
+    
+    func loadPlayers() throws -> [Player] {
+        let data = try Data(contentsOf: URL.documentsDirectory.appending(path: "playerList"))
+        return try JSONDecoder().decode([Player].self, from: data)
     }
 }

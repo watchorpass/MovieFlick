@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PlayersView: View {
+//    @AppStorage("playerList") var playerList: [String] = [""]
     @Environment(MovieFlickViewModel.self) var vm
     
     private var addPlayerText: (LocalizedStringKey, Bool) {
@@ -41,6 +42,7 @@ struct PlayersView: View {
             Spacer()
             AppButton(title: "Continue", isButtonDisabled: (vm.playersWithoutName() || vm.noSecondNames())) {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                vm.savePlayer()
                 vm.viewState = .chooseTypeView
             }
         }

@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct MovieListInteractorPreview: MovieListInteractorProtocol {
+    func savePlayers(players: [Player]) throws {
+        return
+    }
+    
+    func loadPlayers() throws -> [Player] {
+        []
+    }
+    
 
         
     func getSeries(isAdult: Bool?, includesVideo: Bool?, page: Int?, sortBy: SortType?, releaseYear: Int?, dateGreaterThan: String?, dateLessThan: String?, voteGreaterThan: Double?, voteLessThan: Double?, region: String?, providers: [Provider]?, genres: [Genre]?, monetizationTypes: [MonetizationType]?) async throws -> [Movie] {

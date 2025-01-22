@@ -48,6 +48,7 @@ final class MovieFlickViewModel {
     
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
+        loadPlayer()
     }
     
     func randomMovie() {
@@ -180,9 +181,24 @@ final class MovieFlickViewModel {
     }
     
     func resetGame() {
-        players = [.emptyPlayer, .emptyPlayer]
         selectedGenres = [.all]
         selectedType = .movie
         selectedProviders.removeAll()
+    }
+    
+    func savePlayer() {
+        do {
+            try interactor.savePlayers(players: players)
+        } catch {
+            print("error")
+        }
+    }
+    
+    func loadPlayer() {
+        do {
+            try players = interactor.loadPlayers()
+        } catch {
+            print("error")
+        }
     }
 }
