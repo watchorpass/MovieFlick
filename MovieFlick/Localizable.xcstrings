@@ -12,10 +12,17 @@
             "value" : "–"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "**The MovieFlick team is on it!** 🍿 Spinning the reel to pick the perfect movie for you… Hang tight, quality cinema takes time! 🎬😄" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’equip de MovieFlick hi està treballant! 🍿 Suant la gota per escollir la pel·lícula perfecta per a tu… Espera un moment, el cinema de qualitat necessita temps! 🎬😄"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -26,6 +33,12 @@
     },
     "%@'s turn" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torn de %@"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -36,6 +49,12 @@
     },
     "Action" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acció"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -46,6 +65,12 @@
     },
     "Action & Adventure" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acció i aventura"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -56,6 +81,12 @@
     },
     "Add new player +" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afegeix un jugador +"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -66,6 +97,12 @@
     },
     "Adventure" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aventura"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -76,6 +113,12 @@
     },
     "All Genres" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tots els gèneres"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -86,6 +129,12 @@
     },
     "Animation" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animació"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -96,6 +145,12 @@
     },
     "Can not decide? No problem we will do it for you." : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No et decideixes? Cap problema, ho fem per tu."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -106,6 +161,12 @@
     },
     "Choose one" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tria una."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -116,6 +177,12 @@
     },
     "Choose your favorites genres." : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tria els teus gèneres favorits."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -126,6 +193,12 @@
     },
     "Choose your priority" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tria la teva prioritat"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -136,6 +209,12 @@
     },
     "Comedy" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comèdia"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -146,6 +225,12 @@
     },
     "Continue" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continua"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -156,6 +241,12 @@
     },
     "Create your players" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea els teus jugadors"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -166,6 +257,12 @@
     },
     "Crime" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crim"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -176,6 +273,12 @@
     },
     "Documentary" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Documental"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -186,6 +289,12 @@
     },
     "Drama" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drama"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -196,6 +305,12 @@
     },
     "Family" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Familiar"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -206,6 +321,12 @@
     },
     "Fantasy" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fantasia"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -216,6 +337,12 @@
     },
     "Films" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pel·lícules"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -226,6 +353,12 @@
     },
     "FILTERS" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FILTRES"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -236,6 +369,12 @@
     },
     "Get a random movie!" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escull a l’atzar!"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -246,6 +385,12 @@
     },
     "History" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Història"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -256,6 +401,12 @@
     },
     "Horror" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terror"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -266,6 +417,12 @@
     },
     "It's your turn, %@" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "És el teu torn, %@"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -276,6 +433,12 @@
     },
     "Kids" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Infantil"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -286,6 +449,12 @@
     },
     "Legal + About us" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legal + Sobre nosaltres"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -296,6 +465,12 @@
     },
     "legal_policy_text" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les dades de les pel·lícules dins d’aquesta aplicació són proporcionades per un servei extern, The Movie Database (TMDb). Per obtenir més informació sobre TMDb, visiteu www.themoviedb.org. No estem afiliats amb TMDb ni som responsables de l’exactitud, disponibilitat o legalitat de la informació que proporcionen. TMDb és un servei independent, i no donem suport ni controlem el contingut que subministren. Aquesta aplicació no pretén reclamar ni implicar propietat, suport o associació amb cap pel·lícula específica, estudi o altra propietat intel·lectual referenciada a través de les dades de TMDb. Totes les marques comercials, títols de pel·lícules i mitjans associats són propietat dels seus respectius titulars. Rebutgem qualsevol responsabilitat relacionada amb possibles problemes de drets d’autor o marques comercials derivats de la visualització de les dades proporcionades per TMDb. Els usuaris haurien de consultar TMDb i els titulars dels drets de les propietats intel·lectuals específiques per a qualsevol preocupació relacionada amb l’ús legal. A més, no assumim cap responsabilitat pel contingut, les polítiques de privacitat o les pràctiques de cap lloc web o servei extern enllaçat des d’aquesta aplicació. Totes les imatges a MovieFlick (aquesta aplicació) tenen com a finalitat l’ús no comercial d’entreteniment i educació únicament, com ara ressenyes, fan art, blogs, fòrums, etc. MovieFlick (aquesta aplicació) no està recolzada, patrocinada ni afiliada amb cap estudi cinematogràfic. Tots els drets d’autor, marques comercials i logotips són propietat dels seus respectius titulars. MovieFlick (aquesta aplicació) és per a ús sense ànim de lucre i educatiu exclusivament."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -312,6 +487,12 @@
     },
     "MATCHES" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MATCHES"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -322,6 +503,12 @@
     },
     "Max. 4 players" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Màx. 4 jugadors"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -332,6 +519,12 @@
     },
     "Music" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Musical"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -342,6 +535,12 @@
     },
     "Mystery" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Misteri"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -352,6 +551,12 @@
     },
     "News" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notícies"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -362,6 +567,12 @@
     },
     "Next" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Següent"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -372,6 +583,12 @@
     },
     "NO" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NO"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -382,6 +599,12 @@
     },
     "NO MATCHES FOUND" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NO HI HA CAP MATCH"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -392,6 +615,12 @@
     },
     "Oops! Looks like there’s no match this time… 🤔 Maybe it’s time to rethink your movie friendship. Or, you can play again and try your luck! 🎬" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ups! Sembla que aquesta vegada no hi ha cap coincidència… 🤔 Potser és hora de replantejar-te la vostra compatibilitat cinematogràfica. O bé, pots tornar a jugar i provar sort! 🎬"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -402,6 +631,12 @@
     },
     "Play again" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torna a jugar"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -412,6 +647,12 @@
     },
     "Player %lld" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jugador/a %lld"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -422,6 +663,12 @@
     },
     "Popular" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Popular"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -432,6 +679,12 @@
     },
     "Proudly developed by [Alberto Alegre](https://github.com/Bitos88), [Alex Ma](https://github.com/alexmaxu), [Fran Malo](https://github.com/franmu94) and [Fran Ochoa](https://github.com/fran-6co)" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desenvolupat amb amor per [Alberto Alegre](https://github.com/Bitos88), [Alex Ma](https://github.com/alexmaxu), [Fran Malo](https://github.com/franmu94) i [Fran Ochoa](https://github.com/fran-6co)."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -442,6 +695,12 @@
     },
     "Rate:" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valoració:"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -452,6 +711,12 @@
     },
     "Reality" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reality"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -462,6 +727,12 @@
     },
     "Restart" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reinicia"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -472,6 +743,12 @@
     },
     "Restart Game" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reinicia"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -488,6 +765,12 @@
     },
     "Romance" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Romanç"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -498,6 +781,12 @@
     },
     "Sci-Fi & Fantasy" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sci-Fi i Fantasia"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -508,6 +797,12 @@
     },
     "Science Fiction" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciència ficció"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -518,6 +813,12 @@
     },
     "See matches" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veu els resultats"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -528,6 +829,12 @@
     },
     "Select providers" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tria plataformes"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -538,6 +845,12 @@
     },
     "Select your favourite genres" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tria els teus gèneres preferits"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -548,6 +861,12 @@
     },
     "Selected movie is: " : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La tria ha resultat en:"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -558,6 +877,12 @@
     },
     "Soap" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Telenovel·la"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -568,6 +893,12 @@
     },
     "Start" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comença"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -578,6 +909,12 @@
     },
     "Swipe right for YES and left for NO." : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Llisca a la dreta per SÍ, i a l’esquerra per NO."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -588,6 +925,12 @@
     },
     "Talk" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conversa"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -598,6 +941,12 @@
     },
     "This product uses the TMDB API but is not endorsed or certified by TMDB." : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aquest producte utilitza l’API de TMDB però no està recolzat ni certificat per TMDB."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -608,6 +957,12 @@
     },
     "Thriller" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thriller"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -618,6 +973,12 @@
     },
     "Time to Swipe!" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hora de lliscar"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -628,6 +989,12 @@
     },
     "Top rated" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Millors valorades"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -638,6 +1005,12 @@
     },
     "Try again" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torna-hi"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -648,6 +1021,12 @@
     },
     "TV Movie" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sèries de pel·lícules"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -658,6 +1037,12 @@
     },
     "TV Series" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sèries"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -668,6 +1053,12 @@
     },
     "War" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guerra"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -678,6 +1069,12 @@
     },
     "War & Politics" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guerra i Política"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -688,6 +1085,12 @@
     },
     "Western" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oest"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -698,6 +1101,12 @@
     },
     "What to see" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Què veure?"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -708,6 +1117,12 @@
     },
     "YES" : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SÍ"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -718,6 +1133,12 @@
     },
     "You can select more than one." : {
       "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pots seleccionar més d’una."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
