@@ -184,21 +184,19 @@ final class MovieFlickViewModel {
         selectedGenres = [.all]
         selectedType = .movie
         selectedProviders.removeAll()
+        loadPlayer()
     }
     
     func savePlayer() {
+        let playerName = players.map(\.name)
         do {
-            try interactor.savePlayers(players: players)
-        } catch {
-            print("error")
-        }
+            try interactor.savePlayers(players: playerName)
+        } catch {}
     }
     
     func loadPlayer() {
         do {
             try players = interactor.loadPlayers()
-        } catch {
-            print("error")
-        }
+        } catch {}
     }
 }

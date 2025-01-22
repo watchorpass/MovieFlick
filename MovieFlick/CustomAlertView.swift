@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CustomAlertView: View {
-    let errorTitle: String
-    let errorMessage: String
+    let errorTitle: LocalizedStringKey
+    let errorMessage: LocalizedStringKey
     let retryAction: () -> Void
     
     @State private var isAnimating = false

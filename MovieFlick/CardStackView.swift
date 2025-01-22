@@ -11,7 +11,7 @@ struct CardStackView: View {
     
     var body: some View {
         VStack {
-            Text(player.name + "'s turn")
+            Text("\(player.name)'s turn")
                 .font(.title2)
                 .fontWeight(.heavy)
                 .foregroundStyle(.white)

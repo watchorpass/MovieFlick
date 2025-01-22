@@ -15,7 +15,7 @@ struct AppBackground: ViewModifier {
                 ZStack {
                     Color.black
                     LinearGradient(
-                        gradient: Gradient(colors: [Color.purple.opacity(gradientOpacity), Color.gray.opacity(gradientOpacity)]),
+                        gradient: Gradient(colors: [Color.purple.opacity(gradientOpacity), Color.purple.opacity(gradientOpacity),  Color.black.opacity(gradientOpacity)]),
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )

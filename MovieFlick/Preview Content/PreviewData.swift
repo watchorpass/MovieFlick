@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MovieListInteractorPreview: MovieListInteractorProtocol {
-    func savePlayers(players: [Player]) throws {
+    func savePlayers(players: [String]) throws {
         return
     }
     

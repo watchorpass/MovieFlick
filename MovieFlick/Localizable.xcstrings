@@ -2,7 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "shouldTranslate" : false
     },
     "–" : {
       "localizations" : {
@@ -20,6 +20,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "**¡El equipo de MovieFlick está en ello!** 🍿 Estamos dándole al coco para encontrar la mejor película para vosotros… Aguanta un poco más, el cine de calidad lleva su tiempo! 🎬😄"
+          }
+        }
+      }
+    },
+    "%@'s turn" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turno de %@"
           }
         }
       }
@@ -234,17 +244,6 @@
         }
       }
     },
-    "HELLO" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HOLA"
-          }
-        }
-      }
-    },
     "History" : {
       "localizations" : {
         "es" : {
@@ -377,6 +376,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "NO"
+          }
+        }
+      }
+    },
+    "NO MATCHES FOUND" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NO HAY MATCHES"
+          }
+        }
+      }
+    },
+    "Oops! Looks like there’s no match this time… 🤔 Maybe it’s time to rethink your movie friendship. Or, you can play again and try your luck! 🎬" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Ups! Parece que no hubo coincidencia esta vez… 🤔 Tal vez sea momento de replantearte tu amistad cinéfila. O puedes jugar de nuevo y probar suerte. 🎬"
           }
         }
       }
