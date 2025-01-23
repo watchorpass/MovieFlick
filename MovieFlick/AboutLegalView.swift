@@ -11,11 +11,12 @@ struct AboutLegalView: View {
     @Environment(MovieFlickViewModel.self) var vm
 
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             Text("Legal + About us")
                 .font(.title)
                 .bold()
                 .foregroundStyle(.white)
+                .padding(.top, 48)
             
             Text("legal_policy_text")
                 .font(.system(size: 13))
@@ -42,7 +43,7 @@ struct AboutLegalView: View {
             Button {
                 vm.viewState = .startView
             } label: {
-                Image(systemName: "x.square")
+                Image(systemName: "x.circle")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 25)

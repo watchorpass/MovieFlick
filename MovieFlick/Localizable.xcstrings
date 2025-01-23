@@ -15,6 +15,22 @@
       },
       "shouldTranslate" : false
     },
+    "– %lld movies left –" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "– Restant: %lld –"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "– Restante: %lld –"
+          }
+        }
+      }
+    },
     "**The MovieFlick team is on it!** 🍿 Spinning the reel to pick the perfect movie for you… Hang tight, quality cinema takes time! 🎬😄" : {
       "localizations" : {
         "ca" : {
@@ -164,7 +180,7 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tria una."
+            "value" : "Tria una"
           }
         },
         "es" : {
@@ -807,22 +823,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ciencia ficción"
-          }
-        }
-      }
-    },
-    "See matches" : {
-      "localizations" : {
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Veu els resultats"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ver matches"
           }
         }
       }

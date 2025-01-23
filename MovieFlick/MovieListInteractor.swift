@@ -32,7 +32,6 @@ struct MovieListInteractor: MovieListInteractorProtocol, NetworkInteractor {
             dateLessThan: dateLessThan,
             voteGreaterThan: voteGreaterThan,
             voteLessThan: voteLessThan,
-            region: region,
             providers: providers,
             genres: genres,
             monetizationTypes: monetizationTypes)
@@ -98,4 +97,5 @@ struct MovieListInteractor: MovieListInteractorProtocol, NetworkInteractor {
         let playersName = try JSONDecoder().decode([String].self, from: data)
         return playersName.map { Player(name: $0) }
     }
+
 }

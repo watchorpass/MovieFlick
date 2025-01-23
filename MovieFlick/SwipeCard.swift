@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NewCard: View {
     @Environment(MovieFlickViewModel.self) var viewModel
-
+    
     @State private var xOffset: CGFloat = 0
     @State private var degrees: Double = 0
     
@@ -38,7 +38,6 @@ struct NewCard: View {
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .offset(x: xOffset)
         .rotationEffect(.degrees(degrees))
-        .animation(.snappy, value: xOffset)
         .gesture(
             DragGesture()
                 .onChanged(onDragChange)
@@ -49,8 +48,10 @@ struct NewCard: View {
 
 extension NewCard {
     func returnToCenter() {
-        xOffset = 0
-        degrees = 0
+        withAnimation(.snappy) {
+            xOffset = 0
+            degrees = 0
+        }
     }
     
     func swipeRight() {
@@ -58,8 +59,8 @@ extension NewCard {
             xOffset = 500
             degrees = 12
         } completion: {
-            //viewModel.selectedPlayer.choosedMovies.append(movie)
             viewModel.selectedPlayer.moviesPassed += 1
+            viewModel.moviesLeft -= 1
         }
     }
     
@@ -68,8 +69,9 @@ extension NewCard {
             xOffset = -500
             degrees = -12
         } completion: {
-           viewModel.removeFromResultMovies(movie: movie)
+            viewModel.removeFromResultMovies(movie: movie)
             viewModel.selectedPlayer.moviesPassed += 1
+            viewModel.moviesLeft -= 1
         }
     }
 }
@@ -98,7 +100,7 @@ extension NewCard {
 
 extension NewCard {
     var screenCutoff: CGFloat {
-        (UIScreen.main.bounds.width / 2) * 0.8
+        (UIScreen.main.bounds.width / 2) * 0.6
     }
     
     var cardWidth: CGFloat {

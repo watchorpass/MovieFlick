@@ -25,7 +25,6 @@ extension URL {
         dateLessThan: String? = nil,
         voteGreaterThan: Double? = nil,
         voteLessThan: Double? = nil,
-        region: String? = nil,
         providers: [Provider]? = nil,
         genres: [Genre]? = nil,
         monetizationTypes: [MonetizationType]? = nil) -> URL {
@@ -59,9 +58,6 @@ extension URL {
             if let voteLessThan = voteLessThan {
                 queryItems.append(.voteLessThan(rate: voteLessThan))
             }
-            if let region = region {
-                queryItems.append(.region(region: region))
-            }
             if let providers = providers {
                 queryItems.append(.providers(providers: providers))
             }
@@ -74,6 +70,8 @@ extension URL {
                 queryItems.append(.monetizationTypes(types: monetizationTypes))
             }
             queryItems.append(.language())
+            queryItems.append(.region())
+            queryItems.append(.watchRegion())
             return movieURL.appending(queryItems: queryItems)
         }
     
@@ -113,9 +111,6 @@ extension URL {
         if let voteLessThan = voteLessThan {
             queryItems.append(.voteLessThan(rate: voteLessThan))
         }
-        if let region = region {
-            queryItems.append(.region(region: region))
-        }
         if let providers = providers {
             queryItems.append(.providers(providers: providers))
         }
@@ -128,7 +123,8 @@ extension URL {
             queryItems.append(.monetizationTypes(types: monetizationTypes))
         }
         queryItems.append(.language())
-        
+        queryItems.append(.region())
+        queryItems.append(.watchRegion())
         return tvURL.appending(queryItems: queryItems)
         
     }
@@ -195,5 +191,14 @@ extension URLQueryItem {
     static func language() -> URLQueryItem {
         let locale = Locale.preferredLanguages.first ?? "es_ES"
         return URLQueryItem(name: "language", value: locale)
+    }
+    
+    static func region() -> URLQueryItem {
+        let region = Locale.current.region?.identifier
+        return URLQueryItem(name: "region", value: region)
+    }
+    static func watchRegion() -> URLQueryItem {
+        let region = Locale.current.region?.identifier
+        return URLQueryItem(name: "watch_region", value: region)
     }
 }

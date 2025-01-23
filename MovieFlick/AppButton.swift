@@ -68,10 +68,10 @@ struct AppButton: View {
 }
 #Preview {
     VStack {
-        AppButton(title: "Active Button") {
+        AppButton(title: "Active Button", color: .gray) {
             print("Popular button tapped")
         }
-        AppButton(title: "Button dissabled", animation: nil, isButtonDisabled: true) {}
+        AppButton(title: "Button dissabled", color: .gray, animation: nil, isButtonDisabled: true) {}
         AppButton(icon: Image(systemName: "arrow.clockwise"),title: "Button enabled", animation: nil, isButtonDisabled: false) {}
         AppButton(icon: Image(systemName: "arrow.clockwise"),title: "Button dissabled", animation: nil, isButtonDisabled: true) {}
     }

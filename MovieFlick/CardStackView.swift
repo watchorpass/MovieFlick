@@ -11,36 +11,39 @@ struct CardStackView: View {
     
     var body: some View {
         VStack {
-            Text("\(player.name)'s turn")
-                .font(.title2)
-                .fontWeight(.heavy)
-                .foregroundStyle(.white)
-                .padding(.top)
-                .onAppear {
-                    vm.selectedPlayer = player
-                }
+            VStack(spacing: 8) {
+                Text("\(player.name)'s turn")
+                    .font(.title2)
+                    .fontWeight(.heavy)
+                Text("– \(vm.moviesLeft) movies left –")
+                    .fontWeight(.light)
+            }
+            .foregroundStyle(.white)
+            .padding(.top)
+            .onAppear {
+                vm.selectedPlayer = player
+            }
             
             ZStack {
                 VStack(spacing: 16) {
-                    if vm.isLastPlayer(player: player) {
-                        AppButton(title: "See matches") {
-                            vm.updatePlayer(player: vm.selectedPlayer)
-                            vm.viewState = .resultView
-                        }
-                        .padding()
-                    } else {
+                    if !vm.isLastPlayer(player: player) {
                         Text("It's your turn, \(vm.nextPlayer(player: player)?.name ?? "")")
                             .font(.title2)
                             .fontWeight(.heavy)
                             .foregroundStyle(Color.white)
                         AppButton(title: "Next") {
                             vm.updatePlayer(player: vm.selectedPlayer)
+                            vm.moviesLeft = 20
                         }
                         .padding(.horizontal)
                     }
-                    
                 }
-                
+                .onChange(of: vm.moviesLeft) { oldValue, newValue in
+                    if newValue == 0 && vm.isLastPlayer(player: player){
+                        vm.updatePlayer(player: vm.selectedPlayer)
+                        vm.viewState = .resultView
+                    }
+                }
                 ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
                     VStack {
                         NewCard(movie: movie)
