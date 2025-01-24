@@ -26,7 +26,7 @@ final class MovieFlickViewModel {
     var moviesWithCard: [Movie] = []
     var players: [Player] = [.emptyPlayer, .emptyPlayer]
     var selectedPlayer: Player = .emptyPlayer
-    var moviesLeft = 20
+    var moviesLeft: Int = 0
     
     var selectedMovie: Movie?
     
@@ -34,7 +34,7 @@ final class MovieFlickViewModel {
     
     var viewState: ViewState = .startView
     var sortType: SortType = .popularity
-    var selectedGenres: [Genre] = [.all]
+    var selectedGenres: [Genre] = []
     var selectedType: SelectedType = .movie
     var selectedProviders: [Provider] = []
     
@@ -45,20 +45,25 @@ final class MovieFlickViewModel {
     let genreTip = GenreTip()
     let chooseOneTip = ChooseOneTip()
     
-    var showLoadingView = true
+    var showLoadingView = false
     
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
         loadPlayer()
+        loadProviders()
+        moviesLeft = moviesWithCard.count
     }
     
     func randomMovie() {
         if let movieWinner = resultMovies.randomElement() {
             selectedMovie = movieWinner
         }
-        Task {
-            try? await Task.sleep(nanoseconds: 5_000_000_000)
+        if resultMovies.count != 1 {
             showLoadingView.toggle()
+            Task {
+                try? await Task.sleep(nanoseconds: 5_000_000_000)
+                showLoadingView.toggle()
+            }
         }
     }
     
@@ -74,6 +79,7 @@ final class MovieFlickViewModel {
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
+            moviesLeft = moviesWithCard.count
         } catch {
             showError.toggle()
             errorMsg = "Check your internet connection and try again"
@@ -88,6 +94,7 @@ final class MovieFlickViewModel {
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
+            moviesLeft = moviesWithCard.count
         } catch {
             showError.toggle()
             errorMsg = "Check your internet connection and try again"
@@ -96,15 +103,11 @@ final class MovieFlickViewModel {
     
     func fetchContent() async {
         switch selectedType {
-        case .movie:
-            await fetchMovies()
-        case .serie:
-            await fetchSeries()
+            case .movie:
+                await fetchMovies()
+            case .serie:
+                await fetchSeries()
         }
-    }
-    func removeCard(_ movie: Movie) {
-        guard let index = moviesWithCard.firstIndex(where: {$0.id == movie.id }) else { return }
-        moviesWithCard.remove(at: index)
     }
     
     func removeFromResultMovies(movie: Movie) {
@@ -114,13 +117,19 @@ final class MovieFlickViewModel {
     
     func addGenre(genre: Genre) {
         if genre == .all {
-            selectedGenres = Genre.allCases
+            if selectedGenres.contains(.all) {
+                selectedGenres = []
+            } else {
+                selectedGenres = [.all]
+            }
         } else {
             if let index = selectedGenres.firstIndex(of: .all) {
                 selectedGenres.remove(at: index)
             }
             if selectedGenres.contains(genre) {
-                selectedGenres.removeAll { $0 == genre }
+                if let index = selectedGenres.firstIndex(of: genre) {
+                    selectedGenres.remove(at: index)
+                }
             } else {
                 selectedGenres.append(genre)
             }
@@ -184,7 +193,6 @@ final class MovieFlickViewModel {
     }
     
     func resetGame() {
-        selectedGenres = [.all]
         selectedType = .movie
         loadPlayer()
     }
@@ -199,6 +207,20 @@ final class MovieFlickViewModel {
     func loadPlayer() {
         do {
             try players = interactor.loadPlayers()
+        } catch {}
+    }
+    
+    func saveProviders() {
+        moviesLeft = moviesWithCard.count
+        let providersNumber = selectedProviders.map(\.rawValue)
+        do {
+            try interactor.saveProviders(providers: providersNumber)
+        } catch {}
+    }
+    
+    func loadProviders() {
+        do {
+            try selectedProviders = interactor.loadProviders()
         } catch {}
     }
 }

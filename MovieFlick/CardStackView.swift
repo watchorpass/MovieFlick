@@ -4,7 +4,6 @@ import TipKit
 struct CardStackView: View {
     @Environment(MovieFlickViewModel.self) var vm
     @State var showDetail = false
-    @State var selectedMovie: Movie?
     var player : Player {
         vm.players.first(where: { $0.moviesPassed < vm.swipeCount } ) ?? .emptyPlayer
     }
@@ -33,7 +32,7 @@ struct CardStackView: View {
                             .foregroundStyle(Color.white)
                         AppButton(title: "Next") {
                             vm.updatePlayer(player: vm.selectedPlayer)
-                            vm.moviesLeft = 20
+                            vm.moviesLeft = vm.moviesWithCard.count
                         }
                         .padding(.horizontal)
                     }
@@ -41,7 +40,12 @@ struct CardStackView: View {
                 .onChange(of: vm.moviesLeft) { oldValue, newValue in
                     if newValue == 0 && vm.isLastPlayer(player: player){
                         vm.updatePlayer(player: vm.selectedPlayer)
-                        vm.viewState = .resultView
+                        if vm.resultMovies.count == 1 {
+                            vm.randomMovie()
+                            vm.viewState = .movieSelection
+                        } else {
+                            vm.viewState = .resultView
+                        }
                     }
                 }
                 ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in

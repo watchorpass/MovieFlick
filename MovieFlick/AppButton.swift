@@ -36,7 +36,8 @@ struct AppButton: View {
             .foregroundColor(.primary.opacity(isButtonDisabled ? 0.4 : 1))
             .padding()
             .frame(maxWidth: .infinity, maxHeight: 50)
-            .background(isButtonDisabled ? color.opacity(0.2) : color.opacity(0.6))
+            .background(isButtonDisabled ? color.opacity(0.2) : color.opacity(0.7))
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 8))
             .cornerRadius(10)
             .overlay {
                 RoundedRectangle(cornerRadius: 10)

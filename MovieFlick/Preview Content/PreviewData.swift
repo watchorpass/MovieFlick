@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct MovieListInteractorPreview: MovieListInteractorProtocol {
+    func saveProviders(providers: [Int]) throws {
+        return
+    }
+    
+    func loadProviders() throws -> [Provider] {
+        []
+    }
+    
     func savePlayers(players: [String]) throws {
         return
     }

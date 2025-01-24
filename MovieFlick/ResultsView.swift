@@ -27,7 +27,6 @@ struct ResultsView: View {
                     if !vm.resultMovies.isEmpty {
                         AppButton(title: "Restart Game", color: .gray) {
                             vm.swipeTip.invalidate(reason: .actionPerformed)
-                            vm.showLoadingView = true
                             vm.resetGame()
                             vm.viewState = .startView
                         }
@@ -45,7 +44,6 @@ struct ResultsView: View {
         .overlay {
             if vm.resultMovies.isEmpty {
                 CustomAlertView(errorTitle: "NO MATCHES FOUND", errorMessage: "Oops! Looks like there’s no match this time… 🤔 Maybe it’s time to rethink your movie friendship. Or, you can play again and try your luck! 🎬") {
-                    vm.showLoadingView = true
                     vm.resetGame()
                     vm.viewState = .startView
                 }

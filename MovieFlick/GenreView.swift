@@ -23,12 +23,12 @@ struct GenreView: View {
                                               image:  Image("\(genre.imageName)\(vm.selectedType == .movie ? "" : "TV")")) {
                                 vm.addGenre(genre: genre)
                             }
-                          .overlay {
-                              RoundedRectangle(cornerRadius: geometry.size.width*0.4/10)
-                                  .stroke(lineWidth: 4)
-                                  .fill(vm.selectedGenres.contains(genre) ? .white : .clear)
-                          }
-                          .padding(4)
+                                              .overlay {
+                                                  RoundedRectangle(cornerRadius: geometry.size.width*0.4/10)
+                                                      .stroke(lineWidth: 4)
+                                                      .fill(vm.selectedGenres.contains(genre) ? .white : .clear)
+                                              }
+                                              .padding(4)
                         }
                     }
                     Spacer(minLength: 65)

@@ -49,6 +49,7 @@ struct ProvidersView: View {
         .overlay(alignment: .bottom) {
             if !vm.selectedProviders.isEmpty {
                 AppButton(title: "Continue", color: .gray) {
+                    vm.saveProviders()
                     vm.viewState = .genreView
                 }
                 .padding()

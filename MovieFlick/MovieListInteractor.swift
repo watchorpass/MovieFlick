@@ -14,6 +14,8 @@ protocol MovieListInteractorProtocol {
     func loadCardImages(for movies: [Movie]) async throws -> [Movie]
     func savePlayers(players: [String]) throws
     func loadPlayers() throws -> [Player]
+    func saveProviders(providers: [Int]) throws
+    func loadProviders() throws -> [Provider]
 }
 
 struct MovieListInteractor: MovieListInteractorProtocol, NetworkInteractor {
@@ -56,19 +58,19 @@ struct MovieListInteractor: MovieListInteractorProtocol, NetworkInteractor {
     
     func loadCardImages(for movies: [Movie]) async throws -> [Movie] {
         var mutableMovies = movies.filter({ $0.posterPath != nil })
-
+        
         try await withThrowingTaskGroup(of: (Int, UIImage?).self) { group in
             for (index, movie) in mutableMovies.enumerated() {
                 guard let url = movie.posterPath else {
                     continue
                 }
-
+                
                 group.addTask {
                     let image = try await getImage(url: url)
                     return (index, image)
                 }
             }
-
+            
             for try await (index, image) in group {
                 mutableMovies[index].cardImage = image
             }
@@ -97,5 +99,17 @@ struct MovieListInteractor: MovieListInteractorProtocol, NetworkInteractor {
         let playersName = try JSONDecoder().decode([String].self, from: data)
         return playersName.map { Player(name: $0) }
     }
-
+    
+    func saveProviders(providers: [Int]) throws {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let data = try encoder.encode(providers)
+        try data.write(to: URL.documentsDirectory.appending(path: "providersList.json"), options: .atomic)
+    }
+    
+    func loadProviders() throws -> [Provider] {
+        let data = try Data(contentsOf: URL.documentsDirectory.appending(path: "providersList.json"))
+        let providers = try JSONDecoder().decode([Int].self, from: data)
+        return providers.compactMap { Provider(rawValue: $0) }
+    }
 }

@@ -49,7 +49,6 @@ struct MovieSelectionView: View {
             }
             Spacer()
             AppButton(title: "Restart", color: .gray) {
-                vm.showLoadingView = true
                 vm.resetGame()
                 vm.viewState = .startView
             }
