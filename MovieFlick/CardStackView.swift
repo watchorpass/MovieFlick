@@ -4,6 +4,8 @@ import TipKit
 struct CardStackView: View {
     @Environment(MovieFlickViewModel.self) var vm
     @State var showDetail = false
+    @State var isAnimating = false
+    
     var player : Player {
         vm.players.first(where: { $0.moviesPassed < vm.swipeCount } ) ?? .emptyPlayer
     }
@@ -22,6 +24,7 @@ struct CardStackView: View {
             .onAppear {
                 vm.selectedPlayer = player
             }
+            .popoverTip(vm.swipeTip, arrowEdge: .top)
             
             ZStack {
                 VStack(spacing: 16) {
@@ -49,18 +52,19 @@ struct CardStackView: View {
                     }
                 }
                 ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
-                    VStack {
-                        NewCard(movie: movie)
-                            .onTapGesture {
-                                vm.selectedMovie = vm.movieSelected(index)
-                                showDetail.toggle()
-                            }
-                    }
-                    .offset(y: CGFloat(Double(index) * 1))
+                    NewCard(movie: movie)
+                        .onTapGesture {
+                            vm.selectedMovie = vm.movieSelected(index)
+                            showDetail.toggle()
+                        }
+                        .offset(y: CGFloat(Double(index) * 1))
+                        .onAppear {
+                                                        print(index)
+                        }
                 }
             }
             .padding(.top)
-            .popoverTip(vm.swipeTip)
+
             Spacer()
         }
         .id(player)
@@ -76,6 +80,11 @@ struct CardStackView: View {
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground(gradientOpacity: 0.5)
+        .overlay {
+            if vm.moviesWithCard.isEmpty && !vm.showError {
+                cardStackLoading
+            }
+        }
         .overlay(alignment: .topLeading) {
             BackButtonComponent {
                 vm.restartCount()
@@ -84,15 +93,54 @@ struct CardStackView: View {
             .padding(.leading, 24)
         }
         .overlay {
-            CustomErrorView(alertTitle: "UPS... Something went wrong",
-                            alertMessage: vm.errorMsg) {
-                Task {
-                    await vm.fetchMovies()
+            if vm.showError {
+                CustomErrorView(alertTitle: "UPS... Something went wrong", alertMessage: vm.errorMsg) {
+                    Task {
+                        await vm.fetchContent()
+                    }
+                }
+                .padding(.bottom, 68)
+            }
+        }
+    }
+    
+    var cardStackLoading: some View {
+        VStack {
+            Image(.rebrandingMovieFlick)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 250)
+                .padding()
+                .rotationEffect(.degrees(isAnimating ? 2 : -2))
+                .animation(
+                    Animation.easeInOut(duration: 1.2)
+                        .repeatForever(autoreverses: true),
+                    value: isAnimating
+                )
+                .onAppear {
+                    isAnimating = true
+                }
+            LoadingView()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .appBackground(gradientOpacity: 0.5)
+    }
+}
+
+struct LoadingView: View {
+    @State private var dotCount = 0
+    private let maxDots = 3
+    
+    var body: some View {
+        Text("Loading" + String(repeating: ".", count: dotCount))
+            .font(.title2)
+            .fontWeight(.heavy)
+            .foregroundStyle(.white)
+            .onAppear {
+                Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+                    dotCount = (dotCount + 1) % (maxDots + 1)
                 }
             }
-                            .padding(.bottom, 68)
-                            .opacity(vm.showError ? 1 : 0)
-        }
     }
 }
 

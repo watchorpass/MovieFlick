@@ -39,7 +39,7 @@ final class MovieFlickViewModel {
     var selectedProviders: [Provider] = []
     
     var showError = false
-    var errorMsg = ""
+    var errorMsg: LocalizedStringKey = ""
     
     let swipeTip = SwipeTip()
     let genreTip = GenreTip()
@@ -60,6 +60,7 @@ final class MovieFlickViewModel {
         }
         if resultMovies.count != 1 {
             showLoadingView.toggle()
+            //TODO: change to timer
             Task {
                 try? await Task.sleep(nanoseconds: 5_000_000_000)
                 showLoadingView.toggle()
@@ -71,33 +72,34 @@ final class MovieFlickViewModel {
         swipeCount = moviesWithCard.count
     }
     
-    func fetchMovies() async {
+    private func fetchMovies() async {
         let randomPage = Int.random(in: 1..<10)
         do {
             let movies = try await interactor.getMovies(isAdult: true, includesVideo: nil, page: randomPage, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
-            
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
+            showError = false
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
             moviesLeft = moviesWithCard.count
         } catch {
-            showError.toggle()
-            errorMsg = "Check your internet connection and try again"
+            errorMsg = "We couldn’t load your movies, please try again later"
+            showError = true
         }
     }
     
-    func fetchSeries() async {
+    private func fetchSeries() async {
         let randomPage = Int.random(in: 1..<10)
         do {
             let movies = try await interactor.getSeries(isAdult: true, includesVideo: nil, page: randomPage, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
             
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
+            showError = false
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
             moviesLeft = moviesWithCard.count
         } catch {
-            showError.toggle()
-            errorMsg = "Check your internet connection and try again"
+            errorMsg = "We couldn’t load your TV Series, please try again later"
+            showError = true
         }
     }
     
@@ -201,13 +203,17 @@ final class MovieFlickViewModel {
         let playerName = players.map(\.name)
         do {
             try interactor.savePlayers(players: playerName)
-        } catch {}
+        } catch {
+            players = [.emptyPlayer, .emptyPlayer]
+        }
     }
     
     func loadPlayer() {
         do {
             try players = interactor.loadPlayers()
-        } catch {}
+        } catch {
+            players = [.emptyPlayer, .emptyPlayer]
+        }
     }
     
     func saveProviders() {
@@ -215,12 +221,16 @@ final class MovieFlickViewModel {
         let providersNumber = selectedProviders.map(\.rawValue)
         do {
             try interactor.saveProviders(providers: providersNumber)
-        } catch {}
+        } catch {
+            selectedProviders = []
+        }
     }
     
     func loadProviders() {
         do {
             try selectedProviders = interactor.loadProviders()
-        } catch {}
+        } catch {
+            selectedProviders = []
+        }
     }
 }

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CustomErrorView: View {
-    let alertTitle: String
-    var alertMessage: String?
+    let alertTitle: LocalizedStringKey
+    var alertMessage: LocalizedStringKey?
     let action: () -> Void
     
     var body: some View {

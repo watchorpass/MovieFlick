@@ -16,6 +16,7 @@ struct PlayerTextField: View {
             .foregroundStyle(.white)
             .accentColor(.white)
             .multilineTextAlignment(.center)
+            .autocorrectionDisabled()
             .font(.title)
             .bold()
             .foregroundColor(.primary)

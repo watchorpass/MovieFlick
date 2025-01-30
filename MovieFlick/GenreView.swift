@@ -49,9 +49,6 @@ struct GenreView: View {
                     vm.viewState = .swipeView
                 }
                 .padding()
-                .task {
-                    await vm.fetchContent()
-                }
             }
         }
         .appBackground(gradientOpacity: 0.5)

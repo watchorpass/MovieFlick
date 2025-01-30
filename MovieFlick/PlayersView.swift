@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PlayersView: View {
-//    @AppStorage("playerList") var playerList: [String] = [""]
     @Environment(MovieFlickViewModel.self) var vm
     
     private var addPlayerText: (LocalizedStringKey, Bool) {

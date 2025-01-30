@@ -10,7 +10,7 @@ import SwiftUI
 struct NewCard: View {
     @Environment(MovieFlickViewModel.self) var viewModel
     
-    @State private var xOffset: CGFloat = 0
+    @State var xOffset: CGFloat = 0
     @State private var degrees: Double = 0
     
     let movie: Movie
@@ -21,20 +21,20 @@ struct NewCard: View {
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFill()
-                    .overlay(alignment: .bottomTrailing) {
-                        Image(systemName: "info.circle")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 40)
-                            .foregroundStyle(.white)
-                            .padding(16)
-                    }
             }
             SwipeActionIndicationView(xOffset: $xOffset, screenCutoff: screenCutoff)
                 .frame(width: cardWidth)
             
         }
         .frame(width: cardWidth, height: cardHeight)
+        .overlay(alignment: .bottomTrailing) {
+            Image(systemName: "info.circle")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 40)
+                .foregroundStyle(.white)
+                .padding(16)
+        }
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .offset(x: xOffset)
         .rotationEffect(.degrees(degrees))

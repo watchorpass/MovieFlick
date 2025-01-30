@@ -41,7 +41,7 @@ struct MovieSelectionView: View {
                     CustomErrorView(alertTitle: "Image can not be loaded. Try again please.",
                                     alertMessage: vm.errorMsg) {
                         Task {
-                            await vm.fetchMovies()
+                            await vm.fetchContent()
                         }
                     }
                     .padding(.bottom, 68)

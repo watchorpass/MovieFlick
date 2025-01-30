@@ -9,7 +9,8 @@ import SwiftUI
 
 struct AboutLegalView: View {
     @Environment(MovieFlickViewModel.self) var vm
-
+    @State private var showMenu = false
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             Text("Legal + About us")
@@ -35,6 +36,9 @@ struct AboutLegalView: View {
                 .multilineTextAlignment(.center)
                 .padding(.top, 32)
             Spacer()
+#if DEBUG
+            DevButtonView(showMenu: showMenu)
+#endif
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.horizontal)
@@ -51,10 +55,39 @@ struct AboutLegalView: View {
             }
             .padding()
             .buttonStyle(PlainButtonStyle())
-
+            
         }
     }
 }
+
+#if DEBUG
+struct DevButtonView: View {
+    @State var showMenu: Bool
+    var body: some View {
+        ZStack {
+            Color.clear
+                .frame(width: 100, height: 100)
+                .contentShape(Rectangle())
+                .gesture(
+                    TapGesture(count: 2)
+                        .onEnded { _ in
+                            showMenu = true
+                        }
+                )
+            if showMenu {
+                Menu("WARNING: Dev tools") {
+                    Button("Close menu") {
+                        showMenu = false
+                    }
+                }
+                .padding(40)
+                .background(Color.yellow)
+                .cornerRadius(12)
+            }
+        }
+    }
+}
+#endif
 
 #Preview {
     AboutLegalView()

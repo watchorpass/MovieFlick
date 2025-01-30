@@ -175,6 +175,22 @@
         }
       }
     },
+    "Check your internet connection and try again." : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprova la teva connexió a internet i torna-ho a intentar."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprueba tu conexión a internet y vuelve a intentarlo."
+          }
+        }
+      }
+    },
     "Choose one" : {
       "localizations" : {
         "ca" : {
@@ -219,6 +235,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Escoge tu prioridad"
+          }
+        }
+      }
+    },
+    "Close menu" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanca el menú"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar menú"
           }
         }
       }
@@ -427,6 +459,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terror"
+          }
+        }
+      }
+    },
+    "Image can not be loaded. Try again please." : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La imatge no es pot carregar. Torna-ho a intentar"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La imagen no se puede cargar. Inténtalo de nuevo."
           }
         }
       }
@@ -1051,6 +1099,22 @@
         }
       }
     },
+    "UPS... Something went wrong" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ups… Alguna cosa no ha anat bé."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ups… Algo no ha ido bien"
+          }
+        }
+      }
+    },
     "War" : {
       "localizations" : {
         "ca" : {
@@ -1079,6 +1143,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guerra y política"
+          }
+        }
+      }
+    },
+    "WARNING: Dev tools" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ATENCIÓ: Eines per devs."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CUIDADO: Herramientas de developer."
+          }
+        }
+      }
+    },
+    "We couldn’t load your movies, please try again later" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hem pogut carregar les pel·lícules, intenta-ho més tard."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hemos podido cargar tus películas, por favor inténtalo de nuevo más tarde"
+          }
+        }
+      }
+    },
+    "We couldn’t load your TV Series, please try again later" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hem pogut carregar les sèries, intenta-ho més tard."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hemos podido cargar las series, por favor inténtalo de nuevo más tarde."
           }
         }
       }
