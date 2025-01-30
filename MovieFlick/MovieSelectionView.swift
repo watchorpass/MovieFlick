@@ -16,6 +16,7 @@ struct MovieSelectionView: View {
             Text("Selected movie is: ")
                 .font(.title)
                 .foregroundStyle(.white)
+                .multilineTextAlignment(.center)
                 .bold()
                 .padding(.top, 50)
             if let selectedMovie = vm.selectedMovie {

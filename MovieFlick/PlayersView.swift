@@ -23,11 +23,11 @@ struct PlayersView: View {
                 .foregroundStyle(Color.white)
             Spacer()
             VStack {
-                ForEach(vm.players.indices, id: \.self) { index in
+                ForEach(Array(vm.players.enumerated()), id: \.0) { index, player in
                     HStack {
                         PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.players[index].name, color: vm.isFirstOfHisName(player: vm.players[index]) ? .green : .red)
                         AppButton(title: "–", color: (vm.players.count < 3) ? .gray : .red, animation: nil, isButtonDisabled: (vm.players.count < 3)) {
-                            vm.players.remove(at: index)
+                            vm.removePlayer(player: player)
                         }
                         .frame(width: 50)
                     }

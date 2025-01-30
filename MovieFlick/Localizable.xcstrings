@@ -176,6 +176,7 @@
       }
     },
     "Check your internet connection and try again." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ca" : {
           "stringUnit" : {

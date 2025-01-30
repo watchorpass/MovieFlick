@@ -41,7 +41,7 @@ struct CardStackView: View {
                     }
                 }
                 .onChange(of: vm.moviesLeft) { oldValue, newValue in
-                    if newValue == 0 && vm.isLastPlayer(player: player){
+                    if newValue < 1 && vm.isLastPlayer(player: player){
                         vm.updatePlayer(player: vm.selectedPlayer)
                         if vm.resultMovies.count == 1 {
                             vm.randomMovie()

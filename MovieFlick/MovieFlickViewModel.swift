@@ -180,6 +180,12 @@ final class MovieFlickViewModel {
         players.last?.id ?? .none  == player.id
     }
     
+    func removePlayer(player: Player) {
+        if let lastIndex = players.firstIndex(of: player) {
+            players.remove(at: lastIndex)
+        }
+    }
+    
     func isFirstOfHisName(player: Player) -> Bool {
         if player.name.isEmpty {
             return true
