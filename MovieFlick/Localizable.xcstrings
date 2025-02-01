@@ -344,7 +344,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wähle deine Priorität"
+            "value" : "Was ist dir wichtig?"
           }
         },
         "es" : {
@@ -420,6 +420,9 @@
           }
         }
       }
+    },
+    "Continue button" : {
+
     },
     "Create your players" : {
       "localizations" : {
@@ -618,6 +621,9 @@
           }
         }
       }
+    },
+    "Go back" : {
+
     },
     "History" : {
       "localizations" : {
@@ -867,6 +873,9 @@
         }
       }
     },
+    "Navigates to the previous screen" : {
+
+    },
     "News" : {
       "localizations" : {
         "ca" : {
@@ -1042,6 +1051,9 @@
           }
         }
       }
+    },
+    "Proceed to the next step" : {
+
     },
     "Proudly developed by [Alberto Alegre](https://github.com/Bitos88), [Alex Ma](https://github.com/alexmaxu), [Fran Malo](https://github.com/franmu94) and [Fran Ochoa](https://github.com/fran-6co)" : {
       "localizations" : {
@@ -1522,7 +1534,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "TV-Serie"
+            "value" : "Serien"
           }
         },
         "es" : {
@@ -1698,7 +1710,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Was anschauen"
+            "value" : "Was willst du anschauen?"
           }
         },
         "es" : {
@@ -1742,7 +1754,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Du kannst mehr als eine auswählen."
+            "value" : "Du kannst mehr als eines wählen."
           }
         },
         "es" : {
