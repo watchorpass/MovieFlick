@@ -58,9 +58,6 @@ struct CardStackView: View {
                             showDetail.toggle()
                         }
                         .offset(y: CGFloat(Double(index) * 1))
-                        .onAppear {
-                                                        print(index)
-                        }
                 }
             }
             .padding(.top)
