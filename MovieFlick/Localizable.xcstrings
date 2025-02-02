@@ -179,6 +179,9 @@
         }
       }
     },
+    "Active Button" : {
+      "shouldTranslate" : false
+    },
     "Add new player +" : {
       "localizations" : {
         "ca" : {
@@ -266,6 +269,12 @@
           }
         }
       }
+    },
+    "Button dissabled" : {
+      "shouldTranslate" : false
+    },
+    "Button enabled" : {
+      "shouldTranslate" : false
     },
     "Can not decide? No problem we will do it for you." : {
       "localizations" : {
@@ -420,9 +429,6 @@
           }
         }
       }
-    },
-    "Continue button" : {
-
     },
     "Create your players" : {
       "localizations" : {
@@ -621,9 +627,6 @@
           }
         }
       }
-    },
-    "Go back" : {
-
     },
     "History" : {
       "localizations" : {
@@ -873,9 +876,6 @@
         }
       }
     },
-    "Navigates to the previous screen" : {
-
-    },
     "News" : {
       "localizations" : {
         "ca" : {
@@ -1051,9 +1051,6 @@
           }
         }
       }
-    },
-    "Proceed to the next step" : {
-
     },
     "Proudly developed by [Alberto Alegre](https://github.com/Bitos88), [Alex Ma](https://github.com/alexmaxu), [Fran Malo](https://github.com/franmu94) and [Fran Ochoa](https://github.com/fran-6co)" : {
       "localizations" : {
