@@ -41,7 +41,7 @@ struct GenreView: View {
             BackButtonComponent {
                 vm.viewState = .providerView
             }
-            .padding(.leading, 24)
+            .padding()
         }
         .overlay(alignment: .bottom) {
             if !vm.selectedGenres.isEmpty {

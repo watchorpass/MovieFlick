@@ -135,6 +135,15 @@
         }
       }
     },
+    "150 and long text" : {
+      "shouldTranslate" : false
+    },
+    "200 and color" : {
+      "shouldTranslate" : false
+    },
+    "300" : {
+      "shouldTranslate" : false
+    },
     "Action" : {
       "localizations" : {
         "ca" : {
@@ -178,9 +187,6 @@
           }
         }
       }
-    },
-    "Active Button" : {
-      "shouldTranslate" : false
     },
     "Add new player +" : {
       "localizations" : {
@@ -269,12 +275,6 @@
           }
         }
       }
-    },
-    "Button dissabled" : {
-      "shouldTranslate" : false
-    },
-    "Button enabled" : {
-      "shouldTranslate" : false
     },
     "Can not decide? No problem we will do it for you." : {
       "localizations" : {
@@ -562,6 +562,9 @@
         }
       }
     },
+    "Fiction" : {
+      "shouldTranslate" : false
+    },
     "Films" : {
       "localizations" : {
         "ca" : {
@@ -605,6 +608,9 @@
           }
         }
       }
+    },
+    "Genre name" : {
+      "shouldTranslate" : false
     },
     "Get a random movie!" : {
       "localizations" : {
@@ -738,6 +744,9 @@
         }
       }
     },
+    "Large title movie just for checking long text 2" : {
+      "shouldTranslate" : false
+    },
     "Legal + About us" : {
       "localizations" : {
         "ca" : {
@@ -831,6 +840,9 @@
           }
         }
       }
+    },
+    "Movie title" : {
+      "shouldTranslate" : false
     },
     "Music" : {
       "localizations" : {

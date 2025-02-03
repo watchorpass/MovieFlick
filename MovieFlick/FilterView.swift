@@ -32,7 +32,7 @@ struct FilterView: View {
             BackButtonComponent {
                 vm.viewState = .chooseTypeView
             }
-            .padding(.leading, 24)
+            .padding()
         }
         .appBackground(gradientOpacity: 0.5)
     }

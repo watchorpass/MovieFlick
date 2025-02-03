@@ -5,6 +5,7 @@ struct CardStackView: View {
     @Environment(MovieFlickViewModel.self) var vm
     @State var showDetail = false
     @State var isAnimating = false
+    @State var showPlayerInfo = false
     
     var player : Player {
         vm.players.first(where: { $0.moviesPassed < vm.swipeCount } ) ?? .emptyPlayer
@@ -24,6 +25,12 @@ struct CardStackView: View {
             .onAppear {
                 vm.selectedPlayer = player
             }
+            .onChange(of: vm.moviesLeft, { oldValue, newValue in
+                if newValue < 1 {
+                    showPlayerInfo.toggle()
+                }
+            })
+            .opacity(showPlayerInfo ? 0 : 1)
             .popoverTip(vm.swipeTip, arrowEdge: .top)
             
             ZStack {
@@ -33,7 +40,8 @@ struct CardStackView: View {
                             .font(.title2)
                             .fontWeight(.heavy)
                             .foregroundStyle(Color.white)
-                        AppButton(title: "Next") {
+                        AppButton(title: "Next", isButtonDisabled: !(vm.moviesLeft < 1)) {
+                            showPlayerInfo.toggle()
                             vm.updatePlayer(player: vm.selectedPlayer)
                             vm.moviesLeft = vm.moviesWithCard.count
                         }
@@ -51,6 +59,7 @@ struct CardStackView: View {
                         }
                     }
                 }
+                .opacity(showPlayerInfo ? 1 : 0)
                 ForEach(Array(vm.moviesWithCard.enumerated()), id: \.offset) { index, movie in
                     NewCard(movie: movie)
                         .onTapGesture {
@@ -64,6 +73,7 @@ struct CardStackView: View {
 
             Spacer()
         }
+        .animation(.easeInOut, value: showPlayerInfo)
         .id(player)
         .task {
             await vm.fetchContent()
@@ -87,7 +97,7 @@ struct CardStackView: View {
                 vm.restartCount()
                 vm.viewState = .genreView
             }
-            .padding(.leading, 24)
+            .padding()
         }
         .overlay {
             if vm.showError {

@@ -17,12 +17,12 @@ struct ChooseTypeView: View {
                 .bold()
                 .foregroundStyle(.white)
             Spacer()
-            GridCellComponent(title: "Films", cellSize: 300, image: Image(.films)) {
+            GridCellComponent(title: "Films", cellSize: UIDevice.width * 0.7, image: Image(.films)) {
                 vm.selectedType = .movie
                 vm.viewState = .filterView
             }
                 .padding()
-            GridCellComponent(title: "TV Series", cellSize: 300, image: Image(.tvseries)) {
+            GridCellComponent(title: "TV Series", cellSize: UIDevice.width * 0.7, image: Image(.tvseries)) {
                 vm.selectedType = .serie
                 vm.viewState = .filterView
             }
@@ -35,7 +35,7 @@ struct ChooseTypeView: View {
             BackButtonComponent {
                 vm.viewState = .playersView
             }
-            .padding(.leading, 24)
+            .padding()
         }
         .appBackground(gradientOpacity: 0.5)
     }

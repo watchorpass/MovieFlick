@@ -44,7 +44,7 @@ struct ProvidersView: View {
             BackButtonComponent {
                 vm.viewState = .filterView
             }
-            .padding(.leading, 24)
+            .padding()
         }
         .overlay(alignment: .bottom) {
             if !vm.selectedProviders.isEmpty {
