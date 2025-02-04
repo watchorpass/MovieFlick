@@ -1,10 +1,3 @@
-//
-//  PreviewData.swift
-//  MovieFlick
-//
-//  Created by Fran Malo on 20/8/24.
-//
-
 import SwiftUI
 
 struct MovieListInteractorPreview: MovieListInteractorProtocol {

@@ -37,12 +37,7 @@ struct GenreView: View {
         }
         .padding(.top, 48)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .overlay(alignment: .topLeading) {
-            BackButtonComponent {
-                vm.viewState = .providerView
-            }
-            .padding()
-        }
+        .backButton(previousViewState: .providerView)
         .overlay(alignment: .bottom) {
             if !vm.selectedGenres.isEmpty {
                 AppButton(title: "Continue", color: .gray) {

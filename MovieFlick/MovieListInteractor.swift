@@ -1,10 +1,3 @@
-//
-//  MovieListInteractor.swift
-//  MovieFlick
-//
-//  Created by Fran Malo on 19/8/24.
-//
-
 import SwiftUI
 import PackageNetwork
 

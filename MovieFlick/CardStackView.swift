@@ -20,6 +20,8 @@ struct CardStackView: View {
                 Text("– \(vm.moviesLeft) movies left –")
                     .fontWeight(.light)
             }
+            .contentTransition(.numericText(value: Double(vm.moviesLeft)))
+            .animation(.snappy, value: vm.moviesLeft)
             .foregroundStyle(.white)
             .padding(.top)
             .onAppear {
@@ -92,13 +94,7 @@ struct CardStackView: View {
                 cardStackLoading
             }
         }
-        .overlay(alignment: .topLeading) {
-            BackButtonComponent {
-                vm.restartCount()
-                vm.viewState = .genreView
-            }
-            .padding()
-        }
+        .backButton(previousViewState: .genreView)
         .overlay {
             if vm.showError {
                 CustomErrorView(alertTitle: "UPS... Something went wrong", alertMessage: vm.errorMsg) {
@@ -113,20 +109,7 @@ struct CardStackView: View {
     
     var cardStackLoading: some View {
         VStack {
-            Image(.rebrandingMovieFlick)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 250)
-                .padding()
-                .rotationEffect(.degrees(isAnimating ? 2 : -2))
-                .animation(
-                    Animation.easeInOut(duration: 1.2)
-                        .repeatForever(autoreverses: true),
-                    value: isAnimating
-                )
-                .onAppear {
-                    isAnimating = true
-                }
+            AnimatedLogo()
             LoadingView()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -1,10 +1,3 @@
-//
-//  SwipeCard.swift
-//  MovieFlick
-//
-//  Created by Alberto Alegre Bravo on 25/8/24.
-//
-
 import SwiftUI
 
 struct NewCard: View {

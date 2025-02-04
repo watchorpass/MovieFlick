@@ -1,10 +1,3 @@
-//
-//  BackButtonComponent.swift
-//  MovieFlick
-//
-//  Created by Alberto Alegre Bravo on 27/8/24.
-//
-
 import SwiftUI
 
 struct BackButtonComponent: View {

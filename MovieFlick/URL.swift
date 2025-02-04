@@ -1,12 +1,4 @@
-//
-//  URL.swift
-//  MovieFlick
-//
-//  Created by Fran Malo on 16/8/24.
-//
-
 import Foundation
-
 
 let mainURL = URL(string: "https://api.themoviedb.org/3/discover")!
 let imageBaseUrl = URL(string: "https://image.tmdb.org/t/p/w600_and_h900_bestv2")!

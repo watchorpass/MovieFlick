@@ -1,10 +1,3 @@
-//
-//  GifImage.swift
-//  MovieFlick
-//
-//  Created by Alex  on 31/8/24.
-//
-
 import Foundation
 import WebKit
 import SwiftUI

@@ -5,7 +5,7 @@ struct FilterView: View {
     
     var body: some View {
         VStack {
-            Text("FILTERS")
+            Text("Filters")
                 .font(.title)
                 .bold()
                 .foregroundStyle(.white)
@@ -27,14 +27,9 @@ struct FilterView: View {
             Spacer()
         }
         .padding(.top, 48)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .overlay(alignment: .topLeading) {
-            BackButtonComponent {
-                vm.viewState = .chooseTypeView
-            }
-            .padding()
-        }
+        .backButton(previousViewState: .chooseTypeView)
         .appBackground(gradientOpacity: 0.5)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

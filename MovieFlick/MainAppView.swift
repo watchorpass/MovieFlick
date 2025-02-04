@@ -28,6 +28,7 @@ struct MainAppView: View {
                 ProvidersView()
             }
         }
+        .background(.black)
         .animation(.spring, value: vm.viewState)
     }
 }

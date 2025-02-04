@@ -1,16 +1,9 @@
-//
-//  PlayerTextField.swift
-//  MovieFlick
-//
-//  Created by Alex  on 21/8/24.
-//
-
 import SwiftUI
 
 struct PlayerTextField: View {
     var backgroundText: LocalizedStringKey
     @Binding var text: String
-    var color: Color
+
     var body: some View {
         TextField(backgroundText, text: $text, prompt: Text(backgroundText).foregroundStyle(.white.opacity(0.5)))
             .foregroundStyle(.white)
@@ -28,6 +21,6 @@ struct PlayerTextField: View {
 }
 
 #Preview {
-    PlayerTextField(backgroundText: "Text Background", text: .constant(String()) , color: .green)
+    PlayerTextField(backgroundText: "Text Background", text: .constant(String()))
         .appBackground()
 }

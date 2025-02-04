@@ -1,10 +1,3 @@
-//
-//  MovieFlickApp.swift
-//  MovieFlick
-//
-//  Created by Alberto Alegre Bravo on 9/8/24.
-//
-
 import SwiftUI
 import TipKit
 

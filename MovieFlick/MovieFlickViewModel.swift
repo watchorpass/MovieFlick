@@ -1,5 +1,3 @@
-
-
 import SwiftUI
 
 enum ViewState {
@@ -142,10 +140,6 @@ final class MovieFlickViewModel {
         return moviesWithCard[index]
     }
     
-    func playersWithoutName() -> Bool {
-        players.map { $0.name }.contains("")
-    }
-    
     func addprovider(provider: Provider) {
         if selectedProviders.contains(provider) {
             selectedProviders.removeAll { $0 == provider }
@@ -185,19 +179,10 @@ final class MovieFlickViewModel {
             players.remove(at: lastIndex)
         }
     }
-    
-    func isFirstOfHisName(player: Player) -> Bool {
-        if player.name.isEmpty {
-            return true
-        }
-        if let index = players.firstIndex(where: { $0.name == player.name }) {
-            return players[index].id == player.id
-        }
-        return false
-    }
-    
-    func noSecondNames() -> Bool {
-        return !players.allSatisfy({isFirstOfHisName(player: $0)})
+
+    func isRepeatedOrEmptyPlayer() -> Bool {
+        guard !players.map({ $0.name }).contains("") else {return true}
+        return players.count != Set(players.map { $0.name.replacingOccurrences(of: " ", with: "") }).count
     }
     
     func resetGame() {

@@ -1,10 +1,3 @@
-//
-//  View+Extension.swift
-//  MovieFlick
-//
-//  Created by Alberto Alegre Bravo on 15/8/24.
-//
-
 import SwiftUI
 
 extension View {
@@ -19,4 +12,13 @@ extension View {
     func appBackground(gradientOpacity: Double = 0.9) -> some View {
         self.modifier(AppBackground(gradientOpacity: gradientOpacity))
     }
+    
+    func legalModifier() -> some View {
+        modifier(TextLegalModifier())
+    }
+    
+    func backButton(previousViewState: ViewState) -> some View {
+        modifier(BackButtonModifier(viewState: previousViewState))
+    }
 }
+

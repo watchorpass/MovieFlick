@@ -1,10 +1,3 @@
-//
-//  TipKit.swift
-//  MovieFlick
-//
-//  Created by Alex  on 3/9/24.
-//
-
 import Foundation
 import TipKit
 

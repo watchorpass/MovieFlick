@@ -1,10 +1,3 @@
-//
-//  PlayersView.swift
-//  MovieFlick
-//
-//  Created by Alex  on 16/8/24.
-//
-
 import SwiftUI
 
 struct PlayersView: View {
@@ -25,7 +18,7 @@ struct PlayersView: View {
             VStack {
                 ForEach(Array(vm.players.enumerated()), id: \.0) { index, player in
                     HStack {
-                        PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.players[index].name, color: vm.isFirstOfHisName(player: vm.players[index]) ? .green : .red)
+                        PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.players[index].name)
                         AppButton(title: "–", color: (vm.players.count < 3) ? .gray : .red, animation: nil, isButtonDisabled: (vm.players.count < 3)) {
                             vm.removePlayer(player: player)
                         }
@@ -39,7 +32,7 @@ struct PlayersView: View {
             }
 
             Spacer()
-            AppButton(title: "Continue", isButtonDisabled: (vm.playersWithoutName() || vm.noSecondNames())) {
+            AppButton(title: "Continue", isButtonDisabled: vm.isRepeatedOrEmptyPlayer()) {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 vm.savePlayer()
                 vm.viewState = .chooseTypeView

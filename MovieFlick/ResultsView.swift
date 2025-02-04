@@ -1,10 +1,3 @@
-//
-//  ResultsView.swift
-//  MovieFlick
-//
-//  Created by Alberto Alegre Bravo on 27/8/24.
-//
-
 import SwiftUI
 import TipKit
 
@@ -15,7 +8,7 @@ struct ResultsView: View {
     
     var body: some View {
         VStack(spacing: 26) {
-            Text("MATCHES")
+            Text("Matches")
                 .font(.title)
                 .fontWeight(.heavy)
                 .foregroundStyle(Color.white)

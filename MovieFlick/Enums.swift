@@ -1,10 +1,3 @@
-//
-//  Enums.swift
-//  MovieFlick
-//
-//  Created by Fran Malo on 21/8/24.
-//
-
 import SwiftUI
 
 

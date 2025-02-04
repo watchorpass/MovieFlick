@@ -1,10 +1,3 @@
-//
-//  DetailView.swift
-//  MovieFlick
-//
-//  Created by Alex  on 4/9/24.
-//
-
 import SwiftUI
 
 struct DetailView: View {

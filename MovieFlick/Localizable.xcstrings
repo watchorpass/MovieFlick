@@ -135,15 +135,6 @@
         }
       }
     },
-    "150 and long text" : {
-      "shouldTranslate" : false
-    },
-    "200 and color" : {
-      "shouldTranslate" : false
-    },
-    "300" : {
-      "shouldTranslate" : false
-    },
     "Action" : {
       "localizations" : {
         "ca" : {
@@ -562,9 +553,6 @@
         }
       }
     },
-    "Fiction" : {
-      "shouldTranslate" : false
-    },
     "Films" : {
       "localizations" : {
         "ca" : {
@@ -587,30 +575,27 @@
         }
       }
     },
-    "FILTERS" : {
+    "Filters" : {
       "localizations" : {
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "FILTRES"
+            "value" : "Filtres"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "FILTER"
+            "value" : "Filter"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "FILTROS"
+            "value" : "Filtros"
           }
         }
       }
-    },
-    "Genre name" : {
-      "shouldTranslate" : false
     },
     "Get a random movie!" : {
       "localizations" : {
@@ -744,9 +729,6 @@
         }
       }
     },
-    "Large title movie just for checking long text 2" : {
-      "shouldTranslate" : false
-    },
     "Legal + About us" : {
       "localizations" : {
         "ca" : {
@@ -797,24 +779,24 @@
         }
       }
     },
-    "MATCHES" : {
+    "Matches" : {
       "localizations" : {
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "MATCHES"
+            "value" : "Matches"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "TREFFER"
+            "value" : "Treffer"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "COINCIDENCIAS"
+            "value" : "Coincidencias"
           }
         }
       }
@@ -840,9 +822,6 @@
           }
         }
       }
-    },
-    "Movie title" : {
-      "shouldTranslate" : false
     },
     "Music" : {
       "localizations" : {

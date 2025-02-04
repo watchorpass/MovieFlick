@@ -1,10 +1,3 @@
-//
-//  StarsRateComponent.swift
-//  MovieFlick
-//
-//  Created by Fran Malo on 12/8/24.
-//
-
 import SwiftUI
 
 struct StarsRateComponent: View {
