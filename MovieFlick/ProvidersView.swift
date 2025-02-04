@@ -10,7 +10,7 @@ import SwiftUI
 struct ProvidersView: View {
     @Environment(MovieFlickViewModel.self) var vm
     
-    var gridColums = [GridItem(), GridItem()]
+    var gridColumns = [GridItem(), GridItem()]
     
     var body: some View {
         VStack(spacing: 8) {
@@ -20,7 +20,7 @@ struct ProvidersView: View {
                 .foregroundStyle(.white)
             GeometryReader { geometry in
                 ScrollView {
-                    LazyVGrid(columns: gridColums, spacing: 20) {
+                    LazyVGrid(columns: gridColumns, spacing: 20) {
                         ForEach(Provider.avaibleProviders, id: \.self) { provider in
                             GridCellComponent(title: "", cellSize: geometry.size.width*0.40,
                                               image: Image("\(provider)")) {
@@ -44,17 +44,18 @@ struct ProvidersView: View {
             BackButtonComponent {
                 vm.viewState = .filterView
             }
-            .padding(.leading, 24)
+            .padding()
         }
         .overlay(alignment: .bottom) {
             if !vm.selectedProviders.isEmpty {
                 AppButton(title: "Continue", color: .gray) {
+                    vm.saveProviders()
                     vm.viewState = .genreView
                 }
                 .padding()
             }
         }
-        .appBackground()
+        .appBackground(gradientOpacity: 0.5)
     }
 }
 

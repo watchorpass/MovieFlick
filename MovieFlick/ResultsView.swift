@@ -15,54 +15,38 @@ struct ResultsView: View {
     
     var body: some View {
         VStack(spacing: 26) {
-            Text("\(vm.selectedType.rawValue) MATCHES")
+            Text("MATCHES")
                 .font(.title)
                 .fontWeight(.heavy)
                 .foregroundStyle(Color.white)
             ScrollView {
-                LazyVGrid(columns: items) {
-                    ForEach(vm.resultMovies) { movie in
-                        if let image = movie.cardImage {
-                            Image(uiImage: image)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 160)
-                                .clipShape(RoundedRectangle(cornerRadius: 8))
-                                .overlay(alignment: .bottomTrailing) {
-                                    Image(systemName: "info.circle")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 20)
-                                        .foregroundStyle(.white)
-                                        .padding(16)
-                                        .onTapGesture {
-                                            vm.selectedMovie = movie
-                                            showDetail.toggle()
-                                        }
-                                }
-                        } else {
-                            Image(systemName: "popcorn")
-                        }
-                    }
-                }
+                resultMovies
             }
             .safeAreaInset(edge: .bottom) {
                 HStack {
-                    AppButton(title: "Restart Game", color: .gray) {
-                        vm.swipeTip.invalidate(reason: .actionPerformed)
-                        vm.showLoadingView = true
-                        vm.players = [.emptyPlayer, .emptyPlayer]
-                        vm.viewState = .startView
+                    if !vm.resultMovies.isEmpty {
+                        AppButton(title: "Restart Game", color: .gray) {
+                            vm.swipeTip.invalidate(reason: .actionPerformed)
+                            vm.resetGame()
+                            vm.viewState = .startView
+                        }
+                        AppButton(title: "Choose one", color: .gray) {
+                            vm.swipeTip.invalidate(reason: .actionPerformed)
+                            vm.randomMovie()
+                            vm.viewState = .movieSelection
+                        }
+                        .popoverTip(vm.chooseOneTip)
                     }
-                    
-                    AppButton(title: "Choose one", color: .gray) {
-                        vm.swipeTip.invalidate(reason: .actionPerformed)
-                        vm.randomMovie()
-                        vm.viewState = .movieSelection
-                    }
-                    .popoverTip(vm.chooseOneTip)
                 }
                 .padding()
+            }
+        }
+        .overlay {
+            if vm.resultMovies.isEmpty {
+                CustomAlertView(errorTitle: "NO MATCHES FOUND", errorMessage: "Oops! Looks like there’s no match this time… 🤔 Maybe it’s time to rethink your movie friendship. Or, you can play again and try your luck! 🎬") {
+                    vm.resetGame()
+                    vm.viewState = .startView
+                }
             }
         }
         .sheet(isPresented: $showDetail, content: {
@@ -71,7 +55,35 @@ struct ResultsView: View {
             }
         })
         .padding()
-        .appBackground()
+        .appBackground(gradientOpacity: 0.5)
+    }
+    
+    var resultMovies: some View {
+        LazyVGrid(columns: items) {
+            ForEach(vm.resultMovies) { movie in
+                if let image = movie.cardImage {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 160)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .overlay(alignment: .bottomTrailing) {
+                            Image(systemName: "info.circle")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20)
+                                .foregroundStyle(.white)
+                                .padding(16)
+                                .onTapGesture {
+                                    vm.selectedMovie = movie
+                                    showDetail.toggle()
+                                }
+                        }
+                } else {
+                    Image(systemName: "popcorn")
+                }
+            }
+        }
     }
 }
 

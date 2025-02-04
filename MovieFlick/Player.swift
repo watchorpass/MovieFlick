@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Player: Equatable, Hashable, Identifiable {
+struct Player: Equatable, Hashable, Identifiable, Codable {
 
     var id = UUID()
     static let emptyPlayer = Player(name: "")

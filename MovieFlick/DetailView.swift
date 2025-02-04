@@ -54,7 +54,7 @@ struct DetailView: View {
             }
             .padding(.bottom, UIDevice.bottomInsetSize)
         }
-        .appBackground()
+        .appBackground(gradientOpacity: 0.5)
         .ignoresSafeArea()
     }
 }

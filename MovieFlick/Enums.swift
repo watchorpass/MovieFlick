@@ -5,7 +5,7 @@
 //  Created by Fran Malo on 21/8/24.
 //
 
-import Foundation
+import SwiftUI
 
 
 enum SortType: String {
@@ -79,7 +79,41 @@ enum Genre: Int, CaseIterable {
     case talk = 10767
     case warPolitics = 10768
     
-    var description: String {
+    var description: LocalizedStringKey {
+        switch self {
+        case .all: return "All Genres"
+        case .action: return "Action"
+        case .adventure: return "Adventure"
+        case .animation: return "Animation"
+        case .comedy: return "Comedy"
+        case .crime: return "Crime"
+        case .documentary: return "Documentary"
+        case .drama: return "Drama"
+        case .family: return "Family"
+        case .fantasy: return "Fantasy"
+        case .history: return "History"
+        case .horror: return "Horror"
+        case .music: return "Music"
+        case .mystery: return "Mystery"
+        case .romance: return "Romance"
+        case .scienceFiction: return "Science Fiction"
+        case .tvMovie: return "TV Movie"
+        case .thriller: return "Thriller"
+        case .war: return "War"
+        case .western: return "Western"
+            
+        case .actionAdventure: return "Action & Adventure"
+        case .kids: return "Kids"
+        case .news: return "News"
+        case .reality: return "Reality"
+        case .sciFiFantasy: return "Sci-Fi & Fantasy"
+        case .soap: return "Soap"
+        case .talk: return "Talk"
+        case .warPolitics: return "War & Politics"
+        }
+    }
+    
+    var imageName: String {
         switch self {
         case .all: return "All Genres"
         case .action: return "Action"

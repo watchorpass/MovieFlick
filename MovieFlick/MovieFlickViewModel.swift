@@ -26,6 +26,7 @@ final class MovieFlickViewModel {
     var moviesWithCard: [Movie] = []
     var players: [Player] = [.emptyPlayer, .emptyPlayer]
     var selectedPlayer: Player = .emptyPlayer
+    var moviesLeft: Int = 0
     
     var selectedMovie: Movie?
     
@@ -33,30 +34,37 @@ final class MovieFlickViewModel {
     
     var viewState: ViewState = .startView
     var sortType: SortType = .popularity
-    var selectedGenres: [Genre] = [.all]
+    var selectedGenres: [Genre] = []
     var selectedType: SelectedType = .movie
     var selectedProviders: [Provider] = []
     
     var showError = false
-    var errorMsg = ""
+    var errorMsg: LocalizedStringKey = ""
     
     let swipeTip = SwipeTip()
     let genreTip = GenreTip()
     let chooseOneTip = ChooseOneTip()
     
-    var showLoadingView = true
+    var showLoadingView = false
     
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
+        loadPlayer()
+        loadProviders()
+        moviesLeft = moviesWithCard.count
     }
     
     func randomMovie() {
         if let movieWinner = resultMovies.randomElement() {
             selectedMovie = movieWinner
         }
-        Task {
-            try? await Task.sleep(nanoseconds: 5_000_000_000)
+        if resultMovies.count != 1 {
             showLoadingView.toggle()
+            //TODO: change to timer
+            Task {
+                try? await Task.sleep(nanoseconds: 5_000_000_000)
+                showLoadingView.toggle()
+            }
         }
     }
     
@@ -64,43 +72,44 @@ final class MovieFlickViewModel {
         swipeCount = moviesWithCard.count
     }
     
-    func fetchMovies() async {
+    private func fetchMovies() async {
+        let randomPage = Int.random(in: 1..<10)
         do {
-            let movies = try await interactor.getMovies(isAdult: true, includesVideo: nil, page: 1, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
-            
+            let movies = try await interactor.getMovies(isAdult: true, includesVideo: nil, page: randomPage, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
+            showError = false
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
+            moviesLeft = moviesWithCard.count
         } catch {
-            showError.toggle()
-            errorMsg = "Check your internet connection and try again"
+            errorMsg = "We couldn’t load your movies, please try again later"
+            showError = true
         }
     }
     
-    func fetchSeries() async {
+    private func fetchSeries() async {
+        let randomPage = Int.random(in: 1..<10)
         do {
-            let movies = try await interactor.getSeries(isAdult: true, includesVideo: nil, page: 1, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
+            let movies = try await interactor.getSeries(isAdult: true, includesVideo: nil, page: randomPage, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
             
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
+            showError = false
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
+            moviesLeft = moviesWithCard.count
         } catch {
-            showError.toggle()
-            errorMsg = "Check your internet connection and try again"
+            errorMsg = "We couldn’t load your TV Series, please try again later"
+            showError = true
         }
     }
     
     func fetchContent() async {
         switch selectedType {
-        case .movie:
-            await fetchMovies()
-        case .serie:
-            await fetchSeries()
+            case .movie:
+                await fetchMovies()
+            case .serie:
+                await fetchSeries()
         }
-    }
-    func removeCard(_ movie: Movie) {
-        guard let index = moviesWithCard.firstIndex(where: {$0.id == movie.id }) else { return }
-        moviesWithCard.remove(at: index)
     }
     
     func removeFromResultMovies(movie: Movie) {
@@ -110,13 +119,19 @@ final class MovieFlickViewModel {
     
     func addGenre(genre: Genre) {
         if genre == .all {
-            selectedGenres = Genre.allCases
+            if selectedGenres.contains(.all) {
+                selectedGenres = []
+            } else {
+                selectedGenres = [.all]
+            }
         } else {
             if let index = selectedGenres.firstIndex(of: .all) {
                 selectedGenres.remove(at: index)
             }
             if selectedGenres.contains(genre) {
-                selectedGenres.removeAll { $0 == genre }
+                if let index = selectedGenres.firstIndex(of: genre) {
+                    selectedGenres.remove(at: index)
+                }
             } else {
                 selectedGenres.append(genre)
             }
@@ -165,6 +180,12 @@ final class MovieFlickViewModel {
         players.last?.id ?? .none  == player.id
     }
     
+    func removePlayer(player: Player) {
+        if let lastIndex = players.firstIndex(of: player) {
+            players.remove(at: lastIndex)
+        }
+    }
+    
     func isFirstOfHisName(player: Player) -> Bool {
         if player.name.isEmpty {
             return true
@@ -177,5 +198,45 @@ final class MovieFlickViewModel {
     
     func noSecondNames() -> Bool {
         return !players.allSatisfy({isFirstOfHisName(player: $0)})
+    }
+    
+    func resetGame() {
+        selectedType = .movie
+        loadPlayer()
+    }
+    
+    func savePlayer() {
+        let playerName = players.map(\.name)
+        do {
+            try interactor.savePlayers(players: playerName)
+        } catch {
+            players = [.emptyPlayer, .emptyPlayer]
+        }
+    }
+    
+    func loadPlayer() {
+        do {
+            try players = interactor.loadPlayers()
+        } catch {
+            players = [.emptyPlayer, .emptyPlayer]
+        }
+    }
+    
+    func saveProviders() {
+        moviesLeft = moviesWithCard.count
+        let providersNumber = selectedProviders.map(\.rawValue)
+        do {
+            try interactor.saveProviders(providers: providersNumber)
+        } catch {
+            selectedProviders = []
+        }
+    }
+    
+    func loadProviders() {
+        do {
+            try selectedProviders = interactor.loadProviders()
+        } catch {
+            selectedProviders = []
+        }
     }
 }

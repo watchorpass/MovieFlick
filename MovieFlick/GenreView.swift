@@ -20,15 +20,15 @@ struct GenreView: View {
                         ForEach(Genre.GenreListByType(type: vm.selectedType) , id: \.self) { genre in
                             GridCellComponent(title: genre.description,
                                               cellSize: geometry.size.width*0.4,
-                                              image: Image("\(genre.description)\(vm.selectedType == .movie ? "" : "TV")")) {
+                                              image:  Image("\(genre.imageName)\(vm.selectedType == .movie ? "" : "TV")")) {
                                 vm.addGenre(genre: genre)
                             }
-                          .overlay {
-                              RoundedRectangle(cornerRadius: geometry.size.width*0.4/10)
-                                  .stroke(lineWidth: 4)
-                                  .fill(vm.selectedGenres.contains(genre) ? .white : .clear)
-                          }
-                          .padding(4)
+                                              .overlay {
+                                                  RoundedRectangle(cornerRadius: geometry.size.width*0.4/10)
+                                                      .stroke(lineWidth: 4)
+                                                      .fill(vm.selectedGenres.contains(genre) ? .white : .clear)
+                                              }
+                                              .padding(4)
                         }
                     }
                     Spacer(minLength: 65)
@@ -41,7 +41,7 @@ struct GenreView: View {
             BackButtonComponent {
                 vm.viewState = .providerView
             }
-            .padding(.leading, 24)
+            .padding()
         }
         .overlay(alignment: .bottom) {
             if !vm.selectedGenres.isEmpty {
@@ -49,12 +49,9 @@ struct GenreView: View {
                     vm.viewState = .swipeView
                 }
                 .padding()
-                .task {
-                    await vm.fetchContent()
-                }
             }
         }
-        .appBackground()
+        .appBackground(gradientOpacity: 0.5)
     }
 }
 

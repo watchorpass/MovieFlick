@@ -10,7 +10,7 @@ import SwiftUI
 struct PlayersView: View {
     @Environment(MovieFlickViewModel.self) var vm
     
-    private var addPlayerText: (String, Bool) {
+    private var addPlayerText: (LocalizedStringKey, Bool) {
         (vm.players.count < 4) ? ("Add new player +", false) : ("Max. 4 players", true)
     }
     
@@ -23,11 +23,11 @@ struct PlayersView: View {
                 .foregroundStyle(Color.white)
             Spacer()
             VStack {
-                ForEach(vm.players.indices, id: \.self) { index in
+                ForEach(Array(vm.players.enumerated()), id: \.0) { index, player in
                     HStack {
                         PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.players[index].name, color: vm.isFirstOfHisName(player: vm.players[index]) ? .green : .red)
                         AppButton(title: "–", color: (vm.players.count < 3) ? .gray : .red, animation: nil, isButtonDisabled: (vm.players.count < 3)) {
-                            vm.players.remove(at: index)
+                            vm.removePlayer(player: player)
                         }
                         .frame(width: 50)
                     }
@@ -40,7 +40,8 @@ struct PlayersView: View {
 
             Spacer()
             AppButton(title: "Continue", isButtonDisabled: (vm.playersWithoutName() || vm.noSecondNames())) {
-                print(vm.noSecondNames())
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                vm.savePlayer()
                 vm.viewState = .chooseTypeView
             }
         }
@@ -49,7 +50,7 @@ struct PlayersView: View {
         .padding(.bottom)
         .animation(.smooth, value: vm.players)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .appBackground()
+        .appBackground(gradientOpacity: 0.5)
     }
 }
 

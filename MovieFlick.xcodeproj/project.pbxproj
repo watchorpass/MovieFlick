@@ -38,13 +38,15 @@
 		A106CFD32C73502200762871 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106CFD22C73502200762871 /* FilterView.swift */; };
 		A106CFD52C73536000762871 /* GenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106CFD42C73536000762871 /* GenreView.swift */; };
 		A13CC3362CABE42000C89D59 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13CC3352CABE41A00C89D59 /* Player.swift */; };
-		A199B4592D158C5400AD75CA /* configAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = A199B4582D158C5400AD75CA /* configAPI.plist */; };
+		A1AE41192D3E487F00F3D544 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A1AE41182D3E487F00F3D544 /* Localizable.xcstrings */; };
 		A1C77F4A2C676264008B018F /* GridCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C77F492C676264008B018F /* GridCellComponent.swift */; };
+		A1F418182D3A4DF400D3EA5E /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F418172D3A4DF400D3EA5E /* CustomAlertView.swift */; };
 		D30664482C89C54400ABED1A /* ProvidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30664472C89C54400ABED1A /* ProvidersView.swift */; };
 		D306644A2C8A32A400ABED1A /* CellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30664492C8A32A400ABED1A /* CellProvider.swift */; };
 		D329B1432C84E07C00808E1C /* TVSerieDTOList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329B1422C84E07C00808E1C /* TVSerieDTOList.swift */; };
 		D32CA7962C6A01FA009DF748 /* StarsRateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CA7952C6A01FA009DF748 /* StarsRateComponent.swift */; };
 		D32CA79E2C6C07C5009DF748 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CA79D2C6C07C5009DF748 /* AppButton.swift */; };
+		D34B058C2CB6D17B0038C87C /* configAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = D34B058B2CB6D17B0038C87C /* configAPI.plist */; };
 		D34B058E2CB6D3620038C87C /* AboutLegalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34B058D2CB6D3620038C87C /* AboutLegalView.swift */; };
 		D3BF08772C75021400F487F2 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF08762C75021400F487F2 /* URL.swift */; };
 		D3BF08792C75025300F487F2 /* PreviewDataMovieList.json in Resources */ = {isa = PBXBuildFile; fileRef = D3BF08782C75025300F487F2 /* PreviewDataMovieList.json */; };
@@ -88,14 +90,17 @@
 		A106CFD22C73502200762871 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		A106CFD42C73536000762871 /* GenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreView.swift; sourceTree = "<group>"; };
 		A13CC3352CABE41A00C89D59 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		A199B4582D158C5400AD75CA /* configAPI.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = configAPI.plist; sourceTree = "<group>"; };
+		A1915A872D50D290003B80FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A1AE41182D3E487F00F3D544 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		A1C77F492C676264008B018F /* GridCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCellComponent.swift; sourceTree = "<group>"; };
+		A1F418172D3A4DF400D3EA5E /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		D30664462C899AA300ABED1A /* PreviewDataSeriesList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PreviewDataSeriesList.json; sourceTree = "<group>"; };
 		D30664472C89C54400ABED1A /* ProvidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidersView.swift; sourceTree = "<group>"; };
 		D30664492C8A32A400ABED1A /* CellProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProvider.swift; sourceTree = "<group>"; };
 		D329B1422C84E07C00808E1C /* TVSerieDTOList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSerieDTOList.swift; sourceTree = "<group>"; };
 		D32CA7952C6A01FA009DF748 /* StarsRateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsRateComponent.swift; sourceTree = "<group>"; };
 		D32CA79D2C6C07C5009DF748 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		D34B058B2CB6D17B0038C87C /* configAPI.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = configAPI.plist; sourceTree = "<group>"; };
 		D34B058D2CB6D3620038C87C /* AboutLegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutLegalView.swift; sourceTree = "<group>"; };
 		D3BF08762C75021400F487F2 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		D3BF08782C75025300F487F2 /* PreviewDataMovieList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PreviewDataMovieList.json; sourceTree = "<group>"; };
@@ -138,6 +143,7 @@
 		1A0035EA2C66114B00DC89C0 /* MovieFlick */ = {
 			isa = PBXGroup;
 			children = (
+				A1915A872D50D290003B80FD /* Info.plist */,
 				1A00361E2C6754CD00DC89C0 /* Views */,
 				1A0036212C67550300DC89C0 /* ViewModels */,
 				1A0036222C67551800DC89C0 /* Models */,
@@ -217,6 +223,7 @@
 				5FE312912C75E70700C0971F /* PlayerTextField.swift */,
 				1ABFB2562C7B05A600473726 /* SwipeCard.swift */,
 				1ABFB2642C7E16F700473726 /* BackButtonComponent.swift */,
+				A1F418172D3A4DF400D3EA5E /* CustomAlertView.swift */,
 				1ABFB2662C7F0ADC00473726 /* CustomErrorView.swift */,
 				5F6D370F2C883B4200DE7040 /* DetailView.swift */,
 				D30664492C8A32A400ABED1A /* CellProvider.swift */,
@@ -288,8 +295,9 @@
 		1A0036282C67560B00DC89C0 /* AppConfig */ = {
 			isa = PBXGroup;
 			children = (
-				A199B4582D158C5400AD75CA /* configAPI.plist */,
 				D3BF08802C7502B900F487F2 /* AppConfig.swift */,
+				D34B058B2CB6D17B0038C87C /* configAPI.plist */,
+				A1AE41182D3E487F00F3D544 /* Localizable.xcstrings */,
 			);
 			name = AppConfig;
 			sourceTree = "<group>";
@@ -372,7 +380,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					1A0035E72C66114B00DC89C0 = {
 						CreatedOnToolsVersion = 15.4;
@@ -385,6 +393,9 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
+				ca,
+				de,
 				Base,
 			);
 			mainGroup = 1A0035DF2C66114B00DC89C0;
@@ -405,8 +416,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A199B4592D158C5400AD75CA /* configAPI.plist in Resources */,
+				D34B058C2CB6D17B0038C87C /* configAPI.plist in Resources */,
 				D3BF08792C75025300F487F2 /* PreviewDataMovieList.json in Resources */,
+				A1AE41192D3E487F00F3D544 /* Localizable.xcstrings in Resources */,
 				1A0035F32C66114C00DC89C0 /* Preview Assets.xcassets in Resources */,
 				5F1546C52C85A2A50089DB5D /* movieLoading.gif in Resources */,
 				1A0035F02C66114C00DC89C0 /* Assets.xcassets in Resources */,
@@ -456,6 +468,7 @@
 				5FEDFE1F2C83786900A01C04 /* GifImage.swift in Sources */,
 				A106CFD32C73502200762871 /* FilterView.swift in Sources */,
 				D30664482C89C54400ABED1A /* ProvidersView.swift in Sources */,
+				A1F418182D3A4DF400D3EA5E /* CustomAlertView.swift in Sources */,
 				5FFFEC552C71D738002FB36B /* ChooseTypeView.swift in Sources */,
 				1A0036442C6DF64400DC89C0 /* View+Extension.swift in Sources */,
 				D329B1432C84E07C00808E1C /* TVSerieDTOList.swift in Sources */,
@@ -472,6 +485,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -526,6 +540,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -535,6 +550,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -582,6 +598,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -599,6 +616,7 @@
 				DEVELOPMENT_TEAM = CMLWT6YSFA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MovieFlick/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MovieFlick;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -610,7 +628,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bito.MovieFlick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -635,6 +653,7 @@
 				DEVELOPMENT_TEAM = CMLWT6YSFA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MovieFlick/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MovieFlick;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -646,7 +665,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bito.MovieFlick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -9,15 +9,17 @@ import SwiftUI
 
 struct AboutLegalView: View {
     @Environment(MovieFlickViewModel.self) var vm
-
+    @State private var showMenu = false
+    
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             Text("Legal + About us")
                 .font(.title)
                 .bold()
                 .foregroundStyle(.white)
+                .padding(.top, 48)
             
-            Text("The movie metadata within this app is provided by a third-party service, The Movie Database (TMDb). For more information about TMDb, please visit www.themoviedb.org. We are not affiliated with TMDb, nor are we responsible for the accuracy, availability, or legality of the information they provide. TMDb is an independent service, and we do not endorse or control the content it supplies. This app does not intend to claim or imply ownership, endorsement, or association with any specific movies, studios, or other intellectual property referenced through TMDb metadata. All trademarks, movie titles, and associated media are the property of their respective owners. We disclaim any responsibility for potential copyright or trademark issues arising from the display of metadata provided by TMDb. Users should refer to TMDb and the rights holders of specific intellectual properties for any concerns regarding legal use. We further do not assume responsibility for the content, privacy policies, or practices of any third-party websites or services linked from this app. All images on MovieFlick (this app) are intended for non-commercial entertainment and education use only - reviews, fan art, blogs, forums, etc. MovieFlick (this app) is not endorsed, sponsored or affiliated with any movie studio. All copyrights, trademarks, and logos are owned by their respective owners. MovieFlick (this app) is for non-profit/educational use only.")
+            Text("legal_policy_text")
                 .font(.system(size: 13))
                 .padding()
                 .frame(maxWidth: 400)
@@ -34,6 +36,9 @@ struct AboutLegalView: View {
                 .multilineTextAlignment(.center)
                 .padding(.top, 32)
             Spacer()
+#if DEBUG
+            DevButtonView(showMenu: showMenu)
+#endif
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.horizontal)
@@ -42,7 +47,7 @@ struct AboutLegalView: View {
             Button {
                 vm.viewState = .startView
             } label: {
-                Image(systemName: "x.square")
+                Image(systemName: "x.circle")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 25)
@@ -50,10 +55,39 @@ struct AboutLegalView: View {
             }
             .padding()
             .buttonStyle(PlainButtonStyle())
-
+            
         }
     }
 }
+
+#if DEBUG
+struct DevButtonView: View {
+    @State var showMenu: Bool
+    var body: some View {
+        ZStack {
+            Color.clear
+                .frame(width: 100, height: 100)
+                .contentShape(Rectangle())
+                .gesture(
+                    TapGesture(count: 2)
+                        .onEnded { _ in
+                            showMenu = true
+                        }
+                )
+            if showMenu {
+                Menu("WARNING: Dev tools") {
+                    Button("Close menu") {
+                        showMenu = false
+                    }
+                }
+                .padding(40)
+                .background(Color.yellow)
+                .cornerRadius(12)
+            }
+        }
+    }
+}
+#endif
 
 #Preview {
     AboutLegalView()

@@ -1,0 +1,1779 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+      "shouldTranslate" : false
+    },
+    "–" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "–"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "– %lld movies left –" : {
+      "localizations" : {
+        "ca" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "– Restant: %lld –"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "– Restants: %lld –"
+                }
+              }
+            }
+          }
+        },
+        "de" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "– %lld Film übrig –"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "– %lld Filme übrig –"
+                }
+              }
+            }
+          }
+        },
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "– %lld movie left –"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "– %lld movies left –"
+                }
+              }
+            }
+          }
+        },
+        "es" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "– Restante: %lld –"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "– Restantes: %lld –"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "**The MovieFlick team is on it!** 🍿 Spinning the reel to pick the perfect movie for you… Hang tight, quality cinema takes time! 🎬😄" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’equip de MovieFlick hi està treballant! 🍿 Suant la gota per escollir la pel·lícula perfecta per a tu… Espera un moment, el cinema de qualitat necessita temps! 🎬😄"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Das MovieFlick-Team ist dran!** 🍿 Wir drehen das Rad, um den perfekten Film für dich auszuwählen… Hab Geduld, Qualitätskino braucht Zeit! 🎬😄"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**¡El equipo de MovieFlick está en ello!** 🍿 Estamos dándole al coco para encontrar la mejor película para vosotros… Aguanta un poco más, el cine de calidad lleva su tiempo! 🎬😄"
+          }
+        }
+      }
+    },
+    "%@'s turn" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torn de %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ ist dran"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turno de %@"
+          }
+        }
+      }
+    },
+    "150 and long text" : {
+      "shouldTranslate" : false
+    },
+    "200 and color" : {
+      "shouldTranslate" : false
+    },
+    "300" : {
+      "shouldTranslate" : false
+    },
+    "Action" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acció"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Action"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acción"
+          }
+        }
+      }
+    },
+    "Action & Adventure" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acció i aventura"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Action & Abenteuer"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acción y aventuras"
+          }
+        }
+      }
+    },
+    "Add new player +" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afegeix un jugador +"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neuen Spieler hinzufügen +"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade un nuevo jugador +"
+          }
+        }
+      }
+    },
+    "Adventure" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aventura"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abenteuer"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aventura"
+          }
+        }
+      }
+    },
+    "All Genres" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tots els gèneres"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Genres"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos los géneros"
+          }
+        }
+      }
+    },
+    "Animation" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animació"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animation"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animación"
+          }
+        }
+      }
+    },
+    "Can not decide? No problem we will do it for you." : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No et decideixes? Cap problema, ho fem per tu."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kannst du dich nicht entscheiden? Kein Problem, wir machen das für dich."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿No te aclaras? Sin problema, decidimos por ti."
+          }
+        }
+      }
+    },
+    "Choose one" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tria una"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle eine aus"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escoge una"
+          }
+        }
+      }
+    },
+    "Choose your favorites genres." : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tria els teus gèneres favorits."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle deine Lieblingsgenres."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escoge tus géneros favoritos."
+          }
+        }
+      }
+    },
+    "Choose your priority" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tria la teva prioritat"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist dir wichtig?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escoge tu prioridad"
+          }
+        }
+      }
+    },
+    "Close menu" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanca el menú"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menü schließen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cierra el menú"
+          }
+        }
+      }
+    },
+    "Comedy" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comèdia"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komödie"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comedia"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continua"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weiter"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar"
+          }
+        }
+      }
+    },
+    "Create your players" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea els teus jugadors"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstelle deine Spieler"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea tus jugadores."
+          }
+        }
+      }
+    },
+    "Crime" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crim"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Krimi"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crimen"
+          }
+        }
+      }
+    },
+    "Documentary" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Documental"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dokumentation"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Documental"
+          }
+        }
+      }
+    },
+    "Drama" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drama"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drama"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drama"
+          }
+        }
+      }
+    },
+    "Family" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Familiar"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Familie"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Familiar"
+          }
+        }
+      }
+    },
+    "Fantasy" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fantasia"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fantasy"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fantasía"
+          }
+        }
+      }
+    },
+    "Fiction" : {
+      "shouldTranslate" : false
+    },
+    "Films" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pel·lícules"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filme"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Películas"
+          }
+        }
+      }
+    },
+    "FILTERS" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FILTRES"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FILTER"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FILTROS"
+          }
+        }
+      }
+    },
+    "Genre name" : {
+      "shouldTranslate" : false
+    },
+    "Get a random movie!" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escull a l’atzar!"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einen zufälligen Film auswählen!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Película aleatoria!"
+          }
+        }
+      }
+    },
+    "History" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Història"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geschichte"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historia"
+          }
+        }
+      }
+    },
+    "Horror" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terror"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horror"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terror"
+          }
+        }
+      }
+    },
+    "Image can not be loaded. Try again please." : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La imatge no es pot carregar. Torna-ho a intentar"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Bild kann nicht geladen werden. Bitte versuche es erneut."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La imagen no se puede cargar. Inténtalo de nuevo."
+          }
+        }
+      }
+    },
+    "It's your turn, %@" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "És el teu torn, %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du bist dran, %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu turno, %@"
+          }
+        }
+      }
+    },
+    "Kids" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Infantil"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kinder"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Infantil"
+          }
+        }
+      }
+    },
+    "Large title movie just for checking long text 2" : {
+      "shouldTranslate" : false
+    },
+    "Legal + About us" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legal + Sobre nosaltres"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechtliches + Über uns"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legal + Sobre nosotros"
+          }
+        }
+      }
+    },
+    "legal_policy_text" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les dades de les pel·lícules dins d’aquesta aplicació són proporcionades per un servei extern, The Movie Database (TMDb). Per obtenir més informació sobre TMDb, visiteu www.themoviedb.org. No estem afiliats amb TMDb ni som responsables de l’exactitud, disponibilitat o legalitat de la informació que proporcionen. TMDb és un servei independent, i no donem suport ni controlem el contingut que subministren. Aquesta aplicació no pretén reclamar ni implicar propietat, suport o associació amb cap pel·lícula específica, estudi o altra propietat intel·lectual referenciada a través de les dades de TMDb. Totes les marques comercials, títols de pel·lícules i mitjans associats són propietat dels seus respectius titulars. Rebutgem qualsevol responsabilitat relacionada amb possibles problemes de drets d’autor o marques comercials derivats de la visualització de les dades proporcionades per TMDb. Els usuaris haurien de consultar TMDb i els titulars dels drets de les propietats intel·lectuals específiques per a qualsevol preocupació relacionada amb l’ús legal. A més, no assumim cap responsabilitat pel contingut, les polítiques de privacitat o les pràctiques de cap lloc web o servei extern enllaçat des d’aquesta aplicació. Totes les imatges a MovieFlick (aquesta aplicació) tenen com a finalitat l’ús no comercial d’entreteniment i educació únicament, com ara ressenyes, fan art, blogs, fòrums, etc. MovieFlick (aquesta aplicació) no està recolzada, patrocinada ni afiliada amb cap estudi cinematogràfic. Tots els drets d’autor, marques comercials i logotips són propietat dels seus respectius titulars. MovieFlick (aquesta aplicació) és per a ús sense ànim de lucre i educatiu exclusivament."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Filmdaten innerhalb dieser App werden von einem Drittanbieterdienst, The Movie Database (TMDb), bereitgestellt. Für weitere Informationen über TMDb besuchen Sie bitte www.themoviedb.org. Wir sind weder mit TMDb verbunden noch für die Richtigkeit, Verfügbarkeit oder Rechtmäßigkeit der von ihnen bereitgestellten Informationen verantwortlich. TMDb ist ein unabhängiger Dienst, und wir unterstützen oder kontrollieren die von ihm bereitgestellten Inhalte nicht.\nDiese App erhebt keinen Anspruch auf Eigentum, Unterstützung oder eine Verbindung zu bestimmten Filmen, Studios oder anderem geistigen Eigentum, das über TMDb-Metadaten referenziert wird. Alle Marken, Filmtitel und zugehörigen Medien sind Eigentum ihrer jeweiligen Rechteinhaber. Wir übernehmen keine Verantwortung für mögliche Urheberrechts- oder Markenprobleme, die sich aus der Anzeige von TMDb-Metadaten ergeben. Nutzer sollten sich bei Fragen zur rechtlichen Nutzung direkt an TMDb oder die Rechteinhaber der jeweiligen Inhalte wenden.\nDarüber hinaus übernehmen wir keine Verantwortung für die Inhalte, Datenschutzrichtlinien oder Praktiken von Drittanbieter-Websites oder -Diensten, die mit dieser App verlinkt sind.\nAlle Bilder auf MovieFlick (dieser App) sind ausschließlich für nicht-kommerzielle Unterhaltungs- und Bildungszwecke bestimmt – z. B. Rezensionen, Fan-Kunst, Blogs, Foren usw. MovieFlick (diese App) wird von keinem Filmstudio unterstützt, gesponsert oder ist mit einem solchen verbunden. Alle Urheberrechte, Marken und Logos gehören ihren jeweiligen Eigentümern. MovieFlick (diese App) ist ausschließlich für gemeinnützige/bildungsbezogene Zwecke gedacht."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The movie metadata within this app is provided by a third-party service, The Movie Database (TMDb). For more information about TMDb, please visit www.themoviedb.org. We are not affiliated with TMDb, nor are we responsible for the accuracy, availability, or legality of the information they provide. TMDb is an independent service, and we do not endorse or control the content it supplies. This app does not intend to claim or imply ownership, endorsement, or association with any specific movies, studios, or other intellectual property referenced through TMDb metadata. All trademarks, movie titles, and associated media are the property of their respective owners. We disclaim any responsibility for potential copyright or trademark issues arising from the display of metadata provided by TMDb. Users should refer to TMDb and the rights holders of specific intellectual properties for any concerns regarding legal use. We further do not assume responsibility for the content, privacy policies, or practices of any third-party websites or services linked from this app. All images on MovieFlick (this app) are intended for non-commercial entertainment and education use only - reviews, fan art, blogs, forums, etc. MovieFlick (this app) is not endorsed, sponsored or affiliated with any movie studio. All copyrights, trademarks, and logos are owned by their respective owners. MovieFlick (this app) is for non-profit/educational use only."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los metadatos de películas dentro de esta aplicación son proporcionados por un servicio de terceros, The Movie Database (TMDb). Para obtener más información sobre TMDb, visita www.themoviedb.org. No estamos afiliados a TMDb, ni somos responsables de la precisión, disponibilidad o legalidad de la información que ellos proveen. TMDb es un servicio independiente, y no respaldamos ni controlamos el contenido que suministran. Esta aplicación no pretende reclamar ni implicar propiedad, respaldo o asociación con ninguna película, estudio u otra propiedad intelectual referenciada a través de los metadatos de TMDb. Todas las marcas registradas, títulos de películas y medios asociados son propiedad de sus respectivos dueños. Renunciamos a cualquier responsabilidad por posibles problemas de derechos de autor o marcas comerciales derivados de la visualización de los metadatos proporcionados por TMDb. Los usuarios deben dirigirse a TMDb y a los titulares de derechos de propiedad intelectual específicos para cualquier inquietud relacionada con el uso legal. Además, no asumimos responsabilidad por el contenido, políticas de privacidad o prácticas de cualquier sitio web o servicio de terceros vinculado desde esta aplicación. Todas las imágenes en MovieFlick (esta aplicación) están destinadas exclusivamente para fines de entretenimiento y educativos sin fines de lucro, como reseñas, arte de fanáticos, blogs, foros, etc. MovieFlick (esta aplicación) no está respaldada, patrocinada ni afiliada con ningún estudio cinematográfico. Todos los derechos de autor, marcas comerciales y logotipos son propiedad de sus respectivos dueños. MovieFlick (esta aplicación) es únicamente para uso educativo y sin fines de lucro."
+          }
+        }
+      }
+    },
+    "MATCHES" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MATCHES"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TREFFER"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COINCIDENCIAS"
+          }
+        }
+      }
+    },
+    "Max. 4 players" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Màx. 4 jugadors"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max. 4 Spieler"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Máximo 4 jugadores"
+          }
+        }
+      }
+    },
+    "Movie title" : {
+      "shouldTranslate" : false
+    },
+    "Music" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Musical"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Musik"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Musical"
+          }
+        }
+      }
+    },
+    "Mystery" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Misteri"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mystery"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Misterio"
+          }
+        }
+      }
+    },
+    "News" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notícies"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nachrichten"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notícias"
+          }
+        }
+      }
+    },
+    "Next" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Següent"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nächste"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siguiente"
+          }
+        }
+      }
+    },
+    "NO" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NO"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NEIN"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NO"
+          }
+        }
+      }
+    },
+    "NO MATCHES FOUND" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NO HI HA CAP MATCH"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KEINE TREFFER GEFUNDEN"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NO HAY MATCHES"
+          }
+        }
+      }
+    },
+    "Oops! Looks like there’s no match this time… 🤔 Maybe it’s time to rethink your movie friendship. Or, you can play again and try your luck! 🎬" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ups! Sembla que aquesta vegada no hi ha cap coincidència… 🤔 Potser és hora de replantejar-te la vostra compatibilitat cinematogràfica. O bé, pots tornar a jugar i provar sort! 🎬"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ups! Diesmal gibt es keine Übereinstimmung… 🤔 Vielleicht solltest du deine Filmfreundschaft überdenken. Oder du spielst noch einmal und versuchst dein Glück! 🎬"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Ups! Parece que no hubo coincidencia esta vez… 🤔 Tal vez sea momento de replantearte tu amistad cinéfila. O puedes jugar de nuevo y probar suerte. 🎬"
+          }
+        }
+      }
+    },
+    "Play again" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torna a jugar"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erneut spielen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jugar de nuevo"
+          }
+        }
+      }
+    },
+    "Player %lld" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jugador/a %lld"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spieler %lld"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jugador %lld"
+          }
+        }
+      }
+    },
+    "Popular" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Popular"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beliebt"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Popular"
+          }
+        }
+      }
+    },
+    "Proudly developed by [Alberto Alegre](https://github.com/Bitos88), [Alex Ma](https://github.com/alexmaxu), [Fran Malo](https://github.com/franmu94) and [Fran Ochoa](https://github.com/fran-6co)" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desenvolupat amb amor per [Alberto Alegre](https://github.com/Bitos88), [Alex Ma](https://github.com/alexmaxu), [Fran Malo](https://github.com/franmu94) i [Fran Ochoa](https://github.com/fran-6co)."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stolz entwickelt von [Alberto Alegre](https://github.com/Bitos88), [Alex Ma](https://github.com/alexmaxu), [Fran Malo](https://github.com/franmu94) und [Fran Ochoa](https://github.com/fran-6co)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desarrollado orgullosamente por [Alberto Alegre](https://github.com/Bitos88), [Alex Ma](https://github.com/alexmaxu), [Fran Malo](https://github.com/franmu94) y [Fran Ochoa](https://github.com/fran-6co)."
+          }
+        }
+      }
+    },
+    "Rate:" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valoració:"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewertung:"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valoración:"
+          }
+        }
+      }
+    },
+    "Reality" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reality"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reality-TV"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reality"
+          }
+        }
+      }
+    },
+    "Restart" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reinicia"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neustart"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reiniciar"
+          }
+        }
+      }
+    },
+    "Restart Game" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reinicia"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spiel neu starten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restart"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reiniciar"
+          }
+        }
+      }
+    },
+    "Romance" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Romanç"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Romantik"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Romance"
+          }
+        }
+      }
+    },
+    "Sci-Fi & Fantasy" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sci-Fi i Fantasia"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sci-Fi & Fantasy"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sci-Fi/Fantasía"
+          }
+        }
+      }
+    },
+    "Science Fiction" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciència ficció"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Science-Fiction"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciencia ficción"
+          }
+        }
+      }
+    },
+    "Select providers" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tria plataformes"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anbieter auswählen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona plataformas"
+          }
+        }
+      }
+    },
+    "Select your favourite genres" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tria els teus gèneres preferits"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle deine Lieblingsgenres"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona tus géneros favoritos"
+          }
+        }
+      }
+    },
+    "Selected movie is: " : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La tria ha resultat en:"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der ausgewählte Film ist: "
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La película seleccionada es:"
+          }
+        }
+      }
+    },
+    "Soap" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Telenovel·la"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seifenoper"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Telenovela"
+          }
+        }
+      }
+    },
+    "Start" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comença"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empezar"
+          }
+        }
+      }
+    },
+    "Swipe right for YES and left for NO." : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Llisca a la dreta per SÍ, i a l’esquerra per NO."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wische nach rechts für JA und nach links für NEIN."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desliza a la derecha para SÍ e izquierda para NO."
+          }
+        }
+      }
+    },
+    "Talk" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conversa"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talkshow"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talk-show"
+          }
+        }
+      }
+    },
+    "This product uses the TMDB API but is not endorsed or certified by TMDB." : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aquest producte utilitza l’API de TMDB però no està recolzat ni certificat per TMDB."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieses Produkt nutzt die TMDB-API, ist aber nicht von TMDB unterstützt oder zertifiziert."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este producto utiliza la API de TMDB pero no está aprobado ni certificado por TMDB."
+          }
+        }
+      }
+    },
+    "Thriller" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thriller"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thriller"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thriller"
+          }
+        }
+      }
+    },
+    "Time to Swipe!" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hora de lliscar"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeit zum Wischen!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Hora de deslizar!"
+          }
+        }
+      }
+    },
+    "Top rated" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Millors valorades"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bestbewertet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mejor valorado"
+          }
+        }
+      }
+    },
+    "Try again" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torna-hi"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versuche es erneut"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vuelve a intentarlo"
+          }
+        }
+      }
+    },
+    "TV Movie" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sèries de pel·lícules"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TV-Film"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TV/Película"
+          }
+        }
+      }
+    },
+    "TV Series" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sèries"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serien"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Series"
+          }
+        }
+      }
+    },
+    "UPS... Something went wrong" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ups… Alguna cosa no ha anat bé."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UPS... Etwas ist schiefgelaufen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ups… Algo no ha ido bien"
+          }
+        }
+      }
+    },
+    "War" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guerra"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kriegsfilm"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bélicas"
+          }
+        }
+      }
+    },
+    "War & Politics" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guerra i Política"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Krieg & Politik"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guerra y política"
+          }
+        }
+      }
+    },
+    "WARNING: Dev tools" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ATENCIÓ: Eines per devs."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WARNUNG: Entwicklerwerkzeuge"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CUIDADO: Herramientas de developer."
+          }
+        }
+      }
+    },
+    "We couldn’t load your movies, please try again later" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hem pogut carregar les pel·lícules, intenta-ho més tard."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wir konnten deine Filme nicht laden, bitte versuche es später erneut."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hemos podido cargar tus películas, por favor inténtalo de nuevo más tarde"
+          }
+        }
+      }
+    },
+    "We couldn’t load your TV Series, please try again later" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hem pogut carregar les sèries, intenta-ho més tard."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wir konnten deine Serien nicht laden, bitte versuche es später erneut."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hemos podido cargar las series, por favor inténtalo de nuevo más tarde."
+          }
+        }
+      }
+    },
+    "Western" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oest"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Western"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Western"
+          }
+        }
+      }
+    },
+    "What to see" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Què veure?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was willst du anschauen?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qué ver"
+          }
+        }
+      }
+    },
+    "YES" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SÍ"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JA"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SÍ"
+          }
+        }
+      }
+    },
+    "You can select more than one." : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pots seleccionar més d’una."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du kannst mehr als eines wählen."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puedes seleccionar más de una."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
