@@ -44,6 +44,7 @@ final class MovieFlickViewModel {
     let chooseOneTip = ChooseOneTip()
     
     var showLoadingView = false
+    private var timer: Timer?
     
     init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
         self.interactor = interactor
@@ -52,17 +53,23 @@ final class MovieFlickViewModel {
         moviesLeft = moviesWithCard.count
     }
     
+    func startLoadingTimer() {
+        defer {
+            timer = nil
+            timer?.invalidate()
+        }
+        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+            self.showLoadingView.toggle()
+        }
+    }
+    
     func randomMovie() {
         if let movieWinner = resultMovies.randomElement() {
             selectedMovie = movieWinner
         }
         if resultMovies.count != 1 {
             showLoadingView.toggle()
-            //TODO: change to timer
-            Task {
-                try? await Task.sleep(nanoseconds: 5_000_000_000)
-                showLoadingView.toggle()
-            }
+            startLoadingTimer()
         }
     }
     
@@ -117,19 +124,11 @@ final class MovieFlickViewModel {
     
     func addGenre(genre: Genre) {
         if genre == .all {
-            if selectedGenres.contains(.all) {
-                selectedGenres = []
-            } else {
-                selectedGenres = [.all]
-            }
+            selectedGenres = selectedGenres.contains(.all) ? [] : [.all]
         } else {
-            if let index = selectedGenres.firstIndex(of: .all) {
-                selectedGenres.remove(at: index)
-            }
+            selectedGenres.removeAll { $0 == .all }
             if selectedGenres.contains(genre) {
-                if let index = selectedGenres.firstIndex(of: genre) {
-                    selectedGenres.remove(at: index)
-                }
+                selectedGenres.removeAll { $0 == genre }
             } else {
                 selectedGenres.append(genre)
             }
@@ -163,21 +162,17 @@ final class MovieFlickViewModel {
     }
     
     func nextPlayer(player: Player) -> Player? {
-        if let index = players.firstIndex(where: { $0.id == player.id }) {
-            if index + 1 < players.count {
-                return players[index + 1]
-            }
-        }
-        return nil
+        guard let index = players.firstIndex(where: { $0.id == player.id }),
+              index + 1 < players.count else { return nil }
+        return players[index + 1]
     }
+    
     func isLastPlayer(player: Player) -> Bool {
-        players.last?.id ?? .none  == player.id
+        players.last?.id == player.id
     }
     
     func removePlayer(player: Player) {
-        if let lastIndex = players.firstIndex(of: player) {
-            players.remove(at: lastIndex)
-        }
+        players.removeAll { $0.id == player.id }
     }
 
     func isRepeatedOrEmptyPlayer() -> Bool {
