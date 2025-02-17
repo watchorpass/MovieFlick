@@ -1,5 +1,3 @@
-
-
 import SwiftUI
 
 enum ViewState {
@@ -10,7 +8,7 @@ enum ViewState {
     case filterView
     case providerView
     case genreView
-    case swipeView
+    case cardStackView
     case resultView
     case movieSelection
 }
@@ -21,37 +19,46 @@ enum SelectedType:  String {
 
 @Observable
 final class MovieFlickViewModel {
+    
     let interactor: MovieListInteractorProtocol
+    let playerManager = PlayerManager()
+    let providerRepository: ProviderRepositoryProtocol
+    
     var resultMovies: [Movie] = []
     var moviesWithCard: [Movie] = []
-    var players: [Player] = [.emptyPlayer, .emptyPlayer]
-    var selectedPlayer: Player = .emptyPlayer
     var moviesLeft: Int = 0
-    
     var selectedMovie: Movie?
-    
     var swipeCount: Int = 0
-    
     var viewState: ViewState = .startView
     var sortType: SortType = .popularity
     var selectedGenres: [Genre] = []
     var selectedType: SelectedType = .movie
     var selectedProviders: [Provider] = []
-    
     var showError = false
     var errorMsg: LocalizedStringKey = ""
+    var showLoadingView = false
+    private var timer: Timer?
+    var noResults = false
     
     let swipeTip = SwipeTip()
     let genreTip = GenreTip()
     let chooseOneTip = ChooseOneTip()
     
-    var showLoadingView = false
-    
-    init(interactor: MovieListInteractorProtocol = MovieListInteractor()) {
+    init(interactor: MovieListInteractorProtocol = MovieListInteractor(), provider: ProviderRepositoryProtocol = ProviderRepository()) {
         self.interactor = interactor
-        loadPlayer()
+        self.providerRepository = provider
         loadProviders()
         moviesLeft = moviesWithCard.count
+    }
+    
+    func startLoadingTimer() {
+        defer {
+            timer = nil
+            timer?.invalidate()
+        }
+        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+            self.showLoadingView.toggle()
+        }
     }
     
     func randomMovie() {
@@ -60,11 +67,7 @@ final class MovieFlickViewModel {
         }
         if resultMovies.count != 1 {
             showLoadingView.toggle()
-            //TODO: change to timer
-            Task {
-                try? await Task.sleep(nanoseconds: 5_000_000_000)
-                showLoadingView.toggle()
-            }
+            startLoadingTimer()
         }
     }
     
@@ -75,8 +78,11 @@ final class MovieFlickViewModel {
     private func fetchMovies() async {
         let randomPage = Int.random(in: 1..<10)
         do {
-            let movies = try await interactor.getMovies(isAdult: true, includesVideo: nil, page: randomPage, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
+            let movies = try await interactor.getMovies(page: randomPage, sortBy: .popularity, providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
+            if moviesWithCard.count < 2 {
+                noResults = true
+            }
             showError = false
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
@@ -90,9 +96,11 @@ final class MovieFlickViewModel {
     private func fetchSeries() async {
         let randomPage = Int.random(in: 1..<10)
         do {
-            let movies = try await interactor.getSeries(isAdult: true, includesVideo: nil, page: randomPage, sortBy: .popularity, releaseYear: nil, dateGreaterThan: nil, dateLessThan: nil, voteGreaterThan: nil, voteLessThan: nil, region: "ES", providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
-            
+            let movies = try await interactor.getSeries(page: randomPage, sortBy: .popularity, providers: selectedProviders, genres: selectedGenres, monetizationTypes: [.flatrate])
             moviesWithCard = try await interactor.loadCardImages(for: movies).reversed()
+            if moviesWithCard.count < 2 {
+                noResults = true
+            }
             showError = false
             resultMovies = moviesWithCard
             swipeCount = moviesWithCard.count
@@ -119,19 +127,11 @@ final class MovieFlickViewModel {
     
     func addGenre(genre: Genre) {
         if genre == .all {
-            if selectedGenres.contains(.all) {
-                selectedGenres = []
-            } else {
-                selectedGenres = [.all]
-            }
+            selectedGenres = selectedGenres.contains(.all) ? [] : [.all]
         } else {
-            if let index = selectedGenres.firstIndex(of: .all) {
-                selectedGenres.remove(at: index)
-            }
+            selectedGenres.removeAll { $0 == .all }
             if selectedGenres.contains(genre) {
-                if let index = selectedGenres.firstIndex(of: genre) {
-                    selectedGenres.remove(at: index)
-                }
+                selectedGenres.removeAll { $0 == genre }
             } else {
                 selectedGenres.append(genre)
             }
@@ -142,10 +142,6 @@ final class MovieFlickViewModel {
         return moviesWithCard[index]
     }
     
-    func playersWithoutName() -> Bool {
-        players.map { $0.name }.contains("")
-    }
-    
     func addprovider(provider: Provider) {
         if selectedProviders.contains(provider) {
             selectedProviders.removeAll { $0 == provider }
@@ -154,79 +150,16 @@ final class MovieFlickViewModel {
         }
     }
     
-    func addPlayer(name: String, index: Int ) {
-        players[index] = Player(name: name)
-    }
-    
-    func canBeAdded(player: Player) -> Bool {
-        players.filter { $0.name == player.name }.count > 1
-    }
-    
-    func updatePlayer(player: Player) {
-        if let index = players.firstIndex(where: { $0.name == player.name }) {
-            players[index] = player
-        }
-    }
-    
-    func nextPlayer(player: Player) -> Player? {
-        if let index = players.firstIndex(where: { $0.id == player.id }) {
-            if index + 1 < players.count {
-                return players[index + 1]
-            }
-        }
-        return nil
-    }
-    func isLastPlayer(player: Player) -> Bool {
-        players.last?.id ?? .none  == player.id
-    }
-    
-    func removePlayer(player: Player) {
-        if let lastIndex = players.firstIndex(of: player) {
-            players.remove(at: lastIndex)
-        }
-    }
-    
-    func isFirstOfHisName(player: Player) -> Bool {
-        if player.name.isEmpty {
-            return true
-        }
-        if let index = players.firstIndex(where: { $0.name == player.name }) {
-            return players[index].id == player.id
-        }
-        return false
-    }
-    
-    func noSecondNames() -> Bool {
-        return !players.allSatisfy({isFirstOfHisName(player: $0)})
-    }
-    
     func resetGame() {
+        playerManager.loadPlayers()
         selectedType = .movie
-        loadPlayer()
-    }
-    
-    func savePlayer() {
-        let playerName = players.map(\.name)
-        do {
-            try interactor.savePlayers(players: playerName)
-        } catch {
-            players = [.emptyPlayer, .emptyPlayer]
-        }
-    }
-    
-    func loadPlayer() {
-        do {
-            try players = interactor.loadPlayers()
-        } catch {
-            players = [.emptyPlayer, .emptyPlayer]
-        }
     }
     
     func saveProviders() {
         moviesLeft = moviesWithCard.count
         let providersNumber = selectedProviders.map(\.rawValue)
         do {
-            try interactor.saveProviders(providers: providersNumber)
+            try providerRepository.saveProviders(providers: providersNumber)
         } catch {
             selectedProviders = []
         }
@@ -234,7 +167,7 @@ final class MovieFlickViewModel {
     
     func loadProviders() {
         do {
-            try selectedProviders = interactor.loadProviders()
+            try selectedProviders = providerRepository.loadProviders()
         } catch {
             selectedProviders = []
         }

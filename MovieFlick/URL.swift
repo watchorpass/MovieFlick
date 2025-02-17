@@ -1,12 +1,4 @@
-//
-//  URL.swift
-//  MovieFlick
-//
-//  Created by Fran Malo on 16/8/24.
-//
-
 import Foundation
-
 
 let mainURL = URL(string: "https://api.themoviedb.org/3/discover")!
 let imageBaseUrl = URL(string: "https://image.tmdb.org/t/p/w600_and_h900_bestv2")!
@@ -16,47 +8,17 @@ extension URL {
     static let tvURL = mainURL.appending(path: "tv")
     
     static func finalURLMovie(
-        isAdult: Bool? = nil,
-        includesVideo: Bool? = nil,
         page: Int? = nil,
         sortBy: SortType? = nil,
-        releaseYear: Int? = nil,
-        dateGreaterThan: String? = nil,
-        dateLessThan: String? = nil,
-        voteGreaterThan: Double? = nil,
-        voteLessThan: Double? = nil,
         providers: [Provider]? = nil,
         genres: [Genre]? = nil,
         monetizationTypes: [MonetizationType]? = nil) -> URL {
-            
             var queryItems: [URLQueryItem] = []
-            
-            if let isAdult = isAdult {
-                queryItems.append(.includeAdult(isAdult: isAdult))
-            }
-            if let includesVideo = includesVideo {
-                queryItems.append(.includeVideo(withVideo: includesVideo))
-            }
             if let page = page {
                 queryItems.append(.page(page: page))
             }
             if let sortBy = sortBy {
                 queryItems.append(.sortBy(sortBy: sortBy))
-            }
-            if let releaseYear = releaseYear {
-                queryItems.append(.releaseYear(year: releaseYear))
-            }
-            if let dateGreaterThan = dateGreaterThan {
-                queryItems.append(.dateGreaterThan(date: dateGreaterThan))
-            }
-            if let dateLessThan = dateLessThan {
-                queryItems.append(.dateLessThan(date: dateLessThan))
-            }
-            if let voteGreaterThan = voteGreaterThan {
-                queryItems.append(.voteGreaterThan(rate: voteGreaterThan))
-            }
-            if let voteLessThan = voteLessThan {
-                queryItems.append(.voteLessThan(rate: voteLessThan))
             }
             if let providers = providers {
                 queryItems.append(.providers(providers: providers))
@@ -69,6 +31,7 @@ extension URL {
             if let monetizationTypes = monetizationTypes {
                 queryItems.append(.monetizationTypes(types: monetizationTypes))
             }
+            queryItems.append(.includeAdult(isAdult: true))
             queryItems.append(.language())
             queryItems.append(.region())
             queryItems.append(.watchRegion())
@@ -76,40 +39,18 @@ extension URL {
         }
     
     static func finalURLTVSeries(
-        isAdult: Bool? = nil,
         page: Int? = nil,
         sortBy: SortType? = nil,
-        airDateGreaterThan: String? = nil,
-        airDateLessThan: String? = nil,
-        voteGreaterThan: Double? = nil,
-        voteLessThan: Double? = nil,
-        region: String? = nil,
         providers: [Provider]? = nil,
         genres: [Genre]? = nil,
         monetizationTypes: [MonetizationType]? = nil
     ) -> URL {
         var queryItems: [URLQueryItem] = []
-        
-        if let isAdult = isAdult {
-            queryItems.append(.includeAdult(isAdult: isAdult))
-        }
         if let page = page {
             queryItems.append(.page(page: page))
         }
         if let sortBy = sortBy {
             queryItems.append(.sortBy(sortBy: sortBy))
-        }
-        if let airDateGreaterThan = airDateGreaterThan {
-            queryItems.append(.airDateGreaterThan(date: airDateGreaterThan))
-        }
-        if let airDateLessThan = airDateLessThan {
-            queryItems.append(.airDateLessThan(date: airDateLessThan))
-        }
-        if let voteGreaterThan = voteGreaterThan {
-            queryItems.append(.voteGreaterThan(rate: voteGreaterThan))
-        }
-        if let voteLessThan = voteLessThan {
-            queryItems.append(.voteLessThan(rate: voteLessThan))
         }
         if let providers = providers {
             queryItems.append(.providers(providers: providers))
@@ -122,6 +63,7 @@ extension URL {
         if let monetizationTypes = monetizationTypes {
             queryItems.append(.monetizationTypes(types: monetizationTypes))
         }
+        queryItems.append(.includeAdult(isAdult: true))
         queryItems.append(.language())
         queryItems.append(.region())
         queryItems.append(.watchRegion())
@@ -135,10 +77,9 @@ extension URL {
     }
 }
 
-
 extension URLQueryItem {
     static func includeAdult(isAdult: Bool) -> URLQueryItem {
-        URLQueryItem(name: "include_adult", value: String(isAdult) )
+        URLQueryItem(name: "include_adult", value: String(true) )
     }
     static func includeVideo(withVideo: Bool) -> URLQueryItem {
         URLQueryItem(name: "include_video", value: String(withVideo) )
@@ -179,20 +120,16 @@ extension URLQueryItem {
         let typesString = types.map { $0.rawValue }.joined(separator: ",")
         return URLQueryItem(name: "with_watch_monetization_types", value: typesString)
     }
-    
-    
     static func airDateGreaterThan(date: String) -> URLQueryItem {
         URLQueryItem(name: "air_date.gte", value: date)
     }
     static func airDateLessThan(date: String) -> URLQueryItem {
         URLQueryItem(name: "air_date.lte", value: date)
     }
-    
     static func language() -> URLQueryItem {
         let locale = Locale.preferredLanguages.first ?? "es_ES"
         return URLQueryItem(name: "language", value: locale)
     }
-    
     static func region() -> URLQueryItem {
         let region = Locale.current.region?.identifier
         return URLQueryItem(name: "region", value: region)

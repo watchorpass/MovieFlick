@@ -1,10 +1,3 @@
-//
-//  LoadingSelectingView.swift
-//  MovieFlick
-//
-//  Created by Alex  on 1/9/24.
-//
-
 import SwiftUI
 
 struct LoadingSelectingView: View {
@@ -13,20 +6,7 @@ struct LoadingSelectingView: View {
     
     var body: some View {
         VStack {
-            Image(.rebrandingMovieFlick)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 150)
-                .padding()
-                .rotationEffect(.degrees(isAnimating ? 2 : -2))
-                .animation(
-                    Animation.easeInOut(duration: 1.2)
-                        .repeatForever(autoreverses: true),
-                    value: isAnimating
-                )
-                .onAppear {
-                    isAnimating = true
-                }
+            AnimatedLogo()
             Text("**The MovieFlick team is on it!** 🍿 Spinning the reel to pick the perfect movie for you… Hang tight, quality cinema takes time! 🎬😄")
                 .font(.title2)
                 .foregroundStyle(.white)

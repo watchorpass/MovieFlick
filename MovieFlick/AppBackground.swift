@@ -1,10 +1,3 @@
-//
-//  AppBackground.swift
-//  MovieFlick
-//
-//  Created by Alex  on 18/8/24.
-//
-
 import SwiftUI
 
 struct AppBackground: ViewModifier {

@@ -1,10 +1,3 @@
-//
-//  SwipeGestureModifier.swift
-//  MovieFlick
-//
-//  Created by Alberto Alegre Bravo on 15/8/24.
-//
-
 import SwiftUI
 
 struct SwipeGestureModifier: ViewModifier {

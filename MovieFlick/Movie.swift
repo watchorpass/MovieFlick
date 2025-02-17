@@ -1,10 +1,3 @@
-//
-//  Movie.swift
-//  MovieFlick
-//
-//  Created by Fran Malo on 19/8/24.
-//
-
 import SwiftUI
 
 struct Movie: Identifiable, Hashable {

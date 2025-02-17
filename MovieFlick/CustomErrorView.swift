@@ -1,10 +1,3 @@
-//
-//  CustomErrorView.swift
-//  MovieFlick
-//
-//  Created by Alberto Alegre Bravo on 28/8/24.
-//
-
 import SwiftUI
 
 struct CustomErrorView: View {

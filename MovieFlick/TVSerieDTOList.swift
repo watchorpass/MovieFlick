@@ -1,10 +1,3 @@
-//
-//  TVSerieDTOList.swift
-//  MovieFlick
-//
-//  Created by Fran Malo on 1/9/24.
-//
-
 import Foundation
 
 struct TVSerieList: Codable {

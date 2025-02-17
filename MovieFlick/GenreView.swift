@@ -3,6 +3,7 @@ import TipKit
 
 struct GenreView: View {
     @Environment(MovieFlickViewModel.self) var vm
+    @Environment(PlayerManager.self) var playerVM
     
     var gridColums = [GridItem(), GridItem()]
     
@@ -37,16 +38,13 @@ struct GenreView: View {
         }
         .padding(.top, 48)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .overlay(alignment: .topLeading) {
-            BackButtonComponent {
-                vm.viewState = .providerView
-            }
-            .padding()
-        }
+        .backButton(previousViewState: .providerView)
         .overlay(alignment: .bottom) {
             if !vm.selectedGenres.isEmpty {
                 AppButton(title: "Continue", color: .gray) {
-                    vm.viewState = .swipeView
+                    vm.noResults = false
+                    playerVM.resetPlayers()
+                    vm.viewState = .cardStackView
                 }
                 .padding()
             }

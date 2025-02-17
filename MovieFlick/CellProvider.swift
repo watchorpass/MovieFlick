@@ -1,10 +1,3 @@
-//
-//  CellProvider.swift
-//  MovieFlick
-//
-//  Created by Fran Malo on 5/9/24.
-//
-
 import SwiftUI
 
 struct CellProvider: View {
