@@ -21,7 +21,7 @@ enum SortType: String {
 
 enum Provider: Int, CaseIterable {
     case Netflix = 8
-    case AppleTV = 2
+    case AppleTV = 350
     case MovistarPlus = 149
     case MAX = 1899
     case YoutubePremium = 188

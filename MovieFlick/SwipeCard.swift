@@ -2,6 +2,7 @@ import SwiftUI
 
 struct NewCard: View {
     @Environment(MovieFlickViewModel.self) var viewModel
+    @Environment(PlayerManager.self) var playerVM
     
     @State var xOffset: CGFloat = 0
     @State private var degrees: Double = 0
@@ -52,7 +53,7 @@ extension NewCard {
             xOffset = 500
             degrees = 12
         } completion: {
-            viewModel.selectedPlayer.moviesPassed += 1
+            playerVM.selectedPlayer.moviesPassed += 1
             viewModel.moviesLeft -= 1
         }
     }
@@ -63,7 +64,7 @@ extension NewCard {
             degrees = -12
         } completion: {
             viewModel.removeFromResultMovies(movie: movie)
-            viewModel.selectedPlayer.moviesPassed += 1
+            playerVM.selectedPlayer.moviesPassed += 1
             viewModel.moviesLeft -= 1
         }
     }

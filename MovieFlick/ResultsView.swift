@@ -3,6 +3,7 @@ import TipKit
 
 struct ResultsView: View {
     @Environment(MovieFlickViewModel.self) var vm
+
     let items: [GridItem] = [GridItem(), GridItem()]
     @State var showDetail = false
     
