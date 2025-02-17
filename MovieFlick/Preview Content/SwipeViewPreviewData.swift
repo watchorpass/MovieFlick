@@ -1,10 +1,3 @@
-//
-//  SwipeViewPreviewData.swift
-//  MovieFlick
-//
-//  Created by Alberto Alegre Bravo on 19/8/24.
-//
-
 import Foundation
 
 struct MovieModel: Identifiable {

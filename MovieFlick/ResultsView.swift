@@ -1,21 +1,15 @@
-//
-//  ResultsView.swift
-//  MovieFlick
-//
-//  Created by Alberto Alegre Bravo on 27/8/24.
-//
-
 import SwiftUI
 import TipKit
 
 struct ResultsView: View {
     @Environment(MovieFlickViewModel.self) var vm
+
     let items: [GridItem] = [GridItem(), GridItem()]
     @State var showDetail = false
     
     var body: some View {
         VStack(spacing: 26) {
-            Text("MATCHES")
+            Text("Matches")
                 .font(.title)
                 .fontWeight(.heavy)
                 .foregroundStyle(Color.white)

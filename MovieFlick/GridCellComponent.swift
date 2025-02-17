@@ -1,10 +1,3 @@
-//
-//  GridCellComponent.swift
-//  MovieFlick
-//
-//  Created by Fran Ochoa on 10/8/24.
-//
-
 import SwiftUI
 
 struct GridCellComponent: View {

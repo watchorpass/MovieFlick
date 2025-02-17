@@ -1,43 +1,18 @@
-//
-//  PreviewData.swift
-//  MovieFlick
-//
-//  Created by Fran Malo on 20/8/24.
-//
-
 import SwiftUI
 
 struct MovieListInteractorPreview: MovieListInteractorProtocol {
-    func saveProviders(providers: [Int]) throws {
-        return
-    }
-    
-    func loadProviders() throws -> [Provider] {
-        []
-    }
-    
-    func savePlayers(players: [String]) throws {
-        return
-    }
-    
-    func loadPlayers() throws -> [Player] {
-        []
-    }
-    
-
-        
-    func getSeries(isAdult: Bool?, includesVideo: Bool?, page: Int?, sortBy: SortType?, releaseYear: Int?, dateGreaterThan: String?, dateLessThan: String?, voteGreaterThan: Double?, voteLessThan: Double?, region: String?, providers: [Provider]?, genres: [Genre]?, monetizationTypes: [MonetizationType]?) async throws -> [Movie] {
-        let url = Bundle.main.url(forResource: "PreviewDataSeriesList", withExtension: "json")!
-        let data = try Data(contentsOf: url)
-        let decoder = JSONDecoder()
-        return try decoder.decode(TVSerieList.self, from: data).results.map(\.toMovie)
-    }
-    
-    func getMovies(isAdult: Bool?, includesVideo: Bool?, page: Int?, sortBy: SortType?, releaseYear: Int?, dateGreaterThan: String?, dateLessThan: String?, voteGreaterThan: Double?, voteLessThan: Double?, region: String?, providers: [Provider]?, genres: [Genre]?, monetizationTypes: [MonetizationType]?) async throws -> [Movie] {
+    func getMovies(page: Int?, sortBy: SortType?, providers: [Provider]?, genres: [Genre]?, monetizationTypes: [MonetizationType]?) async throws -> [Movie] {
         let url = Bundle.main.url(forResource: "PreviewDataMovieList", withExtension: "json")!
         let data = try Data(contentsOf: url)
         let decoder = JSONDecoder()
         return try decoder.decode(MovieDTOList.self, from: data).results.map(\.toMovie)
+    }
+    
+    func getSeries(page: Int?, sortBy: SortType?, providers: [Provider]?, genres: [Genre]?, monetizationTypes: [MonetizationType]?) async throws -> [Movie] {
+        let url = Bundle.main.url(forResource: "PreviewDataSeriesList", withExtension: "json")!
+        let data = try Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        return try decoder.decode(TVSerieList.self, from: data).results.map(\.toMovie)
     }
     
     func loadCardImages(for movies: [Movie]) async throws -> [Movie] {

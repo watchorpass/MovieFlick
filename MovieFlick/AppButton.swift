@@ -1,10 +1,3 @@
-//
-//  ButtonComponent.swift
-//  MovieFlick
-//
-//  Created by Fran Malo on 13/8/24.
-//
-
 import SwiftUI
 
 struct AppButton: View {

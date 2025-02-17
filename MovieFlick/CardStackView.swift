@@ -3,12 +3,13 @@ import TipKit
 
 struct CardStackView: View {
     @Environment(MovieFlickViewModel.self) var vm
+    @Environment(PlayerManager.self) var playerVM
     @State var showDetail = false
     @State var isAnimating = false
     @State var showPlayerInfo = false
     
     var player : Player {
-        vm.players.first(where: { $0.moviesPassed < vm.swipeCount } ) ?? .emptyPlayer
+        return playerVM.players.first(where: { $0.moviesPassed < vm.swipeCount } ) ?? .emptyPlayer
     }
     
     var body: some View {
@@ -20,10 +21,12 @@ struct CardStackView: View {
                 Text("– \(vm.moviesLeft) movies left –")
                     .fontWeight(.light)
             }
+            .contentTransition(.numericText(value: Double(vm.moviesLeft)))
+            .animation(.snappy, value: vm.moviesLeft)
             .foregroundStyle(.white)
             .padding(.top)
             .onAppear {
-                vm.selectedPlayer = player
+                playerVM.selectedPlayer = player
             }
             .onChange(of: vm.moviesLeft, { oldValue, newValue in
                 if newValue < 1 {
@@ -35,22 +38,22 @@ struct CardStackView: View {
             
             ZStack {
                 VStack(spacing: 16) {
-                    if !vm.isLastPlayer(player: player) {
-                        Text("It's your turn, \(vm.nextPlayer(player: player)?.name ?? "")")
+                    if !playerVM.isLastPlayer(player: player) {
+                        Text("It's your turn, \(playerVM.nextPlayer(player: player)?.name ?? "")")
                             .font(.title2)
                             .fontWeight(.heavy)
                             .foregroundStyle(Color.white)
                         AppButton(title: "Next", isButtonDisabled: !(vm.moviesLeft < 1)) {
                             showPlayerInfo.toggle()
-                            vm.updatePlayer(player: vm.selectedPlayer)
+                            playerVM.updatePlayer(player: playerVM.selectedPlayer)
                             vm.moviesLeft = vm.moviesWithCard.count
                         }
                         .padding(.horizontal)
                     }
                 }
                 .onChange(of: vm.moviesLeft) { oldValue, newValue in
-                    if newValue < 1 && vm.isLastPlayer(player: player){
-                        vm.updatePlayer(player: vm.selectedPlayer)
+                    if newValue < 1 && playerVM.isLastPlayer(player: player){
+                        playerVM.updatePlayer(player: playerVM.selectedPlayer)
                         if vm.resultMovies.count == 1 {
                             vm.randomMovie()
                             vm.viewState = .movieSelection
@@ -78,7 +81,7 @@ struct CardStackView: View {
         .task {
             await vm.fetchContent()
         }
-        .opacity(vm.showError ? 0 : 1)
+        .opacity((vm.showError || vm.noResults) ? 0 : 1)
         .sheet(isPresented: $showDetail, content: {
             if let selected = vm.selectedMovie {
                 DetailView(movie: selected)
@@ -88,17 +91,11 @@ struct CardStackView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground(gradientOpacity: 0.5)
         .overlay {
-            if vm.moviesWithCard.isEmpty && !vm.showError {
+            if vm.moviesWithCard.isEmpty && !(vm.showError || vm.noResults) {
                 cardStackLoading
             }
         }
-        .overlay(alignment: .topLeading) {
-            BackButtonComponent {
-                vm.restartCount()
-                vm.viewState = .genreView
-            }
-            .padding()
-        }
+        .backButton(previousViewState: .genreView)
         .overlay {
             if vm.showError {
                 CustomErrorView(alertTitle: "UPS... Something went wrong", alertMessage: vm.errorMsg) {
@@ -108,25 +105,17 @@ struct CardStackView: View {
                 }
                 .padding(.bottom, 68)
             }
+            if vm.noResults {
+                CustomAlertView(errorTitle: "no_results_title", errorMessage: "no_results_message") {
+                    vm.viewState = .genreView
+                }
+            }
         }
     }
     
-    var cardStackLoading: some View {
+    private var cardStackLoading: some View {
         VStack {
-            Image(.rebrandingMovieFlick)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 250)
-                .padding()
-                .rotationEffect(.degrees(isAnimating ? 2 : -2))
-                .animation(
-                    Animation.easeInOut(duration: 1.2)
-                        .repeatForever(autoreverses: true),
-                    value: isAnimating
-                )
-                .onAppear {
-                    isAnimating = true
-                }
+            AnimatedLogo()
             LoadingView()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -154,6 +143,7 @@ struct LoadingView: View {
 #Preview {
     CardStackView()
         .environment(MovieFlickViewModel())
+        .environment(PlayerManager())
         .task {
             try? Tips.configure([
                 .datastoreLocation(.applicationDefault)])

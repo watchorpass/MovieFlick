@@ -1,10 +1,3 @@
-//
-//  Player.swift
-//  MovieFlick
-//
-//  Created by Fran Ochoa on 1/10/24.
-//
-
 import Foundation
 
 struct Player: Equatable, Hashable, Identifiable, Codable {

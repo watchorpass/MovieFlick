@@ -1,10 +1,3 @@
-//
-//  AppConfig.swift
-//  MovieFlick
-//
-//  Created by Fran Malo on 19/8/24.
-//
-
 import Foundation
 
 final class AppConfig {

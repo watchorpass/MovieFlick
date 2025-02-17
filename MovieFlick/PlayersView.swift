@@ -1,21 +1,15 @@
-//
-//  PlayersView.swift
-//  MovieFlick
-//
-//  Created by Alex  on 16/8/24.
-//
-
 import SwiftUI
 
 struct PlayersView: View {
     @Environment(MovieFlickViewModel.self) var vm
+    @Environment(PlayerManager.self) var playerVM
     
     private var addPlayerText: (LocalizedStringKey, Bool) {
-        (vm.players.count < 4) ? ("Add new player +", false) : ("Max. 4 players", true)
+        (playerVM.players.count < 4) ? ("Add new player +", false) : ("Max. 4 players", true)
     }
     
     var body: some View {
-        @Bindable var bvm = vm
+        @Bindable var bPlayerVM = playerVM
         VStack {
             Text("Create your players")
                 .font(.title)
@@ -23,32 +17,32 @@ struct PlayersView: View {
                 .foregroundStyle(Color.white)
             Spacer()
             VStack {
-                ForEach(Array(vm.players.enumerated()), id: \.0) { index, player in
+                ForEach(Array(playerVM.players.enumerated()), id: \.0) { index, player in
                     HStack {
-                        PlayerTextField(backgroundText: "Player \(index + 1)", text: $bvm.players[index].name, color: vm.isFirstOfHisName(player: vm.players[index]) ? .green : .red)
-                        AppButton(title: "–", color: (vm.players.count < 3) ? .gray : .red, animation: nil, isButtonDisabled: (vm.players.count < 3)) {
-                            vm.removePlayer(player: player)
+                        PlayerTextField(backgroundText: "Player \(index + 1)", text: $bPlayerVM.players[index].name)
+                        AppButton(title: "–", color: (playerVM.players.count < 3) ? .gray : .red, animation: nil, isButtonDisabled: (playerVM.players.count < 3)) {
+                            playerVM.removePlayer(player: player)
                         }
                         .frame(width: 50)
                     }
                 }
                 AppButton(title: addPlayerText.0, isButtonDisabled: addPlayerText.1) {
-                    vm.players.append(.emptyPlayer)
+                    playerVM.players.append(.emptyPlayer)
                 }
                 .padding(.vertical)
             }
 
             Spacer()
-            AppButton(title: "Continue", isButtonDisabled: (vm.playersWithoutName() || vm.noSecondNames())) {
+            AppButton(title: "Continue", isButtonDisabled: playerVM.isRepeatedOrEmptyPlayer()) {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                vm.savePlayer()
+                playerVM.savePlayers()
                 vm.viewState = .chooseTypeView
             }
         }
         .padding(.horizontal)
         .padding(.top, 48)
         .padding(.bottom)
-        .animation(.smooth, value: vm.players)
+        .animation(.smooth, value: playerVM.players)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .appBackground(gradientOpacity: 0.5)
     }
@@ -57,4 +51,5 @@ struct PlayersView: View {
 #Preview {
     PlayersView()
         .environment(MovieFlickViewModel())
+        .environment(PlayerManager())
 }

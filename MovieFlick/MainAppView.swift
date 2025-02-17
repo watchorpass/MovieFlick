@@ -18,7 +18,7 @@ struct MainAppView: View {
                 FilterView()
             case .genreView:
                 GenreView()
-            case .swipeView:
+            case .cardStackView:
                 CardStackView()
             case .resultView:
                 ResultsView()
@@ -28,6 +28,7 @@ struct MainAppView: View {
                 ProvidersView()
             }
         }
+        .background(.black)
         .animation(.spring, value: vm.viewState)
     }
 }

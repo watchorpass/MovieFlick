@@ -1,10 +1,3 @@
-//
-//  ChooseTypeView.swift
-//  MovieFlick
-//
-//  Created by Alex  on 18/8/24.
-//
-
 import SwiftUI
 
 struct ChooseTypeView: View {
@@ -31,12 +24,7 @@ struct ChooseTypeView: View {
         }
         .padding(.top, 48)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .overlay(alignment: .topLeading) {
-            BackButtonComponent {
-                vm.viewState = .playersView
-            }
-            .padding()
-        }
+        .backButton(previousViewState: .playersView)
         .appBackground(gradientOpacity: 0.5)
     }
 }

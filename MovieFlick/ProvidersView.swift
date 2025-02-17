@@ -1,10 +1,3 @@
-//
-//  ProvidersView.swift
-//  MovieFlick
-//
-//  Created by Fran Malo on 5/9/24.
-//
-
 import SwiftUI
 
 struct ProvidersView: View {
@@ -40,12 +33,7 @@ struct ProvidersView: View {
         }
         .padding(.top, 48)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .overlay(alignment: .topLeading) {
-            BackButtonComponent {
-                vm.viewState = .filterView
-            }
-            .padding()
-        }
+        .backButton(previousViewState: .filterView)
         .overlay(alignment: .bottom) {
             if !vm.selectedProviders.isEmpty {
                 AppButton(title: "Continue", color: .gray) {

@@ -1,10 +1,3 @@
-//
-//  MovieSelection.swift
-//  MovieFlick
-//
-//  Created by Alex  on 29/8/24.
-//
-
 import SwiftUI
 
 struct MovieSelectionView: View {
